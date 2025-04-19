@@ -1,0 +1,110 @@
+@if (translation) { @if (priceRequestSig()) {
+<article class="card">
+  <div class="card-body pt-6 p-6">
+    <div class="title">
+      <h2>{{ translation.title | translate }}</h2>
+      @if (user.roles.includes(role.ProjectManager) ||
+      user.roles.includes(role.SiteEngineer)) {
+      <button type="button" (click)="openAddRequestDialog()">
+        <i class="ki-duotone ki-plus"> </i>
+        <span>{{ translation.addPriceRequests | translate }}</span>
+      </button>
+      }
+    </div>
+    <div class="price-requests-list">
+      <app-price-requests-list
+        [priceRequest]="priceRequestSig()"
+        [priceApprovalStatusBadges]="priceApprovalStatusBadges"
+        [translation]="translation"
+      ></app-price-requests-list>
+    </div>
+    @if (priceRequestSig().attachments?.length > 0) {
+    <div class="sample-approval-form">
+      <app-price-requests-sample-approval
+        [attachments]="priceRequestSig().attachments"
+        [translation]="translation"
+        (refreshRequest)="refreshRequest()"
+      ></app-price-requests-sample-approval>
+    </div>
+    }
+  </div>
+</article>
+<article class="card price-requests-status-list">
+  <div class="card-body pt-6 p-6">
+    <h2>{{ translation.requestStatus | translate }}</h2>
+    <app-price-requests-status-list
+      [translation]="translation"
+      [history]="priceRequestSig().history"
+      [priceRequest]="priceRequestSig()"
+    ></app-price-requests-status-list>
+    <div
+      class="buttons"
+      *ngIf="
+        priceRequestSig().phase === 0 &&
+        user.roles.includes(role.ProjectManager) &&
+        priceRequestSig().status === 0
+      "
+    >
+      <button type="button" (click)="openAcceptRejectDialog('accept')">
+        <span>{{ 'termsDetails.acceptRequest' | translate }}</span>
+      </button>
+      <button type="button" (click)="openAcceptRejectDialog('reject')">
+        <span>{{ 'termsDetails.rejectRequest' | translate }}</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+<article class="card certified-suppliers">
+  <div class="card-body pt-6 p-6">
+    <div class="cardDetails">
+      <h2>
+        @if (user.roles.includes(role.ProjectManager) ||
+        user.roles.includes(role.SiteEngineer)) {
+        {{ translation.certifiedSuppliers | translate }}
+        } @else {
+        {{ translation.priceOffers | translate }}
+        }
+      </h2>
+      @if (priceRequestSig().suppliers.length > 0 && enableOpenAddSupplierBtn) {
+      <button type="button" (click)="openSupplierDialog()">
+        <i class="ki-duotone ki-plus"> </i>
+        <span>{{ translation?.addSupplier | translate }}</span>
+      </button>
+      }
+    </div>
+    <app-certified-suppliers-list
+      [translation]="translation"
+      [userRoles]="user?.roles"
+      [phase]="priceRequestSig().phase"
+      [suppliers]="priceRequestSig().suppliers"
+      [priceRequestId]="priceRequestSig().id"
+      (refreshRequest)="refreshRequest($event)"
+      [enableOpenAddSupplierBtn]="enableOpenAddSupplierBtn"
+      (openAddSupplyDialog)="openSupplierDialog()"
+      (deleteSupplier)="deleteSupplier($event)"
+      [termId]="termId"
+      [projectId]="projectId"
+    ></app-certified-suppliers-list>
+  </div>
+</article>
+@if (pageInfo()?.totalPages > 1) {
+<app-pagination
+  [pageInfo]="pageInfo()"
+  [paginationPages]="paginationPages()"
+  [pageIndex]="pageIndexSig() + 1"
+  (goToPage)="goToPageHandler($event)"
+  [pageSize]="1"
+></app-pagination>
+
+} } @else {
+<article class="card">
+  <div class="card-body pt-6 p-6">
+    <app-no-price-requests
+      [translation]="translation"
+      [userRoles]="user?.roles"
+      (openAddDialog)="openAddRequestDialog()"
+    ></app-no-price-requests>
+  </div>
+</article>
+} }

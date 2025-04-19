@@ -1,0 +1,16 @@
+.dotted-box {
+  padding: 12px;
+  border: 1px dashed #979797;
+  p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    white-space: nowrap;
+  }
+  span {
+    font-size: 14px;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+}

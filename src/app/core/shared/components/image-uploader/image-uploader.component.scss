@@ -1,0 +1,41 @@
+.image-upload-container {
+    text-align: center;
+  }
+  
+  .image-upload-placeholder {
+    width: 233px;
+    height: 233px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative; /* Enable relative positioning for child elements */
+
+  }
+  
+  .upload-icon {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+  }
+  
+  .uploaded-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .upload-text {
+    color: green;
+    text-decoration: none;
+    cursor: pointer; /* Indicate clickable behavior */
+
+  }
+  .remove-icon {
+    position: absolute; /* Position the icon absolutely within the placeholder */
+    top: 4px; /* Adjust position as needed */
+    right: 210px; 
+    cursor: pointer; /* Indicate clickable behavior */
+  }

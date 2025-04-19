@@ -1,0 +1,58 @@
+:host {
+  display: block;
+}
+
+.term-details-title {
+  h1 {
+    color: #333;
+    margin-bottom: 3px;
+    font-weight: 700;
+  }
+  h3 {
+    color: #333;
+    a {
+      color: #333;
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+    .termstitle {
+      font-weight: 700;
+    }
+  }
+}
+
+.details-table {
+  margin-top: 21px;
+  table {
+    margin-bottom: 0;
+    border-bottom: 2px solid #ECEEF1;
+    thead {
+      background-color: #ECEEF1;
+    }
+    tr {
+      color: #333;
+      th {
+        white-space: nowrap;
+        font-weight: 700;
+        padding: 15px;
+        font-size: 13px;
+      }
+      td {
+        font-weight: 400;
+        padding: 15px;
+      }
+    }
+    tbody {
+      background-color: #fff;
+    }
+  }
+}
+
+.tabPanel {
+  margin-top: 15px;
+}
+
+ul.nav {
+  background-color: #fff;
+}

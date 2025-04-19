@@ -1,0 +1,17 @@
+<div class="contractor-container">
+  @if (supplier()) {
+  <app-dotted-box [title]="translation.name" [subtitle]="supplier().name" />
+  @if (supplier().identifierNumber) {
+  <app-dotted-box
+    [title]="translation.taxNumber"
+    [subtitle]="supplier().identifierNumber"
+  />
+  } @if (supplier().bankName) {
+  <app-dotted-box [title]="translation.bankName" [subtitle]="supplier().bankName" />
+  } @if (supplier().iban) {
+  <app-dotted-box [title]="translation.BankAccountNumber" [subtitle]="supplier().iban" />
+  }
+  <app-dotted-box [title]="translation.contactNumber" [subtitle]="supplier().phone1" />
+  }
+</div>
+

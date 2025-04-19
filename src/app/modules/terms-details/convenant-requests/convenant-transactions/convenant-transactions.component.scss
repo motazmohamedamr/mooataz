@@ -1,0 +1,37 @@
+table {
+  margin-bottom: 0;
+  margin-top: 20px;
+  thead {
+    background-color: #ECEEF1;
+  }
+  tbody tr:first-child {
+    // cursor: pointer;
+    border-bottom: 2px solid #ECEEF1 !important;
+  }
+  tr {
+    color: #333;
+    .attachments-title {
+      margin: 0;
+    }
+    th {
+      white-space: nowrap;
+      font-weight: 700;
+      padding: 15px;
+      font-size: 13px;
+    }
+    td {
+      font-weight: 400;
+      padding: 15px;
+    }
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      gap: 10px;
+      .card {
+        flex-basis: 150px;
+        background-color: rgb(238, 241, 245);
+      }
+    }
+  }
+}

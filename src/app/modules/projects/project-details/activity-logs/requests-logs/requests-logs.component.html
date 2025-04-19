@@ -1,0 +1,217 @@
+@for (activity of activitiesSig(); track activity.id) {
+<div class="log">
+  <div class="logo-line">
+    @if (activity.request?.status === 'Created') {
+    <div class="logo" [style.background-color]="'#15845633'">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_2868_8324)">
+          <path
+            d="M7.99976 0C3.58842 0 -0.000244141 3.58867 -0.000244141 8C-0.000244141 12.4113 3.58842 16 7.99976 16C12.4111 16 15.9998 12.4113 15.9998 8C15.9998 3.58867 12.4111 0 7.99976 0Z"
+            fill="#158456"
+          />
+          <path
+            opacity="0.2"
+            d="M7.99976 0.166667C12.3831 0.166667 15.9504 3.71067 15.9958 8.08333C15.9958 8.05533 15.9998 8.028 15.9998 8C15.9998 3.58867 12.4111 0 7.99976 0C3.58842 0 -0.000244141 3.58867 -0.000244141 8C-0.000244141 8.028 0.00375586 8.05533 0.00375586 8.08333C0.0490892 3.71067 3.61709 0.166667 7.99976 0.166667Z"
+            fill="white"
+          />
+          <path
+            opacity="0.1"
+            d="M7.99976 15.8333C3.61642 15.8333 0.0490892 12.2893 0.00375586 7.91667C0.00375586 7.94467 -0.000244141 7.97201 -0.000244141 8.00001C-0.000244141 12.4113 3.58842 16 7.99976 16C12.4111 16 15.9998 12.4113 15.9998 8.00001C15.9998 7.97201 15.9958 7.94467 15.9958 7.91667C15.9504 12.2893 12.3824 15.8333 7.99976 15.8333Z"
+            fill="black"
+          />
+          <path
+            d="M12.6663 7.33333H8.66634V3.33333H7.33301V7.33333H3.33301V8.66666H7.33301V12.6667H8.66634V8.66666H12.6663V7.33333Z"
+            fill="white"
+          />
+          <path
+            d="M3.33301 8.66666L7.33301 12.6667V8.66666H3.33301ZM8.66634 7.33333H12.6663L8.66634 3.33333V7.33333ZM12.6663 7.33333V8.66666H8.66634V12.6667H7.33301L10.3203 15.654C11.578 15.2696 12.7221 14.5823 13.652 13.6524C14.582 12.7224 15.2693 11.5784 15.6537 10.3207L12.6663 7.33333Z"
+            fill="url(#paint0_linear_2868_8324)"
+          />
+          <path
+            d="M7.99976 0C3.58842 0 -0.000244141 3.58867 -0.000244141 8C-0.000244141 12.4113 3.58842 16 7.99976 16C12.4111 16 15.9998 12.4113 15.9998 8C15.9998 3.58867 12.4111 0 7.99976 0Z"
+            fill="url(#paint1_linear_2868_8324)"
+          />
+        </g>
+        <defs>
+          <linearGradient
+            id="paint0_linear_2868_8324"
+            x1="6.40367"
+            y1="6.40399"
+            x2="12.4623"
+            y2="12.4627"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-opacity="0.1" />
+            <stop offset="1" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="paint1_linear_2868_8324"
+            x1="0.749756"
+            y1="4.61933"
+            x2="15.2498"
+            y2="11.3807"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="white" stop-opacity="0.2" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+          </linearGradient>
+          <clipPath id="clip0_2868_8324">
+            <rect
+              width="16"
+              height="16"
+              fill="white"
+              transform="translate(-0.000244141)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+    } @else if (activity.request?.status === 'Rejected') {
+    <div class="logo" [style.background-color]="'#F64E601F'">
+      <span class="reject">X</span>
+    </div>
+    } @else if (activity.request?.status === 'Approved' || activity.request?.status ===
+    'TransferredPartial') {
+    <div class="logo" [style.background-color]="'#15845633'">
+      <span class="tick">&#10004;</span>
+    </div>
+    }
+    <div class="dashed-line"></div>
+  </div>
+  <div class="content">
+    <p class="title">
+      {{
+        $any(translation?.activityLogStatus)
+          [activity.request?.status]?.replace(
+            '{request}',
+            $any(translation?.activityLogRequestType)[activity.requestType]
+          )
+          ?.replace('{actor}', $any(translation?.activityLogActor)[activity.actor])
+      }}
+    </p>
+    <span class="subtitle"
+      >{{ activity.createdAt?.toString() | timeFormat : translate.currentLang }}
+      {{ translation?.by }} &nbsp;<span class="name">{{
+        createdByNames()[activity.createdBy]
+      }}</span></span
+    >
+    <div style="overflow-x: auto">
+      <table
+        id="kt_profile_overview_table"
+        class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+      >
+        <thead class="fs-7">
+          <tr>
+            @if (activity.requestType === 'ExtractRequest') {
+            <th scope="col">
+              {{ translation?.extractNumber }}
+            </th>
+            <th scope="col">{{ translation?.extractDate }}</th>
+            <th scope="col">{{ translation?.extractValue }}</th>
+            <th scope="col">{{ translation?.extractType }}</th>
+            <th scope="col">{{ translation?.showExtract }}</th>
+            } @else {
+            <th scope="col">
+              {{ translation?.requestNumber }}
+            </th>
+            <th scope="col">{{ translation?.termName }}</th>
+            <th scope="col">{{ translation?.requestDate }}</th>
+            <th scope="col">{{ translation?.quantity }}</th>
+            <th scope="col">{{ translation?.details }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody class="fs-6">
+          @if (activity.requestType === 'ExtractRequest') {
+          <tr>
+            <td>#{{ activity.request?.requestNumber }}</td>
+            <td>{{ activity.createdAt | date : 'd MMM y' : '' : locale }}</td>
+            <td>{{ activity.request?.extractRequestExtractValue | numberWithCommas }}</td>
+            <td>
+              {{ $any(translation?.extractTypes)[activity.request?.extractRequestType] }}
+            </td>
+            <td class="showrequest extract">
+              <button
+                class="btn btn-icon btn-color-info btn-bg-light btn-sm me-1"
+                (click)="showRequest(activity)"
+              >
+                <i class="ki-duotone ki-eye">
+                  <span class="path1"></span>
+                  <span class="path2"></span>
+                  <span class="path3"></span>
+                </i>
+              </button>
+            </td>
+          </tr>
+          } @else {
+          <tr>
+            <td>#{{ activity.request?.requestNumber }}</td>
+            <td>{{ activity.termTitle }}</td>
+            <td>{{ activity.createdAt | date : 'd MMM y' : '' : locale }}</td>
+            <td>{{ activity.request?.quantity }}</td>
+            <td class="showrequest">
+              <button (click)="showRequest(activity)">
+                {{ translation?.showRequest }}
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+} @empty {
+<h2>{{ translation?.noActivities }}</h2>
+}
+
+<!---->
+<!---->
+<!---->
+<!---->
+
+<!-- <div class="log">
+  <div class="logo-line">
+    <div class="logo" [style.background-color]="'#F64E601F'">
+      <i class="ki-duotone ki-trash fs-5" style="color: #f64e60">
+        <span class="path1"></span>
+        <span class="path2"></span>
+        <span class="path3"></span>
+        <span class="path4"></span>
+        <span class="path5"></span>
+      </i>
+    </div>
+    <div class="dashed-line"></div>
+  </div>
+  <div class="content">
+    <p class="title">تم حذف 4 ملفات من طلب التسعير</p>
+    <span class="subtitle"
+      >4:23 مساءً بواسطة &nbsp;<span class="name">محمد عبد الله السيد</span></span
+    >
+    <div class="file-list">
+      @for (file of [1, 2, 3]; let ind = $index; track ind) {
+      <div class="file-item">
+        <img src="assets/media/svg/files/pdf.svg" width="30" height="30" alt="file" />
+        <p class="file-name">طلب التسعير.pdf</p>
+      </div>
+      }
+    </div>
+  </div>
+</div> -->
+
+@if (pageInfo()?.totalPages > 1) {
+<app-pagination
+  [pageInfo]="pageInfo()"
+  [paginationPages]="paginationPages()"
+  [pageIndex]="pageData().pageIndex + 1"
+  (goToPage)="goToPageHandler($event)"
+  [pageSize]="5"
+></app-pagination>
+
+}

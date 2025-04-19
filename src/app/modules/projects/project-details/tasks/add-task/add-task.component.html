@@ -1,0 +1,458 @@
+<div>
+  <div class="modal-header border-0">
+    <div class="d-flex flex-column">
+      <h1 class="modal-title mb-1 fw-bold">
+        @if (task) {
+        {{ 'Projects.projectDetails.updateTask' | translate }}
+        } @else {
+        {{ 'Projects.projectDetails.addNewTask' | translate }}
+        }
+      </h1>
+      <h3 class="modal-title">{{ 'Projects.projectDetails.enterData' | translate }}</h3>
+    </div>
+  </div>
+  <div class="modal-body py-0" id="modalBody">
+    <!--begin::Input group-->
+    <div class="d-flex flex-column mb-8 fv-row">
+      <!--begin::Label-->
+      <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+        <span class="required">{{ 'Projects.projectDetails.termName' | translate }}</span>
+        <span class="ms-1" data-bs-toggle="tooltip" title="Term name"> </span>
+      </label>
+      <!--end::Label-->
+      <input
+        type="text"
+        class="form-control form-control-solid"
+        placeholder="{{ 'Projects.projectDetails.enterTermName' | translate }}"
+        name="term_name"
+        [formControl]="termObj"
+        [ngbTypeahead]="termsSearch"
+        [editable]="false"
+        [inputFormatter]="termFormatter"
+        [resultFormatter]="termFormatter"
+      />
+      <ng-container *ngIf="termObj?.invalid && termObj?.touched">
+        <div
+          *ngIf="termObj?.hasError('required')"
+          class="fv-plugins-message-container invalid-feedback"
+        >
+          <span>
+            {{ 'validations.required' | translate : { field: termObj } }}
+          </span>
+        </div>
+      </ng-container>
+    </div>
+    <!--end::Input group-->
+
+    <!--begin::Input group-->
+    <div class="d-flex flex-column mb-8 fv-row">
+      <!--begin::Label-->
+      <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+        <span class="required">{{ 'Projects.projectDetails.taskName' | translate }}</span>
+        <span class="ms-1" data-bs-toggle="tooltip" title="Task name"> </span>
+      </label>
+      <!--end::Label-->
+      <input
+        type="text"
+        class="form-control form-control-solid"
+        placeholder="{{ 'Projects.projectDetails.enterTaskName' | translate }}"
+        name="task_title"
+        [formControl]="taskName"
+      />
+      <ng-container *ngIf="taskName?.invalid && taskName?.touched">
+        <div
+          *ngIf="taskName?.hasError('required')"
+          class="fv-plugins-message-container invalid-feedback"
+        >
+          <span>
+            {{ 'validations.required' | translate : { field: taskName } }}
+          </span>
+        </div>
+      </ng-container>
+    </div>
+    <!--end::Input group-->
+
+    <!--begin::Input group-->
+    <div class="row g-9 mb-8">
+      <!--begin::Input group-->
+      <div class="col-md-6 fv-row">
+        <!--begin::Label-->
+        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+          <span class="required">{{
+            'Projects.projectDetails.taskPeriod' | translate
+          }}</span>
+          <span class="ms-1" data-bs-toggle="tooltip" title="Term name"> </span>
+        </label>
+        <!--end::Label-->
+
+        <div class="input-group input-group-solid">
+          <input
+            type="number"
+            aria-label="Days"
+            class="form-control"
+            max="29"
+            [formControl]="periodDays"
+            placeholder="{{ 'Projects.projectDetails.periodDays' | translate }}"
+          />
+          <input
+            type="number"
+            aria-label="Months"
+            class="form-control"
+            max="11"
+            [formControl]="periodMonths"
+            placeholder="{{ 'Projects.projectDetails.periodMonths' | translate }}"
+          />
+          <input
+            type="number"
+            aria-label="Years"
+            class="form-control"
+            max="10"
+            [formControl]="periodYears"
+            placeholder="{{ 'Projects.projectDetails.periodYears' | translate }}"
+          />
+        </div>
+        <ng-container
+          *ngIf="
+            (periodDays?.invalid && periodDays?.touched) ||
+            (periodMonths?.invalid && periodMonths?.touched) ||
+            (periodYears?.invalid && periodYears?.touched)
+          "
+        >
+          <div class="fv-plugins-message-container invalid-feedback">
+            <span>
+              {{ 'validations.required' | translate : { field: periodDays } }}
+            </span>
+            <span>
+              {{ 'Projects.projectDetails.periodError' | translate }}
+            </span>
+          </div>
+        </ng-container>
+      </div>
+      <!--end::Input group-->
+
+      <!--begin::Col-->
+      <div class="col-md-6 fv-row">
+        <label class="required fs-6 fw-semibold mb-2">{{
+          'Projects.projectDetails.taskStartDate' | translate
+        }}</label>
+        <!--begin::Input-->
+        <div class="position-relative d-flex align-items-center">
+          <!--begin::Icon-->
+          <button
+            (click)="d.toggle()"
+            class="btn position-absolute end-0 h-100 d-flex justify-content-end align-items-center p-0"
+          >
+            <i class="ki-duotone ki-calendar-8 fs-2 mx-4 startDate">
+              <span class="path1"></span>
+              <span class="path2"></span>
+              <span class="path3"></span>
+              <span class="path4"></span>
+              <span class="path5"></span>
+              <span class="path6"></span>
+            </i>
+          </button>
+          <!--end::Icon-->
+          <!--begin::Datepicker-->
+          <input
+            class="form-control form-control-solid"
+            placeholder="{{ 'Projects.projectDetails.selectDate' | translate }}"
+            name="due_date"
+            ngbDatepicker
+            #d="ngbDatepicker"
+            [formControl]="startingDate"
+          />
+          <!--end::Datepicker-->
+        </div>
+        <ng-container *ngIf="startingDate?.invalid && startingDate?.touched">
+          <div
+            *ngIf="startingDate?.hasError('required')"
+            class="fv-plugins-message-container invalid-feedback"
+          >
+            <span>
+              {{ 'validations.required' | translate : { field: startingDate } }}
+            </span>
+          </div>
+        </ng-container>
+        <!--end::Input-->
+      </div>
+      <!--end::Col-->
+    </div>
+    <!--end::Input group-->
+
+    <!--begin::Col-->
+    <div class="d-flex flex-column mb-8">
+      <ng-template #rt let-r="result" let-t="term">
+        <img
+          [src]="r['picture'] || './assets/media/avatars/blank.png'"
+          class="me-1 w-20px rounded-circle"
+        />
+        <ngb-highlight [result]="r.fullName" [term]="t"></ngb-highlight>
+      </ng-template>
+      <label class="required fs-6 fw-semibold mb-2">{{
+        'Projects.projectDetails.employee' | translate
+      }}</label>
+      <input
+        type="text"
+        class="form-control form-control-solid"
+        placeholder="{{ 'Projects.projectDetails.selectEmployee' | translate }}"
+        name="users_name"
+        [formControl]="assignees"
+        [ngbTypeahead]="usersSearch"
+        [editable]="false"
+        [inputFormatter]="userFormatter"
+        [resultFormatter]="userFormatter"
+        [resultTemplate]="rt"
+        (focus)="focus$.next($any($event).target.value)"
+        (click)="click$.next($any($event).target.value)"
+        #instance="ngbTypeahead"
+      />
+      <ng-container *ngIf="assignees?.invalid && assignees?.touched">
+        <div
+          *ngIf="assignees?.hasError('required')"
+          class="fv-plugins-message-container invalid-feedback"
+        >
+          <span>
+            {{ 'validations.required' | translate : { field: assignees } }}
+          </span>
+        </div>
+      </ng-container>
+    </div>
+    <!--end::Col-->
+    <!--begin::Input group-->
+    <div class="d-flex flex-column mb-8">
+      <label class="required fs-6 fw-semibold mb-2">{{
+        'Projects.projectDetails.details' | translate
+      }}</label>
+      <textarea
+        class="form-control form-control-solid"
+        rows="3"
+        name="task_details"
+        [formControl]="description"
+        placeholder="{{ 'Projects.projectDetails.addDetails' | translate }}"
+      ></textarea>
+      <ng-container *ngIf="description?.invalid && description?.touched">
+        <div
+          *ngIf="description?.hasError('required')"
+          class="fv-plugins-message-container invalid-feedback"
+        >
+          <span>
+            {{ 'validations.required' | translate : { field: description } }}
+          </span>
+        </div>
+      </ng-container>
+    </div>
+    <!--end::Input group-->
+    <!--begin::Input group-->
+    <div class="d-flex flex-column mb-8 fv-row">
+      <!--begin::Label-->
+      <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+        <span class="">{{ 'Projects.projectDetails.tags' | translate }}</span>
+        <span class="ms-1" data-bs-toggle="tooltip"> </span>
+      </label>
+      <!--end::Label-->
+      <tagify
+        inputClass="form-control form-control-solid"
+        [settings]="settings"
+        [whitelist]="whitelist$.asObservable()"
+        (add)="onAddTag($event)"
+        [formControl]="tags"
+        (tInput)="getTagValue($event)"
+      >
+        @for (tag of currentTags; track $index) {
+        {{ tag }}
+        }
+      </tagify>
+    </div>
+    <!--end::Input group-->
+    <!--begin::Input group-->
+    <div class="d-flex flex-column mb-8 fv-row">
+      <label class="required fs-6 fw-semibold mb-2">{{
+        'Projects.projectDetails.priority' | translate
+      }}</label>
+      <select
+        class="form-select form-select-solid"
+        data-control="select2"
+        data-hide-search="true"
+        name="target_assign"
+        [formControl]="priority"
+      >
+        <option value="">
+          {{ 'Projects.projectDetails.selectPriority' | translate }}
+        </option>
+        <option [value]="WorkItemPriority.Low">
+          {{ 'Projects.projectDetails.low' | translate }}
+        </option>
+        <option [value]="WorkItemPriority.Medium">
+          {{ 'Projects.projectDetails.medium' | translate }}
+        </option>
+        <option [value]="WorkItemPriority.High">
+          {{ 'Projects.projectDetails.high' | translate }}
+        </option>
+      </select>
+      <ng-container *ngIf="priority?.invalid && priority?.touched">
+        <div
+          *ngIf="priority?.hasError('required')"
+          class="fv-plugins-message-container invalid-feedback"
+        >
+          <span>
+            {{ 'validations.required' | translate : { field: priority } }}
+          </span>
+        </div>
+      </ng-container>
+    </div>
+
+    <!--end::Input group-->
+    <!--begin::Input group-->
+    <div class="d-flex flex-column mb-8">
+      <label class="fs-6 fw-semibold mb-2">{{
+        'Projects.projectDetails.notes' | translate
+      }}</label>
+      <!-- <textarea
+        id="comments"
+        class="form-control form-control-solid"
+        rows="3"
+        name="task_details"
+        [formControl]="notes"
+        placeholder="{{ 'Projects.projectDetails.addComment' | translate }}"
+      ></textarea> -->
+      <input
+        type="text"
+        id="comments"
+        class="form-control form-control-solid"
+        name="task_details"
+        [formControl]="notes"
+        placeholder="{{ 'Projects.projectDetails.addComment' | translate }}"
+      />
+    </div>
+    <!--end::Input group-->
+    <ul class="p-0 d-flex flex-column gap-4">
+      @for (comment of commentsList; track $index) {
+      <li class="mb-2">
+        <div class="d-flex justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img
+              [src]="
+                getUser(comment.userId)?.picture ||
+                getUser(account.id)?.picture ||
+                './assets/media/avatars/blank.png'
+              "
+              class="w-25px rounded-circle"
+              alt=""
+            />
+            {{ getUser(comment.userId)?.fullName || getUser(account.id)?.fullName }}
+          </div>
+          <div
+            ngbDropdown
+            class="d-inline-block"
+            [ngClass]="{ 'd-none': comment.userId !== account?.id }"
+          >
+            <button class="btn btn-icon btn-sm" id="dropdownBasic1" ngbDropdownToggle>
+              <img src="assets/media/svg/general/dots.svg" alt="dots" class="w-20px" />
+            </button>
+
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="updateComment(comment)">
+                {{ 'general.update' | translate }}
+              </button>
+              <button ngbDropdownItem (click)="deleteComment(comment, $index)">
+                {{ 'general.delete' | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="comment-body">
+          <textarea
+            type="text"
+            class="bg-light p-3 border w-100 d-flex"
+            disabled
+            [id]="comment.id"
+            value="{{ comment.content ?? comment }}"
+          ></textarea>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fs-8 mt-1">{{
+              comment.modifiedAt ?? comment.createdAt | date : 'MMM d, h:mm a'
+            }}</span>
+            <button
+              class="btn btn-sm btn-primary my-1 d-none"
+              id="{{ 'update-' + comment.id }}"
+              (click)="putUpdateComment(comment)"
+            >
+              {{ 'general.update' | translate }}
+            </button>
+          </div>
+        </div>
+      </li>
+      }
+    </ul>
+    <!-- Files -->
+    @if (attachmentsList.length > 0) {
+    <div>
+      <label class="fs-6 fw-semibold mb-2">{{
+        'Projects.projectDetails.files' | translate
+      }}</label>
+      <ul class="m-0 p-0" id="attachments">
+        @for (att of attachmentsList; track $index) {
+        <li class="mt-3">
+          <div class="d-flex align-items-center">
+            <a
+              href="{{ att.url }}"
+              target="_blank"
+              class="flex-grow-1 d-flex align-items-center gap-2 text-black"
+            >
+              <img
+                [src]="'assets/media/svg/files/' + att.extension + '.svg'"
+                class="theme-light-show w-35px"
+                alt="file-type-icon"
+              />
+              <span class="flex-grow-1">{{ att.displayName }}</span>
+            </a>
+            <button
+              class="btn btn-icon btn-bg-light btn-color-danger btn-sm"
+              (click)="removeFile(att.uniqueName, $index)"
+            >
+              <i class="ki-duotone ki-trash fs-2">
+                <span class="path1"></span>
+                <span class="path2"></span>
+                <span class="path3"></span>
+                <span class="path4"></span>
+                <span class="path5"></span>
+              </i>
+            </button>
+          </div>
+          <hr />
+        </li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+  <div class="modal-footer border-0 justify-content-between">
+    <button class="btn bg-light" (click)="file.click()">
+      {{ 'Projects.projectDetails.addAttachment' | translate }}
+      <i>
+        <img src="./assets/media/icons/attachment.svg" alt="attachment.svg" />
+      </i>
+    </button>
+    <input
+      #file
+      type="file"
+      accept=""
+      (change)="addAttachment($event.target!)"
+      multiple
+      hidden
+    />
+
+    <div class="d-flex gap-3">
+      <button type="button" class="btn btn-primary" (click)="submit()">
+        {{ 'general.save' | translate }}
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="activeModal.close('Close click')"
+      >
+        {{ 'general.discard' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

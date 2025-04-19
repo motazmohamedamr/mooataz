@@ -1,0 +1,65 @@
+<div style="overflow-x: auto">
+  <table
+    id="kt_profile_overview_table"
+    class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+  >
+    <thead class="fs-7">
+      <tr>
+        <th scope="col" class="fw-bold">
+          {{ translation.extractNumber | translate }}
+        </th>
+        <th scope="col">{{ translation.extractDate | translate }}</th>
+        <th scope="col">{{ translation.extractValue | translate }}</th>
+        <th scope="col">{{ translation.extractType | translate }}</th>
+        <th scope="col">{{ translation.extractStatus.title | translate }}</th>
+        <th scope="col">{{ translation.showExtract | translate }}</th>
+      </tr>
+    </thead>
+    <tbody class="fs-6">
+      @for (extract of extractList; track extract.id; let index = $index) {
+      <tr>
+        <td>{{ extract.requestNumber }}</td>
+        <td>{{ extract.extractDate | date : 'd MMM y' : '' : locale }}</td>
+        <td
+          dir="ltr"
+          [ngStyle]="{ 'text-align': translate.currentLang === 'ar' ? 'right' : 'left' }"
+        >
+          {{ extract.extractValue | numberWithCommas }}
+        </td>
+        <td>
+          @if (extractTypes[this.extractList[index].type]) {
+          <div
+            [class]="'badge fw-bold ' + extractTypes[this.extractList[index].type].color"
+          >
+            {{ extractTypes[this.extractList[index].type].value }}
+          </div>
+          }
+        </td>
+        <td>
+          @if (extractStatuses[this.extractList[index].status]) {
+          <div
+            [class]="
+              'badge fw-bold ' + extractStatuses[this.extractList[index].status].color
+            "
+          >
+            {{ extractStatuses[this.extractList[index].status].value }}
+          </div>
+          }
+        </td>
+        <td>
+          <button
+            class="btn btn-icon btn-color-info btn-bg-light btn-sm me-1"
+            (click)="showExtractDetails(extract)"
+          >
+            <i class="ki-duotone ki-eye">
+              <span class="path1"></span>
+              <span class="path2"></span>
+              <span class="path3"></span>
+            </i>
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

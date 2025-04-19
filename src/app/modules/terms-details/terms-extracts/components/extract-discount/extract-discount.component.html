@@ -1,0 +1,96 @@
+<div style="overflow-x: auto">
+  <table
+    id="kt_profile_overview_table"
+    class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+  >
+    <thead class="fs-7">
+      <tr>
+        <th scope="col" class="fw-bold">
+          {{ translation.businessData | translate }}
+        </th>
+        <th scope="col">{{ translation.itemNumber | translate }}</th>
+        <th scope="col">{{ translation.measurementUnit | translate }}</th>
+        <th scope="col">{{ translation.previousQuantity | translate }}</th>
+        <th scope="col">{{ translation.currentQuantity | translate }}</th>
+        <th scope="col">{{ translation.totalQuantity | translate }}</th>
+        <th scope="col">{{ translation.unitPrice | translate }}</th>
+        <th scope="col">{{ translation.total | translate }}</th>
+      </tr>
+    </thead>
+    <tbody class="fs-6">
+      @for (deduction of extract.deductions; track deduction.id; let ind = $index) {
+      <tr>
+        <td style="color: #f15642">{{ deduction.description }}</td>
+        <td>{{ extract.term?.itemNumber }}</td>
+        <td>
+          {{
+            translate.currentLang === 'en'
+              ? deduction.measurementUnit?.name.en
+              : deduction.measurementUnit?.name.ar
+          }}
+        </td>
+        <td>{{ deduction.previousQuantity }}</td>
+        <td>{{ deduction.currentQuantity }}</td>
+        <td>
+          @if (extract.status === extractStatus.Draft) {
+          <app-extract-input
+            [value]="deduction.totalQuantity"
+            (changeValue)="toalQuantityValueChange($event, ind)"
+          ></app-extract-input>
+          } @else {
+          {{ deduction.totalQuantity }}
+          }
+        </td>
+        <td>
+          @if (extract.status === extractStatus.Draft && (!lastRequest() ||
+          lastRequest().deductions.length <= 0)) {
+          <app-extract-input
+            [value]="deduction.unitPrice"
+            (changeValue)="unitPriceValueChange($event, ind)"
+          ></app-extract-input>
+          } @else {
+          {{ deduction.unitPrice | numberWithCommas }}
+          }
+        </td>
+        <td>{{ deduction.total | numberWithCommas }}</td>
+      </tr>
+      } @empty {
+      <tr>
+        <td colspan="100%">
+          <h2>{{ translation?.noDiscounts | translate }}</h2>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<div class="extract-value">
+  <div class="value main">
+    <p>{{ translation.extractValue }}</p>
+  </div>
+  <div class="value">
+    <p>{{ translation.totalBusinessUntilExtractData }}</p>
+    <span dir="ltr">{{ extract.totalAfterDeductions | numberWithCommas }}</span>
+  </div>
+  <div class="value">
+    <p>{{ translation.totalVat }}</p>
+    <span dir="ltr">{{ extract.vatAmount | numberWithCommas }}</span>
+  </div>
+  <div class="value">
+    <p>{{ translation.totalBusinessWithVat }}</p>
+    <span dir="ltr">{{ extract.totalAfterDeductionsWithVat | numberWithCommas }}</span>
+  </div>
+  <div class="value">
+    <p>{{ translation.discountBusiness10Percent }}</p>
+    <span dir="ltr">{{ extract.tenPercentDeduction | numberWithCommas }}</span>
+  </div>
+  <div class="value">
+    <p>{{ translation.discountPaidBefore }}</p>
+    <span dir="ltr">{{ extract.totalPaidBefore | numberWithCommas }}</span>
+  </div>
+  <div class="value">
+    <p>{{ translation.netExtractIncludingVat }}</p>
+    <span dir="ltr">{{ extract.extractValue | numberWithCommas }}</span>
+  </div>
+</div>

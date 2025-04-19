@@ -1,0 +1,261 @@
+<div role="tabpanel" data-select2-id="select2-data-kt_project_targets_card_pane">
+  <!--begin::Row-->
+  <div class="row g-9" data-select2-id="select2-data-145-hpng">
+    <!--begin::Col-->
+    <div class="col-md-4 col-lg-12 col-xl-4" data-select2-id="select2-data-144-mpir">
+      <!--begin::Col header-->
+      <div class="mb-9" data-select2-id="select2-data-143-i6t9">
+        <div class="d-flex flex-stack" data-select2-id="select2-data-142-z6nk">
+          <div class="fw-bold fs-4">
+            {{ 'Projects.projectDetails.yetToStart' | translate }}
+            <span class="fs-6 text-gray-500 ms-2">{{ notStartedTasks?.length }}</span>
+          </div>
+        </div>
+        <div class="h-3px w-100 bg-warning"></div>
+      </div>
+      <!--end::Col header-->
+      <!--begin::Card-->
+      @for (term of notStartedTasks; track term) {
+      <!--begin::Card-->
+      <div class="card mb-6 mb-xl-9 cursor-pointer" (click)="select(term)">
+        <!--begin::Card body-->
+        <div class="card-body">
+          <!--begin::Title-->
+          <span class="badge badge-light fs-8 fw-semibold mb-2">{{
+            getBusinessTypeName(term.businessType)
+          }}</span>
+          <div class="mb-2">
+            <a class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">{{
+              term.title
+            }}</a>
+          </div>
+          <!--end::Title-->
+          <!--begin::Content-->
+          <div class="fs-6 fw-semibold text-gray-600 mb-5">
+            {{ term.description }}
+          </div>
+          <!--end::Content-->
+          <!--begin::Footer-->
+          <div class="d-flex flex-stack flex-wrapr">
+            <!--begin::Users-->
+            <div class="symbol-group symbol-hover my-1"></div>
+            <!--end::Users-->
+            <div class="d-flex">
+              <div
+                class="border border-dashed border-gray-300 d-flex align-items-center rounded py-2 px-3"
+                data-bs-toggle="tooltip"
+                [title]="translation?.quantity?.label | translate"
+              >
+                <img src="./assets/media/icons/count.svg" class="w-15px" alt="" />
+
+                <span class="ms-1 fs-7 fw-bold text-gray-600">{{ term.quantity }}</span>
+              </div>
+              <div
+                class="border border-dashed border-gray-300 rounded d-flex align-items-center py-2 px-3 mx-3"
+                data-bs-toggle="tooltip"
+                [title]="translation?.unitPrice?.label | translate"
+              >
+                <!-- <i class="ki-duotone ki-paper-clip fs-3"></i> -->
+                <img src="./assets/media/icons/price.svg" class="w-15px" alt="" />
+                <span class="ms-1 fs-7 fw-bold text-gray-600">{{ term.unitPrice }}</span>
+              </div>
+              <div
+                class="border border-dashed border-gray-300 d-flex align-items-center rounded py-2 px-3"
+                data-bs-toggle="tooltip"
+                [title]="translation?.measurementUnitId?.label | translate"
+              >
+                <img src="./assets/media/icons/unit.svg" class="w-15px" alt="" />
+
+                <span class="ms-1 fs-7 fw-bold text-gray-600">
+                  {{
+                    _translateService.currentLang === 'en'
+                      ? term.measurementUnitName.en
+                      : term.measurementUnitName.ar
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--end::Footer-->
+        </div>
+
+        <!--end::Card body-->
+      </div>
+      <!--end::Card-->
+      }
+      <!--end::Card-->
+    </div>
+    <!--end::Col-->
+    <!--begin::Col-->
+    <div class="col-md-4 col-lg-12 col-xl-4">
+      <!--begin::Col header-->
+      <div class="mb-9">
+        <div class="d-flex flex-stack">
+          <div class="fw-bold fs-4">
+            {{ 'Projects.projectDetails.inProgress' | translate }}
+            <span class="fs-6 text-gray-500 ms-2">{{ inProgressTasks?.length }}</span>
+          </div>
+        </div>
+        <div class="h-3px w-100 bg-blue"></div>
+      </div>
+      <!--end::Col header-->
+      <!--begin::Card-->
+      @for (term of inProgressTasks; track term) {
+      <!--begin::Card-->
+      <div class="card mb-6 mb-xl-9 cursor-pointer" (click)="select(term)">
+        <!--begin::Card body-->
+        <div class="card-body">
+          <!--begin::Title-->
+          <span class="badge badge-light fs-8 fw-semibold mb-2">{{
+            getBusinessTypeName(term.businessType)
+          }}</span>
+          <div class="mb-2">
+            <a class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">{{
+              term.title
+            }}</a>
+          </div>
+          <!--end::Title-->
+          <!--begin::Content-->
+          <div class="fs-6 fw-semibold text-gray-600 mb-5">
+            {{ term.description }}
+          </div>
+          <!--end::Content-->
+          <!--begin::Footer-->
+          <div class="d-flex flex-stack flex-wrapr">
+            <!--begin::Users-->
+            <div class="symbol-group symbol-hover my-1"></div>
+            <!--end::Users-->
+            <div class="d-flex">
+              <div
+                class="border border-dashed border-gray-300 d-flex align-items-center rounded py-2 px-3"
+                data-bs-toggle="tooltip"
+                [title]="translation?.quantity?.label | translate"
+              >
+                <img src="./assets/media/icons/count.svg" class="w-15px" alt="" />
+
+                <span class="ms-1 fs-7 fw-bold text-gray-600">{{ term.quantity }}</span>
+              </div>
+              <div
+                class="border border-dashed border-gray-300 rounded d-flex align-items-center py-2 px-3 mx-3"
+                data-bs-toggle="tooltip"
+                [title]="translation?.unitPrice?.label | translate"
+              >
+                <!-- <i class="ki-duotone ki-paper-clip fs-3"></i> -->
+                <img src="./assets/media/icons/price.svg" class="w-15px" alt="" />
+                <span class="ms-1 fs-7 fw-bold text-gray-600">{{ term.unitPrice }}</span>
+              </div>
+              <div
+                class="border border-dashed border-gray-300 d-flex align-items-center rounded py-2 px-3"
+                data-bs-toggle="tooltip"
+                [title]="translation?.measurementUnitId?.label | translate"
+              >
+                <img src="./assets/media/icons/unit.svg" class="w-15px" alt="" />
+
+                <span class="ms-1 fs-7 fw-bold text-gray-600">
+                  {{
+                    _translateService.currentLang === 'en'
+                      ? term.measurementUnitName.en
+                      : term.measurementUnitName.ar
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--end::Footer-->
+        </div>
+
+        <!--end::Card body-->
+      </div>
+      <!--end::Card-->
+      }
+      <!--end::Card-->
+    </div>
+    <!--end::Col-->
+    <!--begin::Col-->
+    <div class="col-md-4 col-lg-12 col-xl-4">
+      <!--begin::Col header-->
+      <div class="mb-9">
+        <div class="d-flex flex-stack">
+          <div class="fw-bold fs-4">
+            {{ 'Projects.projectDetails.completed' | translate }}
+            <span class="fs-6 text-gray-500 ms-2">{{ completedTasks?.length }}</span>
+          </div>
+        </div>
+        <div class="h-3px w-100 bg-success"></div>
+      </div>
+      <!--end::Col header-->
+      <!--begin::Card-->
+      @for (term of completedTasks; track term) {
+      <!--begin::Card-->
+      <div class="card mb-6 mb-xl-9 cursor-pointer" (click)="select(term)">
+        <!--begin::Card body-->
+        <div class="card-body">
+          <!--begin::Title-->
+          <span class="badge badge-light fs-8 fw-semibold mb-2">{{
+            getBusinessTypeName(term.businessType)
+          }}</span>
+          <div class="mb-2">
+            <a class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">{{
+              term.title
+            }}</a>
+          </div>
+          <!--end::Title-->
+          <!--begin::Content-->
+          <div class="fs-6 fw-semibold text-gray-600 mb-5">
+            {{ term.description }}
+          </div>
+          <!--end::Content-->
+          <!--begin::Footer-->
+          <div class="d-flex flex-stack flex-wrapr">
+            <!--begin::Users-->
+            <div class="symbol-group symbol-hover my-1"></div>
+            <!--end::Users-->
+            <div class="d-flex">
+              <div
+                class="border border-dashed border-gray-300 d-flex align-items-center rounded py-2 px-3"
+                data-bs-toggle="tooltip"
+                [title]="translation?.quantity?.label | translate"
+              >
+                <img src="./assets/media/icons/count.svg" class="w-15px" alt="" />
+
+                <span class="ms-1 fs-7 fw-bold text-gray-600">{{ term.quantity }}</span>
+              </div>
+              <div
+                class="border border-dashed border-gray-300 rounded d-flex align-items-center py-2 px-3 mx-3"
+                data-bs-toggle="tooltip"
+                [title]="translation?.unitPrice?.label | translate"
+              >
+                <!-- <i class="ki-duotone ki-paper-clip fs-3"></i> -->
+                <img src="./assets/media/icons/price.svg" class="w-15px" alt="" />
+                <span class="ms-1 fs-7 fw-bold text-gray-600">{{ term.unitPrice }}</span>
+              </div>
+              <div
+                class="border border-dashed border-gray-300 d-flex align-items-center rounded py-2 px-3"
+                data-bs-toggle="tooltip"
+                [title]="translation?.measurementUnitId?.label | translate"
+              >
+                <img src="./assets/media/icons/unit.svg" class="w-15px" alt="" />
+
+                <span class="ms-1 fs-7 fw-bold text-gray-600">
+                  {{
+                    _translateService.currentLang === 'en'
+                      ? term.measurementUnitName.en
+                      : term.measurementUnitName.ar
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--end::Footer-->
+        </div>
+
+        <!--end::Card body-->
+      </div>
+      <!--end::Card-->
+      }
+      <!--end::Card-->
+    </div>
+    <!--end::Col-->
+  </div>
+  <!--end::Row-->
+</div>

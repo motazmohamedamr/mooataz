@@ -1,0 +1,25 @@
+.modal-header,
+.modal-body,
+.modal-footer {
+  padding: 5%;
+}
+
+.attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  .card {
+    flex-basis: 150px;
+    background-color: rgb(238, 241, 245);
+  }
+}
+
+.card-body {
+  position: relative;
+  .deletefile {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+  }
+}

@@ -1,0 +1,240 @@
+﻿<div
+  *ngIf="form"
+  class="modal fade"
+  [id]="Modals.usersCreateUpdate"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <!--begin::Modal dialog-->
+  <div class="modal-dialog modal-dialog-centered mw-650px">
+    <!--begin::Modal content-->
+    <div class="modal-content">
+      <!--begin::Modal header-->
+      <div class="modal-header">
+        <!--begin::Modal title-->
+        <h2 *ngIf="!item" class="fw-bold">{{ translation?.create }}</h2>
+        <h2 *ngIf="item" class="fw-bold">{{ translation?.edit }}</h2>
+        <!--end::Modal title-->
+        <!--begin::Close-->
+        <div class="btn btn-icon btn-sm btn-active-icon-primary" (click)="close()">
+          <i class="ki-duotone ki-cross fs-1">
+            <span class="path1"></span>
+            <span class="path2"></span>
+          </i>
+        </div>
+        <!--end::Close-->
+      </div>
+      <!--end::Modal header-->
+      <!--begin::Modal body-->
+      <div class="modal-body px-5 my-7">
+        <!--begin::Form-->
+        <form class="form" (ngSubmit)="save()">
+          <!--begin::Scroll-->
+          <div
+            class="d-flex flex-column scroll-y px-5 px-lg-10"
+            data-kt-scroll="true"
+            data-kt-scroll-activate="true"
+            data-kt-scroll-max-height="auto"
+            data-kt-scroll-offset="300px"
+          >
+            <!--begin::Input group-->
+            <div *ngIf="item" class="fv-row mb-7">
+              <!--begin::Label-->
+              <label class="d-block fw-semibold fs-6 mb-5">{{
+                translation.fields?.picture
+              }}</label>
+              <!--end::Label-->
+              <!--begin::Image placeholder-->
+              <style>
+                .image-input-placeholder {
+                  background-image: url('assets/media/svg/files/blank-image.svg');
+                }
+
+                [data-bs-theme='dark'] .image-input-placeholder {
+                  background-image: url('assets/media/svg/files/blank-image-dark.svg');
+                }
+              </style>
+              <!--end::Image placeholder-->
+              <!--begin::Image input-->
+              <div
+                class="image-input image-input-outline image-input-placeholder"
+                data-kt-image-input="true"
+              >
+                <!--begin::Preview existing avatar-->
+                <div
+                  class="image-input-wrapper w-125px h-125px"
+                  [class.image-input-placeholder]="!item.pictureUrl"
+                  [ngStyle]="{
+                    'background-image': item.pictureUrl
+                      ? 'url(' + item.pictureUrl + ')'
+                      : ''
+                  }"
+                ></div>
+                <!--end::Preview existing avatar-->
+              </div>
+              <!--end::Image input-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="fv-row mb-7">
+              <!--begin::Label-->
+              <label class="required fw-semibold fs-6 mb-2">{{
+                translation?.fields?.firstName
+              }}</label>
+              <!--end::Label-->
+              <!--begin::Input-->
+              <input
+                type="text"
+                class="form-control form-control-solid mb-3 mb-lg-0"
+                [formControl]="firstName"
+                placeholder="{{ translation?.fields?.firstNameHint }}"
+                autofocus
+              />
+              <!--begin::Validation-->
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  title: translation?.fields?.firstName,
+                  control: firstName
+                }"
+              ></ng-container>
+              <!--end::Validation-->
+              <!--end::Input-->
+            </div>
+            <!--begin::Input group-->
+            <div class="fv-row mb-7">
+              <!--begin::Label-->
+              <label class="required fw-semibold fs-6 mb-2">{{
+                translation?.fields?.lastName
+              }}</label>
+              <!--end::Label-->
+              <!--begin::Input-->
+              <input
+                type="text"
+                class="form-control form-control-solid mb-3 mb-lg-0"
+                [formControl]="lastName"
+                placeholder="{{ translation?.fields?.lastNameHint }}"
+              />
+              <!--begin::Validation-->
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  title: translation?.fields?.lastName,
+                  control: lastName
+                }"
+              ></ng-container>
+              <!--end::Validation-->
+              <!--end::Input-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="fv-row mb-7">
+              <!--begin::Label-->
+              <label class="required fw-semibold fs-6 mb-2">{{
+                translation?.fields?.email
+              }}</label>
+              <!--end::Label-->
+              <!--begin::Input-->
+              <input
+                type="email"
+                class="form-control form-control-solid mb-3 mb-lg-0"
+                [formControl]="email"
+                placeholder="{{ translation?.fields?.emailHint }}"
+              />
+              <!--begin::Validation-->
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  title: translation?.fields?.email,
+                  control: email
+                }"
+              ></ng-container>
+              <!--end::Validation-->
+              <!--end::Input-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="fv-row mb-7">
+              <!--begin::Label-->
+              <label class="fw-semibold fs-6 mb-2">{{
+                translation?.fields?.phoneNumber
+              }}</label>
+              <!--end::Label-->
+              <!--begin::Input-->
+              <input
+                type="tel"
+                class="form-control form-control-solid mb-3 mb-lg-0"
+                [formControl]="phoneNumber"
+                placeholder="{{ translation?.fields?.phoneNumberHint }}"
+              />
+              <!--begin::Validation-->
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  title: translation?.fields?.phoneNumber,
+                  control: phoneNumber
+                }"
+              ></ng-container>
+              <!--end::Validation-->
+              <!--end::Input-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="fv-row mb-7">
+              <app-roles-selector
+                [control]="role"
+                [roles]="roles"
+                [disabled]="!!item"
+              ></app-roles-selector>
+            </div>
+          </div>
+          <!--end::Scroll-->
+          <!--begin::Actions-->
+          <div class="text-center pt-10">
+            <button type="button" class="btn btn-light me-3" (click)="close()">
+              {{ 'general.discard' | translate }}
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="(form && !form.valid) || loading"
+              [attr.data-kt-indicator]="loading ? 'on' : 'off'"
+            >
+              <span class="indicator-label">{{ 'general.submit' | translate }}</span>
+              <span class="indicator-progress">
+                {{ 'general.loading' | translate }}
+                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+              </span>
+            </button>
+          </div>
+          <!--end::Actions-->
+        </form>
+        <!--end::Form-->
+      </div>
+      <!--end::Modal body-->
+    </div>
+    <!--end::Modal content-->
+  </div>
+  <!--end::Modal dialog-->
+</div>
+
+<ng-template #formError let-control="control" let-title="title">
+  <ng-container *ngIf="control.invalid && control.dirty">
+    <div
+      *ngIf="control.hasError('required')"
+      class="fv-plugins-message-container invalid-feedback"
+    >
+      <span>
+        {{ 'validations.required' | translate : { field: title } }}
+      </span>
+    </div>
+    <div
+      *ngIf="control.hasError('validation')"
+      class="fv-plugins-message-container invalid-feedback"
+    >
+      <span>
+        {{ control.errors['validation'] }}
+      </span>
+    </div>
+  </ng-container>
+</ng-template>

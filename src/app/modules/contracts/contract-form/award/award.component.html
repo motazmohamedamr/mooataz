@@ -1,0 +1,166 @@
+<h1>{{ title }}</h1>
+
+<form [formGroup]="contractForm">
+  <app-contract-form-input
+    [formControl]="awardNumber"
+    [type]="'text'"
+    [label]="translation?.awardNumber?.label"
+    [placeholder]="translation?.awardNumber?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="awardOrderIssuanceDate"
+    [type]="'date'"
+    [minDate]="minDate"
+    [label]="translation?.awardOrderIssuanceDate?.label"
+    [placeholder]="translation?.awardOrderIssuanceDate?.placeholder"
+    (dateChangeEv)="awardOrderIssuanceDateChanged($event)"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="awardOrderIssuanceHijriDate"
+    [type]="'dateHijri'"
+    (dateChangeEv)="awardOrderIssuanceHijriDateChanged($event)"
+    [label]="translation?.awardOrderIssuanceHijriDate?.label"
+    [gridClass]="'span-2'"
+    [placeholder]="translation?.awardOrderIssuanceHijriDate?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="receiptAwardOrderDate"
+    [type]="'date'"
+    (dateChangeEv)="receiptAwardOrderDateChanged($event)"
+    [minDate]="minDate"
+    [label]="translation?.receiptAwardOrderDate?.label"
+    [placeholder]="translation?.receiptAwardOrderDate?.placeholder"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="receiptAwardOrderHijriDate"
+    [type]="'dateHijri'"
+    (dateChangeEv)="receiptAwardOrderHijriDateChanged($event)"
+    [label]="translation?.receiptAwardOrderHijriDate?.label"
+    [gridClass]="'span-2'"
+    [placeholder]="translation?.receiptAwardOrderHijriDate?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="displayNumber"
+    [type]="'text'"
+    [label]="translation?.displayNumber?.label"
+    [placeholder]="translation?.displayNumber?.placeholder"
+    [gridClass]="'span-2'"
+    [inputMode]="'numeric'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="itimadCompetitionNumber"
+    [type]="'text'"
+    [label]="translation?.itimadCompetitionNumber?.label"
+    [gridClass]="'span-2'"
+    [placeholder]="translation?.itimadCompetitionNumber?.placeholder"
+    [inputMode]="'numeric'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="initialTotalPrice"
+    [type]="'number'"
+    [gridClass]="'span-2'"
+    [label]="translation?.initialTotalPrice?.label"
+    [placeholder]="translation?.initialTotalPrice?.placeholder"
+    [inputIcon]="currency"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="initialTotalPriceInLetters"
+    [type]="'text'"
+    [gridClass]="'span-2'"
+    [label]="translation?.initialTotalPriceInLetters?.label"
+    [placeholder]="translation?.initialTotalPriceInLetters?.placeholder"
+    [inputIcon]="currency"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="vatPercentage"
+    [type]="'number'"
+    [gridClass]="'span-1'"
+    [label]="translation?.vatPercentage?.label"
+    [inputIcon]="'%'"
+    [placeholder]="translation?.vatPercentage?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="vatValue"
+    [type]="'number'"
+    [gridClass]="'span-1'"
+    [label]="translation?.vatValue?.label"
+    [placeholder]="translation?.vatValue?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="vatValueInLetters"
+    [type]="'text'"
+    [gridClass]="'span-2'"
+    [label]="translation?.vatValueInLetters?.label"
+    [placeholder]="translation?.vatValueInLetters?.placeholder"
+    [inputIcon]="currency"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="discountPercentage"
+    [type]="'number'"
+    [gridClass]="'span-1'"
+    [label]="translation?.discountPercentage?.label"
+    [placeholder]="translation?.discountPercentage?.placeholder"
+    [inputIcon]="'%'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="discountValue"
+    [type]="'number'"
+    [gridClass]="'span-1'"
+    [label]="translation?.discountValue?.label"
+    [placeholder]="translation?.discountValue?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="discountInLetters"
+    [type]="'text'"
+    [gridClass]="'span-2'"
+    [label]="translation?.discountInLetters?.label"
+    [inputIcon]="currency"
+    [placeholder]="translation?.discountInLetters?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="finalTotalPrice"
+    [type]="'number'"
+    [gridClass]="'span-2'"
+    [label]="translation?.finalTotalPrice?.label"
+    [placeholder]="translation?.finalTotalPrice?.placeholder"
+    [inputIcon]="currency"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="finalPriceInLetters"
+    [type]="'text'"
+    [gridClass]="'span-2'"
+    [label]="translation?.finalPriceInLetters?.label"
+    [inputIcon]="currency"
+    [placeholder]="translation?.finalPriceInLetters?.placeholder"
+  ></app-contract-form-input>
+
+  <div class="fileuploader">
+    <app-file-upload
+      [multiple]="true"
+      [accept]="
+        'application/pdf,image/png,image/jpeg,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      "
+      (LoadFileHandler)="uploadFiless($event)"
+      (DeleteFileHandler)="removeFile($event)"
+    >
+    </app-file-upload>
+  </div>
+</form>

@@ -1,0 +1,13 @@
+<div class="card mt-2">
+  <div class="card-body p-6">
+    <ngb-pagination
+      [collectionSize]="pageInfo.totalCount"
+      [page]="pageIndex"
+      [pageSize]="pageSize"
+      [maxSize]="5"
+      [rotate]="true"
+      [boundaryLinks]="true"
+      (pageChange)="goToPageHandler($event)"
+    />
+  </div>
+</div>

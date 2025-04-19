@@ -1,0 +1,165 @@
+<form class="form my-auto w-100" [formGroup]="form" (ngSubmit)="reset()">
+  <!--begin::Heading-->
+  <div class="mb-10 layout">
+    <div class="row">
+      <div class="hub">
+        <span>{{ 'general.project' | translate }}</span>
+      </div>
+    </div>
+    <div class="mb-7">
+      <h1 class="reset-title display-text-4 fw-bolder mb-2">
+        {{ 'reset.title' | translate }}
+      </h1>
+      <div class="reset-description text-gray">
+        {{ 'general.description' | translate }}
+      </div>
+    </div>
+
+    <!-- begin::Alert error-->
+    <ng-container *ngIf="errors.key || errors.detail">
+      <div class="mb-8 alert alert-danger">
+        <div class="alert-text font-weight-bold">
+          <span *ngIf="errors.detail">{{ errors.detail }}</span>
+          <span *ngIf="!errors.detail">{{ errors.key | translate }}</span>
+        </div>
+      </div>
+    </ng-container>
+    <!-- end::Alert error-->
+
+    <!--begin::Form group-->
+    <div *ngIf="'reset.email' | translate as emailTitle" class="fv-row mb-8">
+      <label class="form-label fs-4 fw-bolder text-gray-900 fontStyle">{{
+        emailTitle
+      }}</label>
+      <input
+        [formControl]="email"
+        class="form-control bg-transparent"
+        autoComplete="username"
+        type="email"
+        name="email"
+        [class.is-invalid]="email.invalid && email.dirty"
+        [class.is-valid]="email.valid && email.dirty"
+      />
+      <ng-container
+        [ngTemplateOutlet]="formError"
+        [ngTemplateOutletContext]="{
+          title: emailTitle,
+          control: email
+        }"
+      ></ng-container>
+    </div>
+
+    <div *ngIf="'reset.token' | translate as tokenTitle" class="fv-row mb-8">
+      <label class="form-label fs-4 fw-bolder text-gray-900 fontStyle">{{
+        tokenTitle
+      }}</label>
+      <input
+        [formControl]="token"
+        class="form-control bg-transparent"
+        autoComplete="username"
+        type="text"
+        name="token"
+        [class.is-invalid]="token.invalid && token.dirty"
+        [class.is-valid]="token.valid && token.dirty"
+      />
+      <ng-container
+        [ngTemplateOutlet]="formError"
+        [ngTemplateOutletContext]="{
+          title: tokenTitle,
+          control: token
+        }"
+      ></ng-container>
+    </div>
+
+    <div *ngIf="'reset.password' | translate as passwordTitle" class="fv-row mb-8">
+      <label class="form-label fs-4 fw-bolder text-gray-900 fontStyle">{{
+        passwordTitle
+      }}</label>
+      <div class="input-group password-input-group">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          [formControl]="password"
+          class="form-control bg-transparent password-input"
+          name="password"
+          autocomplete="off"
+          formControlName="password"
+          [class.is-invalid]="password.invalid && password.dirty"
+          [class.is-valid]="password.valid && password.dirty"
+        />
+        <!--        <button type="button" class="btn password-toggle" (click)="togglePassword()">-->
+        <!--          <i [ngClass]="showPassword ? 'bi bi-eye' : 'bi bi-eye-slash'"></i>-->
+        <!--        </button>-->
+      </div>
+      <ng-container
+        [ngTemplateOutlet]="formError"
+        [ngTemplateOutletContext]="{
+          title: passwordTitle,
+          control: password
+        }"
+      ></ng-container>
+    </div>
+
+    <div
+      *ngIf="'reset.confirmPassword' | translate as confirmPasswordTitle"
+      class="fv-row mb-8"
+    >
+      <label class="form-label fs-4 fw-bolder text-gray-900 fontStyle">{{
+        confirmPasswordTitle
+      }}</label>
+      <div class="input-group password-input-group">
+        <input
+          [formControl]="confirmPassword"
+          class="form-control bg-transparent password-input"
+          type="password"
+          name="password"
+          autocomplete="off"
+          formControlName="password"
+          [class.is-invalid]="confirmPassword.invalid && confirmPassword.dirty"
+          [class.is-valid]="confirmPassword.valid && confirmPassword.dirty"
+        />
+      </div>
+      <ng-container
+        [ngTemplateOutlet]="formError"
+        [ngTemplateOutletContext]="{
+          title: confirmPasswordTitle,
+          control: confirmPassword
+        }"
+      ></ng-container>
+    </div>
+    <!--end::Form group-->
+
+    <!--begin::Actions-->
+    <div class="d-grid mb-10">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="(form && !form.valid) || loading"
+        [attr.data-kt-indicator]="loading ? 'on' : 'off'"
+      >
+        <span class="indicator-label">{{ 'reset.submit' | translate }}</span>
+        <span class="indicator-progress">
+          {{ 'general.loading' | translate }}
+          <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+        </span>
+      </button>
+    </div>
+    <!--end::Actions-->
+  </div>
+  <!--end::Form group-->
+</form>
+<!--end::Form-->
+
+<ng-template #formError let-control="control" let-title="title">
+  <ng-container *ngIf="control.invalid && control.dirty">
+    <div *ngIf="control.hasError('required')" class="fv-plugins-message-container">
+      <span class="text-danger" role="alert">
+        {{ 'validations.required' | translate: { field: title } }}
+      </span>
+    </div>
+    <div *ngIf="control.hasError('validation')" class="fv-plugins-message-container">
+      <span class="text-danger" role="alert">
+        {{ control.errors['validation'] }}
+      </span>
+    </div>
+  </ng-container>
+</ng-template>

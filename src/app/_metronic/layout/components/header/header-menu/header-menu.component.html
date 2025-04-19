@@ -1,0 +1,235 @@
+<!-- Landing page -->
+<div class="menu-item me-lg-1">
+  <a class="menu-link py-3" routerLink="/"
+    ><span class="menu-title" translate="MENU.main"></span
+  ></a>
+</div>
+
+<!-- Dashboard -->
+<div class="menu-item me-lg-1">
+  <a class="menu-link py-3" routerLinkActive="active" routerLink="/dashboard"
+    ><span class="menu-title" translate="MENU.DASHBOARD"></span
+  ></a>
+</div>
+
+<!-- Contracts -->
+<div *hasRole="[Role.Admin]" class="menu-item me-lg-1">
+  <a class="menu-link py-3" routerLinkActive="active" routerLink="/contracts"
+    ><span class="menu-title" translate="MENU.contracts"></span
+  ></a>
+</div>
+
+<!-- Projects -->
+<div class="menu-item me-lg-1">
+  <a class="menu-link py-3" routerLinkActive="active" routerLink="/projects"
+    ><span class="menu-title" translate="MENU.projects"></span
+  ></a>
+</div>
+
+<!-- Requests -->
+<!-- <div class="menu-item me-lg-1">
+  <a class="menu-link py-3" routerLinkActive="active" routerLink="/supplier-approvals"
+    ><span class="menu-title" translate="MENU.requests"></span
+  ></a>
+</div> -->
+
+<!-- Settings -->
+<div
+  *hasRole="[
+    Role.Admin,
+    Role.Purchasing,
+    Role.Accountant,
+    Role.TechnicalOfficer,
+    Role.SiteEngineer,
+    Role.ProjectManager,
+    Role.ProjectsManager
+  ]"
+  class="menu-item menu-lg-down-accordion settings-p me-lg-1 menu-dropdown"
+  #settingsElem
+>
+  <span
+    class="menu-link py-3"
+    (click)="showSettings.set(!showSettings())"
+    [ngClass]="calculateMenuItemCssClass('/settings')"
+  >
+    <span class="menu-title" translate="MENU.SETTINGS"></span>
+    <span class="menu-arrow d-lg-none"></span>
+  </span>
+  @if (showSettings()) {
+  <div
+    class="menu-rounded-0 py-lg-4 w-lg-225px settings"
+    [ngStyle]="{
+    right: translate.currentLang === 'ar' ? '0': 'initial',
+    left: translate.currentLang === 'en' ? '0': 'initial',
+  }"
+  >
+    <div class="menu-item me-lg-1">
+      <ng-container *hasRole="Role.Admin">
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          routerLink="/settings/contract-type"
+          (click)="showSettings.set(false)"
+          ><span class="menu-bullet"><span class="bullet bullet-dot"></span></span
+          ><span class="menu-title" translate="MENU.ContractTypes"></span
+        ></a>
+      </ng-container>
+
+      <ng-container
+        *hasRole="[
+          Role.Admin,
+          Role.Purchasing,
+          Role.Accountant,
+          Role.TechnicalOfficer,
+          Role.SiteEngineer,
+          Role.ProjectManager,
+          Role.ProjectsManager
+        ]"
+      >
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          routerLink="/settings/measurement-unitVm"
+          (click)="showSettings.set(false)"
+          ><span class="menu-bullet"><span class="bullet bullet-dot"></span></span
+          ><span class="menu-title" translate="MENU.MeasureUnitVm"></span
+        ></a>
+      </ng-container>
+
+      <ng-container
+        *hasRole="[
+          Role.Admin,
+          Role.Purchasing,
+          Role.Accountant,
+          Role.TechnicalOfficer,
+          Role.SiteEngineer,
+          Role.ProjectManager,
+          Role.ProjectsManager
+        ]"
+      >
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          (click)="showSettings.set(false)"
+          routerLink="/settings/materials"
+          ><span class="menu-bullet"><span class="bullet bullet-dot"></span></span
+          ><span class="menu-title" translate="MENU.Materials"></span
+        ></a>
+      </ng-container>
+
+      <ng-container *hasRole="Role.Admin">
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          (click)="showSettings.set(false)"
+          routerLink="/settings/users"
+          ><span class="menu-bullet"><span class="bullet bullet-dot"></span></span
+          ><span class="menu-title" translate="MENU.users"></span
+        ></a>
+      </ng-container>
+
+      <ng-container *hasRole="[Role.Admin]">
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          (click)="showSettings.set(false)"
+          routerLink="/settings/clients"
+          ><span class="menu-bullet"><span class="bullet bullet-dot"></span></span
+          ><span class="menu-title" translate="MENU.Clients"></span
+        ></a>
+      </ng-container>
+
+      <ng-container *hasRole="Role.Admin">
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          (click)="showSettings.set(false)"
+          routerLink="/settings/countries"
+          ><span class="menu-bullet"><span class="bullet bullet-dot"></span></span
+          ><span class="menu-title" translate="MENU.countries"></span
+        ></a>
+      </ng-container>
+
+      <ng-container *hasRole="Role.Admin">
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          (click)="showSettings.set(false)"
+          routerLink="/settings/cities"
+          ><span class="menu-bullet"><span class="bullet bullet-dot"></span></span
+          ><span class="menu-title" translate="MENU.cities"></span
+        ></a>
+      </ng-container>
+
+      <ng-container *hasRole="Role.Admin">
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          (click)="showSettings.set(false)"
+          routerLink="/settings/commerce-chambers"
+          ><span class="menu-bullet"><span class="bullet bullet-dot"></span></span
+          ><span class="menu-title" translate="MENU.commerceChambers"></span
+        ></a>
+      </ng-container>
+
+      <ng-container
+        *hasRole="[
+          Role.Admin,
+          Role.Purchasing,
+          Role.Accountant,
+          Role.TechnicalOfficer,
+          Role.SiteEngineer,
+          Role.ProjectManager,
+          Role.ProjectsManager
+        ]"
+      >
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          (click)="showSettings.set(false)"
+          routerLink="/settings/suppliers"
+          ><span class="menu-bullet"><span class="bullet bullet-dot"></span></span
+          ><span class="menu-title" translate="MENU.suppliers"></span
+        ></a>
+      </ng-container>
+
+      <ng-container *hasRole="Role.Admin">
+        <a
+          class="menu-link py-3"
+          routerLinkActive="active"
+          routerLink="/settings/branches"
+        >
+          <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+          <span class="menu-title" translate="MENU.Branches"></span>
+        </a>
+      </ng-container>
+
+      <!-- Layout Builder -->
+
+      <a
+        class="menu-link py-3"
+        routerLinkActive="active"
+        (click)="showSettings.set(false)"
+        routerLink="/builder"
+      >
+        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+        <span class="menu-title" translate="MENU.layoutBuilder"></span>
+      </a>
+    </div>
+  </div>
+  }
+</div>
+
+<ng-container *hasRole="Role.Admin">
+  <ng-container *isDefaultTenant>
+    <div *canAccess="MODULES.MultiTenancy" class="menu-item me-lg-1">
+      <a
+        class="menu-link py-3"
+        routerLinkActive="active"
+        (click)="showSettings.set(false)"
+        routerLink="/multi-tenancy"
+        ><span class="menu-title" translate="MENU.tenants"></span
+      ></a>
+    </div>
+  </ng-container>
+</ng-container>

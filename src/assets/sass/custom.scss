@@ -1,0 +1,22 @@
+.ms-auto {
+  [dir=ltr] & {
+    margin-right: unset !important;
+  }
+
+  [dir=rtl] & {
+    margin-left: unset !important;
+  }
+}
+
+:root {
+  --blue: #008FFB;
+}
+
+.bg-blue {
+  background-color: var(--blue) !important;
+}
+
+.badge-blue {
+  color: #003157;
+  background-color: #008efb54;
+}

@@ -1,0 +1,62 @@
+<table
+  id="kt_profile_overview_table"
+  class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+>
+  <thead class="fs-7">
+    <tr>
+      <th scope="col" class="fw-bold">
+        {{ translation.requestNumber }}
+      </th>
+      <th scope="col">{{ translation.requestDate }}</th>
+      <th scope="col">{{ translation.requestStatus }}</th>
+      <th scope="col">{{ 'termsDetails.by' | translate }}</th>
+      <th scope="col">{{ translation.responseDate }}</th>
+      <th scope="col">{{ translation.notes }}</th>
+      <th scope="col">{{ translation.attachments }}</th>
+    </tr>
+  </thead>
+  <tbody class="fs-6">
+    @for (item of extract.history; track item.id; let index = $index) {
+    <tr>
+      <td>#{{ extract.requestNumber }}</td>
+      <td>{{ extract.createdAt | date : 'd MMM y - HH:mm' : '' : locale }}</td>
+      <td>
+        @if (extractStatuses[item.status]) {
+        <div [class]="'badge fw-bold ' + extractStatuses[item.status].color">
+          {{ extractStatuses[item.status].value }}
+        </div>
+        }
+      </td>
+      <td>{{ actorTranslation[item.actor] | translate }}</td>
+      <td>{{ item.createdAt | date : 'd MMM y - HH:mm' : '' : locale }}</td>
+      <td>{{ item.notes }}</td>
+      <td>
+        @if (item.attachments?.length > 0) {
+        <button
+          class="btn btn-icon btn-color-info btn-bg-light btn-sm me-1"
+          (click)="openAttachmentsDialog(item)"
+        >
+          <i class="ki-duotone ki-eye">
+            <span class="path1"></span>
+            <span class="path2"></span>
+            <span class="path3"></span>
+          </i>
+        </button>
+        }
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+@if (enableAcceptRejectBtns) {
+<div class="accept-buttons">
+  <button type="button" (click)="openAcceptRejectDialog('accept')">
+    <span>{{ 'termsDetails.acceptRequest' | translate }}</span>
+  </button>
+  <button type="button" (click)="openAcceptRejectDialog('reject')">
+    <span>{{ 'termsDetails.rejectRequest' | translate }}</span>
+  </button>
+</div>
+}
+

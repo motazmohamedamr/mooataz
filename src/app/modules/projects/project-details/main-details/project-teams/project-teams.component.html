@@ -1,0 +1,63 @@
+<section class="card">
+  <div class="title-btn">
+    <div class="title">
+      <h2>{{ translation?.team }}</h2>
+      <h3>{{ totalMembers }}</h3>
+    </div>
+    <button (click)="goToTeamTab()">{{ translation?.showMore }}</button>
+  </div>
+
+  <div style="overflow-x: auto">
+    <table
+      id="kt_profile_overview_table"
+      class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+    >
+      <thead class="fs-7">
+        <tr>
+          <th scope="col">
+            {{ translation?.name }}
+          </th>
+          <th scope="col">{{ translation?.division }}</th>
+          <!-- <th scope="col">{{ translation?.jobName }}</th>
+          <th scope="col">{{ translation?.lastShow }}</th>
+          <th scope="col">{{ translation?.requests }}</th>
+          <th scope="col">{{ translation?.tasks }}</th> -->
+        </tr>
+      </thead>
+      <tbody class="fs-6">
+        @for (user of users().slice(0, 5); track user.id) {
+        <tr>
+          <td>
+            <div class="name-image">
+              <div
+                class="symbol symbol-35px symbol-circle"
+                data-bs-toggle="tooltip"
+                [title]="user.username"
+              >
+                <img
+                  alt="Pic"
+                  [src]="user.picture || 'assets/media//avatars/blank.png'"
+                  onerror="this.onerror=null;this.src='assets/media//avatars/blank.png'"
+                />
+              </div>
+              <span>{{ user.fullName }}</span>
+            </div>
+          </td>
+          <td>{{ businessTypes ? businessTypes[$any(user).department] : '-' }}</td>
+          <!--  <td>مهندس موقع</td>
+            <td>منذ ساعة</td>
+            <td>
+              <span class="red">4</span> / <span class="green">4</span>
+              {{ translation?.requests }}
+            </td>
+            <td>
+              <span class="red">4</span> / <span class="green">4</span>
+              {{ translation?.task }}
+            </td> -->
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+

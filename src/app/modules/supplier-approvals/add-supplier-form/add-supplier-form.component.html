@@ -1,0 +1,71 @@
+<h1 mat-dialog-title>{{ data.translation?.addSupplier | translate }}</h1>
+
+<mat-dialog-content>
+  <form [formGroup]="addSupplierForm" (ngSubmit)="addSupplier()">
+    <article class="supplierform">
+      <app-custom-input
+        [formControl]="supplierId"
+        [label]="data.translation?.addSupplier"
+        [type]="'select'"
+        (dropdownChanged)="supplierChanged($event)"
+        [placeholder]="data.translation?.addSupplier"
+        [selectOptions]="supplierList()"
+        (selectSearchChanged)="supplierSearchChanged($event)"
+        [selectValue]="'id'"
+        [selectLabel]="'name'"
+      ></app-custom-input>
+      <app-custom-input
+        [formControl]="price"
+        [label]="data.translation?.price"
+        [type]="'number'"
+        [placeholder]="data.translation?.price"
+        [inputIcon]="translateService.currentLang === 'en' ? 'Saudi Riyal' : 'ريال سعودي'"
+      ></app-custom-input>
+    </article>
+
+    <h2 class="attachments-title">{{ data.translation?.attachments | translate }}</h2>
+
+    <div class="attachments" formArrayName="attachments">
+      <div class="card" *ngFor="let ctrl of attachments.controls">
+        <!--begin::Card body-->
+        <div class="card-body text-center p-8" [formGroup]="ctrl">
+          <!--begin::Name-->
+          <div class="card-detail text-gray-800 text-hover-primary d-flex flex-column">
+            <!--begin::Image-->
+            <div class="symbol symbol-60px mb-5">
+              <img
+                [src]="'assets/media/svg/files/' + ctrl.get('extension').value + '.svg'"
+                class="theme-light-show"
+                alt=""
+              />
+            </div>
+            <!--end::Image-->
+            <!--begin::Title-->
+            <div class="fs-5 fw-bold mb-2">{{ ctrl.get('displayName').value }}</div>
+            <!--end::Title-->
+          </div>
+        </div>
+        <!--end::Card body-->
+      </div>
+    </div>
+
+    <div class="supplier-buttons">
+      <button
+        type="button"
+        [class.ar]="translateService.currentLang === 'ar'"
+        class="addfile"
+      >
+        {{ data.translation?.addFile | translate }}
+        <input
+          type="file"
+          accept="application/pdf,image/*,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          (change)="fileUploaded($event)"
+        />
+      </button>
+      <button mat-dialog-close>{{ 'general.cancel' | translate }}</button>
+      <button type="submit" [disabled]="!addSupplierForm.valid">
+        {{ data.translation?.confirm | translate }}
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>

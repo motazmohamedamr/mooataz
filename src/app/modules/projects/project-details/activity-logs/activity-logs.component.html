@@ -1,0 +1,85 @@
+<section class="card">
+  <div class="card-body">
+    <div class="activity-header">
+      <div class="btns-search">
+        <div class="btns">
+          <button
+            [class.active]="router.url.includes('requests-logs')"
+            (click)="navigateTo('requests-logs')"
+          >
+            {{ translation?.requestsLogs }}
+          </button>
+          <!-- <button
+            [class.active]="router.url.includes('tasks-logs')"
+            (click)="navigateTo('tasks-logs')"
+          >
+            {{ translation?.tasksLogs }}
+          </button> -->
+        </div>
+        <div class="searchinput">
+          <input
+            type="text"
+            [formControl]="searchControl"
+            [placeholder]="translation?.searchByRequestName"
+          />
+          <i
+            class="ki-duotone ki-magnifier"
+            [ngStyle]="{
+            right: translate.currentLang === 'ar' ? '14px': 'initial',
+            left: translate.currentLang === 'en' ? '14px': 'initial',
+          }"
+          >
+            <span class="path1"></span>
+            <span class="path2"></span>
+          </i>
+        </div>
+      </div>
+
+      <div class="date-tabs">
+        <div class="date">
+          <div class="image">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p>
+            @if (filterValue === 'today') {
+            {{ todaysDate | date : 'd MMM y' : '' : locale }}
+            } @else { @if (filtersDate()) {
+            {{ filtersDate().from | date : 'd MMM y' : '' : locale }} -
+            {{ filtersDate().to | date : 'd MMM y' : '' : locale }}
+            } }
+          </p>
+        </div>
+        <ul>
+          @for (dateFilter of dateFilters; let idx = $index; track dateFilter.text) {
+          <li
+            [class.active]="dateFilter.value === filterValue"
+            (click)="setDateFilter(dateFilter.value)"
+          >
+            {{ dateFilter.text }}
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="logs">
+      <!-- @if (router.url.includes('requests-logs')) { -->
+      <app-requests-logs
+        [projectId]="projectId"
+        [searchValue]="debouncedValue()"
+        [dateFilters]="filtersDate()"
+      ></app-requests-logs>
+      <!-- } @else if (router.url.includes('tasks-logs')) {
+      <app-tasks-logs></app-tasks-logs>
+      } -->
+    </div>
+  </div>
+</section>

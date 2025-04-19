@@ -1,0 +1,36 @@
+<div
+  class="upload-container"
+  [class.hovering]="isHovering"
+  (mouseenter)="isHovering = true"
+  (mouseleave)="isHovering = false"
+  (drop)="onFileDropped($event)"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+>
+  <input
+    type="file"
+    #fileInput
+    id="fileInput"
+    [multiple]="multiple"
+    [accept]="accept"
+    (change)="onFileSelected($event)"
+  />
+
+  <button mat-button (click)="fileInput.click()">Select Files</button>
+
+  <p *ngIf="multiple">Drag & drop or click to select files</p>
+  <p *ngIf="!multiple">Drag & drop or click to select a file</p>
+</div>
+
+<div class="files-list" *ngIf="files.length > 0">
+  <div *ngFor="let file of files; let i = index" class="file-item">
+    @if (isImage(file) || file.url) {
+    <img [src]="file.url" alt="{{ file.name }}" class="file-preview" />
+    } @else {
+    <span>{{ file.name }}</span>
+    }
+    <button mat-icon-button (click)="deleteFile(i)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

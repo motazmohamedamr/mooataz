@@ -1,0 +1,11 @@
+form {
+  margin-top: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: grid;
+  gap: 10px;
+}
+
+.fileuploader {
+  grid-column: 1 / -1;
+}
+

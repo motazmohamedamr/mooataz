@@ -1,0 +1,32 @@
+@if (extractListSignal().length) {
+<app-extracts-list-view
+  [translation]="translation"
+  [extractList]="extractListSignal()"
+  [user]="user"
+  (openAddDialog)="openAddRequestDialog()"
+  (goToDetailsEmitter)="goToDetails($event)"
+></app-extracts-list-view>
+@if (pageInfo()?.totalPages > 1) {
+<article class="card">
+  <div class="card-body pt-6 p-6">
+    <app-pagination
+      [pageInfo]="pageInfo()"
+      [paginationPages]="paginationPages()"
+      [pageIndex]="pageIndexSig() + 1"
+      (goToPage)="goToPageHandler($event)"
+      [pageSize]="5"
+    ></app-pagination>
+  </div>
+</article>
+
+} } @else {
+<article class="card">
+  <div class="card-body pt-6 p-6">
+    <app-no-extracts
+      (openAddDialog)="openAddRequestDialog()"
+      [translation]="translation"
+      [user]="user"
+    ></app-no-extracts>
+  </div>
+</article>
+}

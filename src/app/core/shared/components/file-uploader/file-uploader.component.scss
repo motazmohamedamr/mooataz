@@ -1,0 +1,42 @@
+.upload-container {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .upload-container.hovering {
+    border-color: #3f51b5;
+    background-color: #f5f5f5;
+  }
+
+  .files-list {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  mat-icon {
+    cursor: pointer;
+    color: red;
+  }
+
+  button {
+    margin: 10px 0;
+    &:disabled {
+      opacity: .5;
+    }
+  }

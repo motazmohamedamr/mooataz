@@ -1,0 +1,109 @@
+section {
+  .activity-header {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .btns-search {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .btns {
+        display: flex;
+        gap: 10px;
+        button {
+          padding: 12px 24px;
+          border-radius: 6px;
+          font-size: 16px;
+          font-weight: 400;
+          cursor: pointer;
+          color: #fff;
+          border: none;
+          background-color: #B5B5C3;
+          &.active {
+            background-color: #158456;
+          }
+        }
+      }
+      .searchinput {
+        position: relative;
+        min-width: 300px;
+        input {
+          background-color: #F9F9F9;
+          border-radius: 6px;
+          padding: 14px;
+          padding-right: 33px;
+          width: 100%;
+          border: none;
+          &::placeholder {
+            color: #A1A5B7;
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+        i {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .date-tabs {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .date {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        .image {
+          background-color: #15845633;
+          border-radius: 6px;
+          display: grid;
+          padding: 5px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 3px;
+          span {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #158456;
+          }
+        }
+        p {
+          font-size: 14px;
+          font-weight: 700;
+          color: #333333;
+          margin: 0;
+        }
+      }
+      ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        gap: 2px;
+        li {
+          padding: 0 9.5px 16px;
+          border-bottom: 1.5px solid transparent;
+          cursor: pointer;
+          color: #B5B5C3;
+          &:hover, &.active {
+            color: #3F4254;
+            border-bottom: 1.5px solid #158456;
+          }
+        }
+      }
+    }
+  }
+  hr {
+    margin: 0;
+    opacity: 1;
+    color: #EFF2F5;
+  }
+  .logs {
+    margin-top: 32px;
+  }
+}

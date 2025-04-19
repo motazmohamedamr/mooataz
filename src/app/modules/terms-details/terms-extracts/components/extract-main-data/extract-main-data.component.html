@@ -1,0 +1,37 @@
+<div style="overflow-x: auto">
+  <table
+    id="kt_profile_overview_table"
+    class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+  >
+    <thead class="fs-7">
+      <tr>
+        <th scope="col" class="fw-bold">
+          {{ translation.businessDescription | translate }}
+        </th>
+        <th scope="col">{{ translation.itemNumber | translate }}</th>
+        <th scope="col">{{ translation.measurementUnit | translate }}</th>
+        <th scope="col">{{ translation.contractNumber | translate }}</th>
+        <th scope="col">{{ translation.contractQuantity | translate }}</th>
+        <th scope="col">{{ translation.unitPrice | translate }}</th>
+        <th scope="col">{{ translation.totalContract | translate }}</th>
+      </tr>
+    </thead>
+    <tbody class="fs-6">
+      <tr>
+        <td>{{ extract.description }}</td>
+        <td>{{ extract.term?.itemNumber }}</td>
+        <td>
+          {{
+            translate.currentLang === 'en'
+              ? extract.measurementUnit.name.en
+              : extract.measurementUnit.name.ar
+          }}
+        </td>
+        <td>{{ extract.contractRefNumber }}</td>
+        <td>{{ extract.quantity }}</td>
+        <td>{{ extract.unitPrice }}</td>
+        <td>{{ extract.total }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

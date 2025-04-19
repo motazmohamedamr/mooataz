@@ -1,0 +1,82 @@
+<h1 mat-dialog-title>{{ data.translation?.addSupplier | translate }}</h1>
+
+<mat-dialog-content>
+  <form [formGroup]="addSupplierForm" (ngSubmit)="addSupplier()">
+    <article class="supplierform">
+      <app-custom-input
+        [formControl]="supplierId"
+        [label]="data.translation?.addSupplier"
+        [type]="'select'"
+        (dropdownChanged)="supplierChanged($event)"
+        [placeholder]="data.translation?.addSupplier"
+        [selectOptions]="supplierList()"
+        [selectValue]="'id'"
+        [selectLabel]="'name'"
+        (selectSearchChanged)="supplierSearchChanged($event)"
+      ></app-custom-input>
+    </article>
+
+    <h2 class="attachments-title">{{ data.translation?.attachments | translate }}</h2>
+
+    <div class="attachments" formArrayName="attachments">
+      <div class="card" *ngFor="let ctrl of attachments.controls; let idx = index">
+        <!--begin::Card body-->
+        <div class="card-body text-center p-8" [formGroup]="ctrl">
+          <!--begin::Name-->
+          <div class="card-detail text-gray-800 text-hover-primary d-flex flex-column">
+            <!--begin::Image-->
+            <div class="symbol symbol-60px mb-5">
+              <img
+                [src]="'assets/media/svg/files/' + ctrl.get('extension').value + '.svg'"
+                class="theme-light-show"
+                alt=""
+              />
+            </div>
+            <!--end::Image-->
+            <!--begin::Title-->
+            <div class="fs-5 fw-bold mb-2">{{ ctrl.get('displayName').value }}</div>
+            <!--end::Title-->
+            <button
+              type="button"
+              [title]="'general.delete' | translate"
+              (click)="deleteAttachment(idx)"
+              class="btn btn-icon btn-bg-light btn-color-danger btn-md deletefile"
+            >
+              <i class="ki-duotone ki-trash fs-2">
+                <span class="path1"></span>
+                <span class="path2"></span>
+                <span class="path3"></span>
+                <span class="path4"></span>
+                <span class="path5"></span>
+              </i>
+            </button>
+          </div>
+        </div>
+        <!--end::Card body-->
+      </div>
+    </div>
+
+    <div class="supplier-buttons">
+      <button
+        type="button"
+        [class.ar]="translateService.currentLang === 'ar'"
+        class="addfile"
+      >
+        {{ data.translation?.addFile | translate }}
+        <input
+          type="file"
+          accept="application/pdf,image/*,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          (change)="fileUploaded($event)"
+          multiple
+        />
+      </button>
+      <button mat-dialog-close>{{ 'general.cancel' | translate }}</button>
+      <button
+        type="submit"
+        [disabled]="!addSupplierForm.valid || attachments.length <= 0"
+      >
+        {{ data.translation?.confirm | translate }}
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>

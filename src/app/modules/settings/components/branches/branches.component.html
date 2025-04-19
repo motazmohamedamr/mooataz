@@ -1,0 +1,14 @@
+<app-aio-table
+  *ngIf="tableBuilder"
+  [title]="'Branches.table.title' | translate"
+  [description]="'Branches.table.description' | translate"
+  [tableComponent]="this"
+>
+</app-aio-table>
+
+<app-branches-form
+  [item]="currentItem"
+  (output)="onReload()"
+  (initialized)="handleModal()"
+></app-branches-form>
+

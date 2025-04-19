@@ -1,0 +1,49 @@
+@if (department) {
+<div class="card">
+  <!--begin::Card body-->
+  <div class="card-body">
+    <!--begin::Title-->
+    <div class="mb-2">
+      <a href="#" class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">{{
+        department.label
+      }}</a>
+    </div>
+    <!--end::Title-->
+    <!--begin::Content-->
+    <div class="fs-6 fw-semibold text-gray-600 mb-5">
+      {{ department.description }}
+    </div>
+    <!--end::Content-->
+    <!--begin::Footer-->
+    <div class="d-flex flex-stack flex-wrapr">
+      <!--begin::Users-->
+      <div class="symbol-group symbol-hover my-1">
+        @if (departmentUsers) { @for (user of departmentUsers; track user.id) {
+        <div
+          class="symbol symbol-35px symbol-circle"
+          data-bs-toggle="tooltip"
+          [title]="user.username"
+        >
+          <img
+            alt="Pic"
+            [src]="user.picture ? user.picture : 'assets/media//avatars/blank.png'"
+            onerror="this.onerror=null;this.src='assets/media//avatars/blank.png'"
+          />
+        </div>
+        } }
+      </div>
+      <!--end::Users-->
+      <div class="btns my-1">
+        <button
+          (click)="openAssignUserDialog()"
+          class="btn btn-icon btn-bg-primary btn-color-light btn-sm uploadfilebtn"
+        >
+          <i class="ki-duotone ki-plus"> </i>
+        </button>
+      </div>
+    </div>
+    <!--end::Footer-->
+  </div>
+  <!--end::Card body-->
+</div>
+}

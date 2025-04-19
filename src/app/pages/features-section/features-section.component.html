@@ -1,0 +1,44 @@
+<section id="features">
+  <p class="header">{{ translation?.title }}</p>
+  <h2 class="title">{{ translation?.allYouNeedToManage }}</h2>
+  <h3 class="subtitle">{{ translation?.motabeaOffersTools }}</h3>
+
+  <div class="cards">
+    <div class="feature-card">
+      <img src="./assets/media/homepage/feature1.webp" alt="Feature Logo" />
+      <h4>{{ translation?.projectDashboardRealtime }}</h4>
+      <p>{{ translation?.watchProgress }}</p>
+    </div>
+    <div class="feature-card">
+      <img src="./assets/media/homepage/feature2.webp" alt="Feature Logo" />
+      <h4>{{ translation?.completeTasks }}</h4>
+      <p>{{ translation?.trackUpdateTasks }}</p>
+    </div>
+  </div>
+
+  <div class="project-management">
+    <div class="content">
+      <h2>{{ translation?.managementProjectsAI }}</h2>
+      <p>{{ translation?.motabeaDashboard }}</p>
+      <div class="button">
+        <button type="button">
+          <span>{{ translation?.readOurStory }}</span>
+          <img
+            [ngStyle]="{
+            'left': translate.currentLang === 'ar' ? '0': 'initial',
+            'right': translate.currentLang === 'en' ? '0': 'initial',
+          }"
+            src="./assets/media/homepage/top-right-green-arrow-white-bg.svg"
+            alt="Logo"
+          />
+        </button>
+      </div>
+    </div>
+    <div class="image">
+      <img
+        src="./assets/media/homepage/project-manangement-worker.webp"
+        alt="Feature Logo"
+      />
+    </div>
+  </div>
+</section>

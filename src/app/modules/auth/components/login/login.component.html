@@ -1,0 +1,113 @@
+<img class="login-bg" src="./assets/media/auth/login-bg.jpg" alt="Motabea Login Logo" />
+<section>
+  <div class="login-layout">
+    <img src="./assets/media/logos/motabea-login-logo.svg" alt="Motabea Login Logo" />
+    <form
+      class="login-card"
+      [formGroup]="form"
+      *ngIf="'login.email' | translate as emailTitle"
+      (ngSubmit)="login()"
+    >
+      <h1>{{ 'login.title' | translate }}</h1>
+      <h2>{{ 'general.description' | translate }}</h2>
+      <div class="inputs">
+        <div class="inputGroup">
+          <div class="label-flex">
+            <label>{{ emailTitle }}</label>
+          </div>
+          <input
+            [formControl]="email"
+            class="form-control form-control-solid"
+            autoComplete="username"
+            type="email"
+            name="email"
+            placeholder="hub@example.com"
+            [class.is-invalid]="email.invalid && email.dirty"
+            [class.is-valid]="email.valid && email.dirty"
+          />
+          <ng-container
+            [ngTemplateOutlet]="formError"
+            [ngTemplateOutletContext]="{
+              title: emailTitle,
+              control: email
+            }"
+          ></ng-container>
+        </div>
+        <div class="inputGroup">
+          <div class="label-flex">
+            <label>{{ 'login.password' | translate }}</label>
+            <a class="forgot-pass" [routerLink]="[PATHS.Forgot]">{{
+              'login.forgot' | translate
+            }}</a>
+          </div>
+          <div class="password-group">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              [formControl]="password"
+              class="form-control form-control-solid password-input"
+              name="password"
+              autocomplete="off"
+              placeholder="*************"
+              formControlName="password"
+              [class.is-invalid]="password.invalid && password.dirty"
+              [class.is-valid]="password.valid && password.dirty"
+            />
+            <button
+              class="eye-btn"
+              type="button"
+              (click)="togglePassword()"
+              [disabled]="(form && !form.valid) || loading"
+              [attr.data-kt-indicator]="loading ? 'on' : 'off'"
+              [ngStyle]="{
+                left: language === 'ar' ? '30px' : 'initial',
+                right: language !== 'ar' ? '30px' : 'initial'
+              }"
+            >
+              <i class="ki-duotone ki-eye">
+                <span class="path1"></span>
+                <span class="path2"></span>
+                <span class="path3"></span>
+              </i>
+            </button>
+          </div>
+          <ng-container
+            [ngTemplateOutlet]="formError"
+            [ngTemplateOutletContext]="{
+              title: 'login.password' | translate,
+              control: password
+            }"
+          ></ng-container>
+        </div>
+      </div>
+      <div class="buttons">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="(form && !form.valid) || loading"
+          [attr.data-kt-indicator]="loading ? 'on' : 'off'"
+        >
+          <span class="indicator-label">{{ 'login.submit' | translate }}</span>
+          <span class="indicator-progress">
+            {{ 'general.loading' | translate }}
+            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<ng-template #formError let-control="control" let-title="title">
+  <ng-container *ngIf="control.invalid && control.dirty">
+    <div *ngIf="control.hasError('required')" class="fv-plugins-message-container mb-3">
+      <span class="text-danger" role="alert">
+        {{ 'validations.required' | translate : { field: title } }}
+      </span>
+    </div>
+    <div *ngIf="control.hasError('validation')" class="fv-plugins-message-container mb-3">
+      <span class="text-danger" role="alert">
+        {{ control.errors['validation'] }}
+      </span>
+    </div>
+  </ng-container>
+</ng-template>

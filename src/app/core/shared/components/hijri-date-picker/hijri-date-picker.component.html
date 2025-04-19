@@ -1,0 +1,22 @@
+<div class="input-group" [style.backgroundColor]="backgroundColor">
+  <input
+    class="form-control"
+    [placeholder]="placeholder"
+    name="dp"
+    [(ngModel)]="value"
+    (ngModelChange)="dateChanged($event)"
+    [style.backgroundColor]="backgroundColor"
+    ngbDatepicker
+    #dp="ngbDatepicker"
+    container="body"
+    [firstDayOfWeek]="7"
+  />
+  <div class="input-group-append">
+    <button
+      class="btn btn-outline-secondary bi bi-calendar3"
+      [style.color]="iconColor"
+      (click)="dp.toggle()"
+      type="button"
+    ></button>
+  </div>
+</div>

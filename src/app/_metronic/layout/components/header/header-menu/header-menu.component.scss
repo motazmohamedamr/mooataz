@@ -1,0 +1,16 @@
+:host {
+  height: inherit;
+  width: inherit;
+}
+
+.settings-p {
+  position: relative;
+  .settings {
+    background-color: #fff;
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+    position: absolute;
+    z-index: 5;
+    border-radius: 0.475rem;
+    top: 50px;
+  }
+}

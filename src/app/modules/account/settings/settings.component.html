@@ -1,0 +1,4 @@
+<ng-container *ngIf="userDetails$ | async as userDetails">
+  <app-profile-details [userDetails]="userDetails"></app-profile-details>
+  <app-sign-in-method [userDetails]="userDetails"></app-sign-in-method>
+</ng-container>

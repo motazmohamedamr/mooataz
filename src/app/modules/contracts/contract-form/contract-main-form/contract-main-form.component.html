@@ -1,0 +1,48 @@
+<h1>{{ title }}</h1>
+
+<form [formGroup]="contractForm">
+  <app-contract-form-input
+    [formControl]="competitionType"
+    [label]="translation?.type?.label"
+    [type]="'select'"
+    [placeholder]="translation?.type?.placeholder"
+    [selectOptions]="contractTypes"
+    [selectValue]="'value'"
+    [selectLabel]="'label'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="clientId"
+    [label]="translation?.client?.label"
+    [type]="'select'"
+    [placeholder]="translation?.client?.placeholder"
+    [selectOptions]="clients()"
+    [selectValue]="'id'"
+    [selectLabel]="'name'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="countryId"
+    [label]="translation?.country?.label"
+    [type]="'select'"
+    [placeholder]="translation?.country?.placeholder"
+    [selectOptionHasLangValues]="true"
+    [selectOptions]="countries()"
+    [selectValue]="'id'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="refNumber"
+    [label]="translation?.refNo?.label"
+    [type]="'text'"
+    [placeholder]="translation?.refNo?.placeholder"
+    [maxLengthNumChars]="16"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="name"
+    [type]="'text'"
+    [label]="translation?.name?.label"
+    [placeholder]="translation?.name?.placeholder"
+  ></app-contract-form-input>
+</form>

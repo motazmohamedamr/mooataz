@@ -1,0 +1,152 @@
+<div class="summary-chart" [class.asideDisplay]="asideDisplay">
+  @if (loading()) {
+  <h2>{{ 'general.loading' | translate }}</h2>
+  } @else if (tasksSummary()) { @for (item of tasksSummary(); track item.projectId; let
+  projectIndex = $index) {
+  <div class="chart-card">
+    <a
+      class="chart-card-header"
+      [routerLink]="['/', 'projects', 'project-details', item.projectId]"
+    >
+      @if (item.siteImage) {
+      <img [src]="item.siteImage" width="32" height="32" alt="Project image" />
+      } @else {
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 280.01 279.28"
+        width="32"
+        height="32"
+      >
+        <defs>
+          <style>
+            .cls-1 {
+              fill: url(#radial-gradient);
+            }
+            .cls-2 {
+              fill: #0d3f3c;
+              fill-rule: evenodd;
+            }
+          </style>
+          <radialGradient
+            id="radial-gradient"
+            cx="140.01"
+            cy="304.35"
+            r="139.82"
+            gradientTransform="matrix(1, 0, 0, -1, 0, 443.99)"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stop-color="#0e283d" />
+            <stop offset="0.48" stop-color="#0d3f3c" />
+            <stop offset="0.59" stop-color="#0c433b" />
+            <stop offset="0.7" stop-color="#0c4f3b" />
+            <stop offset="0.81" stop-color="#0b643b" />
+            <stop offset="0.88" stop-color="#0b753b" />
+            <stop offset="0.99" stop-color="#0b783b" />
+            <stop offset="1" stop-color="#0b793b" />
+          </radialGradient>
+        </defs>
+        <title>Asset 1</title>
+        <g id="Layer_2" data-name="Layer 2">
+          <g id="Layer_1-2" data-name="Layer 1">
+            <path
+              class="cls-1"
+              d="M164.06,58.29c.12-1.25.27-2.6.44-4.1,1.42-12.91,2.84-25.82,4.33-39.42A10.33,10.33,0,0,1,182.08,6a129.92,129.92,0,0,1,43.85,23c14.35,11.4,14.21,11.59,0,23-10.26,8.27-20.64,16.39-30.74,24.84a80.13,80.13,0,0,0-31.15-18.52Zm-122.54-9c13.76,9.82,27.24,20,40.94,29.91A80.07,80.07,0,0,1,133.9,54.84c1.74-14.42,3.31-29,4.95-44.07A9.72,9.72,0,0,0,128.3,0c-34.51,3.23-63.52,16.57-88,40.86-3.15,3.13-2.83,5.55,1.17,8.41ZM262,70.54c-2.29-4.1-4.47-7-9.37-3.14-13.25,10.39-26.54,20.71-38.85,30.29a18.22,18.22,0,0,0-1.95,1.76A79.94,79.94,0,0,1,140,214.64H125.45A11.49,11.49,0,0,0,114,226.12a12.28,12.28,0,0,1-12.27,12.27H85.25c-3.92,5.34-7.85,10.72-11.85,16.18A6.16,6.16,0,0,0,75,263.34a18.26,18.26,0,0,0,4.42,2.32c12.23,4,24.4,8.59,37,11,29,5.62,57.34,2.2,84-11,42.48-21.07,68.59-55,77.21-101.65,6.07-32.81.85-64.17-15.55-93.48ZM60,221.46V188.21a26.34,26.34,0,0,1,7.92-18.84A80.19,80.19,0,0,1,60,132.62a78.74,78.74,0,0,1,6.39-29.2C53.63,93.85,40.57,84.36,26.1,73.81a7.73,7.73,0,0,0-11.76,3.45C10.57,87,7,95.77,4.71,104.89c-12.56,50.4.28,94.39,35,132.47,4,4.39,6.89,5.21,10.92-.46,3.11-4.38,6.29-8.71,9.48-13a17.15,17.15,0,0,1-.19-2.4Z"
+            />
+            <path
+              class="cls-2"
+              d="M208.83,134.62A69,69,0,0,0,140.4,65.78H140c-37.09,0-67.93,30-68.83,67.11a68.93,68.93,0,0,0,8.65,35.21l2.52,4.52L78,175.48a15.26,15.26,0,0,0-6.88,12.73v33.25a5.76,5.76,0,0,0,5.75,5.75h24.8a1.08,1.08,0,0,0,1.08-1.08,22.7,22.7,0,0,1,22.67-22.67H139.9a68.94,68.94,0,0,0,68.93-68.84Zm-30.59,2.47a38.35,38.35,0,0,1-35.77,35.78c-.81,0-1.63.08-2.44.08a38.33,38.33,0,1,1,38.21-35.86Z"
+            />
+          </g>
+        </g>
+      </svg>
+      }
+      <h3>{{ item.projectName }}</h3>
+    </a>
+    <div class="chart-card-body">
+      <div class="chart">
+        <apx-chart
+          [series]="[
+            item.notStartedTaskCount,
+            item.inProgressTasksCount,
+            item.completedTasksCount
+          ]"
+          [chart]="chartOptions.chart"
+          [labels]="[
+            translation?.notStarted,
+            translation?.inProgress,
+            translation?.finished
+          ]"
+          [fill]="chartOptions.fill"
+          [plotOptions]="chartOptions.plotOptions"
+          [legend]="chartOptions.legend"
+          [dataLabels]="chartOptions.dataLabels"
+          [responsive]="chartOptions.responsive"
+          [colors]="chartOptions.colors"
+        ></apx-chart>
+        <div class="numberOfTasks">
+          <span>{{
+            item.inProgressTasksCount +
+              item.notStartedTaskCount +
+              item.completedTasksCount
+          }}</span>
+          <p>{{ translation?.tasksCount }}</p>
+        </div>
+      </div>
+      @for (stat of statsKeysValues; track stat.key; let ind = $index) {
+      <div class="chart-card-content">
+        <div class="img" [style.background-color]="iconColors[ind].paddingColor">
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              opacity="0.3"
+              x="14.0835"
+              y="4.33334"
+              width="3.25"
+              height="17.3333"
+              rx="1.625"
+              [attr.fill]="iconColors[ind].svgIconFill"
+            />
+            <rect
+              x="8.66675"
+              y="9.75"
+              width="3.25"
+              height="11.9167"
+              rx="1.625"
+              [attr.fill]="iconColors[ind].svgIconFill"
+            />
+            <rect
+              x="19.5001"
+              y="11.9167"
+              width="3.25"
+              height="9.75"
+              rx="1.625"
+              [attr.fill]="iconColors[ind].svgIconFill"
+            />
+            <rect
+              x="3.25012"
+              y="14.0833"
+              width="3.25"
+              height="7.58333"
+              rx="1.625"
+              [attr.fill]="iconColors[ind].svgIconFill"
+            />
+          </svg>
+        </div>
+        <div class="contentt">
+          <p>{{ tasksSummary()[projectIndex][stat.key] }}</p>
+          <span>{{ stat.title }}</span>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  } } @else {
+  <h2>{{ 'general.error' | translate }}</h2>
+  }
+</div>

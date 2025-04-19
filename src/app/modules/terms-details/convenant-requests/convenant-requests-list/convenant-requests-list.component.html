@@ -1,0 +1,47 @@
+<table
+  id="kt_profile_overview_table"
+  class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+>
+  <thead class="fs-7">
+    <tr>
+      <th scope="col" class="fw-bold">{{ translation.term | translate }}</th>
+      <th scope="col">{{ translation.termNumber | translate }}</th>
+      <th scope="col">{{ translation.requestDescription | translate }}</th>
+      <th scope="col">{{ translation.unit | translate }}</th>
+      <th scope="col">{{ translation.quantity | translate }}</th>
+      <th scope="col">{{ translation.unitPrice | translate }}</th>
+      <th scope="col">{{ translation.totalPrice | translate }}</th>
+    </tr>
+  </thead>
+  <tbody class="fs-6">
+    <tr>
+      <td>{{ covenantRequest.term?.title }}</td>
+      <td>{{ covenantRequest.term?.itemNumber }}</td>
+      <td>{{ covenantRequest.businessData }}</td>
+      <td>
+        {{
+          translate.currentLang === 'ar'
+            ? covenantRequest?.measurementUnit?.name.ar
+            : covenantRequest?.measurementUnit?.name.en
+        }}
+      </td>
+      <td>{{ covenantRequest.quantity }}</td>
+      <td>{{ covenantRequest.singlePrice }}</td>
+      <td>{{ covenantRequest.totalPriceWithoutVat }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="totalprice">
+  <p>{{ translation.totalWithoutVAT }}</p>
+  <span>{{ covenantRequest.totalPriceWithoutVat?.toFixed(2) }}</span>
+</div>
+<div class="totalprice">
+  <p>{{ translation.vat }}</p>
+  <span>{{ covenantRequest.vatPrice?.toFixed(2) }}</span>
+</div>
+<div class="totalprice">
+  <p>{{ translation.totalWithVAT }}</p>
+  <span>{{ covenantRequest.totalPriceWithVat?.toFixed(2) }}</span>
+</div>
+

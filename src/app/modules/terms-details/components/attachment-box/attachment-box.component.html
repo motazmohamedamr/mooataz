@@ -1,0 +1,104 @@
+<div class="card">
+  <div class="card-body flex flex-wrap gap-2 text-center p-8">
+    <div class="card-detail text-gray-800 d-flex flex-column">
+      <div class="symbol symbol-60px mb-5">
+        <img
+          [src]="'assets/media/svg/files/' + attachment.extension + '.svg'"
+          class="theme-light-show"
+          [alt]="attachment.displayName"
+        />
+      </div>
+      <div class="fs-5 fw-bold mb-2 attachment-name">
+        {{ attachment.displayName }}
+      </div>
+
+      <button
+        type="button"
+        [title]="'general.view' | translate"
+        (click)="openViewer()"
+        class="btn btn-icon btn-bg-light btn-color-success btn-md viewfile mb-2"
+      >
+        <i class="ki-duotone ki-eye fs-2">
+          <span class="path1"></span>
+          <span class="path2"></span>
+          <span class="path3"></span>
+        </i>
+      </button>
+
+      <button
+        type="button"
+        [title]="'general.download' | translate"
+        (click)="downloadAttachment(attachment)"
+        class="btn btn-icon btn-bg-light btn-color-primary btn-md downloadfile"
+      >
+        <i class="ki-duotone ki-arrow-down">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
+      </button>
+      @if (!extract || (extract?.status === extractStatus?.Draft &&
+      (user?.roles?.includes(role?.ProjectManager) ||
+      user?.roles?.includes(role?.SiteEngineer)))) {
+      <button
+        type="button"
+        [title]="'general.delete' | translate"
+        (click)="deleteAttachment(attachment)"
+        class="btn btn-icon btn-bg-light btn-color-danger btn-md deletefile"
+      >
+        <i class="ki-duotone ki-trash fs-2">
+          <span class="path1"></span>
+          <span class="path2"></span>
+          <span class="path3"></span>
+          <span class="path4"></span>
+          <span class="path5"></span>
+        </i>
+      </button>
+      }
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showPdfViewer && attachmentSrc && isPdf" class="pdf-viewer-fullscreen">
+  <div class="pdf-viewer-header">
+    <h3>{{ attachment.displayName }}</h3>
+    <button
+      type="button"
+      class="btn btn-icon btn-sm btn-light-danger"
+      (click)="closeViewer()"
+    >
+      <i class="ki-duotone ki-cross fs-2">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
+    </button>
+  </div>
+
+  <ngx-extended-pdf-viewer
+    [src]="attachmentSrc"
+    [height]="'calc(100vh - 60px)'"
+    [textLayer]="true"
+    [showHandToolButton]="true"
+    [filenameForDownload]="attachment.displayName"
+    [height]="'calc(100vh - 60px)'"
+    [zoom]="'page-fit'"
+  >
+  </ngx-extended-pdf-viewer>
+</div>
+
+<div *ngIf="showImageViewer && attachmentSrc" class="pdf-viewer-fullscreen">
+  <div class="pdf-viewer-header">
+    <h3>{{ attachment.displayName }}</h3>
+    <button
+      type="button"
+      class="btn btn-icon btn-sm btn-light-danger"
+      (click)="closeViewer()"
+    >
+      <i class="ki-duotone ki-cross fs-2">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
+    </button>
+  </div>
+
+  <img [src]="attachmentSrc" [alt]="attachment.displayName" />
+</div>

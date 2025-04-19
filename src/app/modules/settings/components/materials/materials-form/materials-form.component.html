@@ -1,0 +1,116 @@
+<div *ngIf="translation" [id]="Modals.materialCreateUpdate">
+  <!--begin::Modal dialog-->
+  <div class="header mx-12 align-items-center mt-8 h-unset">
+    <!--begin::Modal title-->
+    <h2 *ngIf="!data?.item" class="fw-bold mb-0">{{ translation?.create }}</h2>
+    <h2 *ngIf="data?.item" class="fw-bold mb-0">{{ translation?.edit }}</h2>
+    <!--end::Modal title-->
+    <!--begin::Close-->
+    <div class="btn btn-icon btn-sm btn-active-icon-primary" (click)="close()">
+      <i class="ki-duotone ki-cross fs-1">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
+    </div>
+    <!--end::Close-->
+  </div>
+  <!--end::Modal header-->
+  <!--begin::Modal body-->
+  <div class="mx-3 my-8">
+    <!--begin::Form-->
+    <form class="form" [formGroup]="form" (ngSubmit)="save()">
+      <!--begin::Scroll-->
+      <div
+        class="d-flex flex-column scroll-y px-5 px-lg-10"
+        data-kt-scroll="true"
+        data-kt-scroll-activate="true"
+        data-kt-scroll-max-height="auto"
+        data-kt-scroll-offset="300px"
+      >
+        <app-custom-input
+          [formControl]="nameAr"
+          [label]="translation?.fields.nameAr"
+          [type]="'text'"
+          [placeholder]="translation?.fields.nameAr"
+        ></app-custom-input>
+
+        <app-custom-input
+          [formControl]="nameEn"
+          [label]="translation?.fields.nameEn"
+          [type]="'text'"
+          [placeholder]="translation?.fields.nameEn"
+          class="mt-4"
+        ></app-custom-input>
+
+        <app-custom-input
+          [formControl]="description"
+          [label]="translation?.fields.description"
+          [type]="'text'"
+          [placeholder]="translation?.fields.description"
+          class="mt-4"
+        ></app-custom-input>
+        <div class="fv-row mt-3">
+          <div class="label-btn">
+            <label class="required fw-semibold fs-6">{{
+              translation?.fields.measurementUnits | translate
+            }}</label>
+            <button
+              class="btn btn-icon btn-bg-primary btn-color-light btn-sm"
+              type="button"
+              (click)="addMeasurementUnit()"
+            >
+              <i class="ki-duotone ki-plus"> </i>
+            </button>
+          </div>
+          <div class="units-grid" formArrayName="measurementUnitIds">
+            <div
+              class="unit-form"
+              *ngFor="let measurementUnit of measurementUnitIds.controls; let i = index"
+            >
+              <app-custom-input
+                [formControlName]="i"
+                [label]="''"
+                [type]="'select'"
+                [placeholder]="translation?.fields.measurementUnit"
+                [selectOptions]="measurementUnits()"
+                [selectValue]="'id'"
+                [selectLabel]="'name'"
+                [selectOptionHasLangValues]="true"
+                class="mt-4"
+              ></app-custom-input>
+              <button
+                class="delete-unit"
+                (click)="removeMeasurementUnit(i)"
+                type="button"
+              >
+                X
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end::Scroll-->
+      <!--begin::Actions-->
+      <div class="text-center pt-10">
+        <button type="button" class="btn btn-light me-3" (click)="close()">
+          {{ 'general.discard' | translate }}
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="loading || !form.valid || measurementUnitIds.controls?.length <= 0"
+          [attr.data-kt-indicator]="loading ? 'on' : 'off'"
+        >
+          <span class="indicator-label">{{ 'general.submit' | translate }}</span>
+          <span class="indicator-progress">
+            {{ 'general.loading' | translate }}
+            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+          </span>
+        </button>
+      </div>
+      <!--end::Actions-->
+    </form>
+    <!--end::Form-->
+  </div>
+  <!--end::Modal dialog-->
+</div>

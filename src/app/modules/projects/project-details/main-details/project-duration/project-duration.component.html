@@ -1,0 +1,48 @@
+<section class="card">
+  <div class="duration-progress">
+    <div class="title">
+      <p>{{ translation?.projectPeriod }}</p>
+      <span>{{ (projectDetails?.remainingTime?.percentage || 0) + '%' }}</span>
+    </div>
+    <div class="progress">
+      <span
+        [style.width]="(projectDetails?.remainingTime?.percentage || 0) + '%'"
+        [ngStyle]="{
+        right: translate.currentLang === 'ar' ? '0': 'initial',
+        left: translate.currentLang === 'en' ? '0': 'initial',
+      }"
+      ></span>
+    </div>
+  </div>
+
+  <div class="duration-details">
+    <div class="duration-details__detail">
+      <span>{{ translation?.startProjectDate }}</span>
+      <p>
+        {{
+          projectDetails
+            ? (projectDetails.startingDate | date : 'd MMM y' : '' : locale)
+            : 0
+        }}
+      </p>
+    </div>
+    <div class="duration-details__detail">
+      <span>{{ translation?.deliveryProjectDate }}</span>
+      <p>
+        {{
+          projectDetails
+            ? (projectDetails.endingDate | date : 'd MMM y' : '' : locale)
+            : '-'
+        }}
+      </p>
+    </div>
+    <div class="duration-details__detail">
+      <span>{{ translation?.executionPeriod }}</span>
+      <p>
+        {{ projectDetails?.remainingTime?.remainingPeriod?.months || 0 }} شهر -
+        {{ projectDetails?.remainingTime?.remainingPeriod?.days || 0 }} يوم
+      </p>
+    </div>
+  </div>
+</section>
+

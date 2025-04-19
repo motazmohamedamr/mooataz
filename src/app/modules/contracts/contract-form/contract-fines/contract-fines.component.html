@@ -1,0 +1,20 @@
+<div class="title-btn">
+  <h1>{{ title }}</h1>
+  @if (fines().length) {
+  <button (click)="openNewFineDialog()">
+    <i class="ki-duotone ki-plus"> </i>
+    <span>{{ translation?.addNewFine | translate }}</span>
+  </button>
+  }
+</div>
+
+@if (fines().length) {
+<app-contract-fines-table
+  [translation]="translation"
+  [fineList]="fines()"
+  (openEditEvent)="openEditFineDialog($event)"
+  (deletFineEvent)="deleteFine($event)"
+></app-contract-fines-table>
+} @else {
+<app-contract-fines-form (save)="addNewFine($event)"></app-contract-fines-form>
+}

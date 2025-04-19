@@ -1,0 +1,287 @@
+<!-- Dashboard -->
+<div class="menu-item">
+  <a class="menu-link without-sub" routerLink="/dashboard" routerLinkActive="active"
+    ><span class="menu-icon">
+      <span
+        [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+        class="svg-icon svg-icon-2"
+      ></span>
+    </span>
+    <span class="menu-title" translate="MENU.DASHBOARD"></span
+  ></a>
+</div>
+
+
+
+<!-- Contracts -->
+<div class="menu-item">
+  <a class="menu-link without-sub" routerLink="/contracts" routerLinkActive="active"
+    ><span class="menu-icon">
+      <span
+        [inlineSVG]="'./assets/media/icons/duotune/general/gen019.svg'"
+        class="svg-icon svg-icon-2"
+      ></span> </span
+    ><span class="menu-title" translate="MENU.contracts"></span
+  ></a>
+</div>
+
+<!-- Projects -->
+<div class="menu-item">
+  <a class="menu-link without-sub" routerLink="/projects" routerLinkActive="active"
+    ><span class="menu-icon">
+      <span
+        [inlineSVG]="'./assets/media/icons/duotune/general/gen019.svg'"
+        class="svg-icon svg-icon-2"
+      ></span> </span
+    ><span class="menu-title" translate="MENU.projects"></span
+  ></a>
+</div>
+
+<!-- Requests -->
+<!-- <div class="menu-item">
+  <a
+    class="menu-link without-sub"
+    routerLink="/supplier-approvals"
+    routerLinkActive="active"
+    ><span class="menu-icon">
+      <span
+        [inlineSVG]="'./assets/media/icons/duotune/general/gen019.svg'"
+        class="svg-icon svg-icon-2"
+      ></span> </span
+    ><span class="menu-title" translate="MENU.requests"></span
+  ></a>
+</div> -->
+
+<!-- Settings -->
+<ng-container *hasRole="[Role.Admin,Role.Purchasing,Role.Accountant,Role.TechnicalOfficer,Role.SiteEngineer,Role.ProjectManager,Role.ProjectsManager]">
+  <div class="menu-item">
+    <div class="menu-content pt-8 pb-2">
+      <span
+        class="menu-section text-muted text-uppercase fs-8 ls-1"
+        translate="MENU.SETTINGS"
+      ></span>
+    </div>
+  </div>
+
+  <!-- Contract Types -->
+  <ng-container *hasRole="Role.Admin">
+    <div class="menu-item">
+      <a
+        class="menu-link without-sub"
+        routerLink="/settings/contract-type"
+        routerLinkActive="active"
+        ><span class="menu-icon">
+          <span
+            [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+            class="svg-icon svg-icon-2"
+          ></span>
+        </span>
+        <span class="menu-title" translate="MENU.ContractTypes"></span
+      ></a>
+    </div>
+  </ng-container>
+  
+  <!-- Measuring  Units -->
+  <ng-container *hasRole="[Role.Admin,Role.Purchasing,Role.Accountant,Role.TechnicalOfficer,Role.SiteEngineer,Role.ProjectManager,Role.ProjectsManager]">
+    <div class="menu-item">
+      <a
+        class="menu-link without-sub"
+        routerLink="/settings/measurement-unitVm"
+        routerLinkActive="active"
+        ><span class="menu-icon">
+          <span
+            [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+            class="svg-icon svg-icon-2"
+          ></span>
+        </span>
+        <span class="menu-title" translate="MENU.measuring-units"></span
+      ></a>
+    </div>
+  </ng-container>
+
+  <!-- Users -->
+  <ng-container *hasRole="Role.Admin">
+    <div class="menu-item">
+      <a
+        class="menu-link without-sub"
+        routerLink="/settings/users"
+        routerLinkActive="active"
+        ><span class="menu-icon">
+          <span
+            [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+            class="svg-icon svg-icon-2"
+          ></span>
+        </span>
+        <span class="menu-title" translate="MENU.users"></span
+      ></a>
+    </div>
+  </ng-container>
+
+<!-- Tenants -->
+<ng-container *hasRole="Role.Admin">
+  <ng-container *isDefaultTenant>
+    <div *canAccess="MODULES.MultiTenancy" class="menu-item">
+      <a class="menu-link without-sub" routerLink="/multi-tenancy" routerLinkActive="active"
+        ><span class="menu-icon">
+          <span
+            [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+            class="svg-icon svg-icon-2"
+          ></span>
+        </span>
+        <span class="menu-title" translate="MENU.tenants"></span
+      ></a>
+    </div>
+  </ng-container>
+</ng-container>
+
+
+
+<!-- Countries -->
+<ng-container *hasRole="Role.Admin">
+  <div class="menu-item">
+    <a
+      class="menu-link without-sub"
+      routerLink="/settings/countries"
+      routerLinkActive="active"
+      ><span class="menu-icon">
+        <span
+          [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+          class="svg-icon svg-icon-2"
+        ></span>
+      </span>
+      <span class="menu-title" translate="MENU.countries"></span
+    ></a>
+  </div>
+</ng-container>
+
+<!-- Cities -->
+<ng-container *hasRole="Role.Admin">
+  <div class="menu-item">
+    <a
+      class="menu-link without-sub"
+      routerLink="/settings/cities"
+      routerLinkActive="active"
+      ><span class="menu-icon">
+        <span
+          [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+          class="svg-icon svg-icon-2"
+        ></span>
+      </span>
+      <span class="menu-title" translate="MENU.cities"></span
+    ></a>
+  </div>
+</ng-container>
+
+<!-- Commerce Chambers -->
+<ng-container *hasRole="Role.Admin">
+  <div class="menu-item">
+    <a
+      class="menu-link without-sub"
+      routerLink="/settings/commerce-chambers"
+      routerLinkActive="active"
+      ><span class="menu-icon">
+        <span
+          [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+          class="svg-icon svg-icon-2"
+        ></span>
+      </span>
+      <span class="menu-title" translate="MENU.commerceChambers"></span
+    ></a>
+  </div>
+</ng-container>
+
+<!-- Commerce Chambers -->
+<ng-container *hasRole="[Role.Admin,Role.Purchasing,Role.Accountant,Role.TechnicalOfficer,Role.SiteEngineer,Role.ProjectManager,Role.ProjectsManager]">
+  <div class="menu-item">
+    <a
+      class="menu-link without-sub"
+      routerLink="/settings/materials"
+      routerLinkActive="active"
+      ><span class="menu-icon">
+        <span
+          [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+          class="svg-icon svg-icon-2"
+        ></span>
+      </span>
+      <span class="menu-title" translate="MENU.Materials"></span
+    ></a>
+  </div>
+</ng-container>
+
+<!-- Clients -->
+<ng-container *isDefaultTenant>
+  <div *hasRole="[Role.Admin]" class="menu-item">
+    <a
+      class="menu-link without-sub"
+      routerLink="/settings/clients"
+      routerLinkActive="active"
+      ><span class="menu-icon">
+        <span
+          [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+          class="svg-icon svg-icon-2"
+        ></span>
+      </span>
+      <span class="menu-title" translate="MENU.Clients"></span
+    ></a>
+  </div>
+</ng-container>
+
+<!-- Suppliers -->
+<ng-container *isDefaultTenant>
+  <div *hasRole="[Role.Admin,Role.Purchasing,Role.Accountant,Role.TechnicalOfficer,Role.SiteEngineer,Role.ProjectManager,Role.ProjectsManager]" class="menu-item">
+    <a
+      class="menu-link without-sub"
+      routerLink="/settings/suppliers"
+      routerLinkActive="active"
+      ><span class="menu-icon">
+        <span
+          [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+          class="svg-icon svg-icon-2"
+        ></span>
+      </span>
+      <span class="menu-title" translate="MENU.suppliers"></span
+    ></a>
+  </div>
+</ng-container>
+
+<!-- Layout builder -->
+
+<div class="menu-item">
+  <a
+    class="menu-link without-sub"
+    routerLink="/builder"
+    routerLinkActive="active"
+    ><span class="menu-icon">
+      <span
+      [inlineSVG]="'./assets/media/icons/duotune/general/gen019.svg'"
+        class="svg-icon svg-icon-2"
+      ></span>
+    </span>
+    <span class="menu-title" translate="MENU.layoutBuilder"></span
+  ></a>
+</div>
+
+
+
+<!-- Branches -->
+<ng-container *isDefaultTenant>
+  <div *hasRole="[Role.Admin]" class="menu-item">
+    <a
+      class="menu-link without-sub"
+      routerLink="/settings/branches"
+      routerLinkActive="active"
+      ><span class="menu-icon">
+        <span
+          [inlineSVG]="'./assets/media/icons/duotune/art/art002.svg'"
+          class="svg-icon svg-icon-2"
+        ></span>
+      </span>
+      <span class="menu-title" translate="MENU.Branches"></span
+    ></a>
+  </div>
+</ng-container>
+
+
+
+</ng-container>
+

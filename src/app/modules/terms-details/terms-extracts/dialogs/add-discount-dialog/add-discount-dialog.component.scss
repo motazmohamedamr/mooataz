@@ -1,0 +1,23 @@
+.modal-header {
+  padding: 5% 5% 0 5%;
+}
+.modal-body,
+.modal-footer {
+  padding: 5%;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-body {
+  overflow-y: auto;
+}
+
+form {
+  margin-top: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: grid;
+  gap: 10px;
+}

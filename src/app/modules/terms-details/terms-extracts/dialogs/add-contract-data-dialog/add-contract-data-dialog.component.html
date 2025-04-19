@@ -1,0 +1,150 @@
+<div class="modal-header border-0">
+  <div class="d-flex flex-column">
+    <h1 class="modal-title mb-1 fw-bold">
+      {{ data?.translationAddContractDetailModal?.title | translate }}
+    </h1>
+    <h3 class="modal-title">
+      {{ data?.translationAddContractDetailModal?.subtitle | translate }}
+    </h3>
+  </div>
+</div>
+
+<form class="modal-body py-0" [formGroup]="contractDataForm" id="modalBody">
+  <app-custom-input
+    [label]="data?.translationAddContractDetailModal?.projectName"
+    [placeholder]="data?.translationAddContractDetailModal?.projectName"
+    [type]="'text'"
+    [formControl]="projectName"
+    class="mb-4"
+  >
+  </app-custom-input>
+
+  <app-custom-input
+    [formControl]="supplierId"
+    [label]="data.translationAddContractDetailModal?.contractorName"
+    [type]="'select'"
+    [placeholder]="data.translationAddContractDetailModal?.contractorName"
+    [selectOptions]="supplierList()"
+    (selectSearchChanged)="supplierSearchChanged($event)"
+    (dropdownChanged)="supplierChanged($event)"
+    [selectValue]="'id'"
+    [selectLabel]="'name'"
+    [gridClass]="'span-2'"
+  ></app-custom-input>
+  <app-custom-input
+    [label]="data?.translationAddContractDetailModal?.taxNumber"
+    [placeholder]="data?.translationAddContractDetailModal?.taxNumber"
+    [type]="'text'"
+    [formControl]="taxNumber"
+    class="mb-4"
+    [gridClass]="'span-2'"
+  >
+  </app-custom-input>
+  <app-custom-input
+    [formControl]="bankId"
+    [label]="data.translationAddContractDetailModal?.bankName"
+    [type]="'text'"
+    [placeholder]="data.translationAddContractDetailModal?.bankName"
+    [gridClass]="'span-2'"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="BankAccountNumber"
+    [label]="data?.translationAddContractDetailModal?.BankAccountNumber"
+    [type]="'text'"
+    [placeholder]="data?.translationAddContractDetailModal?.BankAccountNumber"
+    [gridClass]="'span-2'"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="contactNumber"
+    [label]="data?.translationAddContractDetailModal?.contactNumber"
+    [type]="'text'"
+    [gridClass]="'span-2'"
+    [placeholder]="data?.translationAddContractDetailModal?.contactNumber"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="itemNumber"
+    [label]="data?.translationAddContractDetailModal?.itemNumber"
+    [type]="'text'"
+    [placeholder]="data?.translationAddContractDetailModal?.itemNumber"
+    [gridClass]="'span-2'"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="description"
+    [label]="data?.translationAddContractDetailModal?.businessDescription"
+    [type]="'text'"
+    [placeholder]="data?.translationAddContractDetailModal?.businessDescription"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="measurementUnitId"
+    [label]="data?.translationAddContractDetailModal?.measurementUnit"
+    [type]="'select'"
+    [placeholder]="data?.translationAddContractDetailModal?.measurementUnit"
+    [selectOptions]="measurementUnits()"
+    [selectValue]="'id'"
+    [selectLabel]="'name'"
+    [gridClass]="'span-2'"
+    [selectOptionHasLangValues]="true"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="contractRefNumber"
+    [label]="data?.translationAddContractDetailModal?.contractNumber"
+    [gridClass]="'span-2'"
+    [type]="'text'"
+    [placeholder]="data?.translationAddContractDetailModal?.contractNumber"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="quantity"
+    [label]="data?.translationAddContractDetailModal?.contractQuantity"
+    [gridClass]="'span-2'"
+    [type]="'number'"
+    [placeholder]="data?.translationAddContractDetailModal?.contractQuantity"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="unitPrice"
+    [label]="data?.translationAddContractDetailModal?.unitPrice"
+    [gridClass]="'span-2'"
+    [type]="'number'"
+    [placeholder]="data?.translationAddContractDetailModal?.unitPrice"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="contractTotalPrice"
+    [label]="data?.translationAddContractDetailModal?.contractTotalPrice"
+    [type]="'number'"
+    [placeholder]="data?.translationAddContractDetailModal?.contractTotalPrice"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="notes"
+    [label]="data?.translationAddContractDetailModal?.notes"
+    [type]="'textarea'"
+    [placeholder]="data?.translationAddContractDetailModal?.notes"
+    class="mb-4"
+  ></app-custom-input>
+  <mat-checkbox formControlName="isTaxFree" (change)="taxFreeChanged($event)">{{
+    data?.translationAddContractDetailModal?.taxFree
+  }}</mat-checkbox>
+</form>
+
+<div class="modal-footer border-0">
+  <div class="d-flex gap-3">
+    <button
+      type="button"
+      class="btn btn-primary"
+      [disabled]="!contractDataForm.valid && !this.data?.lastExtract"
+      (click)="openNextModal()"
+    >
+      {{ data?.translationAddContractDetailModal?.next | translate }}
+    </button>
+    <button type="button" (click)="close()" class="btn btn-secondary">
+      {{ 'general.discard' | translate }}
+    </button>
+  </div>
+</div>

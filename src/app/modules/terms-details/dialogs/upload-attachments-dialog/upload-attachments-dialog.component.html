@@ -1,0 +1,94 @@
+<h1 mat-dialog-title>
+  {{ data?.title || data.translation?.addAttachments | translate }}
+</h1>
+
+<mat-dialog-content>
+  <article>
+    @for (fileType of filesTypesToUpload; track fileType.title; let idx = $index) {
+    <div class="upload-file">
+      <h3>{{ fileType.title }}</h3>
+      <app-file-upload
+        [multiple]="true"
+        [addDefaultCurrentFiles]="false"
+        [customUploadContentRef]="fileUploadContent"
+        [ngStyleContainer]="{ background: 'rgb(21,132,86, .1)', borderColor: '#158456' }"
+        [accept]="
+          'application/pdf,image/png,image/jpeg,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        "
+        (LoadFileHandler)="uploadFiless($event, fileType.type, idx)"
+      >
+      </app-file-upload>
+    </div>
+    @if (fileType.attachments?.length > 0) {
+    <div class="attachments">
+      <h4>{{ 'termsDetails.priceRequests.Attachments' | translate }}</h4>
+      @for (attachment of fileType.attachments; track attachment.uniqueKey) {
+      <div class="attachment">
+        <div class="icon-name">
+          <img
+            [src]="
+              'assets/media/svg/files/' +
+              attachment.displayName?.split('.').pop() +
+              '.svg'
+            "
+            class="theme-light-show"
+            [alt]="attachment.displayName"
+          />
+          <span>{{ attachment.displayName }}</span>
+        </div>
+        <button
+          type="button"
+          [title]="'general.delete' | translate"
+          (click)="removeFile(attachment)"
+          class="btn btn-icon btn-bg-light btn-color-danger btn-md deletefile"
+        >
+          <i class="ki-duotone ki-trash fs-5">
+            <span class="path1"></span>
+            <span class="path2"></span>
+            <span class="path3"></span>
+            <span class="path4"></span>
+            <span class="path5"></span>
+          </i>
+        </button>
+      </div>
+      }
+    </div>
+    } }
+  </article>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <div class="buttons">
+    <button type="button" class="btn btn-secondary" (click)="close()">
+      {{ 'general.discard' | translate }}
+    </button>
+    <button type="button" class="btn btn-primary" (click)="closeWithData()">
+      {{ 'general.save' | translate }}
+    </button>
+  </div>
+</mat-dialog-actions>
+
+<ng-template #fileUploadContent>
+  <div class="upload-container__content">
+    <svg
+      width="65"
+      height="65"
+      viewBox="0 0 65 65"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M34.2383 54.5V42.5H42.2383L32.2383 30.5L22.2383 42.5H30.2383V54.5H20.2383V54.4C19.9023 54.42 19.5823 54.5 19.2383 54.5C15.26 54.5 11.4447 52.9196 8.63168 50.1066C5.81863 47.2936 4.23828 43.4782 4.23828 39.5C4.23828 31.804 10.0583 25.532 17.5263 24.672C18.1811 21.2492 20.0081 18.1615 22.6931 15.94C25.3782 13.7186 28.7534 12.5021 32.2383 12.5C35.7237 12.5019 39.0995 13.7182 41.7852 15.9396C44.4709 18.161 46.2987 21.2488 46.9543 24.672C54.4223 25.532 60.2343 31.804 60.2343 39.5C60.2343 43.4782 58.6539 47.2936 55.8409 50.1066C53.0278 52.9196 49.2125 54.5 45.2343 54.5C44.8983 54.5 44.5743 54.42 44.2343 54.4V54.5H34.2383Z"
+        fill="#158456"
+      />
+    </svg>
+
+    <div class="titleflex">
+      <span class="dragdropor">{{ data?.translation.dragDropOr | translate }}</span>
+      &nbsp;
+      <span class="upload">{{ data?.translation.clickToUpload | translate }}</span>
+    </div>
+    <p class="desc">{{ data?.translation.supportedAttachments | translate }}</p>
+  </div>
+</ng-template>
+

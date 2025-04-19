@@ -1,0 +1,14 @@
+<app-aio-table
+        *ngIf="tableBuilder"
+        [title]="'MeasurementUnits.table.title' | translate"
+        [description]="'ContractTypes.table.description' | translate"
+        [tableComponent]="this"
+>
+</app-aio-table>
+
+
+<app-measurement-unit-vm-form
+        [item]="currentItem"
+        (output)="onReload()"
+        (initialized)="handleModal()"
+></app-measurement-unit-vm-form>

@@ -1,0 +1,116 @@
+<h1>{{ title }}</h1>
+
+<form [formGroup]="contractForm">
+  <app-contract-form-input
+    [formControl]="clientId"
+    [type]="'select'"
+    [selectOptions]="clients()"
+    [selectValue]="'id'"
+    [selectLabel]="'name'"
+    [label]="translation?.clientId?.label"
+    [placeholder]="translation?.clientId?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="refNumber"
+    [type]="'text'"
+    [label]="translation?.refNumber?.label"
+    [placeholder]="translation?.refNumber?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="name"
+    [type]="'text'"
+    [label]="translation?.name?.label"
+    [placeholder]="translation?.name?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="issuanceDate"
+    [type]="'date'"
+    (dateChangeEv)="issuanceDateChanged($event)"
+    [label]="translation?.issuanceDate?.label"
+    [placeholder]="translation?.issuanceDate?.placeholder"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="issuanceHijriDate"
+    (dateChangeEv)="issuanceHijriDateChanged($event)"
+    [type]="'dateHijri'"
+    [label]="translation?.issuanceHijriDate?.label"
+    [gridClass]="'span-2'"
+    [placeholder]="translation?.issuanceHijriDate?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="contractSigningDate"
+    [type]="'date'"
+    [label]="translation?.contractSigningDate?.label"
+    [placeholder]="translation?.contractSigningDate?.placeholder"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="dateReceiptHardCopy"
+    [type]="'date'"
+    [label]="translation?.dateReceiptHardCopy?.label"
+    [gridClass]="'span-2'"
+    [placeholder]="translation?.dateReceiptHardCopy?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="years"
+    [type]="'number'"
+    [label]="translation?.years?.label"
+    [gridClass]="'span-2'"
+    [placeholder]="translation?.years?.placeholder"
+  ></app-contract-form-input>
+  <app-contract-form-input
+    [formControl]="months"
+    [type]="'number'"
+    [label]="translation?.months?.label"
+    [placeholder]="translation?.months?.placeholder"
+    [gridClass]="'span-1'"
+  ></app-contract-form-input>
+  <app-contract-form-input
+    [formControl]="days"
+    [type]="'number'"
+    [label]="translation?.days?.label"
+    [placeholder]="translation?.days?.placeholder"
+    [gridClass]="'span-1'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="contractStatus"
+    [label]="translation?.contractStatus?.label"
+    [type]="'select'"
+    [placeholder]="translation?.contractStatus?.placeholder"
+    [selectOptions]="contractStatuses"
+    [selectValue]="'id'"
+    [selectLabel]="'name'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="contractTypeId"
+    [label]="translation?.contractTypeId?.label"
+    [type]="'select'"
+    [placeholder]="translation?.contractTypeId?.placeholder"
+    [selectOptions]="contractTypes()"
+    [selectOptionHasLangValues]="true"
+    [selectValue]="'id'"
+    [selectLabel]="'name'"
+  ></app-contract-form-input>
+
+  <div class="fileuploader">
+    <app-file-upload
+      [multiple]="true"
+      [accept]="
+        'application/pdf,image/png,image/jpeg,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      "
+      (LoadFileHandler)="uploadFiless($event)"
+      (DeleteFileHandler)="removeFile($event)"
+    >
+    </app-file-upload>
+  </div>
+</form>

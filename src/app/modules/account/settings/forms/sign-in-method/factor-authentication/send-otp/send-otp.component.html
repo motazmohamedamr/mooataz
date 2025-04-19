@@ -1,0 +1,101 @@
+<form class="form w-100 mb-13" [formGroup]="form" (ngSubmit)="login2FA()">
+  <!--begin::Icon-->
+  <div class="text-center mb-10">
+    <img alt="Logo" class="mh-125px" src="assets/media/svg/misc/smartphone-2.svg" />
+  </div>
+  <!--end::Icon-->
+  <!--begin::Heading-->
+  <div class="text-center mb-10">
+    <!--begin::Title-->
+    <h1 class="text-gray-900 mb-3">{{ translation.title }}</h1>
+    <!--end::Title-->
+    <!--begin::Sub-title-->
+    <div class="text-muted fw-semibold fs-5 mb-5">
+      {{ translation.description }}
+    </div>
+    <!--end::Sub-title-->
+  </div>
+  <!--end::Heading-->
+  <!--begin::Section-->
+  <div class="mb-10">
+    <!--begin::Label-->
+    <div class="fw-bold text-start text-gray-900 fs-6 mb-1 ms-1">
+      {{ translation.typeCode }}
+    </div>
+    <!--end::Label-->
+    <!--begin::Input group-->
+    <div class="d-flex flex-nowrap flex-stack inputs">
+      <input
+        type="text"
+        name="code_1"
+        maxlength="1"
+        class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+        value=""
+        formControlName="input1"
+      />
+      <input
+        type="text"
+        name="code_2"
+        data-inputmask="'mask': '9', 'placeholder': ''"
+        maxlength="1"
+        class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+        value=""
+        formControlName="input2"
+      />
+      <input
+        type="text"
+        name="code_3"
+        data-inputmask="'mask': '9', 'placeholder': ''"
+        maxlength="1"
+        class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+        value=""
+        formControlName="input3"
+      />
+      <input
+        type="text"
+        name="code_4"
+        data-inputmask="'mask': '9', 'placeholder': ''"
+        maxlength="1"
+        class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+        value=""
+        formControlName="input4"
+      />
+      <input
+        type="text"
+        name="code_5"
+        data-inputmask="'mask': '9', 'placeholder': ''"
+        maxlength="1"
+        class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+        value=""
+        formControlName="input5"
+      />
+      <input
+        type="text"
+        name="code_6"
+        data-inputmask="'mask': '9', 'placeholder': ''"
+        maxlength="1"
+        class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+        value=""
+        formControlName="input6"
+      />
+    </div>
+    <!--begin::Input group-->
+  </div>
+  <!--end::Section-->
+  <!--begin::Submit-->
+  <div class="d-flex flex-center">
+    <button
+      class="btn btn-lg btn-primary fw-bold"
+      [disabled]="(form && !form.valid) || loading"
+      [attr.data-kt-indicator]="loading ? 'on' : 'off'"
+      type="submit"
+    >
+      <span class="indicator-label">{{ 'general.submit' | translate }}</span>
+      <span class="indicator-progress"
+        >{{ 'layoutBuilder.pleaseWait' | translate }}
+        <span class="spinner-border spinner-border-sm align-middle ms-2"></span
+      ></span>
+    </button>
+  </div>
+  <!--end::Submit-->
+</form>

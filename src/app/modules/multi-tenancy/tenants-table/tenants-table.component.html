@@ -1,0 +1,13 @@
+<app-aio-table
+  *ngIf="tableBuilder"
+  [title]="'multiTenancy.table.title' | translate"
+  [description]="'multiTenancy.table.description' | translate"
+  [tableComponent]="this"
+>
+</app-aio-table>
+
+<app-tenants-create-update
+  [item]="currentItem"
+  (output)="onReload()"
+  (initialized)="handleModal()"
+></app-tenants-create-update>

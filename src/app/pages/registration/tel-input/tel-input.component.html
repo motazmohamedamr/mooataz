@@ -1,0 +1,10 @@
+<input
+  #phoneInput
+  type="tel"
+  class="form-control"
+  autocomplete="off"
+  style="width: 100%"
+  placeholder="{{ translation?.phoneNumber }}"
+  [value]="value"
+  (change)="onChange($event)"
+/>

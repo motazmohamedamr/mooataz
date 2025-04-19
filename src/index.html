@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <base href="/" version="1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+    <link href="https://fonts.cdnfonts.com/css/post-no-bills-colombo" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- SPLASH SCREEN-->
+    <link rel="stylesheet" id="layout-styles-anchor" href="./assets/splash-screen.css" />
+    <link rel="preload" href="/assets/i18n/ar.json" as="fetch" />
+    <link
+      rel="preload"
+      href="/assets/media/flags/saudi-arabia.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="/assets/media/flags/united-states.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <!-- Replace the default style import with conditional imports -->
+
+    <!-- <link rel="stylesheet" href="./assets/css/style.ltr.css"> -->
+  </head>
+
+  <body root id="kt_body" class="mat-typography">
+    <!-- <body root id="kt_body" class="mat-typography" direction="rtl" dir="rtl" style="direction: rtl"></body> -->
+    <!--begin::Theme mode setup on page load-->
+    <script>
+      if (document.documentElement) {
+        var defaultThemeMode = 'system';
+
+        var hasKTName = document.body.hasAttribute('data-kt-name');
+        var lsKey = 'kt_' + (hasKTName ? name + '_' : '') + 'theme_mode_value';
+        var themeMode = localStorage.getItem(lsKey);
+        if (!themeMode) {
+          if (defaultThemeMode === 'system') {
+            themeMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          } else {
+            themeMode = defaultThemeMode;
+          }
+        }
+
+        document.documentElement.setAttribute('data-bs-theme', themeMode);
+      }
+    </script>
+    <!--end::Theme mode setup on page load-->
+    <div id="splash-screen" class="splash-screen">
+      <img src="./assets/media/logos/Motabea-logo.svg" alt="Motabea logo" />
+      <span>Loading ...</span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+@if (data.isDialog) {
+<h1 mat-dialog-title>{{ 'contract.stepper.operations.title' | translate }}</h1>
+<h1 mat-dialog-title class="dialog-operations-subtitle">
+  {{ translation?.addNewOperationSubtitle | translate }}
+</h1>
+}
+
+<mat-dialog-content>
+  <form [formGroup]="projectForm" (ngSubmit)="createOperation()">
+    <article class="operationform">
+      <app-contract-form-input
+        [formControl]="name"
+        [type]="'text'"
+        [label]="translation?.name?.label"
+        [placeholder]="translation?.name?.placeholder"
+      ></app-contract-form-input>
+
+      <h2 class="sitereceipttitle">{{ translation?.siteReceipt?.label }}</h2>
+
+      <app-contract-form-input
+        [formControl]="siteReceiptDate"
+        [type]="'date'"
+        [label]="translation?.siteReceiptDate?.label"
+        [gridClass]="'span-2'"
+        [placeholder]="translation?.siteReceiptDate?.placeholder"
+      ></app-contract-form-input>
+
+      <app-contract-form-input
+        [formControl]="sitePrimaryReceiptDate"
+        [type]="'date'"
+        [label]="translation?.sitePrimaryReceiptDate?.label"
+        [gridClass]="'span-2'"
+        [placeholder]="translation?.sitePrimaryReceiptDate?.placeholder"
+      ></app-contract-form-input>
+
+      <app-contract-form-input
+        [formControl]="siteFinalReceiptDate"
+        [type]="'date'"
+        [label]="translation?.siteFinalReceiptDate?.label"
+        [gridClass]="'span-2'"
+        [placeholder]="translation?.siteFinalReceiptDate?.placeholder"
+      ></app-contract-form-input>
+
+      <app-contract-form-input
+        [formControl]="userId"
+        [label]="translation?.userId?.label"
+        [type]="'select'"
+        [placeholder]="translation?.userId?.placeholder"
+        [selectOptions]="users"
+        [selectValue]="'id'"
+        [selectLabel]="'fullName'"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+    </article>
+
+    <div class="operation-buttons">
+      @if (data.isDialog) {
+      <button mat-dialog-close>{{ 'general.cancel' | translate }}</button>
+      }
+      <button type="submit" [disabled]="!projectForm.valid || loading()">
+        {{ translation?.saveOperationButton | translate }}
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>

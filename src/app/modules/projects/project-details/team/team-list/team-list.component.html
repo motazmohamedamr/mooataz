@@ -1,0 +1,76 @@
+<div class="pb-7">
+  <!--begin::Title-->
+  <div class="d-flex flex-wrap justify-content-between align-items-center my-1">
+    <h2 class="fw-bold me-5 my-1">{{ 'Projects.teams.team' | translate }}</h2>
+    <!--begin::Search-->
+    <div class="d-flex align-items-center position-relative my-1">
+      <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-3">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
+      <input
+        type="text"
+        id="kt_filter_search"
+        (input)="userChange($event)"
+        class="form-control form-control-sm border-body bg-body ps-10"
+        placeholder="{{ 'Projects.teams.search' | translate }}"
+      />
+    </div>
+    <!--end::Search-->
+  </div>
+  <!--end::Title-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Tab Content-->
+<div class="tab-content">
+  <!--begin::Tab pane-->
+  <div id="kt_project_users_card_pane" class="tab-pane fade show active">
+    <!--begin::Row-->
+    <div class="row g-6 g-xl-9">
+      <!--begin::Col-->
+      @for (user of users; track user) {
+      <app-team-user [user]="user"></app-team-user>
+      }
+      <!--end::Col-->
+    </div>
+    <!--end::Row-->
+    <!--begin::Pagination-->
+    <!-- <div class="d-flex flex-stack flex-wrap pt-10">
+      <div class="fs-6 fw-semibold text-gray-700">Showing 1 to 10 of 50 entries</div>
+      <ul class="pagination">
+        <li class="page-item previous">
+          <a href="#" class="page-link">
+            <i class="previous"></i>
+          </a>
+        </li>
+        <li class="page-item active">
+          <a href="#" class="page-link">1</a>
+        </li>
+        <li class="page-item">
+          <a href="#" class="page-link">2</a>
+        </li>
+        <li class="page-item">
+          <a href="#" class="page-link">3</a>
+        </li>
+        <li class="page-item">
+          <a href="#" class="page-link">4</a>
+        </li>
+        <li class="page-item">
+          <a href="#" class="page-link">5</a>
+        </li>
+        <li class="page-item">
+          <a href="#" class="page-link">6</a>
+        </li>
+        <li class="page-item next">
+          <a href="#" class="page-link">
+            <i class="next"></i>
+          </a>
+        </li>
+      </ul>
+    </div> -->
+    <!--end::Pagination-->
+  </div>
+  <!--end::Tab pane-->
+</div>
+<!--end::Tab Content-->
+

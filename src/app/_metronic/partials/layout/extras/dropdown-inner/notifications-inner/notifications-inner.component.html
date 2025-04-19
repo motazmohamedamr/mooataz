@@ -1,0 +1,83 @@
+<div
+  class="notification-header d-flex flex-column bgi-no-repeat rounded-top"
+  [style.background-image]="'url(./assets/media/misc/menu-header-bg.jpg)'"
+>
+  <h3 class="text-white fw-bold px-9 mt-10 mb-6">
+    {{ 'general.notifications' | translate }}
+    <span class="fs-8 opacity-75 ps-3"
+      >({{ notificationService.pagingOptions().totalCount }})</span
+    >
+  </h3>
+
+  <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-bold px-9">
+    <li class="nav-item">
+      <a
+        class="nav-link text-white opacity-75 opacity-state-100 pb-4 cursor-pointer"
+        data-bs-toggle="tab"
+        [ngClass]="activeTabId === 'alerts' ? 'active' : ''"
+        (click)="setActiveTabId('alerts')"
+      >
+        {{ 'general.alerts' | translate }}
+      </a>
+    </li>
+
+    <!-- <li class="nav-item">
+      <a
+        class="nav-link text-white opacity-75 opacity-state-100 pb-4 cursor-pointer"
+        data-bs-toggle="tab"
+        [ngClass]="activeTabId === 'updates' ? 'active' : ''"
+        (click)="setActiveTabId('updates')"
+      >
+        {{ 'general.updates' | translate }}
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        class="nav-link text-white opacity-75 opacity-state-100 pb-4 cursor-pointer"
+        data-bs-toggle="tab"
+        [ngClass]="activeTabId === 'logs' ? 'active' : ''"
+        (click)="setActiveTabId('logs')"
+      >
+        {{ 'general.logs' | translate }}
+      </a>
+    </li> -->
+  </ul>
+</div>
+
+<div class="tab-content">
+  <div
+    class="tab-pane fade"
+    id="alerts"
+    role="tabpanel"
+    [ngClass]="activeTabId === 'alerts' ? 'show active' : ''"
+  >
+    <app-notifications-alerts
+      [notifications]="notificationService.alertsNotifications()"
+      (closeNotification)="closeNot($event)"
+      (showMoreNotificationsEv)="notificationService.getMoreNotifications()"
+    ></app-notifications-alerts>
+  </div>
+
+  <!-- <div
+    class="tab-pane fade"
+    id="updates"
+    role="tabpanel"
+    [ngClass]="activeTabId === 'updates' ? 'show active' : ''"
+  >
+    <app-notifications-updates
+      [notifications]="notificationService.upgradesNotifications()"
+    ></app-notifications-updates>
+  </div>
+
+  <div
+    class="tab-pane fade"
+    id="logs"
+    role="tabpanel"
+    [ngClass]="activeTabId === 'logs' ? 'show active' : ''"
+  >
+    <app-notifications-logs
+      [notifications]="notificationService.logsNotifications()"
+    ></app-notifications-logs>
+  </div> -->
+</div>

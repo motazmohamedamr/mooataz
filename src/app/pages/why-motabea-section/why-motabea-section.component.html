@@ -1,0 +1,39 @@
+<section>
+  <div class="companies-image">
+    <div class="companies-image-inner">
+      <img
+        *ngFor="let logo of companyLogos; let i = index"
+        [src]="logo.src"
+        [alt]="logo.alt"
+        [ngStyle]="getOpacity(i)"
+        class="logo"
+      />
+    </div>
+  </div>
+  <div class="why-card">
+    <div class="details">
+      <p class="header">{{ translation?.whyChoose }}</p>
+      <h2>{{ translation?.projectsManagementText }}</h2>
+      <ul>
+        <li><span>&#10004;</span>{{ translation?.estimatePricingAI }}</li>
+        <li><span>&#10004;</span>{{ translation?.completeTasks }}</li>
+        <li><span>&#10004;</span>{{ translation?.trackProjects }}</li>
+        <li><span>&#10004;</span>{{ translation?.resources }}</li>
+        <li><span>&#10004;</span>{{ translation?.cloudBuilt }}</li>
+      </ul>
+      <div class="how-works-button">
+        <button type="button">
+          <span>{{ translation?.knowHowtoWork }}</span>
+          <img src="./assets/media/homepage/play-logo.svg" alt="Logo" />
+        </button>
+      </div>
+    </div>
+    <div class="image">
+      <img
+        src="./assets/media/homepage/construction-worker.webp"
+        alt="Construction Logo"
+      />
+    </div>
+  </div>
+</section>
+

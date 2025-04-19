@@ -1,0 +1,65 @@
+<section class="card">
+  <h2>{{ translation?.tasks }}</h2>
+  <h3>{{ totalTasks }}</h3>
+  <div class="chart">
+    @defer (when tasksSummary()) {
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [labels]="chartOptions.labels"
+      [fill]="chartOptions.fill"
+      [plotOptions]="chartOptions.plotOptions"
+      [legend]="chartOptions.legend"
+      [dataLabels]="chartOptions.dataLabels"
+      [responsive]="chartOptions.responsive"
+      [colors]="chartOptions.colors"
+    ></apx-chart>
+    <div class="numberOfTasks">
+      <span>{{ totalNumberOfTasks }}</span>
+      <p>{{ translation?.totalTasks?.replace('{{total}}', '') }}</p>
+    </div>
+    } @placeholder {
+    <h2 class="loadingchart">{{ 'general.loadingChart' | translate }}</h2>
+    } @loading {
+    <h2 class="loadingchart">{{ 'general.loadingChart' | translate }}</h2>
+    }
+  </div>
+
+  <div class="chart-body">
+    @for (stat of statsKeysValues; track stat.key; let ind = $index) {
+    <div class="chart-content">
+      <div class="img" [style.background-color]="iconColors[ind].paddingColor">
+        <svg
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M4.83334 2.875C4.28105 2.875 3.83334 3.32272 3.83334 3.875V19.125C3.83334 19.6773 4.28105 20.125 4.83334 20.125H5.70834C6.26062 20.125 6.70834 19.6773 6.70834 19.125V3.875C6.70834 3.32272 6.26062 2.875 5.70834 2.875H4.83334ZM9.625 2.875C9.07272 2.875 8.625 3.32272 8.625 3.875V19.125C8.625 19.6773 9.07272 20.125 9.625 20.125H10.5C11.0523 20.125 11.5 19.6773 11.5 19.125V3.875C11.5 3.32272 11.0523 2.875 10.5 2.875H9.625Z"
+            [attr.fill]="iconColors[ind].svgIconFill"
+          />
+          <rect
+            opacity="0.3"
+            x="12.9156"
+            y="3.76041"
+            width="2.875"
+            height="17.25"
+            rx="1"
+            transform="rotate(-19 12.9156 3.76041)"
+            [attr.fill]="iconColors[ind].svgIconFill"
+          />
+        </svg>
+      </div>
+      <div class="contentt">
+        <p>{{ tasksSummary() ? tasksSummary()[stat.key] : 0 }}</p>
+        <span>{{ stat.title }}</span>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+

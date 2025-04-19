@@ -1,0 +1,99 @@
+@if (data.isDialog) {
+<h1 mat-dialog-title>{{ translation?.titleHeader | translate }}</h1>
+<h1 mat-dialog-title class="dialog-quantities-subtitle">
+  {{ translation?.subtitle | translate }}
+</h1>
+}
+
+<mat-dialog-content>
+  <form [formGroup]="quantityForm" (ngSubmit)="createQuantity()">
+    <article class="quantityform">
+      <app-contract-form-input
+        [formControl]="projectId"
+        [type]="'select'"
+        [selectOptions]="data?.allProjects || []"
+        [label]="translation?.projectId?.label"
+        [placeholder]="translation?.projectId?.placeholder"
+        [selectValue]="'id'"
+        [selectLabel]="'name'"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="title"
+        [type]="'text'"
+        [label]="translation?.title?.label"
+        [placeholder]="translation?.title?.placeholder"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="itemNumber"
+        [type]="'number'"
+        [label]="translation?.itemNumber?.label"
+        [placeholder]="translation?.itemNumber?.placeholder"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="description"
+        [type]="'text'"
+        [label]="translation?.description?.label"
+        [placeholder]="translation?.description?.placeholder"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="specifications"
+        [type]="'text'"
+        [label]="translation?.specifications?.label"
+        [placeholder]="translation?.specifications?.placeholder"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="quantity"
+        [type]="'number'"
+        [label]="translation?.quantity?.label"
+        [placeholder]="translation?.quantity?.placeholder"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="businessType"
+        [label]="translation?.businessType?.label"
+        [type]="'select'"
+        [placeholder]="translation?.businessType?.placeholder"
+        [selectOptions]="businessTypes"
+        [gridClass]="'span-2'"
+        [selectValue]="'value'"
+        [selectLabel]="'label'"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="measurementUnitId"
+        [type]="'select'"
+        [label]="translation?.measurementUnitId?.label"
+        [placeholder]="translation?.measurementUnitId?.placeholder"
+        [selectOptionHasLangValues]="true"
+        [selectValue]="'id'"
+        [selectLabel]="'name'"
+        [selectOptions]="measurementUnits()"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="unitPrice"
+        [type]="'number'"
+        [label]="translation?.unitPrice?.label"
+        [placeholder]="translation?.unitPrice?.placeholder"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="totalPrice"
+        [type]="'text'"
+        [label]="translation?.totalPrice?.label"
+        [placeholder]="translation?.totalPrice?.placeholder"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+    </article>
+    <div class="quantity-buttons">
+      @if (data.isDialog) {
+      <button mat-dialog-close>{{ 'general.cancel' | translate }}</button>
+      }
+      <button type="submit" [disabled]="!quantityForm.valid || loading()">
+        {{ translation?.saveQuantityButton | translate }}
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>

@@ -1,0 +1,9 @@
+<mat-checkbox [checked]="selectedValues.length === values.length" (change)="selectAll($event.checked)">
+    Select All
+</mat-checkbox>
+
+<div *ngFor="let value of values" style="margin-right: 2%; margin-left: 2%;">
+    <mat-checkbox [checked]="selectedValues.includes(value)" (change)="toggleSelection(value)">
+        {{ value }}
+    </mat-checkbox>
+</div>

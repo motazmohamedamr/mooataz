@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  margin-top: 30px;
+}
+
+.cardtitle {
+  h1 {
+    margin-bottom: 3px;
+  }
+  h3 {
+    color: #071437;
+    a {
+      color: #071437;
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+app-custom-input:not(:first-child) {
+  display: block;
+  margin-top: 14px;
+}
+
+.approval-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+  button, a {
+    border: none;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 40px;
+    background-color: transparent;
+    border: 1px solid #858896;
+    color: #4F4F4F;
+    margin-top: 0;
+    &:disabled {
+      opacity: .6;
+    }
+    &[type=submit] {
+      color: #fff;
+      background-color: #158456;
+    }
+    &.reject-btn {
+      border: 1px solid #cf3535;
+      color: #cf3535;
+    }
+  }
+}

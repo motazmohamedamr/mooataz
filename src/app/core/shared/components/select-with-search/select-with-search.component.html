@@ -1,0 +1,36 @@
+@if (_control) {
+<label
+  [ngClass]="{ required: _control.hasValidator(requiredValidator) }"
+  class="fw-semibold fs-6 mb-2"
+  >{{ label }}</label
+>
+
+<mat-select
+  [formControl]="_control"
+  [placeholder]="placeholder"
+  (selectionChange)="selectionChange($event)"
+  [className]="'form-control form-control-solid mb-3 mb-lg-0'"
+>
+  <mat-option>
+    <ngx-mat-select-search
+      [placeholderLabel]="placeholder"
+      [noEntriesFoundLabel]="'general.noDataFound' | translate"
+      [formControl]="selectSearchFilterCtrl"
+    ></ngx-mat-select-search>
+  </mat-option>
+
+  <mat-option *ngFor="let option of filteredOptions" [value]="option[selectValue]">
+    @if (selectOptionHasLangValues) {
+    {{
+      _translateService.currentLang === 'en'
+        ? option[selectLabel].en
+        : option[selectLabel].ar
+    }}
+    } @else {
+    {{ option[selectLabel] }}
+    }
+  </mat-option>
+</mat-select>
+
+}
+

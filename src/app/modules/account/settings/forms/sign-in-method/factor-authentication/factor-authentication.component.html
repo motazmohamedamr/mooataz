@@ -1,0 +1,173 @@
+<div class="p-8">
+  <!--begin::Modal header-->
+  <div class="modal-dialog modal-dialog-centered mw-650px">
+    <!--begin::Modal content-->
+    <div class="modal-content">
+      <!--begin::Modal header-->
+      <div class="modal-header flex-stack">
+        <!--begin::Title-->
+        <h2 class="mb-0">{{ 'profile.2fa.title' | translate }}</h2>
+        <!--end::Title-->
+        <!--begin::Close-->
+        <div
+          class="btn btn-sm btn-icon btn-active-color-primary"
+          data-bs-dismiss="modal"
+          (click)="close()"
+        >
+          <i class="ki-duotone ki-cross fs-1">
+            <span class="path1"></span>
+            <span class="path2"></span>
+          </i>
+        </div>
+        <!--end::Close-->
+      </div>
+      <!--begin::Modal header-->
+      <!--begin::Modal body-->
+      <div class="modal-body scroll-y pt-10 pb-15 px-lg-17">
+        <!--begin::Options-->
+        <div data-kt-element="options" [ngClass]="{ 'd-none': secondStep }">
+          <!--begin::Notice-->
+          <p class="text-muted fs-5 fw-semibold mb-10">
+            {{ 'profile.2fa.description' | translate }}
+          </p>
+          <!--end::Notice-->
+          <!--begin::Wrapper-->
+          <div class="pb-10">
+            <!--begin::Option-->
+            <input
+              type="radio"
+              class="btn-check"
+              name="auth_option"
+              value="apps"
+              checked="checked"
+              id="kt_modal_two_factor_authentication_option_1"
+            />
+            <label
+              class="btn btn-outline btn-outline-dashed btn-active-light-primary p-7 d-flex align-items-center mb-5"
+              for="kt_modal_two_factor_authentication_option_1"
+            >
+              <i class="ki-duotone ki-setting-2 fs-4x me-4">
+                <span class="path1"></span>
+                <span class="path2"></span>
+              </i>
+              <span class="d-block fw-semibold text-start">
+                <span class="text-gray-900 fw-bold d-block fs-3">{{
+                  'profile.2fa.authApps' | translate
+                }}</span>
+                <span class="text-muted fw-semibold fs-6">{{
+                  'profile.2fa.authAppsDescription' | translate
+                }}</span>
+              </span>
+            </label>
+            <!--end::Option-->
+          </div>
+          <!--end::Options-->
+          <!--begin::Action-->
+          <button class="btn btn-primary w-100" (click)="secondStep = true">
+            {{ 'profile.2fa.continue' | translate }}
+          </button>
+          <!--end::Action-->
+        </div>
+        <!--end::Options-->
+        <!--begin::Apps-->
+        <div [ngClass]="{ 'd-none': !secondStep }" data-kt-element="apps">
+          <!--begin::Heading-->
+          <h3 class="text-gray-900 fw-bold mb-7">
+            {{ 'profile.2fa.authApps' | translate }}
+          </h3>
+          <!--end::Heading-->
+          <!--begin::Description-->
+          <div class="text-gray-500 fw-semibold fs-6 mb-10">
+            {{ 'profile.2fa.authAppsDescription2' | translate }}
+            <a
+              href="https://support.google.com/accounts/answer/1066447?hl=en"
+              target="_blank"
+              >Google Authenticator</a
+            >,
+            <a
+              href="https://www.microsoft.com/en-us/account/authenticator"
+              target="_blank"
+              >Microsoft Authenticator</a
+            >, <a href="https://authy.com/download/" target="_blank">Authy</a>, or
+            <a href="https://support.1password.com/one-time-passwords/" target="_blank"
+              >1Password</a
+            >{{ 'profile.2fa.authAppsDescription3' | translate }}
+            <!--begin::QR code image-->
+            <div class="pt-5 text-center">
+              <img [src]="qrImage" alt="" class="mw-150px" />
+            </div>
+            <!--end::QR code image-->
+          </div>
+          <!--end::Description-->
+          <!--begin::Notice-->
+          <div
+            class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-10 p-6"
+          >
+            <!--begin::Icon-->
+            <i class="ki-duotone ki-information fs-2tx text-warning me-4">
+              <span class="path1"></span>
+              <span class="path2"></span>
+              <span class="path3"></span>
+            </i>
+            <!--end::Icon-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-stack flex-grow-1">
+              <!--begin::Content-->
+              <div class="fw-semibold">
+                <div class="fs-6 text-gray-700">
+                  {{ 'profile.2fa.recoverCode' | translate }}
+                  <div class="fw-bold text-gray-900 pt-2">
+                    {{ secretKey }}
+                  </div>
+                </div>
+              </div>
+              <!--end::Content-->
+            </div>
+            <!--end::Wrapper-->
+          </div>
+          <!--end::Notice-->
+          <!--begin::Form-->
+          <form
+            data-kt-element="apps-form"
+            class="form"
+            action="#"
+            (submit)="verifyOtp()"
+          >
+            <!--begin::Input group-->
+            <div class="mb-10 fv-row">
+              <input
+                type="text"
+                class="form-control form-control-lg form-control-solid"
+                placeholder="{{ 'profile.2fa.enterCode' | translate }}"
+                name="code"
+                [(ngModel)]="otp"
+              />
+            </div>
+            <!--end::Input group-->
+            <!--begin::Actions-->
+            <div class="d-flex flex-center">
+              <button class="btn btn-light me-3" type="reset" (click)="close()">
+                {{ 'general.cancel' | translate }}
+              </button>
+              <button type="submit" data-kt-element="apps-submit" class="btn btn-primary">
+                <span class="indicator-label" (click)="verifyOtp()">{{
+                  'general.submit' | translate
+                }}</span>
+                <span class="indicator-progress"
+                  >{{ 'layoutBuilder.pleaseWait' | translate }}
+                  <span class="spinner-border spinner-border-sm align-middle ms-2"></span
+                ></span>
+              </button>
+            </div>
+            <!--end::Actions-->
+          </form>
+          <!--end::Form-->
+        </div>
+        <!--end::Options-->
+      </div>
+      <!--begin::Modal body-->
+    </div>
+    <!--end::Modal content-->
+  </div>
+  <!--end::Modal header-->
+</div>

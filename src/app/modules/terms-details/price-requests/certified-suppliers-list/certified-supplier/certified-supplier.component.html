@@ -1,0 +1,103 @@
+<div class="supplier-item">
+  @if (selectMode) {
+  <input
+    type="checkbox"
+    [checked]="supplier.selected"
+    class="supplier-select"
+    [class.ar]="translate.currentLang === 'ar'"
+    (change)="toggleSupplierHandler($event)"
+  />
+  }
+  <div class="suppliername">
+    <div class="icon-name">
+      <span>{{ supplier.supplierName }}</span>
+    </div>
+    <div class="btns-actions">
+      @if (userRoles.includes(role.SiteEngineer)) {
+      <button type="button" class="add-supply" (click)="openAddSupplyDialog()">
+        <i class="ki-duotone ki-plus"> </i>
+        {{ translation.requestSupply | translate }}
+      </button>
+      } @if (!selectMode && enableOpenAddSupplierBtn) {
+      <button
+        type="button"
+        [title]="'general.addFile' | translate"
+        class="selectfile btn btn-icon btn-bg-light btn-color-primary btn-xs"
+      >
+        <i class="ki-duotone ki-paper-clip fs-2"> </i>
+        <input type="file" (change)="uploadFile($event)" />
+      </button>
+      <button
+        type="button"
+        [title]="'general.delete' | translate"
+        (click)="removeSupplier()"
+        class="btn btn-icon btn-bg-light btn-color-danger btn-xs"
+      >
+        <i class="ki-duotone ki-trash fs-2">
+          <span class="path1"></span>
+          <span class="path2"></span>
+          <span class="path3"></span>
+          <span class="path4"></span>
+          <span class="path5"></span>
+        </i>
+      </button>
+      }
+    </div>
+  </div>
+  @for (attachment of supplier.attachments; track attachment.uniqueKey) {
+  <div class="attachment-container">
+    <div class="icon-name">
+      <img
+        [src]="'assets/media/svg/files/' + attachment.extension + '.svg'"
+        width="20"
+        height="20"
+        class="theme-light-show file-icon"
+        alt=""
+      />
+      <span>{{ attachment.displayName }}</span>
+    </div>
+    <div class="btns-actions">
+      @if (selectMode) {
+      <button
+        type="button"
+        [title]="'general.download' | translate"
+        (click)="downloadAttachment(attachment)"
+        class="btn btn-icon btn-bg-light btn-color-primary btn-xs"
+      >
+        <i class="ki-duotone ki-arrow-down">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
+      </button>
+      } @else { @if (enableOpenAddSupplierBtn) { @if (supplier.attachments.length > 1) {
+      <button
+        type="button"
+        [title]="'general.delete' | translate"
+        (click)="removeFile(attachment.uniqueKey)"
+        class="btn btn-icon btn-bg-light btn-color-danger btn-xs"
+      >
+        <i class="ki-duotone ki-trash fs-2">
+          <span class="path1"></span>
+          <span class="path2"></span>
+          <span class="path3"></span>
+          <span class="path4"></span>
+          <span class="path5"></span>
+        </i>
+      </button>
+      } } @else {
+      <button
+        type="button"
+        [title]="'general.download' | translate"
+        (click)="downloadAttachment(attachment)"
+        class="btn btn-icon btn-bg-light btn-color-primary btn-xs"
+      >
+        <i class="ki-duotone ki-arrow-down">
+          <span class="path1"></span>
+          <span class="path2"></span>
+        </i>
+      </button>
+      } }
+    </div>
+  </div>
+  }
+</div>

@@ -1,0 +1,77 @@
+<div class="card card-xl-stretch pb-5 mb-xl-8">
+  <div class="card-header border-0 pt-6">
+    <div class="cardtitle">
+      <h1>{{ 'SupplierApproval.table.title' | translate }}</h1>
+      <h3>
+        <a routerLink="../">{{ 'SupplierApproval.table.title' | translate }}</a> /
+        <span>{{ translation?.addNew | translate }}</span>
+      </h3>
+    </div>
+  </div>
+  <div class="card-body py-3">
+    <form [formGroup]="newEditRequestForm" (ngSubmit)="submitApproval()">
+      <app-custom-input
+        [type]="'select'"
+        [label]="translation?.projectName"
+        [selectOptions]="allProjects()"
+        [selectValue]="'id'"
+        (dropdownChanged)="dropdownChanged(allProjects(), $event)"
+        [selectLabel]="'name'"
+        [formControl]="projectId"
+        [placeholder]="translation?.chooseProject"
+      ></app-custom-input>
+      <app-custom-input
+        [type]="'select'"
+        [label]="translation?.terms"
+        [selectOptions]="allTerms()"
+        [selectValue]="'id'"
+        [selectLabel]="'title'"
+        [formControl]="termId"
+        [placeholder]="translation?.chooseTerm"
+      ></app-custom-input>
+      <app-custom-input
+        [type]="'textarea'"
+        [label]="translation?.notes"
+        [formControl]="notes"
+        [placeholder]="translation?.notes"
+      ></app-custom-input>
+
+      @if (phase.value === supplierApprovalRequestPhase.TechnicalOfficeReview ||
+      phase.value === supplierApprovalRequestPhase.SupplierSelection) {
+      <hr />
+
+      <app-supplier-list
+        [suppliersList]="suppliers"
+        [translation]="translation"
+        [phase]="phase.value"
+      ></app-supplier-list>
+      }
+
+      <div class="approval-buttons">
+        @if (acceptRejectMode && !isRejected) {
+        <button type="button" class="reject-btn" (click)="openRejectFormDialog()">
+          {{ translation?.reject | translate }}
+        </button>
+        } @if ((mode !== 'view') || (user.id !== createdBy.value && !isRejected &&
+        phase.value <= 2)) {
+        <button
+          type="submit"
+          [disabled]="
+            newEditRequestForm.status === 'INVALID' ||
+            (phase.value === supplierApprovalRequestPhase.TechnicalOfficeReview &&
+              suppliers.length === 0) ||
+            (phase.value === supplierApprovalRequestPhase.SupplierSelection &&
+              noSelectedSuppliers)
+          "
+        >
+          {{ translation?.send | translate }}
+        </button>
+        } @if (isRejected || !acceptRejectMode) {
+        <a routerLink="../">{{
+          mode === 'view' ? ('general.back' | translate) : ('general.cancel' | translate)
+        }}</a>
+        }
+      </div>
+    </form>
+  </div>
+</div>

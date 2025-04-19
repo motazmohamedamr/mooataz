@@ -1,0 +1,212 @@
+@defer(on idle) { @if (_control) {
+
+<div class="fv-row mt-1">
+  <!--begin::Label-->
+  @if (label) {
+  <label
+    [ngClass]="{ required: _control.hasValidator(requiredValidator) }"
+    class="fw-semibold fs-6"
+    >{{ label }}</label
+  >
+  }
+  <!--end::Label-->
+  <!--begin::Input-->
+  @if (type === 'text') {
+  <div class="inputflex">
+    <input
+      type="text"
+      class="form-control form-control-solid mb-3 mb-lg-0"
+      (input)="changeValueOnInput($event)"
+      (blur)="changeValueOnBlur($event)"
+      [formControl]="_control"
+      [placeholder]="placeholder"
+      [ngClass]="{
+            rtl: inputIcon && _translateService.currentLang === 'ar',
+          }"
+      [inputMode]="inputMode"
+    />
+    @if (inputIcon) {
+    <span class="iconinput">{{ inputIcon }}</span>
+    }
+  </div>
+  } @else if(type === 'select') {
+  <mat-select
+    [formControl]="_control"
+    [placeholder]="placeholder"
+    (selectionChange)="selectDropdownChanged($event)"
+    [className]="'form-control form-control-solid mb-3 mb-lg-0'"
+  >
+    <mat-option>
+      <ngx-mat-select-search
+        [placeholderLabel]="placeholder || label"
+        [noEntriesFoundLabel]="'general.noDataFound' | translate"
+        [formControl]="selectSearchFilterCtrl"
+      ></ngx-mat-select-search>
+    </mat-option>
+
+    <mat-option *ngFor="let option of filteredOptions" [value]="option[selectValue]">
+      @if (selectOptionHasLangValues) {
+      {{ option[selectLabel][_translateService.currentLang] }}
+      } @else {
+      {{ option[selectLabel] }}
+      }
+    </mat-option>
+  </mat-select>
+  } @else if(type === 'date') {
+  <div class="input-group datepicker">
+    <input
+      class="form-control"
+      [placeholder]="placeholder"
+      [formControl]="_control"
+      [minDate]="minDate || config.minDate"
+      [maxDate]="maxDate || config.maxDate"
+      (ngModelChange)="dateChanged($event)"
+      dateFormat="dd-MMM-yyyy"
+      ngbDatepicker
+      #d="ngbDatepicker"
+    />
+    <button
+      class="btn btn-outline-secondary bi bi-calendar3"
+      (click)="d.toggle()"
+      type="button"
+    ></button>
+  </div>
+  } @else if(type === 'number') {
+  <div class="inputflex">
+    <input
+      type="number"
+      min="0"
+      class="form-control form-control-solid mb-3 mb-lg-0"
+      (input)="changeValueOnInput($event)"
+      (blur)="changeValueOnBlur($event)"
+      [formControl]="_control"
+      [placeholder]="placeholder"
+      [ngClass]="{
+            rtl: inputIcon && _translateService.currentLang === 'ar',
+          }"
+      [inputMode]="inputMode"
+    />
+    @if (inputIcon) {
+    <span class="iconinput">{{ inputIcon }}</span>
+    }
+  </div>
+
+  } @else if(type === 'dateHijri') {
+  <app-hijri-date-picker
+    [placeholder]="placeholder"
+    [formControl]="_control"
+    [backgroundColor]="'#EEF1F5'"
+    (dateChangeEv)="dateChanged($event)"
+    [iconColor]="'#158456'"
+  ></app-hijri-date-picker>
+  } @else if(type === 'textarea') {
+  <div class="inputflex">
+    <textarea
+      class="form-control form-control-solid"
+      [placeholder]="placeholder"
+      [formControl]="_control"
+    ></textarea>
+  </div>
+  }
+  <!--begin::Validation-->
+  <div
+    *ngIf="_control?.touched && _control?.hasError('required')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.required' | translate }}</div>
+  </div>
+  <div
+    *ngIf="_control?.touched && _control?.hasError('maxlength')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.maxLength' | translate : { numChars: maxLengthNumChars } }}</div>
+  </div>
+  <div
+    *ngIf="_control?.touched && _control?.hasError('min')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>
+      {{ 'validations.min' | translate : { numChars: _control.errors?.min?.min } }}
+    </div>
+  </div>
+  <div
+    *ngIf="_control?.touched && _control?.hasError('max')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>
+      {{ 'validations.max' | translate : { numChars: _control.errors?.max?.max } }}
+    </div>
+  </div>
+  <div
+    *ngIf="_control?.touched && _control?.hasError('notNumber')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.numberOnly' | translate }}</div>
+  </div>
+  <div
+    *ngIf="_control?.hasError('issuanceDate_issuanceDateLessThanAwardDate')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.issuanceDateLessThanAwardDate' | translate }}</div>
+  </div>
+  <div
+    *ngIf="_control?.hasError('contractSigningDate_signingDateLessThanIssuanceDate')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.signingDateLessThanIssuanceDate' | translate }}</div>
+  </div>
+  <div
+    *ngIf="
+      _control?.hasError('contractPrimaryReceiptDate_PrimaryReceiptDateLessThanFinalDate')
+    "
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.contractPrimaryReceiptDateLessThanFinalDate' | translate }}</div>
+  </div>
+  <div
+    *ngIf="_control?.hasError('contractReceiptDate_receiptDateLessThanSigningDate')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.contractReceiptDateLessThanSigningDate' | translate }}</div>
+  </div>
+  <div
+    *ngIf="_control?.hasError('guaranteeDate_LessThanAwardDate')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.guaranteeDateLessThanAwardDate' | translate }}</div>
+  </div>
+  <div
+    *ngIf="_control?.hasError('issuanceDate_issuanceDateLessThanGuaranteeDate')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.issuanceDateLessThanGuaranteeDate' | translate }}</div>
+  </div>
+  <div
+    *ngIf="_control?.hasError('ibanErr')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'Suppliers.modal.ibanErr' | translate }}</div>
+  </div>
+  <div
+    *ngIf="_control?.hasError('lessthanzero')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ 'validations.lessthanzero' | translate }}</div>
+  </div>
+  <div
+    *ngIf="_control?.touched && _control?.hasError('validation')"
+    class="fv-plugins-message-container invalid-feedback"
+  >
+    <div>{{ _control?.errors['validation'] }}</div>
+  </div>
+  <!--end::Validation-->
+  <!--end::Input-->
+</div>
+
+} } @placeholder {
+<div class="fv-row mt-1">
+  <label class="fw-semibold fs-6">{{ label }}</label>
+  <input disabled class="form-control form-control-solid" />
+</div>
+<!-- <span>{{ 'general.loading' | translate }}</span> -->
+}

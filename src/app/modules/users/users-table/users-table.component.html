@@ -1,0 +1,14 @@
+<app-aio-table
+  *ngIf="tableBuilder"
+  [title]="'users.table.title' | translate"
+  [description]="'users.table.description' | translate"
+  [tableComponent]="this"
+>
+</app-aio-table>
+
+<app-users-create-update
+  [item]="currentItem"
+  [roles]="roles"
+  (output)="onReload()"
+  (initialized)="handleModal()"
+></app-users-create-update>

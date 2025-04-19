@@ -1,0 +1,28 @@
+<table
+  id="kt_profile_overview_table"
+  class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+>
+  <thead class="fs-7">
+    <tr>
+      <th scope="col">{{ translation.transactionDate | translate }}</th>
+      <th scope="col">{{ translation.amount | translate }}</th>
+      <th scope="col">{{ translation.remainingAmount | translate }}</th>
+    </tr>
+  </thead>
+  <tbody class="fs-6">
+    @for (transaction of transactions; let idx = $index; track idx) {
+    <tr>
+      <td>{{ transaction?.date | date : 'd MMM y' : '' : locale }}</td>
+      <td>{{ transaction.amount }}</td>
+      <td>{{ transaction.remain }}</td>
+    </tr>
+    } @empty {
+    <tr>
+      <td>
+        <h2>{{ translation?.noTransactions | translate }}</h2>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+

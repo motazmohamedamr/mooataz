@@ -1,0 +1,21 @@
+@for (attachmentWithType of attachmentsWithTypes; track attachmentWithType.subtype) { @if
+(attachmentWithType.files.length > 0) {
+<div class="subtype">
+  <h2>
+    {{
+      'termsDetails.attachmentModal.attachmentTypes.' +
+        attachmentSubType[attachmentWithType.subtype] | translate
+    }}
+  </h2>
+  <div class="card-list">
+    @for (attachment of attachmentWithType.files; track attachment.uniqueKey) {
+    <app-attachment-box
+      [attachment]="attachment"
+      [user]="user"
+      [extract]="extract"
+      (refreshRequest)="refreshRequest.emit()"
+    ></app-attachment-box>
+    }
+  </div>
+</div>
+} }

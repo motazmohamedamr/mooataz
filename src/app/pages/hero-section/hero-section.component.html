@@ -1,0 +1,89 @@
+<section class="hero" id="main">
+  <img
+    *ngFor="let image of images; let i = index"
+    [src]="image.src"
+    [alt]="image.alt"
+    [class.active]="i === currentIndex()"
+    class="hero-image"
+  />
+
+  <div class="content">
+    <nav>
+      <div class="logo">
+        <img src="./assets/media/homepage/motabea-logo-text-white.svg" alt="Logo" />
+        <img src="./assets/media/homepage/motabea-logo-image-white.svg" alt="Logo" />
+      </div>
+      <ul
+        class="nav-links"
+        [ngStyle]="{
+      'margin-right': translate.currentLang === 'ar' ? '8px': 'initial',
+      'margin-left': translate.currentLang === 'en' ? '8px': 'initial',
+    }"
+      >
+        <li>
+          <a>{{ translation?.home }}</a>
+        </li>
+        <li>
+          <a (click)="scrollToElement('features')">{{ translation?.features }}</a>
+        </li>
+        <li>
+          <a (click)="scrollToElement('solutions')">{{ translation?.solutions }}</a>
+        </li>
+        <li>
+          <a (click)="scrollToElement('pricing')">{{ translation?.pricing }}</a>
+        </li>
+      </ul>
+      <button class="contact">{{ translation?.contactUs }}</button>
+      <div
+        class="language"
+        (mouseenter)="showLanguageDropdown = true"
+        (mouseleave)="showLanguageDropdown = false"
+      >
+        <div class="language-selector">
+          <img src="./assets/media/homepage/language-logo.svg" alt="Logo" />
+          <span>{{ translate.currentLang.toUpperCase() }}</span>
+        </div>
+        <div class="language-dropdown" [class.show]="showLanguageDropdown">
+          <div
+            class="language-option"
+            (click)="switchLanguage('en')"
+            [class.active]="translate.currentLang === 'en'"
+          >
+            <img src="./assets/media/flags/united-states.svg" alt="Logo" />
+            <span>English</span>
+          </div>
+          <div
+            class="language-option"
+            (click)="switchLanguage('ar')"
+            [class.active]="translate.currentLang === 'ar'"
+          >
+            <img src="./assets/media/flags/saudi-arabia.svg" alt="Logo" />
+            <span>Arabic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-start-free-trial">
+        @if (!user) {
+        <a [routerLink]="['auth', 'login']" [queryParams]="{ returnUrl: 'dashboard' }">{{
+          translation?.login
+        }}</a>
+        } @else {
+        <a [routerLink]="['dashboard']">{{ translation?.dashboard }}</a>
+        }
+        <button>
+          <a [routerLink]="['registration']">{{ translation?.startFreeTrial }}</a>
+        </button>
+      </div>
+    </nav>
+
+    <article class="hero-content">
+      <h1>{{ translation?.heroTitle }}</h1>
+      <h2>{{ translation?.heroSubtitle }}</h2>
+      <div class="btns">
+        <button class="start-free-trial">{{ translation?.startFreeTrial }}</button>
+        <button class="requestDemo">{{ translation?.requestDemo }}</button>
+      </div>
+    </article>
+  </div>
+</section>

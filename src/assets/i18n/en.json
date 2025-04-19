@@ -1,0 +1,2219 @@
+{
+  "general": {
+    "error": "An error occurred",
+    "loadingChart": "Loading...",
+    "project": "Motabe3",
+    "description": "Streamlining Projects, Empowering Administrators",
+    "open": "Open",
+    "settings": "Settings",
+    "showMore": "Show More",
+    "add": "Add",
+    "errorDownloadingFile": "Error in downloading file... please try again",
+    "create": "Create",
+    "update": "Update",
+    "delete": "Delete",
+    "downloadComplete": "Download Complete",
+    "cancel": "Cancel",
+    "download": "Download",
+    "view": "View",
+    "close": "Close",
+    "title": "Title",
+    "notExist": "Not exist",
+    "all": "All",
+    "notifications": "Notifications",
+    "alerts": "Alerts",
+    "updates": "Updates",
+    "logs": "Logs",
+    "ar": "Arabic Name",
+    "en": "English Name",
+    "name": "Name",
+    "selected": "selected",
+    "back": "Back",
+    "search": "Search",
+    "itemsPerPageLabel": "Items Per Page",
+    "firstPageLabel": "First Page",
+    "previousPageLabel": "Previous Page",
+    "nextPageLabel": "Next Page",
+    "lastPageLabel": "Last Page",
+    "of": "Of",
+    "empty": "Empty",
+    "putSuccess": "Update has been completed successfully!",
+    "filter": "Filter",
+    "filterDialog": "Filter Dialog",
+    "more": "More",
+    "addFile": "Add File",
+    "clear": "Clear",
+    "yes": "Yes",
+    "noAlerts": "No Alerts",
+    "noUpdates": "No updates",
+    "noLogs": "No logs",
+    "no": "No",
+    "confirm": "Confirm",
+    "changeLanguage": "تغيير اللغة",
+    "backOnline": "Yay, we're back online!",
+    "submit": "Submit",
+    "saveChanges": "Save Changes",
+    "save": "Save",
+    "discard": "Discard",
+    "loading": "Please wait...",
+    "noDataFound": "No Data Found",
+
+    "uploadFiles": "Upload files or drag and drop",
+    "uploadFile": "Upload a file or drag and drop",
+    "maxSize": "up to {{maxsize}}",
+
+    "filesUploadedSuccess": "Files uploaded successfully",
+    "fileDeleted": "File deleted successfully",
+    "table": {
+      "search": "Search ...",
+      "filter": "Filter",
+      "addNew": "Add New",
+      "actions": "Actions",
+      "emptyTable": "No items found.",
+      "emptyTableDesc": "There are no items to show for the applied filters.",
+      "paginationInfo": "Showing {{start}} to {{end}} of total {{total}} entries"
+    },
+    "dashboard": {
+      "tasksSummary": "Tasks Summary",
+      "requestSummary": "Request Summary",
+      "financialPositionSummary": "Financial Position Summary",
+      "priceRequests": "Price Request",
+      "convenantRequests": "Covenant Request",
+      "supplyRequests": "Supply Request",
+      "extractRequest": "Extract Requests",
+      "inProgress": "In Progress",
+      "notStarted": "Not Started",
+      "finished": "Finished",
+      "actualValue": "Expenses",
+      "finalValue": "Project value",
+      "timelineSummary": "Timeline Summary",
+      "endingPeriod": "Total Duration",
+      "remainingPeriod": "Remaining duration",
+      "projectPeriod": "Project Duration",
+      "noProjects": "No Projects exist!",
+      "numberOfProjects": "Number of projects",
+      "numberOfRequests": "Number of requests",
+      "totalProjectValue": "Total projects value",
+      "elaspedDuration": "Elapsed duration",
+      "noData": "No data",
+      "monthsDuration": "{{duration}} months",
+      "tasksCount": "Tasks Count",
+      "ownerExtract": "Owner Extract",
+      "extracts": "Extracts",
+      "month": "month"
+    },
+    "sweetAlert": {
+      "success": {
+        "title": "Success!",
+        "text": "Operation has been completed successfully!",
+        "confirmButtonText": "Ok, got it!"
+      },
+      "cancellation": {
+        "text": "Are you sure you would like to cancel?",
+        "confirmButtonText": "Yes, cancel it!",
+        "cancelButtonText": "No, return"
+      },
+      "deletion": {
+        "title": "Delete",
+        "text": "Are you sure you would like to delete this item?",
+        "success": "Item has been deleted successfully!",
+        "error": "An error occurred while deleting the item. Please, try again.",
+        "confirmButtonText": "Yes, delete it!",
+        "cancelButtonText": "No, keep it"
+      },
+      "changeStatus": {
+        "title": "Change Status",
+        "text": "Are you sure you would like to change the status of this item?",
+        "success": "Status has been changed successfully!",
+        "error": "An error occurred while changing the status of the item. Please, try again.",
+        "confirmButtonText": "Yes, change it!",
+        "cancelButtonText": "No, keep it"
+      }
+    }
+  },
+  "homepage": {
+    "hero": {
+      "home": "Home",
+      "dashboard": "Dashboard",
+      "features": "Features",
+      "solutions": "Solutions",
+      "pricing": "Pricing",
+      "contactUs": "Contact Us",
+      "login": "Login",
+      "startFreeTrial": "Start Free Trial",
+      "heroTitle": "AI-Powered Project Management for Smarter Construction",
+      "heroSubtitle": "Optimize your construction projects with AI-driven cost estimation, real-time tracking, and workflow automation. Stay on budget, on schedule, and in control.",
+      "requestDemo": "Request a Demo"
+    },
+    "whymotabea": {
+      "whyChoose": " Why Choose Motabea",
+      "projectsManagementText": "Smarter Construction Management Starts Here",
+      "estimatePricingAI": "AI-Powered Cost Estimation",
+      "completeTasks": "Task & Workflow Automation",
+      "trackProjects": "Real-Time Project Tracking",
+      "resources": "Create and Follow Your Invoices",
+      "cloudBuilt": "Cloud-Based & Scalable",
+      "knowHowtoWork": "See How It Works"
+    },
+    "features": {
+      "title": "Features",
+      "allYouNeedToManage": "Everything You Need to Manage Construction Projects Efficiently",
+      "motabeaOffersTools": "Motabe3 offers powerful tools that automate processes, reduce risks, and keep your projects on track.",
+      "projectDashboardRealtime": "Real-Time Project Dashboard",
+      "watchProgress": "Monitor progress, expenses, and resource allocation instantly.",
+      "completeTasks": "Task & Workflow Automation ",
+      "trackUpdateTasks": "Assign, track, and update tasks in real-time for enhanced collaboration.",
+      "managementProjectsAI": "Transforming Construction Management with AI & Data Analytics",
+      "motabeaDashboard": "Motabe3 is an advanced construction management platform designed to help companies streamline workflows, optimize costs, and increase project efficiency. Powered by AI and real-time data insights, Motabe3 enables teams to make smarter decisions and ensure successful project execution",
+      "readOurStory": "Read Our Story"
+    },
+    "pricing": {
+      "pricing": "Pricing",
+      "title": "Find the Perfect Plan for Your Business",
+      "description": "Whether you’re managing small projects or large-scale construction sites, we have a plan that fits.",
+      "freeTrial": "Free Trial (14 Days)",
+      "monthly": "monthly",
+      "startFreeTrial": "Start Free Trial",
+      "taskProjectManagement": "Task & Project Management",
+      "basicAICostEstimation": "Basic AI Cost Estimation",
+      "limitedProjectTracking": "Limited Project Tracking",
+      "activeProject": "1 Active Project",
+      "basicSupport": "Basic Support",
+      "standardPlan": "Standard Plan",
+      "mostPopular": "Most Popular",
+      "chooseStandardPlan": "Choose Standard Plan",
+      "unlimitedProjectsUsers": "Unlimited Projects & Users",
+      "advancedAI": "Advanced AI-Powered Cost Estimation",
+      "resourceTaskManagement": "Resource & Task Management",
+      "automatedNotifications": "Automated Notifications & Alerts",
+      "liveChat": "24/7 Live Chat & Email Support",
+      "exportSupport": "Export Support",
+      "business": "Business",
+      "requestQuote": "Request a Quote",
+      "projectMembers": "Up to 5 project members",
+      "unlimitedtasks": "Unlimited tasks and projects",
+      "storage": "200GB storage",
+      "customAPI": "Custom API Integrations",
+      "unlimitedCostInsights": "Unlimited AI-Powered Cost Insights",
+      "customfields": "Custom fields",
+      "prioritySupportOnboarding": "Priority Support & Onboarding",
+      "exportcapabilities": "Export capabilities",
+      "apiaccess": "API access",
+      "advancedsecurityfeatures": "Advanced security features"
+    },
+    "contact": {
+      "contactUs": "Contact Us",
+      "description": "Let's Connect & Build the Future Together",
+      "phone": "Phone",
+      "email": "Email",
+      "ourOffice": "Our Office",
+      "nakheelTower": "Al-Nakheel Tower",
+      "street": "8266 King Fahad Branch Road Riyadh 12383",
+      "sendAMessage": "Send a message",
+      "haveQuestion": "Have a question or looking for investment opportunities? We're here to help. Reach out to us for inquiries about our projects, partnerships",
+      "fullName": "Full Name",
+      "fullnameRequired": "Full name is required.",
+      "emailRequired": "Email is required.",
+      "emailMessage": "Please enter a valid email address.",
+      "message": "Message",
+      "messageRequired": "Message is required.",
+      "sendMessage": "Send Message",
+      "enterYourName": "Enter Your Name",
+      "enterYourEmail": "Enter Your Email",
+      "enterYourMessage": "Write Message.."
+    },
+    "footer": {
+      "quickLinks": "Quick Links",
+      "home": "Home",
+      "features": "Features",
+      "ourStory": "Our Story",
+      "blogAndNews": "Blog & News",
+      "customerSupport": "Customer Support",
+      "faqs": "FAQs",
+      "supportCenter": "Support Center",
+      "contactUs": "Contact Us",
+      "legalAndPolicies": "Legal & Policies",
+      "termsAndConditions": "Terms & Conditions",
+      "privacyPolicy": "Privacy Policy",
+      "userManual": "User Manual",
+      "logoContent": "Motabe3 – AI-Powered Construction Management",
+      "copyright": "Motabe3 | {{year}} Motabe3 © All rights reserved"
+    },
+    "registration": {
+      "title": "Get Started with Your Free Trial!",
+      "description": "Create your MOTABEA account and take control of your construction projects with AI-powered efficiency.",
+      "fullNameRequired": "Full name is required.",
+      "emailRequired": "Email address is required.",
+      "phoneRequired": "Phone Number is required.",
+      "passwordRequired": "Password is required.",
+      "confirmPasswordRequired": "Confirm Password is required.",
+      "passwordsMatch": "Passwords do not match.",
+      "confirmThat": "I confirm that I have read and accept the terms and conditions",
+      "createAccount": "Create Account",
+      "needHelp": "Need help",
+      "contact": "? Contact",
+      "support": "Support",
+      "forAssistance": "for assistance.",
+      "fullName": "Full Name *",
+      "email": "Email Address *",
+      "companyName": "Company Name",
+      "password": "Password *",
+      "confirmPassword": "Confirm Password *",
+      "phoneNumber": "Phone Number *"
+    }
+  },
+  "errors": {
+    "noData": "Didn't receive any data!",
+    "err400": "Request cannot be processed successfully",
+    "err403": "You don't have the required permissions to move forward.",
+    "err422": "Invalid data. Please, check the form data and resubmit again",
+    "version": "You're running an old version of the website. Please, refresh and resubmit the form",
+    "general": "An error occurs while processing your request",
+    "invalid_file_type": "Invalid file type",
+    "required": "Required field",
+    "min": "The number should be greater than 5000",
+    "noConnection": "Couldn't connect to the server, please check your internet connection!"
+  },
+  "validations": {
+    "required": "This field is required",
+    "lessthanzero": "This field should not be less than zero",
+    "email": "Email must be in correct format",
+    "arabicOnly": "Input should in be in arabic only",
+    "englishOnly": "Input should be in english only",
+    "numberOnly": "Input should only contain numbers",
+    "maxLength": "Input should not contain more than {{numChars}} characters",
+    "min": "The value entered must be at least {{numChars}}",
+    "max": "The value entered should not exceed {{numChars}}",
+    "issuanceDateLessThanAwardDate": "Issuance Date should be after the award Issuance Date",
+    "signingDateLessThanIssuanceDate": "Signing Date should be more than or equal Issuance Date",
+    "contractPrimaryReceiptDateLessThanFinalDate": "Final Receipt Date should be after Primary Receipt Date",
+    "guaranteeDateLessThanAwardDate": "Guarantee Date should be after Award Date",
+    "issuanceDateLessThanGuaranteeDate": "Contract Issuance Date should be after or equal to Guarantee Date",
+    "contractReceiptDateLessThanSigningDate": "Receipt Date should be after signing date",
+    "emptyPeriod": "Contract Period should be at least one day"
+  },
+  "realTime": {
+    "disconnectedTitle": "Internet Connection Lost",
+    "disconnected": "Couldn't connect to the server!",
+    "reconnected": "Connection is back!"
+  },
+  "login": {
+    "title": "Welcome To Motabea",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login",
+    "forgot": "Forgot password ?",
+    "signUp": "Don't have an account ?"
+  },
+  "forgot": {
+    "title": "Forgot Password ?",
+    "description": "Enter your email to reset your password",
+    "email": "Email",
+    "submit": "Send Confirmation Email",
+    "error": "Sorry, looks like there are some errors detected, please try again.",
+    "success": "Your account has been successfully reset."
+  },
+  "reset": {
+    "title": "Reset Password",
+    "description": "Use the form below to reset your password",
+    "email": "Email",
+    "token": "Token",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Reset Password"
+  },
+  "2fa": {
+    "title": "Two Factor Authentication (2fa)",
+    "description": "Enter the verification code we sent",
+    "typeCode": "Type your 6 digit security code"
+  },
+  "profile": {
+    "title": "Profile Details",
+    "signInMethod": "Sign-in Method",
+    "emailAddress": "Email Address",
+    "password": "Password",
+    "passwordRequirements": "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number and one special character.",
+    "secureAccount": "Secure Your Account",
+    "secureAccountDescription": "Two-factor authentication adds an extra layer of security to your account. To log in, in addition you'll need to provide a 6 digit code",
+    "changePassword": "Change Password Notice",
+    "changePasswordDescription": "Changing your password regularly is a good security practice. Note that changing your password will log you out of all devices.",
+    "actions": {
+      "changeEmail": "Change Email",
+      "changePassword": "Change Password",
+      "enable": "Enable",
+      "disable": "Disable"
+    },
+    "2fa": {
+      "title": "Enable two factor authentication (2fa)",
+      "description": "In addition to your username and password, you’ll have to enter a code (delivered via app or SMS) to log into your account.",
+      "authApps": "Authenticator Apps",
+      "authAppsDescription": "Get codes from an app like Google Authenticator, Microsoft Authenticator, Authy or 1Password.",
+      "authAppsDescription2": "Using an authenticator app like",
+      "authAppsDescription3": ", scan the QR code. It will generate a 6 digit code for you to enter below",
+      "recoverCode": "If you having trouble using the QR code, select manual entry on your app, and enter your username and the code:",
+      "continue": "Continue",
+      "enterCode": "Enter authentication code",
+      "success": {
+        "title": "Success!",
+        "text": "Two factor authentication (2FA) is now enabled!",
+        "confirmButtonText": "Ok, got it!"
+      },
+      "disabled": {
+        "title": "Success!",
+        "text": "Two factor authentication (2FA) is now disabled!",
+        "confirmButtonText": "Ok, got it!"
+      },
+      "error": {
+        "title": "Error!",
+        "text": "Code is incorrect!",
+        "confirmButtonText": "The secret key is incorrect or an error occurred.",
+        "cancelButtonText": "Ok, got it!"
+      }
+    },
+    "fields": {
+      "avatar": "Avatar",
+      "fullName": "Full Name",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "firstNameHint": "e.g. John",
+      "lastNameHint": "e.g. Doe",
+      "phoneNumber": "Phone Number",
+      "phoneNumberHint": "e.g. +20 1234567890",
+      "email": "Enter a new Email Address",
+      "emailHint": "e.g. example@domain.com",
+      "currentPassword": "Current Password",
+      "passwordHint": "********",
+      "oldPassword": "Old Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password"
+    }
+  },
+  "users": {
+    "table": {
+      "title": "Users",
+      "description": "List of all users",
+      "userActivated": "User has been activated successfully!",
+      "userDeactivated": "User has been deactivated successfully!",
+      "endLockout": "User lockout has been ended successfully!",
+      "deactivationReason": "The user has been deactivated due to inactivity for more than 6 months.",
+      "resetPasswordDialog": {
+        "title": "Reset Password",
+        "text": "Are you sure you would like to reset the password for this user?",
+        "confirmButtonText": "Yes, reset it!",
+        "cancelButtonText": "No, keep it"
+      },
+      "statuses": {
+        "inactive": "Inactive",
+        "deactivated": "Deactivated",
+        "active": "Active"
+      },
+      "columns": {
+        "userDetails": "User Details",
+        "role": "Role",
+        "status": "Status",
+        "createdAt": "Created At"
+      },
+      "actions": {
+        "activate": "Activate",
+        "deactivate": "Deactivate",
+        "endLockout": "End Lockout",
+        "resetPassword": "Reset Password",
+        "disable2fa": "Disable 2FA"
+      },
+      "modal": {
+        "create": "Create User",
+        "edit": "Edit User",
+        "fields": {
+          "picture": "Picture",
+          "firstName": "First Name",
+          "firstNameHint": "e.g. John",
+          "lastName": "Last Name",
+          "lastNameHint": "e.g. Doe",
+          "email": "Email",
+          "emailHint": "e.g. example@domain.com",
+          "role": "Role",
+          "phoneNumber": "Phone Number"
+        },
+        "roles": {
+          "admin": {
+            "label": "Admin",
+            "description": "Admin users have full access to all features"
+          },
+          "siteEngineer": {
+            "label": "Site Engineer",
+            "description": "Site Engineers have access to their projects and tasks"
+          },
+          "projectManager": {
+            "label": "Project Manager",
+            "description": "Project Managers have access to create projects and tasks"
+          },
+          "projectsManager": {
+            "label": "Projects Manager",
+            "description": "Projects Managers have access to create projects and tasks"
+          },
+          "technicalOfficer": {
+            "label": "Technical Officer",
+            "description": "Technical Office users have access to create financial reports"
+          }
+        },
+        "added": {
+          "text": "User has been added successfully!",
+          "confirmButtonText": "Ok, got it!"
+        }
+      }
+    }
+  },
+  "layoutBuilder": {
+    "title": "Layout Builder",
+    "description": "The layout builder is to assist your set and configure your preferred project layout specifications and preview it in real-time and export the HTML template with its includable partials of this demo. The downloaded version does not include the assets folder since the layout builder's main purpose is to help to generate the final HTML code without hassle. Layout builder changes don't affect pages with layout wrappers.",
+    "header": {
+      "title": "Header",
+      "fixedHeader": "Fixed Header",
+      "leftContent": "Left Content",
+      "width": "Width",
+      "desktop": "Desktop",
+      "tabletMobile": "Tablet & Mobile",
+      "enableFixedHeader": "Enable fixed header",
+      "menu": "Menu",
+      "pageTitle": "Page title",
+      "selectHeaderLeftContentDesc": "Select header left content type.",
+      "selectHeaderWidthDesc": "Select header width type.",
+      "fluid": "Fluid",
+      "Fixed": "Fixed"
+    },
+    "toolbar": {
+      "title": "Toolbar",
+      "display": "Display",
+      "displayToolbar": "Display toolbar",
+      "width": "Width",
+      "selectLayoutWithType": "Select layout width type.",
+      "fluid": "Fluid",
+      "Fixed": "Fixed"
+    },
+    "pageTitle": {
+      "title": "Page Title",
+      "display": "Display",
+      "displayPagetitle": "Display page title",
+      "breadcrumb": "Breadcrumb"
+    },
+    "aside": {
+      "title": "Aside",
+      "display": "Display",
+      "displayAside": "Display aside"
+    },
+    "content": {
+      "title": "Content",
+      "width": "Width",
+      "selectLayoutWithType": "Select layout width type.",
+      "fluid": "Fluid",
+      "Fixed": "Fixed"
+    },
+    "footer": {
+      "title": "Footer",
+      "width": "Width",
+      "selectLayoutWithType": "Select layout width type.",
+      "fluid": "Fluid",
+      "Fixed": "Fixed"
+    },
+    "preview": "Preview",
+    "pleaseWait": "Please wait...",
+    "reset": "Reset"
+  },
+  "multiTenancy": {
+    "table": {
+      "title": "Tenants",
+      "description": "List of all tenants",
+      "tenantActivated": "Tenant has been activated successfully!",
+      "tenantDeactivated": "Tenant has been deactivated successfully!",
+      "columns": {
+        "tenantDetails": "Tenant Details",
+        "adminEmail": "Admin Email",
+        "status": "Status",
+        "validTo": "Valid To"
+      },
+      "actions": {
+        "activate": "Activate",
+        "deactivate": "Deactivate"
+      },
+      "statuses": {
+        "pending": "Pending",
+        "ready": "Ready",
+        "active": "Active",
+        "inactive": "Inactive",
+        "suspended": "Suspended"
+      },
+      "modal": {
+        "create": "Create Tenant",
+        "edit": "Edit Tenant",
+        "fields": {
+          "changeLogo": "Change Logo",
+          "logo": "Logo",
+          "logoHint": "Allowed file types: png, jpg, jpeg.",
+          "nameAr": "Name (Arabic)",
+          "nameArHint": "e.g. شركة العربي",
+          "nameEn": "Name (English)",
+          "nameEnHint": "e.g. Arabi Company",
+          "connectionString": "Connection String",
+          "connectionStringHint": "e.g. Server=...",
+          "adminEmail": "Admin Email",
+          "adminEmailHint": "e.g. example@tenant.com",
+          "testConnection": "Test Connection"
+        },
+        "connected": {
+          "title": "Connection has been established successfully!",
+          "confirmButtonText": "Ok, got it!"
+        },
+        "disconnected": {
+          "title": "Connection has been failed!",
+          "text": "Please, check the connection string and try again.",
+          "confirmButtonText": "Ok, got it!"
+        },
+        "added": {
+          "text": "Tenant has been added successfully!",
+          "confirmButtonText": "Ok, got it!"
+        }
+      }
+    }
+  },
+  "contract": {
+    "contractSaved": "Contract Saved successfully!",
+    "table": {
+      "title": "Contracts",
+      "description": "List of all contracts",
+      "columns": {
+        "refNum": "Reference",
+        "Name": "Project Name",
+        "Type": "Type",
+        "ClientName": "Client Name",
+        "Date": "Contract Date",
+        "status": "Status"
+      },
+      "statuses": {
+        "draft": "Draft",
+        "started": "Started",
+        "notstarted": "Not Started",
+        "initialreceipt": "Initial Receipt",
+        "finalreceipt": "Final Receipt",
+        "inprogress": "In Progress",
+        "canceled": "Cancelled",
+        "finished": "Finished"
+      }
+    },
+    "stepper": {
+      "main": {
+        "title": "Contract Details",
+        "subtitle": "All preliminary information about the contract"
+      },
+      "award": {
+        "title": "Award",
+        "subtitle": "Specify all award details"
+      },
+      "delegation": {
+        "title": "Delegation",
+        "subtitle": "Specify all authorization details"
+      },
+      "guarantee": {
+        "title": "Final bank Guarantee",
+        "subtitle": "Specify the details of the final bank guarantee"
+      },
+      "details": {
+        "title": "Contract data",
+        "subtitle": "Specify all contract data details"
+      },
+      "operations": {
+        "title": "Operations",
+        "subtitle": "Specify all operation details"
+      },
+      "terms": {
+        "title": "Terms Table",
+        "subtitle": "Specify all location receiving details"
+      },
+      "fines": {
+        "title": "Fines",
+        "subtitle": "Specify all fine details"
+      }
+    },
+    "form": {
+      "details": {
+        "type": {
+          "label": "Contract Type",
+          "placeholder": "Choose Contract Type"
+        },
+        "client": {
+          "label": "Client",
+          "placeholder": "Choose Client"
+        },
+        "refNo": {
+          "label": "Ref Number",
+          "placeholder": "Enter Ref Number"
+        },
+        "country": {
+          "label": "Country",
+          "placeholder": "Choose Country"
+        },
+        "name": {
+          "label": "Contract Name",
+          "placeholder": "Enter Contract Name"
+        },
+        "Competition": "Competition",
+        "DirectOrder": "Direct Order",
+        "savesuccess": "Contract details has been saved successfully"
+      },
+      "award": {
+        "awardNumber": {
+          "label": "Award Order Number",
+          "placeholder": "Enter Award Order Number"
+        },
+        "awardOrderIssuanceDate": {
+          "label": "Award Order Issuance Date",
+          "placeholder": "Select Date"
+        },
+        "receiptAwardOrderDate": {
+          "label": "Award Order Receipt Date",
+          "placeholder": "Select Date"
+        },
+        "awardOrderIssuanceHijriDate": {
+          "label": "Award Order Issuance Date - Hijri",
+          "placeholder": "Select Date"
+        },
+        "receiptAwardOrderHijriDate": {
+          "label": "Award Order Receipt Date - Hijri",
+          "placeholder": "Select Date"
+        },
+        "displayNumber": {
+          "label": "Display Number",
+          "placeholder": "Enter Display Number"
+        },
+        "itimadCompetitionNumber": {
+          "label": "Itimad Competition Number",
+          "placeholder": "Enter Itimad Competition Number"
+        },
+        "initialTotalPrice": {
+          "label": "Initial Total Price",
+          "placeholder": "Enter Initial Total Price"
+        },
+        "initialTotalPriceInLetters": {
+          "label": "Discounted Total Price",
+          "placeholder": "Enter Discounted Total Price"
+        },
+        "discountPercentage": {
+          "label": "Discount Percentage (%)",
+          "placeholder": "Enter Discount Percentage (%)"
+        },
+        "discountValue": {
+          "label": "Discount Value",
+          "placeholder": "Enter Value"
+        },
+        "discountInLetters": {
+          "label": "Discount",
+          "placeholder": "Enter Discount"
+        },
+        "vatPercentage": {
+          "label": "VAT Percentage",
+          "placeholder": "Enter Percentage"
+        },
+        "vatValue": {
+          "label": "Vat Value",
+          "placeholder": "Enter Value-Added Tax"
+        },
+        "vatValueInLetters": {
+          "label": "VAT",
+          "placeholder": "Enter VAT"
+        },
+        "finalTotalPrice": {
+          "label": "Final Total Price (After Discount and VAT)",
+          "placeholder": "Enter Final Total Price"
+        },
+        "finalPriceInLetters": {
+          "label": "Final Price",
+          "placeholder": "Enter Final Price"
+        },
+        "savesuccess": "Contract award has been saved successfully"
+      },
+      "delegation": {
+        "commerceChamberId": {
+          "label": "Commerce Chamber ID",
+          "placeholder": "Select Chamber"
+        },
+        "documentNumber": {
+          "label": "Document Number",
+          "placeholder": "Enter Document Number"
+        },
+        "delegatedToName": {
+          "label": "Delegate",
+          "placeholder": "Select Delegate"
+        },
+        "file": {
+          "label": "Attach Authorization Document",
+          "placeholder": ""
+        },
+        "notes": {
+          "label": "Notes",
+          "placeholder": "Enter Notes"
+        },
+        "savesuccess": "Contract delegation details has been saved successfully"
+      },
+      "guarantee": {
+        "isBankHasFinalGuarantee": {
+          "label": "Does the contract have a bank guarantee?",
+          "placeholder": "Select Yes or No"
+        },
+        "bankId": {
+          "label": "Bank",
+          "placeholder": "Select Bank"
+        },
+        "bankGuaranteePercentage": {
+          "label": "Bank Guarantee Percentage (%)",
+          "placeholder": "Enter Percentage"
+        },
+        "bankGuaranteeAmount": {
+          "label": "Bank Guarantee Amount",
+          "placeholder": "Enter Amount"
+        },
+        "bankGuaranteeAmountInLetters": {
+          "label": "Bank Guarantee Amount in Currency",
+          "placeholder": "Enter Amount in Currency"
+        },
+        "awardTotalPrice": {
+          "label": "Total Contract Award Amount",
+          "placeholder": "Enter Amount"
+        },
+        "awardTotalPriceInLetters": {
+          "label": "Amount in Words",
+          "placeholder": "Select Amount"
+        },
+        "bankGuaranteeValidityFrom": {
+          "label": "Bank Guarantee Validity From",
+          "placeholder": "Select Start Date"
+        },
+        "bankGuaranteeValidityTo": {
+          "label": "Bank Guarantee Validity To",
+          "placeholder": "Select End Date"
+        },
+        "receivedOrganization": {
+          "label": "Organization Receiving Bank Guarantee",
+          "placeholder": "Enter Organization"
+        },
+        "notes": {
+          "label": "Notes",
+          "placeholder": "Enter Notes"
+        },
+        "savesuccess": "Bank Guarantee Details Saved Successfully"
+      },
+      "contractDetails": {
+        "clientId": {
+          "label": "Client",
+          "placeholder": "Select Client"
+        },
+        "refNumber": {
+          "label": "Contract Number",
+          "placeholder": "Enter Contract Number"
+        },
+        "name": {
+          "label": "Contract Name",
+          "placeholder": "Enter Contract Name"
+        },
+        "issuanceDate": {
+          "label": "Contract Issuance Date (Gregorian)",
+          "placeholder": "Select Date"
+        },
+        "issuanceHijriDate": {
+          "label": "Contract Issuance Date (Hijri)",
+          "placeholder": "Select Date"
+        },
+        "dateReceiptHardCopy": {
+          "label": "Hard Copy Receipt Date",
+          "placeholder": "Select Date"
+        },
+        "days": {
+          "label": "(Days)",
+          "placeholder": "Enter Number of Days"
+        },
+        "months": {
+          "label": "(Months)",
+          "placeholder": "Enter Number of Months"
+        },
+        "years": {
+          "label": "Contract Duration (Years)",
+          "placeholder": "Enter Number of Years"
+        },
+        "contractTypeId": {
+          "label": "Contract Type",
+          "placeholder": "Select Contract Type"
+        },
+        "contractStatus": {
+          "label": "Contract Status",
+          "placeholder": "Select Contract Status"
+        },
+        "contractSigningDate": {
+          "label": "Contract Signing Date",
+          "placeholder": "Select Date"
+        },
+        "savesuccess": "Contract Details saved successfully"
+      },
+      "operations": {
+        "name": {
+          "label": "Operation Name",
+          "placeholder": "Enter Operation Name"
+        },
+        "userId": {
+          "label": "Employee",
+          "placeholder": "Select Employee"
+        },
+        "siteReceiptDate": {
+          "label": "Site Receipt Date",
+          "placeholder": "Select Date"
+        },
+        "siteFinalReceiptDate": {
+          "label": " Final Recept Date",
+          "placeholder": "Select Date"
+        },
+        "sitePrimaryReceiptDate": {
+          "label": "Primary Receipt Date",
+          "placeholder": "Select Date"
+        },
+        "siteEndDate": {
+          "label": "Site End Date",
+          "placeholder": "Select Date"
+        },
+        "siteReceipt": {
+          "label": "Receipt site"
+        },
+        "saveOperationButton": "Save operation",
+        "actions": "actions",
+        "addNewOperation": "Add New Operation",
+        "addNewOperationSubtitle": "Enter all the following data",
+        "firstOperation": "First Operation",
+        "quantitiesAddedSuccessfully": "Quantities added successfully"
+      },
+      "quantities": {
+        "titleHeader": "Add New Quantity",
+        "subtitle": "Enter all the following data",
+        "actualValue": "Actual Value",
+        "totalWithVAT": "Total Including VAT",
+        "projectId": {
+          "label": "Project Name",
+          "placeholder": "Select Project"
+        },
+        "title": {
+          "label": "Item Name",
+          "placeholder": "Enter Item Name"
+        },
+        "itemNumber": {
+          "label": "Item Number",
+          "placeholder": "Enter Item Number"
+        },
+        "description": {
+          "label": "Item Description",
+          "placeholder": "Enter Item Description"
+        },
+        "specifications": {
+          "label": "Specifications",
+          "placeholder": "Enter Specifications"
+        },
+        "quantity": {
+          "label": "Quantity",
+          "placeholder": "Enter Quantity"
+        },
+        "actualQuantity": {
+          "label": "Actual Quantity",
+          "placeholder": "Enter Actual Quantity"
+        },
+        "measurementUnitId": {
+          "label": "Unit of Measurement",
+          "placeholder": "Select Unit of Measurement"
+        },
+        "unitPrice": {
+          "label": "Unit Price",
+          "placeholder": "Enter Unit Price"
+        },
+        "totalPrice": {
+          "label": "Total Price",
+          "placeholder": "Enter Total Price"
+        },
+        "status": {
+          "label": "Status",
+          "placeholder": "Status"
+        },
+        "effectiveDate": {
+          "label": "Effective Date",
+          "placeholder": "Enter Effective Date"
+        },
+        "businessType": {
+          "label": "Business Type",
+          "placeholder": "Enter Business Type",
+          "Structural": "Structural",
+          "Architectural": "Architectural",
+          "Electrical": "Electrical",
+          "Mechanical": "Mechanical",
+          "Telecommunications": "Telecommunications",
+          "Other": "Other"
+        },
+        "savesuccess": "Item Saved Successfully",
+        "saveQuantityButton": "Save",
+        "quantitiesAddedSuccessfully": "Quantities added successfully",
+        "quantitiesTableTitle": "Process clauses",
+        "addQuantitiesTableBtn": "add clauses table",
+        "addQuantity": "add clause",
+        "downloadComplete": "Download Complete",
+        "noQuantities": "No Clauses Available"
+      },
+      "fines": {
+        "numberOfDays": {
+          "label": "Number of days",
+          "placeholder": "Enter the number of days"
+        },
+        "amount": {
+          "label": "Amount",
+          "placeholder": "Enter Amount"
+        },
+        "amountInLetters": {
+          "label": "Amount in Letters",
+          "placeholder": "Enter Amount"
+        },
+        "description": {
+          "label": "Description",
+          "placeholder": "Enter Description"
+        },
+        "fineType": {
+          "label": "Fine type",
+          "placeholder": "Enter the Fine type"
+        },
+        "discountValue": {
+          "label": "Discount value",
+          "placeholder": "Discount value"
+        },
+        "savesuccess": "Fine details saved successfully",
+        "saveFineButton": "Save Fine",
+        "addNewFineSubtitle": "Enter all the following data"
+      },
+      "buttons": {
+        "saveAsDraft": "Save as Draft",
+        "nextStep": "Next Step",
+        "previousStep": "Previous Step",
+        "saveContract": "Save Contract"
+      }
+    }
+  },
+  "projects": {
+    "statuses": {
+      "NotStarted": "Not Started",
+      "InProgress": "In Progress",
+      "Completed": "Completed"
+    },
+    "searchProjectList": "Search Client name or project name",
+    "projectStatus": "Project Status",
+    "allProjects": "All Projects",
+    "projectsWithContracts": "Projects linked to contracts",
+    "projectsWithNoContracts": "Projects not linked to contracts"
+  },
+  "mock-contract-types": {
+    "title": "Mock Contract Types",
+    "description": "More than 50 contract type",
+    "author": "Author",
+    "company": "Company",
+    "percentage": "Percentage"
+  },
+  "TRANSLATOR": {
+    "SELECT": "Select your language"
+  },
+  "PAGES": {
+    "CONTRACT_TYPES": {
+      "TITLE": "Contract Types",
+      "DESCRIBTION": "More than 50 contract type",
+      "ADD_CONTRACT": "Add New Contract Type"
+    }
+  },
+  "MENU": {
+    "ContractTypes": "Contract Types",
+    "main": "Home",
+    "MeasureUnitVm": "Measure Units",
+    "Materials": "Materials",
+    "NEW": "new",
+    "ACTIONS": "Actions",
+    "CREATE_POST": "Create New Post",
+    "PAGES": "Pages",
+    "FEATURES": "Features",
+    "APPS": "Apps",
+    "DASHBOARD": "Dashboard",
+    "SETTINGS": "Settings",
+    "measuring-units": "Measure Units",
+    "users": "Users",
+    "tenants": "Tenants",
+    "Clients": "Clients",
+    "Branches": "Branches",
+    "countries": "Countries",
+    "cities": "Cities",
+    "suppliers": "Suppliers",
+    "commerceChambers": "Commerce Chambers",
+    "contracts": "Contracts",
+    "projects": "Projects",
+    "layoutBuilder": "Layout Builder",
+    "requests": "Requests"
+  },
+  "MeasureUnitVm": {
+    "nameAr": "Arabic Name",
+    "nameEn": "English Name",
+    "descriptionAr": "Arabic Description",
+    "descriptionEn": "English Description",
+    "Submit": "Submit",
+    "Cancel": "Cancel",
+    "MustInsert": "You must Insert ",
+    "AddNewUnit": "Add New Measure Unit"
+  },
+  "AUTH": {
+    "GENERAL": {
+      "OR": "Or",
+      "SUBMIT_BUTTON": "Submit",
+      "NO_ACCOUNT": "Don't have an account?",
+      "SIGNUP_BUTTON": "Sign Up",
+      "FORGOT_BUTTON": "Forgot Password",
+      "BACK_BUTTON": "Back",
+      "PRIVACY": "Privacy",
+      "LEGAL": "Legal",
+      "CONTACT": "Contact"
+    },
+    "LOGIN": {
+      "TITLE": "Login Account",
+      "BUTTON": "Sign In"
+    },
+    "FORGOT": {
+      "TITLE": "?Forgotten Password",
+      "DESC": "Enter your email to reset your password",
+      "SUCCESS": "Your account has been successfully reset."
+    },
+    "REGISTER": {
+      "TITLE": "Sign Up",
+      "DESC": "Enter your details to create your account",
+      "SUCCESS": "Your account has been successfuly registered."
+    },
+    "INPUT": {
+      "EMAIL": "Email",
+      "FULLNAME": "Fullname",
+      "PASSWORD": "Password",
+      "CONFIRM_PASSWORD": "Confirm Password",
+      "USERNAME": "Username"
+    },
+    "VALIDATION": {
+      "INVALID": "{{name}} is not valid",
+      "REQUIRED": "{{name}} is required",
+      "MIN_LENGTH": "{{name}} minimum length is {{min}}",
+      "AGREEMENT_REQUIRED": "Accepting terms & conditions are required",
+      "NOT_FOUND": "The requested {{name}} is not found",
+      "INVALID_LOGIN": "The login detail is incorrect",
+      "REQUIRED_FIELD": "Required field",
+      "MIN_LENGTH_FIELD": "Minimum field length:",
+      "MAX_LENGTH_FIELD": "Maximum field length:",
+      "INVALID_FIELD": "Field is not valid"
+    }
+  },
+  "ECOMMERCE": {
+    "COMMON": {
+      "SELECTED_RECORDS_COUNT": "Selected records count: ",
+      "ALL": "All",
+      "SUSPENDED": "Suspended",
+      "ACTIVE": "Active",
+      "FILTER": "Filter",
+      "BY_STATUS": "by Status",
+      "BY_TYPE": "by Type",
+      "BUSINESS": "Business",
+      "INDIVIDUAL": "Individual",
+      "SEARCH": "Search",
+      "IN_ALL_FIELDS": "in all fields"
+    },
+    "ECOMMERCE": "eCommerce",
+    "CUSTOMERS": {
+      "CUSTOMERS": "Customers",
+      "CUSTOMERS_LIST": "Customers list",
+      "NEW_CUSTOMER": "New Customer",
+      "DELETE_CUSTOMER_SIMPLE": {
+        "TITLE": "Customer Delete",
+        "DESCRIPTION": "Are you sure to permanently delete this customer?",
+        "WAIT_DESCRIPTION": "Customer is deleting...",
+        "MESSAGE": "Customer has been deleted"
+      },
+      "DELETE_CUSTOMER_MULTY": {
+        "TITLE": "Customers Delete",
+        "DESCRIPTION": "Are you sure to permanently delete selected customers?",
+        "WAIT_DESCRIPTION": "Customers are deleting...",
+        "MESSAGE": "Selected customers have been deleted"
+      },
+      "UPDATE_STATUS": {
+        "TITLE": "Status has been updated for selected customers",
+        "MESSAGE": "Selected customers status have successfully been updated"
+      },
+      "EDIT": {
+        "UPDATE_MESSAGE": "Customer has been updated",
+        "ADD_MESSAGE": "Customer has been created"
+      }
+    }
+  },
+  "ContractTypes": {
+    "table": {
+      "title": "Contract Types",
+      "description": "List of all contract types",
+      "columns": {
+        "contractTypeDetails": "Contract Type Details",
+        "arabicName": "Arabic Name",
+        "englishName": "English Name"
+      }
+    },
+    "modal": {
+      "create": "Create Contract Type",
+      "edit": "Edit Contract Type",
+      "fields": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)"
+      },
+      "added": {
+        "text": "Contact type has been saved successfully!",
+        "confirmButtonText": "Ok, got it!"
+      }
+    }
+  },
+  "Countries": {
+    "table": {
+      "title": "Countries",
+      "description": "List of all countries",
+      "columns": {
+        "countryDetails": "Country Details",
+        "arabicName": "Country name (AR)",
+        "englishName": "Country name (EN)",
+        "ISO2": "ISO 2",
+        "ISO3": "ISO 3",
+        "VATpercentage": "VAT",
+        "Currency": "Currency"
+      }
+    },
+    "modal": {
+      "edit": "Edit Country",
+      "fields": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "VAT": "VAT"
+      },
+      "added": {
+        "text": "Country has been saved successfully!",
+        "confirmButtonText": "Ok, got it!"
+      }
+    }
+  },
+  "Cities": {
+    "table": {
+      "title": "Cities",
+      "description": "List of all cities",
+      "columns": {
+        "cityDetails": "city Details",
+        "arabicName": "city name (AR)",
+        "englishName": "city name (EN)"
+      }
+    },
+    "modal": {
+      "edit": "Edit city",
+      "fields": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "country": "Country"
+      },
+      "added": {
+        "text": "City has been saved successfully!",
+        "confirmButtonText": "Ok, got it!"
+      }
+    }
+  },
+  "Suppliers": {
+    "table": {
+      "title": "Suppliers",
+      "description": "List of all suppliers",
+      "supplierActivated": "Supplier has been activated successfully!",
+      "supplierDeactivated": "Supplier has been deactivated successfully!",
+      "columns": {
+        "supplierType": "Supplier Type",
+        "workType": "Work Type",
+        "name": "Supplier name",
+        "address": "Address",
+        "bank": "Bank",
+        "identifierNumber": "Identifier number",
+        "CommercialRegisterNumber": "Commercial Register Number",
+        "iban": "Iban",
+        "active": "Active",
+        "inActive": "Inactive",
+        "IsActive": "Active Status",
+        "status": "Status",
+        "serviceType": {
+          "label": "Service Type",
+          "Supply": "Supply",
+          "Installation": "Installation",
+          "InstallationAndSupply": "Installation And Supply"
+        }
+      },
+      "actions": {
+        "activate": "Activate",
+        "deactivate": "Deactivate"
+      }
+    },
+    "modal": {
+      "edit": "Edit Supplier",
+      "create": "Create Supplier",
+      "ibanErr": "should consist of 24 characters and begin with SA",
+      "fields": {
+        "supplierType": {
+          "label": "Supplier Type",
+          "placeholder": "Enter Supplier Type",
+          "Individual": "Individual",
+          "Company": "Company"
+        },
+        "workType": "Work Type",
+        "name": "Supplier name",
+        "address": "Address",
+        "bankId": "Bank",
+        "identifierNumber": "Identifier number",
+        "CommercialRegisterNumber": "Commercial Register Number",
+        "serviceType": {
+          "label": "Service Type",
+          "Supply": "Supply",
+          "Installation": "Installation",
+          "InstallationAndSupply": "Installation And Supply"
+        },
+        "iban": "Iban",
+        "phone1": "Phone 1",
+        "phone2": "Phone 2",
+        "mail": "Mail",
+        "active": "Active",
+        "inActive": "Inactive",
+        "IsActive": "Active Status",
+        "contactInformation": "Contact Information",
+        "businessType": {
+          "label": "Business Type",
+          "placeholder": "Enter Business Type",
+          "Structural": "Structural",
+          "Architectural": "Architectural",
+          "Electrical": "Electrical",
+          "Mechanical": "Mechanical",
+          "Telecommunications": "Telecommunications",
+          "Other": "Other"
+        },
+        "paymentOptionsTitle": "Payment Option",
+        "paymentOptions": {
+          "Cash": "Cash",
+          "BankTransfer": "Bank Transfer"
+        }
+      },
+      "added": {
+        "text": "Supplier has been added successfully!",
+        "confirmButtonText": "Ok, got it!"
+      }
+    }
+  },
+  "CommerceChambers": {
+    "table": {
+      "title": "Chambers of Commerce",
+      "description": "List of Chambers of Commerce",
+      "columns": {
+        "commerceChamberDetails": "Chamber Details",
+        "arabicName": "Arabic Name",
+        "englishName": "English Name"
+      }
+    },
+    "modal": {
+      "edit": "Edit Chamber",
+      "fields": {
+        "nameAr": "Arabic Name",
+        "nameEn": "English Name"
+      },
+      "added": {
+        "text": "Chamber saved successfully",
+        "confirmButtonText": "Okay"
+      }
+    }
+  },
+  "MeasurementUnits": {
+    "table": {
+      "title": "Measurement Units",
+      "description": "List of all measurement Units",
+      "columns": {
+        "measurementUnitDetails": "Measurement Unit Details",
+        "arabicName": "Arabic Name",
+        "englishName": "English Name",
+        "abbreviation": "Abbreviation (Arabic)",
+        "abbreviationEn": "Abbreviation (English)"
+      }
+    },
+    "modal": {
+      "create": "Create Measurement Unit",
+      "edit": "Edit Measurement Units",
+      "fields": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "abbreviationAr": "Abbreviation (Arabic)",
+        "abbreviationEn": "Abbreviation (English)"
+      },
+      "added": {
+        "text": "Contact type has been saved successfully!",
+        "confirmButtonText": "Ok, got it!"
+      },
+      "delete": {
+        "title": "Delete Measurement Unit",
+        "text": "Are you sure you would like to delete this measurement unit?",
+        "confirmButtonText": "Yes, delete it!",
+        "cancelButtonText": "No, keep it"
+      }
+    }
+  },
+  "Materials": {
+    "table": {
+      "title": "Materials",
+      "description": "List of all materials",
+      "columns": {
+        "materialsDetails": "Materials Details",
+        "description": "description",
+        "measurementUnit": "Measurement Unit (Arabic)",
+        "measurementUnitEn": "Measurement Unit (English)"
+      }
+    },
+    "modal": {
+      "create": "Create Material",
+      "edit": "Edit Materials",
+      "fields": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "description": "Description",
+        "measurementUnit": "Measurement Unit",
+        "measurementUnits": "Measurement Units",
+        "measurementUnitEn": "Measurement Unit (English)"
+      },
+      "added": {
+        "text": "New material has been saved successfully!",
+        "confirmButtonText": "Ok, got it!"
+      },
+      "delete": {
+        "title": "Delete Materials",
+        "text": "Are you sure you would like to delete this materials?",
+        "confirmButtonText": "Yes, delete it!",
+        "cancelButtonText": "No, keep it"
+      }
+    }
+  },
+  "Branches": {
+    "table": {
+      "title": "Branches",
+      "description": "List of all branches",
+      "columns": {
+        "branchDetails": "Branches Details",
+        "arabicName": "Arabic Name",
+        "englishName": "English Name"
+      }
+    },
+    "modal": {
+      "create": "Create Branch",
+      "edit": "Edit Branches",
+      "fields": {
+        "nameAr": "Name (Arabic)",
+        "nameEn": "Name (English)",
+        "descriptionAr": "Description (Arabic)",
+        "descriptionEn": "Description (English)",
+        "code": "Code"
+      },
+      "added": {
+        "text": "Contact type has been saved successfully!",
+        "confirmButtonText": "Ok, got it!"
+      },
+      "delete": {
+        "title": "Delete Measurement Unit",
+        "text": "Are you sure you would like to delete this measurement unit?",
+        "confirmButtonText": "Yes, delete it!",
+        "cancelButtonText": "No, keep it"
+      }
+    }
+  },
+  "Clients": {
+    "table": {
+      "title": "Clients",
+      "description": "List of all clients",
+      "clientActivated": "Client has been activated successfully!",
+      "clientDeactivated": "Client has been deactivated successfully!",
+      "columns": {
+        "Name": "Client Name",
+        "CommercialRegisterNumber": "Commercial Register number / ID",
+        "Identification": "Identification",
+        "IsActive": "Active Status",
+        "Type": "Type",
+        "status": "Status",
+        "active": "Active",
+        "inActive": "Inactive"
+      },
+      "actions": {
+        "activate": "Activate",
+        "deactivate": "Deactivate"
+      }
+    },
+    "modal": {
+      "create": "Create Client",
+      "edit": "Edit Client",
+      "BasicInformation": "Basic Information",
+      "active": "Active",
+      "inActive": "Inactive",
+      "fields": {
+        "clientType": "Type",
+        "name": "Name",
+        "CommercialRegisterNumber": "Commercial Register Number",
+        "Identification": "Identification",
+        "nameEn": "Name (English)",
+        "abbreviationAr": "Abbreviation (Arabic)",
+        "abbreviationEn": "Abbreviation (English)",
+        "AddressId": "Address",
+        "CountryId": "Country",
+        "CountryNameAr": "Country Name (Arabic)",
+        "CountryNameEn": "Country Name (English)",
+        "CityId": "City",
+        "CityNameAr": "City Name (Arabic)",
+        "CityNameEn": "City Name (English)",
+        "ShortAddress": "Short Address",
+        "Street": "Street",
+        "BuildingNumber": "Building Number",
+        "ContactInfoId": "Contact Information",
+        "PhoneNumber1": "Phone 1",
+        "PhoneNumber2": "Phone 2",
+        "Email": "Email",
+        "FaxNumber": "Fax number",
+        "PostalCode": "Postal Code",
+        "IsActive": "Active Status"
+      },
+      "added": {
+        "text": "Client has been saved successfully!",
+        "confirmButtonText": "Ok, got it!"
+      },
+      "delete": {
+        "title": "Delete Client",
+        "text": "Are you sure you would like to delete this client?",
+        "confirmButtonText": "Yes, delete it!",
+        "cancelButtonText": "No, keep it"
+      }
+    }
+  },
+  "termsDetails": {
+    "title": "Term Details",
+    "termsTable": "Terms Table",
+    "termNumber": "Term Number",
+    "termName": "Name",
+    "termDescription": "Term Description",
+    "measurementUnit": "Unit of Measurement",
+    "quantity": "Quantity",
+    "price": "Unit Price",
+    "acceptRequest": "Accept Request",
+    "rejectRequest": "Reject Request",
+    "confirmRejectTitle": "Are you sure you want to reject this request?",
+    "confirmAcceptTitle": "Are you sure you want to accept this request?",
+    "no_acceptButton": "No, accept the request",
+    "yes_rejectButton": "Yes, reject the request",
+    "yes_acceptButton": "Yes, accept the request",
+    "no_rejectButton": "No, reject the request",
+    "requestAccepted": "Requested has been accepted successfully!",
+    "requestRejected": "Requested has been rejected",
+    "requestedCreatedSuccessfully": "Request created successfully",
+    "by": "By",
+    "fileDeleted": "File deleted successfully",
+    "attachmentModal": {
+      "attachmentTypes": {
+        "None": "",
+        "Schemes": "Schemes",
+        "QuantitySurveySchedule": "Quantity Survey Schedule",
+        "ApprovedPriceQuote": "Approved Price Quote"
+      },
+      "addAttachments": "Add Attachments",
+      "dragDropOr": "Drag and drop or",
+      "clickToUpload": "click to upload",
+      "supportedAttachments": "Supported attachments are PDF,DWG,XCEL"
+    },
+    "accounts": {
+      "0": "Site Engineer",
+      "1": "Project Manager",
+      "2": "Technical Officer",
+      "3": "Projects Manager",
+      "4": "Accountant",
+       "5": "General Manager"
+    },
+    "priceRequests": {
+      "title": "Price Requests",
+      "noPriceRequests": "No price requests",
+      "addPriceRequests": "Add price request",
+      "showAllRequests": "Show all",
+      "requestNumber": "Request number",
+      "requestDate": "Request date",
+      "termName": "Item name",
+      "measurementUnit": "Measurement unit",
+      "quantity": "Quantity",
+      "requestStatus": "Request status",
+      "requestDescription": "Request Description",
+      "sampleApprivalForm": "Sample Approval form",
+      "addSampleApprivalForm": "Add Sample Approval form",
+      "Attachments": "Attachments",
+      "responseDate": "Response date",
+      "notes": "Notes",
+      "certifiedSuppliers": "Certified suppliers",
+      "supplyRequest": "Add new Suppier",
+      "enterData": "Enter all the following data",
+      "supplierAlreadyAdded": "Supplier Already Added",
+      "addAttachment": "Add attachment",
+      "supplyRequestTitleDialog": "Add new supplier",
+      "unitPrice": "Unit Price",
+      "supplierName": "Supplier Name",
+      "addSupplier":"Add Supplier",
+      "total": "Total",
+      "confirmRejectSubtitle": "The rejection of the request will be sent to the site engineer",
+      "confirmConfirmSubtitle": "The acceptance of the request will be sent to the technical office engineer and the site engineer",
+      "vat": "VAT",
+      "totalIncludingVat": "Total including VAT",
+      "enterComment": "Enter Comment",
+      "addFile":"Add File",
+      "confirm":"Confirm",
+      "noSuppliers": "No Suppliers",
+      "send": "Submit",
+      "pleaseAddAttachment": "Please Add Attachments",
+      "requestSupply":"Request Supply",
+      "awaitOtherOffers": "wait for other offers",
+      "priceOffers": "Price Offers",
+      "addPriceOffer": "Add Price Offer",
+      "priceOfferNotExist": "Price Offer does not exist",
+      "requestSupplySuccess":"Supply request Success",
+      "priceApprovalStatus": {
+        "Pending": "Pending",
+        "Approved": "Approved",
+        "ClientReview": "Client Review",
+        "ClientRejected": "Client Rejected",
+        "Rejected": "Rejected",
+        "WaitingNewSuppliers": "Awaiting Other Offers"
+      },
+      "PriceApprovalRequestStatus": {
+        "Created":"Created",
+        "Rejected":"Rejected",
+        "Approved":"Approved",
+        "Completed":"Completed"
+      },
+      "accounts": {
+        "0": "Site Engineer",
+        "1": "Project Manager",
+        "2": "Technical Officer",
+        "3": "Projects Manager",
+        "4": "Purchasing",
+        "5": "General Manager"
+      }
+    },
+    "supplyRequests": {
+      "title": "Supply Requests",
+      "addSupplyRequest": "Add Supply Request",
+      "showAllRequests": "Show all",
+      "supplyRequest": "Supply Request",
+      "enterData": "Enter all the following data",
+      "requestNumber": "Request Number",
+      "requestDate": "Request Date",
+      "termName": "Item Name",
+      "measurementUnit": "Measurement Unit",
+      "quantity": "Quantity",
+      "supplyRequestTitleDialog": "Supply Request",
+      "requestDescription": "Request Description",
+      "price": "Price",
+      "supplierName": "Supplier Name",
+      "totalWithoutVAT": "Total Without VAT",
+      "vat": "VAT Value",
+      "totalWithVAT": "Total Including VAT",
+      "displayApprovedPrice": "Display Approved Price",
+      "quantityTable": "Quantity Survey Table",
+      "charts": "Charts",
+      "requestStatus": "Request Status",
+      "Attachments": "Attachments",
+      "responseDate": "Response Date",
+      "notes": "Notes",
+      "save": "Save",
+      "addAttachment": "Add Attachment",
+      "unitPrice": "Unit Price",
+      "total": "Total",
+      "files": "Files",
+      "enterComment": "Add Comment",
+      "confirmRejectSubtitle": "The project manager will see this status, add a reason for rejection",
+      "confirmConfirmSubtitle": "The project manager will see this status",
+      "noSupplyRequest": "No supply requests",
+      "totalIncludingVat": "Total including VAT",
+      "amount":"Amount",
+      "remainingAmount":"Remaining Amount",
+      "pleaseAddAttachment": "Please Add Attachments",
+      "description": "Description",
+      "evaluationSupplyRequest": "Your evaluation for the supply request",
+      "SupplyApprovalRequestStatus": {
+        "Created":"Created",
+        "Rejected":"Rejected",
+        "Approved":"Approved",
+        "Completed":"Completed",
+        "Transferred": "Transferred"
+      },
+      "transactions": {
+        "title": "Transactions",
+        "addTransaction": "Add Transaction Request",
+        "transactionDate": "Transaction Date",
+        "amount": "Amount",
+        "supplierName": "Supplier Name",
+        "remainingAmount": "Remaining Amount",
+        "confirmTransaction": "Confirm Transaction Amount",
+        "noTransactions": "No transactions",
+        "orderDate": "Order Date"
+      }
+    },
+    "extracts": {
+      "title": "Extracts",
+      "noExtracts": "No extracts available",
+      "addExtract": "Add Extract",
+      "showAllRequests": "Show all",
+      "itemExtracts": "Item Extracts",
+      "extractNumber": "Extract Number",
+      "notes": "Notes",
+      "extractDate": "Extract Date",
+      "extractValue": "Extract Value",
+      "extractType": "Extract Type",
+      "showExtract": "Show Extract",
+      "acceptRequest": "Accept Request",
+      "rejectRequest": "Reject Request",
+      "confirmRejectSubtitle": "The project manager will see this status, add a reason for rejection",
+      "confirmConfirmSubtitle": "The project manager will see this status",
+      "back": "Back",
+      "extractSaved": "Extract saved successfully",
+      "extractAccredited": "Extract accredited successfully",
+      "extractTypes": {
+        "InProgress": "In Progress",
+        "Final": "Final"
+      },
+      "extractStatuses": {
+        "Pending": "Pending",
+        "Rejected": "Rejected",
+        "Approved": "Approved",
+        "Draft": "Draft"
+      },
+      "extractStatus": {
+        "title": "Extract Status",
+        "siteEngineer": "Site Engineer",
+        "projectManager": "Project Manager",
+        "technicalOfficer": "Technical Office",
+        "projectsManager": "Projects Manager",
+        "generalManager": "General Manager",
+        "accountant": "Accountant",
+        "done": "Paid",
+        "TransferredPartial": "Partial Transfer"
+      },
+      "requestStatus": {
+        "title": "Request Status",
+        "requestNumber": "Request Number",
+        "requestDate": "Request Date",
+        "requestStatus": "Request Status",
+        "responseDate": "Response Date",
+        "notes": "Notes",
+        "attachments": "Attachments",
+        "extractRequestHistoryStatuses": {
+          "Created": "Created",
+          "Rejected": "Rejected",
+          "Approved": "Approved",
+          "Transferred": "Transferred",
+          "Completed": "Completed",
+          "Draft": "Draft",
+          "TransferredPartial": "Partial Transfer"
+        }
+      },
+      "transactions": {
+        "title": "Transactions",
+        "addTransaction": "Add Transfer Request",
+        "transactionDate": "Transfer Date",
+        "amount": "Amount",
+        "supplierName": "Supplier Name",
+        "remainingAmount": "Remaining Amount",
+        "confirmTransaction": "Confirm Amount Transfer",
+        "noTransactions": "No transactions available"
+      },
+      "contractor": {
+        "data": "Contractor Data",
+        "name": "Contractor Name",
+        "taxNumber": "Tax Number",
+        "bankName": "Bank Name",
+        "BankAccountNumber": "Bank Account Number",
+        "contactNumber": "Contact Number"
+      },
+      "mainData": {
+        "title": "Main Data",
+        "businessDescription": "Business Description",
+        "itemNumber": "Item Number",
+        "measurementUnit": "Measurement Unit",
+        "contractNumber": "Contract Number",
+        "contractQuantity": "Contract Quantity",
+        "unitPrice": "Unit Price",
+        "totalContract": "Total Contract"
+      },
+      "extractData": {
+        "title": "Extract Data",
+        "extractNumber": "Extract Number",
+        "extractDate": "Extract Date",
+        "extractType": "Extract Type",
+        "workDate": "Work Start Date",
+        "businessData": "Business Data",
+        "itemNumber": "Item Number",
+        "contractQuantity": "Contract Quantity",
+        "previousQuantity": "Previous Quantity",
+        "currentQuantity": "Current Quantity",
+        "totalQuantity": "Total Quantity",
+        "unitPrice": "Unit Price",
+        "total": "Total",
+        "extractTypes": {
+        "InProgress": "In Progress",
+        "Final": "Final"
+      },
+      "notes": "Notes"
+      },
+      "discounts": {
+        "title": "Discounts",
+        "addDiscounts": "Add Discounts",
+        "businessData": "Business Data",
+        "itemNumber": "Item Number",
+        "measurementUnit": "Measurement Unit",
+        "contractQuantity": "Contract Quantity",
+        "previousQuantity": "Previous Quantity",
+        "currentQuantity": "Current Quantity",
+        "totalQuantity": "Total Quantity",
+        "unitPrice": "Unit Price",
+        "total": "Total",
+        "extractValue": "Extract Value",
+        "totalBusinessUntilExtractData": "Total Business Value Until Extract Date",
+        "totalVat": "Total VAT",
+        "totalBusinessWithVat": "Total Business Including VAT",
+        "discountBusiness10Percent": "10% Work Guarantee Discount",
+        "discountPaidBefore": "Deduction of Previously Paid Amounts",
+        "netExtractIncludingVat": "Net Extract Including VAT",
+        "noDiscounts": "No discounts",
+        "enterData": "Enter all of the following information"
+      },
+      "attachments": {
+        "title": "Attachments",
+        "displayApprovedPrice": "Display Approved Price",
+        "quantityTable": "Quantity Table",
+        "charts": "Charts"
+      },
+      "addContractDetailsModal": {
+        "title": "Add Contract Details",
+        "subtitle": "Enter all the following data",
+        "projectName": "Project Name",
+        "contractorName": "Contractor Name",
+        "taxNumber": "Tax Number",
+        "bankName": "Bank Name",
+        "BankAccountNumber": "Bank Account Number",
+        "contactNumber": "Contact Number",
+        "itemNumber": "Item Number",
+        "businessDescription": "Business Description",
+        "measurementUnit": "Unit",
+        "contractNumber": "Contract Number",
+        "contractQuantity": "Contract Quantity",
+        "unitPrice": "Unit Price",
+        "contractTotalPrice": "Total Contract Price",
+        "notes": "Notes",
+        "addComment": "Add Comment",
+        "next": "Next",
+        "cancel": "Cancel",
+        "taxFree": "Tax free"
+      },
+      "addExtractModal": {
+        "title": "Add Extract",
+        "subtitle": "Enter all the following data",
+        "extractDate": "Extract Date",
+        "extractType": "Extract Type",
+        "beginWorkDate": "Work Start Date",
+        "extractNumber": "Extract Number",
+        "previous": "Previous",
+        "addAttachment": "Add Attachment",
+        "pleaseAddAttachment":"Please Add Attachments",
+        "Attachments":"Attachments"
+      },
+      "accreditation": "Accreditation"
+    },
+    "custodyRequests": {
+      "title": "Covenant Requests",
+      "norequests": "No covenant requests",
+      "showAllRequests": "Show all",
+      "addRequest": "Add Covenant Request",
+      "request": "Covenant Request",
+      "term": "Term",
+      "termNumber": "Term Number",
+      "requestDescription": "Request Description",
+      "unit": "Unit",
+      "quantity": "Quantity",
+      "unitPrice": "Unit Price",
+      "totalPrice": "Total Price",
+      "totalWithoutVAT": "Total Without VAT",
+      "vat": "VAT Value",
+      "totalWithVAT": "Total Including VAT",
+      "attachments": "Attachments",
+      "modal": {
+        "title": "Add Covenant Dispense",
+        "subtitle": "Enter all the following data",
+        "termName": "Term Name",
+        "businessData": "Business Data",
+        "measurementUnit": "Measurement Unit",
+        "quantity": "Quantity",
+        "unitPrice": "Unit Price",
+        "totalPrice": "Total Price",
+        "notes": "Notes",
+        "addAttachment": "Add Attachment",
+        "pleaseAddAttachment": "Please Add Attachments",
+        "Attachments": "Attachments",
+        "isTaxFree": "Free tax",
+        "vat":"VAT"
+      },
+      "acceptRequest": "Accept Request",
+      "rejectRequest": "Reject Request",
+      "confirmRejectSubtitle": "The project manager will see this status. Add a reason for rejection.",
+      "confirmConfirmSubtitle": "The project manager will see this status.",
+      "requestStatus": "Request Status",
+      "requestNumber": "Request Number",
+      "requestDate": "Request Date",
+      "termName": "Term Name",
+      "measurementUnit": "Measurement Unit",
+      "responseData": "Response Date",
+      "notes": "Notes",
+      "files": "Files",
+      "convenantRate": "Your Rating for the Covenant Request",
+      "transactions": {
+        "title": "Transactions",
+        "addTransaction": "Add Transaction",
+        "transactionDate": "Transaction Date",
+        "amount": "Amount",
+        "supplierName": "Supplier Name",
+        "remainingAmount": "Remaining Amount",
+        "confirmTransaction": "Confirm Transaction Amount",
+        "noTransactions": "No transactions"
+      },
+      "CovenantRequestStatus": {
+        "Created":"Created",
+        "Rejected":"Rejected",
+        "Approved":"Approved",
+        "Completed":"Completed",
+        "Transferred": "Transferred"
+      }
+    }
+  },
+  "SupplierApproval": {
+    "table": {
+      "title": "Requests",
+      "subtitle": "You can add and modify requests through this window.",
+      "addNew": "Add New Request",
+      "id": "Request Number",
+      "projectName": "Project Name",
+      "termName": "Term Name",
+      "status": "Status",
+      "actions": "Actions",
+      "statuses": {
+        "Pending": "Pending",
+        "Approved": "Approved",
+        "ClientReview": "Client Review",
+        "ClientRejected": "Client Rejected",
+        "Rejected": "Rejected"
+      },
+      "viewRequest": "View Request"
+    },
+    "form": {
+      "addNew": "Add New Request",
+      "projectName": "Project Name",
+      "chooseProject": "Choose Project",
+      "chooseTerm": "ChooseTerm",
+      "terms": "Terms",
+      "notes": "Notes",
+      "send": "Send",
+      "suppliers": "Suppliers",
+      "noSuppliers": "No Suppliers",
+      "addSupplier": "Add Supplier",
+      "chooseSuppliers": "Choose Suppliers",
+      "addFile": "Add File",
+      "confirm": "Confirm",
+      "price": "total price",
+      "attachments": "Attachments",
+      "reject": "Reject",
+      "rejectionTitle": "Are you sure you want to cancel the request?",
+      "addRejectionReason": "Add rejection reason",
+      "rejectionNotesPlaceholder": "Add more details",
+      "supplierAlreadyAdded": "Supplier Already Added"
+    }
+  },
+  "Projects": {
+    "dashboard": {
+      "totalProjectValue": "Total Project Value",
+      "totalExpenses": "Total Expenses",
+      "projectPeriod": "Project Duration",
+      "startProjectDate": "Project Start Date",
+      "deliveryProjectDate": "Project Delivery Date",
+      "executionPeriod": "Execution Period",
+      "expenses": "Expenses",
+      "lastRequests": "Last Requests",
+      "totalRequests": "{{total}} Total Requests",
+      "requests": "Requests",
+      "showMore": "Show More",
+      "priceRequests": "Pricing",
+      "convenantRequests": "Covenant",
+      "supplyRequests": "Supply",
+      "extracts": "Extracts",
+      "requestNumber": "Request Number",
+      "requestType": "request Type",
+      "requestDate":"Request Date",
+      "requestStatus": "Request Status",
+      "details": "Details",
+      "totalRequestsCount": "Total Requests",
+      "inProgress": "In progress",
+      "completed": "Completed",
+      "notStarted":"Not Started",
+      "tasks": "Tasks",
+      "task": "task",
+      "totalTasks": "{{total}} Total Tasks",
+      "taskName":"Task name",
+      "division": "Division",
+      "status":"Status",
+      "team": "Team",
+      "teamMember": "{{total}} Team members",
+      "name": "Name",
+      "jobName": "Job Name",
+      "lastShow": "Last Shown since",
+      "requestTypes": {
+        "SupplyRequest": "Supply Request",
+        "PriceRequest": "Price Request",
+        "CovenantRequest": "Covenant Request",
+        "ExtractRequest": "Extract Request"
+      },
+      "activityStatuses": {
+        "Created": "Created",
+        "Rejected": "Rejected",
+        "Approved": "Approved",
+        "Transferred": "Transferred",
+        "Completed": "Completed",
+        "Draft": "Draft",
+        "TransferredPartial":"Partial Transfer"
+        },
+        "businessTypes": {
+          "Structural": "Structural",
+          "Architectural": "Architectural",
+          "Electrical": "Electrical",
+          "Mechanical": "Mechanical",
+          "Telecommunications": "Telecommunications",
+          "Other": "Other",
+          "ProjectManager": "Project Manager"
+        },
+        "workItemsStatuses": {
+          "Created":"Created",
+          "InProgress":"In Progress",
+          "Completed":"Completed",
+          "Archived": "Archived"
+        }
+    },
+    "projectDetails": {
+      "mainData": "Main data",
+      "termsTable": "Terms table",
+      "projectsFiles": "Project files",
+      "changeProjectImage": "Project Image",
+      "team": "Team",
+      "tasks": "Tasks",
+      "purchaseOrders": "purchase orders",
+      "activity": "Activity",
+      "settings": "Settings",
+      "projectName": "Project name",
+      "budget": "Project Budget",
+      "contractNumber": "Contract number",
+      "startDate": "Project start date",
+      "projectFileChangedSuccessfully": "Project image changed successfully",
+      "deliveryDate": "Project delivery date",
+      "implementationPeriod": "Implementation period",
+      "latestFiles": "Latest files",
+      "taskSummary": "Task summary",
+      "totalTasks": "Total tasks",
+      "tasksDetails": "Tasks Details",
+      "inProgress": "In progress",
+      "active": "Active",
+      "yetToStart": "Yet to start",
+      "termDetails": "Term Details",
+      "addPriceRequest": "Add Price Request",
+      "addSupplyRequest": "Add Supply Request",
+      "addExtract": "Add Extract",
+      "addCovenantRequest": "Add Covenant Request",
+      "completed": "Completed",
+      "Overdue": "Overdue",
+      "totalFiles": "Total {{files}} files, {{space}} space usage",
+      "outOfATotal": "Out of a total {{users}} participants",
+      "status": {
+        "created": "Created",
+        "rejected": "Rejected",
+        "notStarted":"Not Started"
+      },
+      "contractNum": "Contract number",
+      "startingDate": "Starting date",
+      "endingDate": "Ending date",
+      "period": "Implementation period",
+      "periodValue": "{{days}} day - {{months}} month",
+      "addNewTask": "Add new task",
+      "updateTask": "Update task",
+      "enterData": "Enter all of the following information",
+      "termName": "Term name",
+      "enterTermName": "Enter term name",
+      "taskName": "Task name",
+      "enterTaskName": "Enter task name",
+      "employee": "Employee",
+      "selectEmployee": "Select employee",
+      "dueDate": "Due date",
+      "taskStartDate": "Task start date",
+      "selectDate": "Select date",
+      "details": "Task details",
+      "addDetails": "Add task details",
+      "tags": "Tags",
+      "priority": "Priority",
+      "notes": "Notes",
+      "addComment": "Add comment",
+      "selectPriority": "Select priority",
+      "low": "Low",
+      "medium": "medium",
+      "high": "High",
+      "taskPeriod": "Task period",
+      "periodDays": "Days",
+      "periodMonths": "Months",
+      "periodYears": "Years",
+      "periodError": "and days up to 29, months up to 11 and years up to 10",
+      "addAttachment": "Add attachment",
+      "files": "Files",
+      "searchInTasks": "Search in tasks",
+      "filterByTerm": "Filter by term",
+      "refreshTasks": "Refresh tasks"
+    },
+    "activityLogs": {
+      "requestsLogs": "Requests Logs",
+      "tasksLogs": "Tasks Logs",
+      "searchByTaskName": "Search by Task Name",
+      "searchByRequestName": "Search by Request Name",
+      "today": "Today",
+      "lastWeek": "Last Week",
+      "lastMonth": "Last Month",
+      "taskName": "Task Name",
+      "department": "Department",
+      "status": "Status",
+      "team": "Team",
+      "requestNumber": "Request Number",
+      "requestDate": "Request Date",
+      "termName": "Term Name",
+      "details": "Details",
+      "quantity": "Quantity",
+      "requestStatus": "Request Status",
+      "showRequest": "Show Request",
+      "noActivities": "No activities found",
+      "extractNumber": "Extract Number",
+      "extractDate": "Extract Date",
+      "extractValue": "Extract Value",
+      "extractType": "Extract Type",
+      "extractStatus": "Extract Status",
+      "showExtract": "Show Extract",
+      "by": "by",
+      "activityLogStatus": {
+        "Created": "A new request has been created for {request}",
+        "Approved": "The request {request} has been approved by {actor}",
+        "Rejected": "The request {request} has been rejected by {actor}"
+      },
+      "activityLogRequestType": {
+        "ExtractRequest": "Extraction",
+        "SupplyApprovalRequest": "Supply",
+        "PriceApprovalRequest": "Pricing",
+        "CovenantRequestStatus": "Covenant"
+      },
+      "activityLogActor": {
+        "0": "Site Engineer",
+        "1": "Project Manager",
+        "2": "Technical Office",
+        "3": "Projects Director",
+        "4": "Accountant",
+        "5": "General Manager"
+      },
+      "extractTypes": {
+        "InProgress": "In Progress",
+        "Final": "Final"
+      }
+    },
+    "teams": {
+      "team": "Team",
+      "search": "Search ...",
+      "departments": "Departments",
+      "roles": {
+        "Structural": {
+          "title": "Structural",
+          "description": "Monitor the progress of the structural department and ensure its implementation according to the plans and specifications."
+        },
+        "Architectural": {
+          "title": "Architectural",
+          "description": "Monitor the progress of the Architectural department and ensure its implementation according to the plans and specifications."
+        },
+        "Electrical": {
+          "title": "Electrical",
+          "description": "Monitor the progress of the Electrical department and ensure its implementation according to the plans and specifications."
+        },
+        "Mechanical": {
+          "title": "Mechanical",
+          "description": "Monitor the progress of the Mechanical department and ensure its implementation according to the plans and specifications."
+        },
+        "Telecommunications": {
+          "title": "Telecommunications",
+          "description": "Monitor the progress of the Telecommunications department and ensure its implementation according to the plans and specifications."
+        },
+        "Manager": {
+          "title": "Project Manager",
+          "description": "Monitor the progress of the project management and ensure its implementation according to the plans and specifications."
+        },
+        "Other": {
+          "title": "Other",
+          "description": "Monitor the progress of the other departments and ensure its implementation according to the plans and specifications."
+        }
+      },
+      "businessTypes": {
+        "Structural": {
+          "title": "Structural",
+          "description": "Monitor the progress of the structural department and ensure its implementation according to the plans and specifications."
+        },
+        "Architectural": {
+          "title": "Architectural",
+          "description": "Monitor the progress of the Architectural department and ensure its implementation according to the plans and specifications."
+        },
+        "Electrical": {
+          "title": "Electrical",
+          "description": "Monitor the progress of the Electrical department and ensure its implementation according to the plans and specifications."
+        },
+        "Mechanical": {
+          "title": "Mechanical",
+          "description": "Monitor the progress of the Mechanical department and ensure its implementation according to the plans and specifications."
+        },
+        "Telecommunications": {
+          "title": "Telecommunications",
+          "description": "Monitor the progress of the Telecommunications department and ensure its implementation according to the plans and specifications."
+        },
+        "Manager": {
+          "title": "Project Manager",
+          "description": "Monitor the progress of the project management and ensure its implementation according to the plans and specifications."
+        },
+        "Other": {
+          "title": "Other",
+          "description": "Monitor the progress of the other departments and ensure its implementation according to the plans and specifications."
+        }
+      },
+      "addEmployeeTitle": "Add employee to the department",
+      "removeEmployeeTitle": "Remove employee from the department",
+      "addEmployeeSubtitle": "Choose Employee",
+      "addManagerTitle": "Add Manager to the department",
+      "removeUser": "Remove User From department {{department}}",
+      "addManagerSubtitle": "Choose Manager",
+      "employeeList": "Emsployee List",
+      "chooseEmployees": "Choose Employee",
+      "saveAssignButton": "Submit"
+    },
+    "files": {
+      "files": "Project Files",
+      "search": "Search ...",
+      "fileUpload": "File Upload",
+      "dragDropFiles": "Drag and drop files here",
+      "downloadComplete": "Download Complete"
+    }
+  },
+  "Wait": "Wait",
+  "CHOSEIMAGE": "Choose the image from here",
+  "WelcomeBack": "Welcome Back",
+  "EnjoyLogin": "Streamlining Projects, Empowering Administrators"
+}

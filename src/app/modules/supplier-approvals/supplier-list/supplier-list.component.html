@@ -1,0 +1,41 @@
+<section class="suppliers">
+  <div class="title">
+    <h2>{{ translation?.suppliers | translate }}</h2>
+    @if (suppliersList.length > 0 && phase === 1) {
+    <button type="button" (click)="openSupplierDialog()">
+      <i class="ki-duotone ki-plus"> </i>
+      <span>{{ translation?.addSupplier | translate }}</span>
+    </button>
+    }
+  </div>
+
+  @if (suppliersList.length > 0) {
+  <div class="suppliers-list">
+    @for (supplier of suppliersList; track supplier.supplierId) {
+    <app-supplier-list-item
+      (fileAddedToSupplier)="fileAddedToSupplier($event)"
+      (deleteFile)="deleteFile($event)"
+      (deleteSupplier)="deleteSupplier($event)"
+      [supplier]="supplier"
+      (toggleSupplier)="toggleSupplier($event)"
+      [phase]="phase"
+    ></app-supplier-list-item>
+    }
+  </div>
+  } @else {
+
+  <div class="nosuppliers">
+    <img
+      src="./assets/media/svg/files/no-terms.svg"
+      width="200"
+      alt="no terms available"
+    />
+    <h3>{{ translation?.noSuppliers | translate }}</h3>
+    <button type="button" (click)="openSupplierDialog()">
+      <i class="ki-duotone ki-plus"> </i>
+      <span>{{ translation?.addSupplier | translate }}</span>
+    </button>
+  </div>
+
+  }
+</section>

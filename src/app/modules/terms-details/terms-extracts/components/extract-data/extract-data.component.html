@@ -1,0 +1,73 @@
+<div class="boxes">
+  <app-dotted-box
+    [title]="translation.extractNumber"
+    [subtitle]="extract.requestNumber?.toString()"
+    [subtitleColor]="'#3F4254'"
+  ></app-dotted-box>
+  <app-dotted-box
+    [title]="translation.extractDate"
+    [subtitle]="extract.extractDate | date : 'd MMM y' : '' : locale"
+    [subtitleColor]="'#3F4254'"
+  ></app-dotted-box>
+  <app-dotted-box
+    [title]="translation.extractType"
+    [subtitle]="extractTypes[extract.type]"
+    [subtitleColor]="'#3F4254'"
+  ></app-dotted-box>
+  <app-dotted-box
+    [title]="translation.workDate"
+    [subtitle]="extract.startDate | date : 'd MMM y' : '' : locale"
+    [subtitleColor]="'#3F4254'"
+  ></app-dotted-box>
+  @if (extract.notes) {
+  <app-dotted-box
+    class="notes"
+    [title]="translation.notes"
+    [subtitle]="extract.notes"
+    [subtitleColor]="'#3F4254'"
+  ></app-dotted-box>
+  }
+</div>
+
+<div class="extract-data-table" style="overflow-x: auto">
+  <table
+    id="kt_profile_overview_table"
+    class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+  >
+    <thead class="fs-7">
+      <tr>
+        <th scope="col" class="fw-bold">
+          {{ translation.businessData | translate }}
+        </th>
+        <th scope="col">{{ translation.itemNumber | translate }}</th>
+        <th scope="col">{{ translation.contractQuantity | translate }}</th>
+        <th scope="col">{{ translation.previousQuantity | translate }}</th>
+        <th scope="col">{{ translation.currentQuantity | translate }}</th>
+        <th scope="col">{{ translation.totalQuantity | translate }}</th>
+        <th scope="col">{{ translation.unitPrice | translate }}</th>
+        <th scope="col">{{ translation.total | translate }}</th>
+      </tr>
+    </thead>
+    <tbody class="fs-6">
+      <tr>
+        <td>{{ extract.description }}</td>
+        <td>{{ extract.term?.itemNumber }}</td>
+        <td>{{ extract.quantity }}</td>
+        <td>{{ extract.previousQuantity }}</td>
+        <td>{{ extract.currentQuantity }}</td>
+        <td>
+          @if (extract.status === extractStatus.Draft) {
+          <app-extract-input
+            [value]="extract.totalQuantity"
+            (changeValue)="toalQuantityValueChange($event)"
+          ></app-extract-input>
+          } @else {
+          {{ extract.totalQuantity }}
+          }
+        </td>
+        <td>{{ extract.unitPrice | numberWithCommas }}</td>
+        <td>{{ extract.total | numberWithCommas }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

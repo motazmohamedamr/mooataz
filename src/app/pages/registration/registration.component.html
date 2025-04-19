@@ -1,0 +1,235 @@
+<section>
+  <nav>
+    <a [routerLink]="['']" class="logo">
+      <img src="./assets/media/homepage/motabea-logo-green.svg" alt="Logo" />
+    </a>
+    <ul
+      class="nav-links"
+      [ngStyle]="{
+    'margin-right': translate.currentLang === 'ar' ? '8px': 'initial',
+    'margin-left': translate.currentLang === 'en' ? '8px': 'initial',
+  }"
+    >
+      <li>
+        {{ translation?.home }}
+      </li>
+      <li>
+        {{ translation?.features }}
+      </li>
+      <li>
+        {{ translation?.solutions }}
+      </li>
+      <li>
+        {{ translation?.pricing }}
+      </li>
+    </ul>
+    <button class="contact">{{ translation?.contactUs }}</button>
+    <div
+      class="language"
+      (mouseenter)="showLanguageDropdown = true"
+      (mouseleave)="showLanguageDropdown = false"
+    >
+      <div class="language-selector">
+        <img src="./assets/media/homepage/language-logo-dark.svg" alt="Logo" />
+        <span>{{ translate.currentLang.toUpperCase() }}</span>
+      </div>
+      <div class="language-dropdown" [class.show]="showLanguageDropdown">
+        <div
+          class="language-option"
+          (click)="switchLanguage('en')"
+          [class.active]="translate.currentLang === 'en'"
+        >
+          <img src="./assets/media/flags/united-states.svg" alt="Logo" />
+          <span>English</span>
+        </div>
+        <div
+          class="language-option"
+          (click)="switchLanguage('ar')"
+          [class.active]="translate.currentLang === 'ar'"
+        >
+          <img src="./assets/media/flags/saudi-arabia.svg" alt="Logo" />
+          <span>Arabic</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-start-free-trial">
+      <a [routerLink]="['auth', 'login']" [queryParams]="{ returnUrl: 'dashboard' }">{{
+        translation?.login
+      }}</a>
+
+      <button>
+        <a [routerLink]="['registration']">{{ translation?.startFreeTrial }}</a>
+      </button>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="heading">
+      <h1>{{ registrationTranslation?.title }}</h1>
+      <p>
+        {{ registrationTranslation?.description }}
+      </p>
+    </div>
+
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="form">
+      <div class="input-container">
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            name="fullName"
+            [(ngModel)]="contactModel.fullName"
+            required
+            #fullName="ngModel"
+            placeholder="{{ registrationTranslation?.fullName }}"
+          />
+          <div
+            *ngIf="contactForm.submitted && !contactModel.fullName"
+            class="text-danger"
+          >
+            {{ registrationTranslation?.fullNameRequired }}
+          </div>
+        </div>
+
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="email"
+            [(ngModel)]="contactModel.email"
+            required
+            #email="ngModel"
+            placeholder="{{ registrationTranslation?.email }}"
+          />
+          <div *ngIf="contactForm.submitted && !contactModel.email" class="text-danger">
+            {{ registrationTranslation?.emailRequired }}
+          </div>
+        </div>
+
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            id="companyName"
+            name="companyName"
+            [(ngModel)]="contactModel.companyName"
+            required
+            #companyName="ngModel"
+            placeholder="{{ registrationTranslation?.companyName }}"
+          />
+        </div>
+
+        <div>
+          <app-tel-input
+            name="phone"
+            [(ngModel)]="contactModel.phone"
+            required
+            [translation]="registrationTranslation"
+            [value]="contactModel.phone"
+            (valueChange)="contactModel.phone = $event"
+          ></app-tel-input>
+
+          <div *ngIf="contactForm.submitted && !contactModel.phone" class="text-danger">
+            {{ registrationTranslation?.phoneRequired }}
+          </div>
+        </div>
+
+        <div class="position-relative">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-control"
+            id="password"
+            name="password"
+            [(ngModel)]="contactModel.password"
+            required
+            #password="ngModel"
+            placeholder="{{ registrationTranslation?.password }}"
+          />
+          <span
+            class="position-absolute top-50 translate-middle-y"
+            (click)="showPassword = !showPassword"
+            style="cursor: pointer"
+            [ngStyle]="{
+              'left': translate.currentLang === 'ar' ? '24.5px': 'initial',
+              'right': translate.currentLang === 'en' ? '24.5px': 'initial',
+            }"
+          >
+            <img src="./assets/media/homepage/password-icon.svg" alt="" />
+          </span>
+          <div
+            *ngIf="contactForm.submitted && !contactModel.password"
+            class="text-danger"
+          >
+            {{ registrationTranslation?.passwordRequired }}
+          </div>
+        </div>
+
+        <div class="position-relative">
+          <input
+            [type]="showConfirmPassword ? 'text' : 'password'"
+            class="form-control"
+            id="confirmPassword"
+            name="confirmPassword"
+            [(ngModel)]="contactModel.confirmPassword"
+            required
+            #confirmPassword="ngModel"
+            placeholder="{{ registrationTranslation?.confirmPassword }}"
+          />
+          <span
+            class="position-absolute top-50 translate-middle-y"
+            (click)="showConfirmPassword = !showConfirmPassword"
+            style="cursor: pointer"
+            [ngStyle]="{
+              'left': translate.currentLang === 'ar' ? '24.5px': 'initial',
+              'right': translate.currentLang === 'en' ? '24.5px': 'initial',
+            }"
+          >
+            <img src="./assets/media/homepage/password-icon.svg" alt="" />
+          </span>
+          <div
+            *ngIf="contactForm.submitted && !contactModel.confirmPassword"
+            class="text-danger"
+          >
+            {{ registrationTranslation?.confirmPasswordRequired }}
+          </div>
+          <div
+            *ngIf="
+              contactForm.submitted &&
+              confirmPassword.value !== contactModel.password &&
+              contactModel.confirmPassword
+            "
+            class="text-danger"
+          >
+            {{ registrationTranslation?.passwordsMatch }}
+          </div>
+        </div>
+      </div>
+
+      <div class="checkbox-container">
+        <input type="checkbox" class="checkbox" />
+        <p>{{ registrationTranslation?.confirmThat }}</p>
+      </div>
+
+      <button>
+        <p>{{ registrationTranslation?.createAccount }}</p>
+        <img
+          src="./assets/media/homepage/arrow-right.svg"
+          alt="arrow-right"
+          [ngStyle]="{
+          'rotate': translate.currentLang === 'ar' ? '180deg': 'initial',
+        }"
+        />
+      </button>
+    </form>
+
+    <p class="bottom">
+      <a href="">{{ registrationTranslation?.needHelp }}</a
+      >{{ registrationTranslation?.contact }}
+      <span>{{ registrationTranslation?.support }}</span>
+      {{ registrationTranslation?.forAssistance }}
+    </p>
+  </div>
+</section>

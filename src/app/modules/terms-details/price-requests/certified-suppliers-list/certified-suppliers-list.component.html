@@ -1,0 +1,68 @@
+<section class="suppliers">
+  @if (suppliers.length > 0) {
+  <div class="supplier-list">
+    @for (supplier of suppliers; track supplier.supplierId) {
+    <app-certified-supplier
+      (fileAddedToSupplier)="fileAddedToSupplier($event)"
+      (deleteFile)="deleteFile($event)"
+      (deleteSupplier)="deleteSupplierHandler($event)"
+      [supplier]="supplier"
+      (toggleSupplier)="toggleSupplier($event)"
+      [enableOpenAddSupplierBtn]="enableOpenAddSupplierBtn"
+      [phase]="phase"
+      [userRoles]="userRoles"
+      [translation]="translation"
+      [termId]="termId"
+      [projectId]="projectId"
+    ></app-certified-supplier>
+    }
+  </div>
+  } @else {
+  <div class="nosuppliers">
+    <img
+      src="./assets/media/svg/files/no-terms.svg"
+      width="200"
+      alt="no terms available"
+    />
+    <h3>
+      @if (userRoles.includes(role.ProjectManager) ||
+      userRoles.includes(role.SiteEngineer)) {
+      {{ translation?.noSuppliers | translate }}
+      } @else {
+      {{ translation?.priceOfferNotExist | translate }}
+      }
+    </h3>
+    <div class="center-btns">
+      @if (enableOpenAddSupplierBtn){
+      <button type="button" (click)="openAddSupply()">
+        <i class="ki-duotone ki-plus"> </i>
+        <span>{{ translation?.addPriceOffer | translate }}</span>
+      </button>
+      } @if (showOtherOfferVisible) {
+      <button type="button" class="secondary" (click)="otherOfferHandler()">
+        <span>{{ translation?.priceOfferNotExist | translate }}</span>
+      </button>
+      }
+    </div>
+  </div>
+  }
+  <div class="approval-buttons">
+    @if (suppliers.length > 0 && showOtherOfferVisible) {
+    <button type="button" class="rejectbtn" (click)="otherOfferHandler()">
+      {{ translation.awaitOtherOffers | translate }}
+    </button>
+    } @if (enableOpenAddSupplierBtn || (phase ===
+    priceApprovalRequestPhase.SupplierSelection &&
+    this.userRoles.includes(role.ProjectsManager)) || (phase ===
+    priceApprovalRequestPhase.GeneralManagerReview &&
+    this.userRoles.includes(role.GeneralManager))) {
+    <button
+      type="button"
+      (click)="sendSuppliersHandler()"
+      [disabled]="suppliers.length === 0 || noSuppliersSelected"
+    >
+      {{ translation.send | translate }}
+    </button>
+    }
+  </div>
+</section>

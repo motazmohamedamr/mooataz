@@ -1,0 +1,155 @@
+.list-group-item {
+  border: none;
+}
+
+#chart {
+  apx-chart {
+    display: flex;
+    width: 16rem;
+  }
+}
+
+::ng-deep {
+
+  .apexcharts-legend,
+  .apexcharts-datalabels {
+    display: none !important;
+  }
+
+
+}
+
+.main-details {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: min-content min-content min-content min-content repeat(4, 1fr);
+  grid-template-areas:
+    "totalProjectValueChart totalProjectValueChart smallExpensesChart smallExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart"
+    "projectDuration projectDuration projectDuration projectDuration bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart"
+    "lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests requestsChart requestsChart"
+    "tasksChart tasksChart tasksChart tasks tasks tasks tasks tasks"
+    "team team team team team team team team";
+    @media screen and (width < 1130px) {
+      grid-template-areas:
+    "totalProjectValueChart totalProjectValueChart smallExpensesChart smallExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart"
+    "projectDuration projectDuration projectDuration projectDuration bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart"
+    "lastRequests lastRequests lastRequests lastRequests lastRequests requestsChart requestsChart requestsChart"
+    "tasksChart tasksChart tasksChart tasks tasks tasks tasks tasks"
+    "team team team team team team team team";
+    }
+    @media screen and (width < 991px) {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-areas:
+    "totalProjectValueChart totalProjectValueChart totalProjectValueChart totalProjectValueChart smallExpensesChart smallExpensesChart smallExpensesChart smallExpensesChart"
+    "bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart"
+    "projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration"
+    "lastRequests lastRequests lastRequests lastRequests lastRequests requestsChart requestsChart requestsChart"
+    "tasksChart tasksChart tasksChart tasks tasks tasks tasks tasks"
+    "team team team team team team team team";
+    }
+    @media screen and (width < 768px) {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-areas:
+    "totalProjectValueChart totalProjectValueChart totalProjectValueChart totalProjectValueChart smallExpensesChart smallExpensesChart smallExpensesChart smallExpensesChart"
+    "bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart"
+    "projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration"
+    "lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests"
+    "requestsChart requestsChart requestsChart requestsChart requestsChart requestsChart requestsChart requestsChart"
+    "tasksChart tasksChart tasksChart tasksChart tasksChart tasksChart tasksChart tasksChart"
+    "tasks tasks tasks tasks tasks tasks tasks tasks"
+    "team team team team team team team team";
+    }
+    &.asideDisplay {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-areas:
+          "totalProjectValueChart totalProjectValueChart smallExpensesChart smallExpensesChart requestsChart requestsChart requestsChart requestsChart"
+          "projectDuration projectDuration projectDuration projectDuration requestsChart requestsChart requestsChart requestsChart"
+          "bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart"
+          "lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests"
+          "tasksChart tasksChart tasksChart tasks tasks tasks tasks tasks"
+          "team team team team team team team team";
+      @media screen and (min-width: 991px) and (max-width: 1080px) {
+        grid-template-areas:
+        "totalProjectValueChart totalProjectValueChart totalProjectValueChart totalProjectValueChart smallExpensesChart smallExpensesChart smallExpensesChart smallExpensesChart"
+    "bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart"
+    "projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration"
+    "lastRequests lastRequests lastRequests lastRequests lastRequests requestsChart requestsChart requestsChart"
+    "tasksChart tasksChart tasksChart tasks tasks tasks tasks tasks"
+    "team team team team team team team team";
+
+      app-small-expenses-chart,
+      app-total-project-value-chart {
+        max-width: 100%;
+        aspect-ratio: 8 / 4 !important
+      }
+      }
+      @media screen and (width < 768px) {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+      "totalProjectValueChart totalProjectValueChart totalProjectValueChart totalProjectValueChart smallExpensesChart smallExpensesChart smallExpensesChart smallExpensesChart"
+      "bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart bigExpensesChart"
+      "projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration projectDuration"
+      "lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests lastRequests"
+      "requestsChart requestsChart requestsChart requestsChart requestsChart requestsChart requestsChart requestsChart"
+      "tasksChart tasksChart tasksChart tasksChart tasksChart tasksChart tasksChart tasksChart"
+      "tasks tasks tasks tasks tasks tasks tasks tasks"
+      "team team team team team team team team";
+      app-small-expenses-chart,
+      app-total-project-value-chart {
+        max-width: 100%;
+        aspect-ratio: 6 / 4 !important;
+      }
+      }
+    }
+    app-total-project-value-chart {
+      grid-area: totalProjectValueChart;
+      aspect-ratio: 5 / 4;
+      max-width: clamp(220px, 21rem, 300px);
+      @media screen and (width < 991px) {
+        max-width: 100%;
+        aspect-ratio: 7 / 4;
+      }
+      @media screen and (width < 768px) {
+        aspect-ratio: 2 / 1;
+      }
+      @media screen and (width < 580px) {
+        aspect-ratio: 1 / 1;
+      }
+    }
+    app-small-expenses-chart {
+      grid-area: smallExpensesChart;
+      aspect-ratio: 5 / 4;
+      max-width: clamp(220px, 21rem, 300px);
+      @media screen and (width < 991px) {
+        max-width: 100%;
+        aspect-ratio: 7 / 4;
+      }
+      @media screen and (width < 768px) {
+        aspect-ratio: 2 / 1;
+      }
+      @media screen and (width < 580px) {
+        aspect-ratio: 1 / 1;
+      }
+    }
+    app-large-expenses-chart {
+      grid-area: bigExpensesChart;
+    }
+    app-project-duration {
+      grid-area: projectDuration;
+    }
+    app-last-requests {
+      grid-area: lastRequests;
+    }
+    app-project-requests-chart {
+      grid-area: requestsChart;
+    }
+    app-project-tasks-chart {
+      grid-area: tasksChart;
+    }
+    app-project-tasks {
+      grid-area: tasks;
+    }
+    app-project-teams {
+      grid-area: team;
+    }
+}

@@ -1,0 +1,70 @@
+<section class="card">
+  <div class="title-btn">
+    <div class="title">
+      <h2>{{ translation?.tasks }}</h2>
+      <h3>{{ totalTasks }}</h3>
+    </div>
+    <button (click)="goToTasks()">{{ translation?.showMore }}</button>
+  </div>
+
+  <div style="overflow-x: auto">
+    <table
+      id="kt_profile_overview_table"
+      class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+    >
+      <thead class="fs-7">
+        <tr>
+          <th scope="col">
+            {{ translation?.taskName }}
+          </th>
+          <th scope="col">{{ translation?.division }}</th>
+          <th scope="col">{{ translation?.status }}</th>
+          <th scope="col">{{ translation?.team }}</th>
+        </tr>
+      </thead>
+      <tbody class="fs-6">
+        @for (workitem of workItems(); let ind = $index; track ind) {
+        <tr>
+          <td>{{ workitem.name }}</td>
+          <td>{{ businessTypes[workitem.businessType] }}</td>
+          <td>
+            @if (workItemsStatuses && workItemsStatuses[workitem.status]) {
+            <div [class]="'badge fw-bold ' + workItemsStatuses[workitem.status].color">
+              {{ workItemsStatuses[workitem.status].value }}
+            </div>
+            }
+          </td>
+          <td>
+            <div class="symbol-group symbol-hover my-1">
+              @for (user of workitem.assignees; track user) { @if (user) {
+              <div
+                class="symbol symbol-35px symbol-circle"
+                data-bs-toggle="tooltip"
+                [title]="user.username"
+              >
+                <img
+                  alt="Pic"
+                  [src]="user.picture || 'assets/media//avatars/blank.png'"
+                  onerror="this.onerror=null;this.src='assets/media//avatars/blank.png'"
+                />
+              </div>
+              } }
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    @if (pageInfo()?.totalPages > 1) {
+    <app-pagination
+      [pageInfo]="pageInfo()"
+      [paginationPages]="paginationPages()"
+      [pageIndex]="pageInfo().pageIndex + 1"
+      (goToPage)="goToPageHandler($event)"
+      [pageSize]="5"
+    ></app-pagination>
+
+    }
+  </div>
+</section>
+

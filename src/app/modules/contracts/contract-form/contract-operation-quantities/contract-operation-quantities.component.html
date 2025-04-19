@@ -1,0 +1,60 @@
+<h1>{{ title }}</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{ translation?.title?.label | translate }}</th>
+      <th scope="col">{{ translation?.totalPrice?.label | translate }}</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (project of projects(); track project.id; let i = $index) {
+    <tr class="main-row">
+      <td>
+        {{ project.name }}
+      </td>
+      <td>
+        {{ project.totalPrice }}
+        {{ _translateService.currentLang === 'en' ? ' S.R' : 'ر.س ' }}
+      </td>
+      <td class="actions">
+        <button class="btn btn-icon btn-color-primary btn-bg-light btn-sm me-1">
+          <i class="ki-duotone ki-eye">
+            <span class="path1"></span>
+            <span class="path2"></span>
+            <span class="path3"></span>
+          </i>
+        </button>
+        <button
+          (click)="downloadQuantities(project)"
+          class="btn btn-icon btn-bg-light btn-color-primary btn-sm"
+        >
+          <i class="ki-duotone ki-down-square">
+            <span class="path1"></span>
+            <span class="path2"></span>
+          </i>
+        </button>
+      </td>
+      <input type="checkbox" (change)="toggleQuantitiesAccordion($event, project.id)" />
+    </tr>
+    <tr class="quantities-row">
+      <td colspan="3" class="quantities-table">
+        @defer (when project.getQuantities) {
+        <app-quanities-table
+          [selectedProject]="project"
+          [translation]="translation"
+          [allProjects]="projects()"
+          (projectPriceChange)="changeOperationPrice($event, project)"
+        ></app-quanities-table>
+        } @placeholder {
+        <span>{{ 'general.loading' | translate }}</span>
+        } @loading {
+        <span>{{ 'general.loading' | translate }}</span>
+        }
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+

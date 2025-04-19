@@ -1,0 +1,30 @@
+.label-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
+.units-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  display: grid;
+  .unit-form {
+    grid-column: span 2;
+    position: relative;
+    app-custom-input {
+      margin-top: 0 !important;
+    }
+    .delete-unit {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      left: 30px;
+      color: red;
+      z-index: 1;
+      border: none;
+      background-color: transparent;
+    }
+  }
+}

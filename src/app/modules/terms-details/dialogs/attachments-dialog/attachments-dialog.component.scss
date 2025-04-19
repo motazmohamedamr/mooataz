@@ -1,0 +1,10 @@
+.card-body {
+  position: relative;
+  .downloadfile {
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+}

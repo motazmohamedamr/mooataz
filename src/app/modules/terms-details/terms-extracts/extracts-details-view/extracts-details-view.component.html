@@ -1,0 +1,175 @@
+@if (translation) { @if (extractDetailsSig()) {
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h2>{{ translation.extractStatus.title }}</h2>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-extract-status
+      [translation]="translation.extractStatus"
+      [phase]="extractDetailsSig().phase"
+    ></app-extract-status>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h2>{{ translation.contractor.data }}</h2>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-contractor-data
+      [translation]="translation.contractor"
+      [supplierId]="extractDetailsSig().supplierId"
+    ></app-contractor-data>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h2>{{ translation.mainData.title }}</h2>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-extract-main-data
+      [translation]="translation.mainData"
+      [extract]="extractDetailsSig()"
+    ></app-extract-main-data>
+  </mat-expansion-panel>
+</mat-accordion>
+
+@if (extractDetailsSig().history?.length > 0) {
+<mat-accordion class="extract-status">
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h2>{{ translation.requestStatus.title }}</h2>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-extract-request-status
+      [translation]="translation.requestStatus"
+      [user]="user"
+      [extract]="extractDetailsSig()"
+      (openAcceptRejectDialogEmitter)="openAcceptRejectDialog($event)"
+    ></app-extract-request-status>
+  </mat-expansion-panel>
+</mat-accordion>
+}
+
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h2>{{ translation.extractData.title }}</h2>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-extract-data
+      [translation]="translation.extractData"
+      [extract]="extractDetailsSig()"
+      (totalQuantityChange)="totalQuantityChange($event)"
+    ></app-extract-data>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-accordion class="extract-discount">
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div class="d-flex justify-content-between align-items-center flex-grow-1">
+          <h2>{{ translation.discounts.title }}</h2>
+          @if (extractDetailsSig().status === extractStatus.Draft) {
+          <button type="button" (click)="openAddDiscountDialog()">
+            <i class="ki-duotone ki-plus"> </i>
+            <span>{{ translation.discounts.addDiscounts }}</span>
+          </button>
+          }
+        </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-extract-discount
+      [translation]="translation.discounts"
+      [extract]="extractDetailsSig()"
+      (totalQuantityFromDiscountChange)="totalQuantityFromDiscountChange($event)"
+      (unitPriceFromDiscountChange)="unitPriceFromDiscountChange($event)"
+    ></app-extract-discount>
+  </mat-expansion-panel>
+</mat-accordion>
+
+@if (extractDetailsSig().attachments?.length > 0) {
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h2>{{ translation.attachments.title }}</h2>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-extract-attachments
+      [translation]="translation.attachments"
+      [attachments]="extractDetailsSig().attachments"
+      [user]="user"
+      (refreshRequest)="refreshRequest()"
+      [extract]="extractDetailsSig()"
+    ></app-extract-attachments>
+  </mat-expansion-panel>
+</mat-accordion>
+}
+
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div class="d-flex justify-content-between align-items-center flex-grow-1">
+          <h2>{{ translation.transactions.title }}</h2>
+          @if ((user.roles.includes(role.Accountant) && extractDetailsSig().phase === 4)
+          || (user.roles.includes(role.Accountant) && extractDetailsSig().phase === 5)) {
+          <button class="green-btn" type="button" (click)="openAddTransactionDialog()">
+            <i class="ki-duotone ki-plus"> </i>
+            <span>{{ translation.transactions.addTransaction }}</span>
+          </button>
+          }
+        </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-extract-transactions
+      [translation]="translation.transactions"
+      [transactions]="extractDetailsSig().transactionReqeusts"
+    ></app-extract-transactions>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<div class="btns d-flex gap-3">
+  @if (extractDetailsSig().status === extractStatus.Draft && (
+  (user.roles.includes(role.SiteEngineer) && extractDetailsSig().phase ===
+  phase.SiteEngineer) || (user.roles.includes(role.ProjectManager) &&
+  extractDetailsSig().phase === phase.ProjectManagerReview) )) {
+  <button
+    type="button"
+    class="btn btn-secondary"
+    (click)="updateExtract(extractDetailsSig().totalQuantity, false)"
+  >
+    {{ 'general.save' | translate }}
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="updateExtract(extractDetailsSig().totalQuantity, true)"
+  >
+    {{ translation.accreditation }}
+  </button>
+  } @else {
+  <button type="button" (click)="goToList()" class="btn btn-primary">
+    {{ translation.back }}
+  </button>
+  }
+</div>
+
+} @else {
+<article class="card">
+  <div class="card-body">
+    <h2>{{ 'general.loading' | translate }}</h2>
+  </div>
+</article>
+} }

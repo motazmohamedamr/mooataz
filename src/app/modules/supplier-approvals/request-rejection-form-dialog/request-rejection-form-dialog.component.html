@@ -1,0 +1,28 @@
+<div class="title-parent">
+  <h1 mat-dialog-title class="dialog-reject-title">
+    {{ data.translation?.rejectionTitle | translate }}
+  </h1>
+</div>
+
+<mat-dialog-content>
+  <form
+    [formGroup]="requestRejectForm"
+    class="assign-teams-form"
+    (ngSubmit)="submitForm()"
+  >
+    <app-custom-input
+      [type]="'textarea'"
+      [placeholder]="data.translation?.rejectionNotesPlaceholder | translate"
+      [label]="data.translation?.addRejectionReason | translate"
+      [formControl]="notes"
+    ></app-custom-input>
+
+    <div class="reject-buttons">
+      <button mat-dialog-close>{{ 'general.cancel' | translate }}</button>
+      <button type="submit" [disabled]="requestRejectForm.invalid">
+        {{ 'general.confirm' | translate }}
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>
+

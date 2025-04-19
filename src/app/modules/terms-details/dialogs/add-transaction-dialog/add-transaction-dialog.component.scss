@@ -1,0 +1,43 @@
+.modal-header,
+.modal-body,
+.modal-footer {
+  padding: 4.5%;
+  button:disabled {
+    opacity: .65;
+  }
+}
+
+.gridlist {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  display: grid;
+  gap: 10px;
+}
+
+.reject-btn {
+  border-radius: 6px;
+  border: 1px solid #D8D8D8;
+  background: #D8D8D8;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    background-color: #158456;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    i {
+      font-size: 15px;
+      color: #fff;
+    }
+  }
+}

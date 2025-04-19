@@ -1,0 +1,15 @@
+<section>
+  <apx-chart
+    [series]="[100]"
+    [chart]="chartOptions.chart"
+    [stroke]="chartOptions.stroke"
+    [colors]="chartOptions.colors"
+    [grid]="chartOptions.grid"
+    [plotOptions]="chartOptions.plotOptions"
+  ></apx-chart>
+  <div class="value">
+    <span>{{ (financialSummary?.totalValue | numberWithCommas) || 0 }}</span>
+    <p>{{ translation?.totalProjectValue }}</p>
+  </div>
+</section>
+

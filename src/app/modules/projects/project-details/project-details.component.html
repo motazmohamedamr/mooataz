@@ -1,0 +1,308 @@
+<div class="card mb-6 mb-xl-9">
+  <div class="card-body pt-9 pb-0">
+    <!--begin::Details-->
+    <div class="d-flex flex-wrap flex-sm-nowrap mb-6">
+      <!--begin::Image-->
+      <div
+        class="proj d-flex flex-center flex-shrink-0 bg-light rounded w-100px h-100px w-lg-150px h-lg-150px me-7 mb-4"
+      >
+        @if (projectImageUrl) {
+        <img [src]="projectImageUrl" alt="Project image" />
+        } @else {
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 280.01 279.28"
+        >
+          <defs>
+            <style>
+              .cls-1 {
+                fill: url(#radial-gradient);
+              }
+              .cls-2 {
+                fill: #0d3f3c;
+                fill-rule: evenodd;
+              }
+            </style>
+            <radialGradient
+              id="radial-gradient"
+              cx="140.01"
+              cy="304.35"
+              r="139.82"
+              gradientTransform="matrix(1, 0, 0, -1, 0, 443.99)"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#0e283d" />
+              <stop offset="0.48" stop-color="#0d3f3c" />
+              <stop offset="0.59" stop-color="#0c433b" />
+              <stop offset="0.7" stop-color="#0c4f3b" />
+              <stop offset="0.81" stop-color="#0b643b" />
+              <stop offset="0.88" stop-color="#0b753b" />
+              <stop offset="0.99" stop-color="#0b783b" />
+              <stop offset="1" stop-color="#0b793b" />
+            </radialGradient>
+          </defs>
+          <title>Asset 1</title>
+          <g id="Layer_2" data-name="Layer 2">
+            <g id="Layer_1-2" data-name="Layer 1">
+              <path
+                class="cls-1"
+                d="M164.06,58.29c.12-1.25.27-2.6.44-4.1,1.42-12.91,2.84-25.82,4.33-39.42A10.33,10.33,0,0,1,182.08,6a129.92,129.92,0,0,1,43.85,23c14.35,11.4,14.21,11.59,0,23-10.26,8.27-20.64,16.39-30.74,24.84a80.13,80.13,0,0,0-31.15-18.52Zm-122.54-9c13.76,9.82,27.24,20,40.94,29.91A80.07,80.07,0,0,1,133.9,54.84c1.74-14.42,3.31-29,4.95-44.07A9.72,9.72,0,0,0,128.3,0c-34.51,3.23-63.52,16.57-88,40.86-3.15,3.13-2.83,5.55,1.17,8.41ZM262,70.54c-2.29-4.1-4.47-7-9.37-3.14-13.25,10.39-26.54,20.71-38.85,30.29a18.22,18.22,0,0,0-1.95,1.76A79.94,79.94,0,0,1,140,214.64H125.45A11.49,11.49,0,0,0,114,226.12a12.28,12.28,0,0,1-12.27,12.27H85.25c-3.92,5.34-7.85,10.72-11.85,16.18A6.16,6.16,0,0,0,75,263.34a18.26,18.26,0,0,0,4.42,2.32c12.23,4,24.4,8.59,37,11,29,5.62,57.34,2.2,84-11,42.48-21.07,68.59-55,77.21-101.65,6.07-32.81.85-64.17-15.55-93.48ZM60,221.46V188.21a26.34,26.34,0,0,1,7.92-18.84A80.19,80.19,0,0,1,60,132.62a78.74,78.74,0,0,1,6.39-29.2C53.63,93.85,40.57,84.36,26.1,73.81a7.73,7.73,0,0,0-11.76,3.45C10.57,87,7,95.77,4.71,104.89c-12.56,50.4.28,94.39,35,132.47,4,4.39,6.89,5.21,10.92-.46,3.11-4.38,6.29-8.71,9.48-13a17.15,17.15,0,0,1-.19-2.4Z"
+              />
+              <path
+                class="cls-2"
+                d="M208.83,134.62A69,69,0,0,0,140.4,65.78H140c-37.09,0-67.93,30-68.83,67.11a68.93,68.93,0,0,0,8.65,35.21l2.52,4.52L78,175.48a15.26,15.26,0,0,0-6.88,12.73v33.25a5.76,5.76,0,0,0,5.75,5.75h24.8a1.08,1.08,0,0,0,1.08-1.08,22.7,22.7,0,0,1,22.67-22.67H139.9a68.94,68.94,0,0,0,68.93-68.84Zm-30.59,2.47a38.35,38.35,0,0,1-35.77,35.78c-.81,0-1.63.08-2.44.08a38.33,38.33,0,1,1,38.21-35.86Z"
+              />
+            </g>
+          </g>
+        </svg>
+        }
+      </div>
+      <!--end::Image-->
+      <!--begin::Wrapper-->
+      <div class="flex-grow-1">
+        <!--begin::Head-->
+        <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+          <!--begin::Details-->
+          <div class="d-flex flex-column">
+            <!--begin::Status-->
+            <div class="d-flex align-items-center mb-1">
+              <span class="text-gray-800 text-hover-primary fs-2 fw-bold me-3">
+                {{ project?.name }}</span
+              >
+              @switch (project?.status) { @case (ProjectStatus.Completed) {
+              <span class="badge badge-light-success">{{
+                'Projects.projectDetails.status.completed' | translate
+              }}</span>
+              } @case (ProjectStatus.InProgress) {
+              <span class="badge badge-light-primary">{{
+                'Projects.projectDetails.status.inProgress' | translate
+              }}</span>
+              } @default {
+              <span class="badge badge-light-primary">{{
+                'Projects.projectDetails.status.notStarted' | translate
+              }}</span>
+              } }
+            </div>
+            <!--end::Status-->
+            <!--begin::Description-->
+            <div class="d-flex flex-wrap fw-semibold mb-4 mt-2 fs-5 text-gray-500">
+              {{ project?.description }}
+            </div>
+            <!--end::Description-->
+          </div>
+          <!--end::Details-->
+        </div>
+        <!--end::Head-->
+        <!--begin::Info-->
+        <div class="d-flex flex-wrap justify-content-start">
+          <!--begin::Stats-->
+          <div class="d-flex flex-wrap">
+            <!--begin::Stat-->
+            <div
+              class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-2 mb-3"
+            >
+              <!--begin::Number-->
+              <div class="d-flex align-items-center">
+                <div class="fs-4 fw-bold">{{ project?.contractRefNumber ?? '--' }}</div>
+              </div>
+              <!--end::Number-->
+              <!--begin::Label-->
+              <div class="fw-semibold fs-6 text-gray-500">
+                {{ 'Projects.projectDetails.contractNum' | translate }}
+              </div>
+              <!--end::Label-->
+            </div>
+            <!--end::Stat-->
+            <!--begin::Stat-->
+            <div
+              class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-2 mb-3"
+            >
+              <!--begin::Number-->
+              <div class="d-flex align-items-center">
+                <div
+                  class="fs-4 fw-bold"
+                  data-kt-countup="true"
+                  data-kt-countup-value="75"
+                >
+                  {{ project?.startingDate | date : 'dd/MM/yyyy' }}
+                </div>
+              </div>
+              <!--end::Number-->
+              <!--begin::Label-->
+              <div class="fw-semibold fs-6 text-gray-500">
+                {{ 'Projects.projectDetails.startingDate' | translate }}
+              </div>
+              <!--end::Label-->
+            </div>
+            <!--end::Stat-->
+            <!--begin::Stat-->
+            <div
+              class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-2 mb-3"
+            >
+              <!--begin::Number-->
+              <div class="d-flex align-items-center">
+                <div
+                  class="fs-4 fw-bold"
+                  data-kt-countup="true"
+                  data-kt-countup-value="15000"
+                  data-kt-countup-prefix="$"
+                >
+                  {{ project?.endingDate | date : 'dd/MM/yyyy' }}
+                </div>
+              </div>
+              <!--end::Number-->
+              <!--begin::Label-->
+              <div class="fw-semibold fs-6 text-gray-500">
+                {{ 'Projects.projectDetails.endingDate' | translate }}
+              </div>
+              <!--end::Label-->
+            </div>
+            <!--end::Stat-->
+            <!--begin::Stat-->
+            <div
+              class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-2 mb-3"
+            >
+              <!--begin::Number-->
+              <div class="d-flex align-items-center">
+                <div
+                  class="fs-4 fw-bold"
+                  data-kt-countup="true"
+                  data-kt-countup-value="15000"
+                  data-kt-countup-prefix="$"
+                >
+                  {{ calculatePeriod }}
+                </div>
+              </div>
+              <!--end::Number-->
+              <!--begin::Label-->
+              <div class="fw-semibold fs-6 text-gray-500">
+                {{ 'Projects.projectDetails.period' | translate }}
+              </div>
+              <!--end::Label-->
+            </div>
+            <!--end::Stat-->
+          </div>
+          <!--end::Stats-->
+          <!--begin::Users-->
+
+          <!--end::Users-->
+        </div>
+        <!--end::Info-->
+      </div>
+      <!--end::Wrapper-->
+    </div>
+    <!--end::Details-->
+    <div class="separator"></div>
+    <!--begin::Nav-->
+    <ul
+      class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold"
+    >
+      <!--begin::Nav item-->
+      <li class="nav-item">
+        <a
+          class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+          (click)="changeTab(0, '')"
+          [ngClass]="{ active: activeTab === 0 }"
+          >{{ 'Projects.projectDetails.mainData' | translate }}</a
+        >
+      </li>
+      <!--end::Nav item-->
+      <!--begin::Nav item-->
+      <li class="nav-item">
+        <a
+          class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+          (click)="changeTab(1, 'terms-table')"
+          [ngClass]="{ active: activeTab === 1 }"
+          >{{ 'Projects.projectDetails.termsTable' | translate }}</a
+        >
+      </li>
+      <!--end::Nav item-->
+      <!--begin::Nav item-->
+      <li class="nav-item">
+        <a
+          class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+          (click)="changeTab(2, 'tasks')"
+          [ngClass]="{ active: activeTab === 2 }"
+          >{{ 'Projects.projectDetails.tasks' | translate }}</a
+        >
+      </li>
+      <!--end::Nav item-->
+      <!--begin::Nav item-->
+      <li class="nav-item" *hasRole="[Role.Admin]">
+        <a
+          class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+          (click)="changeTab(3, 'team')"
+          [ngClass]="{ active: activeTab === 3 }"
+          >{{ 'Projects.projectDetails.team' | translate }}</a
+        >
+      </li>
+      <!--end::Nav item-->
+      <!--begin::Nav item-->
+      <li class="nav-item">
+        <a
+          class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+          (click)="changeTab(4, 'project-files')"
+          [ngClass]="{ active: activeTab === 4 }"
+          >{{ 'Projects.projectDetails.projectsFiles' | translate }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+          (click)="changeTab(5, 'activity-logs')"
+          [ngClass]="{ active: activeTab === 5 }"
+          >{{ 'Projects.projectDetails.activity' | translate }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+          (click)="changeTab(6, 'settings')"
+          [ngClass]="{ active: activeTab === 6 }"
+          >{{ 'Projects.projectDetails.settings' | translate }}</a
+        >
+      </li>
+
+      <!-- <li class="nav-item">
+        <a
+          class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+          (click)="changeTab(5, 'purchase-orders')"
+          [ngClass]="{ active: activeTab === 5 }"
+          >{{ 'Projects.projectDetails.purchaseOrders' | translate }}</a
+        >
+      </li> -->
+    </ul>
+    <!--end::Nav-->
+  </div>
+</div>
+
+@if (activeTab === 0) {
+<app-main-details
+  [projectDetails]="project"
+  (goToActivityTabEv)="goToActivityTab()"
+  (goToTasks)="getTermId()"
+  (goToTeamEv)="goToTeamTab()"
+></app-main-details>
+} @if (activeTab === 1) {
+<app-terms-table
+  (selectTermEvent)="getTermId($event)"
+  (goToTasksAndFilter)="goToTasksAndFilter($event)"
+></app-terms-table>
+} @if (activeTab === 2) {
+<app-tasks></app-tasks>
+} @if (activeTab === 3) {
+<app-team></app-team>
+} @if (activeTab === 4) {
+<app-project-files></app-project-files>
+} @if (activeTab === 5) {
+<app-activity-logs></app-activity-logs>
+} @if (activeTab === 6) {
+<app-settings
+  [project]="project"
+  [projectImageUrl]="projectImageUrl"
+  (refreshDetails)="getProjectDetails()"
+></app-settings>
+} @if (activeTab === 7) {
+<app-purchase-orders></app-purchase-orders>
+}

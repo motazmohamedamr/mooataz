@@ -1,0 +1,39 @@
+<section>
+  <main>
+    <div class="footer">
+      <div class="footer__top">
+        <div class="footer__content">
+          <div class="logo-container">
+            <div class="logo">
+              <img src="./assets/media/homepage/footer-logo.svg" alt="Logo" />
+            </div>
+            <p>{{ translation?.logoContent }}</p>
+          </div>
+
+          <div class="social-links">
+            <img src="./assets/media/homepage/social-links.svg" alt="Logo" />
+          </div>
+        </div>
+
+        <div class="footer__links-container">
+          <div class="link-container" *ngFor="let section of footerSections">
+            <h6>{{ section.title }}</h6>
+            <ng-container *ngFor="let link of section.links">
+              @if (link.url) {
+              <a [routerLink]="link.url" class="footer-link">{{ link.text }}</a>
+              } @else if (link.href) {
+              <a (click)="scrollToElement(link.href)" class="footer-link">{{
+                link.text
+              }}</a>
+              }
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>{{ translation?.copyright.replace('{{year}}', currentYear.toString()) }}</p>
+      </div>
+    </div>
+  </main>
+</section>

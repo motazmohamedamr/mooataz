@@ -1,0 +1,169 @@
+<div *ngIf="translation" class="card mb-5 mb-xl-10">
+  <div class="card-header border-0">
+    <div class="card-title m-0">
+      <h3 class="fw-bolder m-0">{{ translation.title }}</h3>
+    </div>
+  </div>
+  <div class="collapse show">
+    <form class="form" (ngSubmit)="saveSettings()">
+      <div class="card-body border-top p-9">
+        <div class="row mb-6">
+          <label class="col-lg-4 col-form-label fw-bold fs-6">{{
+            translation.fields?.avatar
+          }}</label>
+          <div class="col-lg-8">
+            <!--begin::Image placeholder-->
+            <style>
+              .image-input-placeholder {
+                background-image: url('assets/media/svg/files/blank-image.svg');
+              }
+
+              [data-bs-theme='dark'] .image-input-placeholder {
+                background-image: url('assets/media/svg/files/blank-image-dark.svg');
+              }
+            </style>
+            <!--end::Image placeholder-->
+            <!--begin::Image input-->
+            <div
+              class="image-input image-input-outline"
+              data-kt-image-input="true"
+              [class.image-input-empty]="!this.newPictureUri"
+              [style.background-image]="'url(./assets/media/avatars/blank.png'"
+            >
+              <!--begin::Preview existing avatar-->
+              <div
+                class="image-input-wrapper w-125px h-125px"
+                [style.background-image]="
+                  this.newPictureUri ? 'url(' + this.newPictureUri + ')' : ''
+                "
+              ></div>
+              <!--end::Preview existing avatar-->
+              <label
+                class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                data-kt-image-input-action="change"
+              >
+                <i class="ki-duotone ki-pencil fs-7">
+                  <span class="path1"></span>
+                  <span class="path2"></span>
+                </i>
+                <!--begin::Inputs-->
+                <input
+                  type="file"
+                  (change)="changePicture($event)"
+                  accept=".png, .jpg, .jpeg"
+                />
+                <!--end::Inputs-->
+              </label>
+            </div>
+            <!--end::Image input-->
+          </div>
+        </div>
+
+        <div class="row mb-6">
+          <label class="col-lg-4 col-form-label required fw-bold fs-6">{{
+            translation.fields.fullName
+          }}</label>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-lg-6 fv-row">
+                <input
+                  type="text"
+                  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                  [formControl]="firstName"
+                  placeholder="{{ translation.fields.firstNameHint }}"
+                  autofocus
+                />
+                <!--begin::Validation-->
+                <ng-container
+                  [ngTemplateOutlet]="formError"
+                  [ngTemplateOutletContext]="{
+                    title: translation.fields.firstName,
+                    control: firstName
+                  }"
+                ></ng-container>
+                <!--end::Validation-->
+              </div>
+              <div class="col-lg-6 fv-row">
+                <input
+                  type="text"
+                  class="form-control form-control-lg form-control-solid"
+                  [formControl]="lastName"
+                  placeholder="{{ translation.fields.lastNameHint }}"
+                />
+                <!--begin::Validation-->
+                <ng-container
+                  [ngTemplateOutlet]="formError"
+                  [ngTemplateOutletContext]="{
+                    title: translation.fields.lastName,
+                    control: lastName
+                  }"
+                ></ng-container>
+                <!--end::Validation-->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-6">
+          <label class="col-lg-4 col-form-label fw-bold fs-6">
+            <span>{{ translation.fields.phoneNumber }}</span>
+          </label>
+          <div class="col-lg-8 fv-row">
+            <input
+              type="tel"
+              class="form-control form-control-lg form-control-solid"
+              [formControl]="phoneNumber"
+              placeholder="{{ translation.fields.phoneNumberHint }}"
+            />
+            <!--begin::Validation-->
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                title: translation.fields.phoneNumber,
+                control: phoneNumber
+              }"
+            ></ng-container>
+            <!--end::Validation-->
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer d-flex justify-content-end py-6 px-9">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="(form && !form.valid) || isLoading"
+        >
+          <span *ngIf="!isLoading" class="indicator-label">{{
+            'general.saveChanges' | translate
+          }}</span>
+          <span *ngIf="isLoading" class="indicator-progress" [style.display]="'block'">
+            {{ 'general.loading' | translate }}
+            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<ng-template #formError let-control="control" let-title="title">
+  <ng-container *ngIf="control.invalid && control.dirty">
+    <div
+      *ngIf="control.hasError('required')"
+      class="fv-plugins-message-container invalid-feedback"
+    >
+      <span>
+        {{ 'validations.required' | translate : { field: title } }}
+      </span>
+    </div>
+    <div
+      *ngIf="control.hasError('validation')"
+      class="fv-plugins-message-container invalid-feedback"
+    >
+      <span>
+        {{ control.errors['validation'] }}
+      </span>
+    </div>
+  </ng-container>
+</ng-template>

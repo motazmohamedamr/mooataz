@@ -1,0 +1,120 @@
+@if (translation) { @if (supplyRequestSig()) {
+<article class="card">
+  <div class="card-body pt-6 p-6">
+    <div class="title">
+      <div class="title-showall">
+        <h2>{{ translation.title | translate }}</h2>
+        @if (requestId()) {
+        <button class="show-all" type="button" (click)="showAllRequests()">
+          <span>{{ translation.showAllRequests | translate }}</span>
+        </button>
+        }
+      </div>
+      @if (user.roles.includes(role.ProjectManager) ||
+      user.roles.includes(role.SiteEngineer)) {
+      <button type="button" class="add-btn" (click)="openAddRequestDialog()">
+        <i class="ki-duotone ki-plus"> </i>
+        <span>{{ translation.addSupplyRequest | translate }}</span>
+      </button>
+      }
+    </div>
+    <div class="supply-requests-list">
+      <app-supply-requests-list
+        [translation]="translation"
+        [supplyRequest]="supplyRequestSig()"
+      ></app-supply-requests-list>
+      @if (supplyRequestSig().attachments?.length > 0) {
+      <div class="attachments">
+        <app-supply-requests-attachments
+          [attachments]="supplyRequestSig().attachments"
+          (refreshRequest)="refreshRequest()"
+        ></app-supply-requests-attachments>
+      </div>
+      }
+
+      <!-- PROJECT MANAGER -->
+      @if (enableAcceptRejectBtns) {
+      <div class="buttons">
+        <button type="button" (click)="openAcceptRejectDialog('accept')">
+          <span>{{ 'termsDetails.acceptRequest' | translate }}</span>
+        </button>
+        <button type="button" (click)="openAcceptRejectDialog('reject')">
+          <span>{{ 'termsDetails.rejectRequest' | translate }}</span>
+        </button>
+      </div>
+      }
+
+      <!-- TECHNICAL OFFICER -->
+      @if (supplyRequestSig().phase === 1 && user.roles.includes(role.TechnicalOfficer) &&
+      supplyRequestSig().status === 0) {
+      <div class="mt-10">
+        <h2>{{ translation.evaluationSupplyRequest | translate }}</h2>
+        <hr />
+        <div class="buttons">
+          <button type="button" (click)="openAcceptRejectDialog('accept')">
+            <span>{{ 'termsDetails.acceptRequest' | translate }}</span>
+          </button>
+          <button type="button" (click)="openAcceptRejectDialog('reject')">
+            <span>{{ 'termsDetails.rejectRequest' | translate }}</span>
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</article>
+<article class="card supply-requests-status-list">
+  <div class="card-body pt-6 p-6">
+    <h2>{{ translation.requestStatus | translate }}</h2>
+    <app-supply-requests-status-list
+      [translation]="translation"
+      [history]="supplyRequestSig().history"
+      [supplyRequest]="supplyRequestSig()"
+    ></app-supply-requests-status-list>
+  </div>
+</article>
+<article
+  class="card supply-transactions"
+  *ngUnless="
+    supplyRequestSig().phase === 1 &&
+    user.roles.includes(role.TechnicalOfficer) &&
+    supplyRequestSig().status === 0
+  "
+>
+  <div class="card-body pt-6 p-6">
+    <div class="title">
+      <h2>{{ translation.transactions.title | translate }}</h2>
+      @if (user.roles.includes(role.Accountant) && supplyRequestSig().phase ===
+      phase.Accountant) {
+      <button type="button" (click)="openAddTransactionDialog()">
+        <i class="ki-duotone ki-plus"> </i>
+        <span>{{ translation.transactions.addTransaction | translate }}</span>
+      </button>
+      }
+    </div>
+    <app-supply-transactions
+      [transactions]="supplyRequestSig().transactionReqeusts"
+      [translation]="translation.transactions"
+    ></app-supply-transactions>
+  </div>
+</article>
+@if (pageInfo()?.totalPages > 1) {
+<app-pagination
+  [pageInfo]="pageInfo()"
+  [paginationPages]="paginationPages()"
+  [pageIndex]="pageIndexSig() + 1"
+  (goToPage)="goToPageHandler($event)"
+  [pageSize]="1"
+></app-pagination>
+
+} } @else {
+<article class="card">
+  <div class="card-body pt-6 p-6">
+    <app-no-supply-requests
+      (openAddDialog)="openAddRequestDialog()"
+      [translation]="translation"
+      [user]="user"
+    ></app-no-supply-requests>
+  </div>
+</article>
+} }

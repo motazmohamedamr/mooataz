@@ -1,0 +1,209 @@
+<div *ngIf="translation">
+  <!--begin::Modal header-->
+  <div class="header">
+    <!--begin::Modal title-->
+    <h2 *ngIf="!data?.item" mat-dialog-title class="fw-bold">{{ translation.create }}</h2>
+    <h2 *ngIf="data?.item" mat-dialog-title class="fw-bold">{{ translation.edit }}</h2>
+    <!--end::Modal title-->
+    <!--begin::Close-->
+    <div class="btn btn-icon btn-sm btn-active-icon-primary" (click)="close()">
+      <i class="ki-duotone ki-cross fs-1">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
+    </div>
+    <!--end::Close-->
+  </div>
+  <!--end::Modal header-->
+  <!--begin::Modal body-->
+  <mat-dialog-content>
+    <!--begin::Form-->
+
+    <form class="form" (ngSubmit)="save()">
+      <!--begin::Scroll-->
+      <div
+        class="scroll-y"
+        data-kt-scroll="true"
+        data-kt-scroll-activate="true"
+        data-kt-scroll-max-height="auto"
+        data-kt-scroll-offset="300px"
+      >
+        <div class="basic-info-group px-4 py-4">
+          <!--begin::Input group-->
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="supplierType"
+              [type]="'select'"
+              [selectOptions]="supplierTypes"
+              [placeholder]="translation.fields.supplierType.label"
+              [label]="translation.fields.supplierType.label"
+              [selectValue]="'id'"
+              [selectLabel]="'name'"
+            >
+            </app-custom-input>
+          </div>
+
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="serviceType"
+              [type]="'select'"
+              [selectOptions]="serviceTypes"
+              [placeholder]="translation.fields.serviceType.label"
+              [label]="translation.fields.serviceType.label"
+              [selectValue]="'id'"
+              [selectLabel]="'name'"
+            >
+            </app-custom-input>
+          </div>
+
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="businessType"
+              [type]="'select'"
+              [selectOptions]="businessTypes"
+              [placeholder]="translation.fields.businessType.label"
+              [label]="translation.fields.businessType.label"
+              [selectValue]="'id'"
+              [selectLabel]="'name'"
+            >
+            </app-custom-input>
+          </div>
+
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="name"
+              [type]="'text'"
+              [placeholder]="translation.fields.name"
+              [label]="translation.fields.name"
+            >
+            </app-custom-input>
+          </div>
+
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="address"
+              [type]="'text'"
+              [placeholder]="translation.fields.address"
+              [label]="translation.fields.address"
+            >
+            </app-custom-input>
+          </div>
+
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="identifierNumber"
+              [type]="'text'"
+              [placeholder]="
+                supplierType.value === suppliertype.Individual
+                  ? translation.fields.identifierNumber
+                  : translation.fields.CommercialRegisterNumber
+              "
+              [label]="
+                supplierType.value === suppliertype.Individual
+                  ? translation.fields.identifierNumber
+                  : translation.fields.CommercialRegisterNumber
+              "
+            >
+            </app-custom-input>
+          </div>
+          <!--end::Input group-->
+        </div>
+
+        <hr />
+
+        <h2 class="mt-5 mb-3 px-4">{{ translation.fields.contactInformation }}</h2>
+        <div class="basic-info-group px-4 py-4">
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="phone1"
+              [type]="'text'"
+              [placeholder]="translation.fields.phone1"
+              [label]="translation.fields.phone1"
+            >
+            </app-custom-input>
+          </div>
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="phone2"
+              [type]="'text'"
+              [placeholder]="translation.fields.phone2"
+              [label]="translation.fields.phone2"
+            >
+            </app-custom-input>
+          </div>
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="mail"
+              [type]="'text'"
+              [placeholder]="translation.fields.mail"
+              [label]="translation.fields.mail"
+            >
+            </app-custom-input>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="basic-info-group px-4 py-4">
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="bankId"
+              [type]="'select'"
+              [selectOptions]="banks()"
+              [selectValue]="'id'"
+              [selectLabel]="'name'"
+              [label]="translation?.fields?.bankId"
+              [selectOptionHasLangValues]="true"
+              [placeholder]="translation?.fields?.bankId"
+              [gridClass]="'span-2'"
+            ></app-custom-input>
+          </div>
+
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="paymentOption"
+              [type]="'select'"
+              [selectOptions]="paymentOptions"
+              [placeholder]="translation.fields.paymentOptionsTitle"
+              [label]="translation.fields.paymentOptionsTitle"
+              [selectValue]="'id'"
+              [selectLabel]="'name'"
+            ></app-custom-input>
+          </div>
+
+          <div class="fv-row mb-3">
+            <app-custom-input
+              [formControl]="iban"
+              [type]="'text'"
+              [placeholder]="translation.fields.iban"
+              [label]="translation.fields.iban"
+            >
+            </app-custom-input>
+          </div>
+        </div>
+      </div>
+      <!--end::Scroll-->
+      <!--begin::Actions-->
+      <div class="text-center pt-10">
+        <button type="button" class="btn btn-light me-3" (click)="close()">
+          {{ 'general.discard' | translate }}
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="loading || form.invalid"
+          [attr.data-kt-indicator]="loading ? 'on' : 'off'"
+        >
+          <span class="indicator-label">{{ 'general.submit' | translate }}</span>
+          <span class="indicator-progress">
+            {{ 'general.loading' | translate }}
+            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+          </span>
+        </button>
+      </div>
+      <!--end::Actions-->
+    </form>
+    <!--end::Form-->
+  </mat-dialog-content>
+  <!--end::Modal dialog-->
+</div>

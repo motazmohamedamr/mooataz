@@ -1,0 +1,58 @@
+<div class="modal-header border-0">
+  <h2 class="modal-title mb-1 fw-bold">
+    {{ data?.translation.confirmTransaction }}
+  </h2>
+  <button
+    type="button"
+    (click)="addTransactionRequest()"
+    [disabled]="!addTransactionForm.valid"
+  >
+    <i class="ki-duotone ki-plus"> </i>
+    <span>{{ data?.translation?.addTransaction | translate }}</span>
+  </button>
+</div>
+
+<form class="modal-body py-0" [formGroup]="addTransactionForm" id="modalBody">
+  <ng-container formArrayName="transactionRequests">
+    <div *ngFor="let ctrl of transactionRequests.controls; let i = index">
+      <form class="gridlist" [formGroup]="ctrl">
+        <app-custom-input
+          formControlName="date"
+          [label]="data?.translation?.transactionDate"
+          [type]="'date'"
+          [gridClass]="'span-2'"
+          [placeholder]="data?.translation?.transactionDate"
+        ></app-custom-input>
+
+        <app-custom-input
+          formControlName="amount"
+          [label]="data?.translation?.amount"
+          [gridClass]="'span-2'"
+          [type]="'number'"
+          [placeholder]="data?.translation?.amount"
+        ></app-custom-input>
+        <app-custom-input
+          formControlName="remain"
+          [label]="data?.translation?.remainingAmount"
+          [gridClass]="'span-2'"
+          [type]="'number'"
+          [placeholder]="data?.translation?.remainingAmount"
+        ></app-custom-input>
+      </form>
+    </div>
+  </ng-container>
+</form>
+
+<div class="d-flex modal-footer border-0 flex-end gap-3">
+  <button type="button" (click)="close()" class="btn reject-btn">
+    {{ 'general.cancel' | translate }}
+  </button>
+  <button
+    type="submit"
+    (click)="submit()"
+    [disabled]="!addTransactionForm.valid"
+    class="btn btn-primary accept-btn"
+  >
+    {{ 'general.save' | translate }}
+  </button>
+</div>

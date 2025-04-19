@@ -1,0 +1,52 @@
+<h1>{{ title }}</h1>
+
+<form [formGroup]="contractForm">
+  <app-contract-form-input
+    [formControl]="documentNumber"
+    [type]="'number'"
+    [label]="translation?.documentNumber?.label"
+    [placeholder]="translation?.documentNumber?.placeholder"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="commerceChamberId"
+    [label]="translation?.commerceChamberId?.label"
+    [type]="'select'"
+    [placeholder]="translation?.commerceChamberId?.placeholder"
+    [selectOptionHasLangValues]="true"
+    [selectOptions]="commerceChambers()"
+    [selectValue]="'id'"
+    [selectLabel]="'name'"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="delegatedToName"
+    [label]="translation?.delegatedToName?.label"
+    [type]="'select'"
+    [placeholder]="translation?.delegatedToName?.placeholder"
+    [selectOptions]="users()"
+    [selectValue]="'id'"
+    [selectLabel]="'fullName'"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="notes"
+    [type]="'textarea'"
+    [label]="translation?.notes?.label"
+    [placeholder]="translation?.notes?.placeholder"
+  ></app-contract-form-input>
+
+  <div class="fileuploader">
+    <app-file-upload
+      [multiple]="true"
+      [accept]="
+        'application/pdf,image/png,image/jpeg,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      "
+      (LoadFileHandler)="uploadFiless($event)"
+      (DeleteFileHandler)="removeFile($event)"
+    >
+    </app-file-upload>
+  </div>
+</form>

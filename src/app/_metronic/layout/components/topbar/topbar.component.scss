@@ -1,0 +1,32 @@
+#dropdownForm1::after {
+  display: none;
+}
+
+app-notifications-inner {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  z-index: 1;
+  border-bottom-right-radius: var(--bs-border-radius) !important;
+  border-bottom-left-radius: var(--bs-border-radius) !important;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 4px 0px;
+}
+
+.notification-btn-icon {
+  position: relative;
+  .not-read-count {
+    position: absolute;
+    top: 0;
+    background-color: red;
+    padding: 3px;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

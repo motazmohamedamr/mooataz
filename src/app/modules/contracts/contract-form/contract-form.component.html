@@ -1,0 +1,65 @@
+<section>
+  <ul>
+    <li
+      *ngFor="let step of contractStepper(); index as idx"
+      (click)="routeToStepper(step.route, step.disabled, idx)"
+      [ngClass]="{
+        active: router.url.includes('(contractStepper:' + step.route + ')'),
+        rtl: translate.currentLang === 'ar',
+        disabled: step.disabled
+      }"
+    >
+      <span>{{ idx + 1 }}</span>
+      <div class="title-subtitle">
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.subtitle }}</p>
+      </div>
+    </li>
+  </ul>
+  <span class="seperating-line"></span>
+  <article class="steppers" data-kt-scroll-height="auto">
+    <router-outlet
+      (activate)="onContractFormRouteChange($event)"
+      name="contractStepper"
+    ></router-outlet>
+    <div class="buttons">
+      <div class="previous">
+        @if(stepperIdx() > 0) {
+        <button type="button" [disabled]="loading()" (click)="previousStep()">
+          {{ 'contract.form.buttons.previousStep' | translate }}
+        </button>
+        }
+      </div>
+      <div class="next">
+        @if(stepperIdx() > 0 && stepperIdx() !== 5 && stepperIdx() !== 6 && stepperIdx()
+        !== 7) {
+        <button type="button" (click)="submitFormAsDraft()" [disabled]="loading()">
+          {{ 'contract.form.buttons.saveAsDraft' | translate }}
+        </button>
+        } @if (stepperIdx() < contractStepper().length - 1) {
+        <button
+          type="button"
+          class="primary"
+          (click)="submitForm()"
+          [disabled]="
+            (currentForm && !currentForm?.valid) ||
+            loading() ||
+            (stepperIdx() === 5 && !currentForm.get('hasOperations').value)
+          "
+        >
+          {{ 'contract.form.buttons.nextStep' | translate }}
+        </button>
+        } @if (stepperIdx() >= contractStepper().length - 1) {
+        <button
+          type="button"
+          class="primary"
+          (click)="submitForm(true)"
+          [disabled]="(currentForm && !currentForm?.valid) || loading()"
+        >
+          {{ 'contract.form.buttons.saveContract' | translate }}
+        </button>
+        }
+      </div>
+    </div>
+  </article>
+</section>

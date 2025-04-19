@@ -1,0 +1,113 @@
+<h1>{{ title }}</h1>
+
+<form [formGroup]="contractForm">
+  <label class="toggle-input-control">
+    <div class="input-switch">
+      <input
+        (change)="isBankGuranteeChanged($event)"
+        type="checkbox"
+        [checked]="isBankHasFinalGuarantee.value"
+      />
+      <span class="slider round"></span>
+    </div>
+    <p>{{ translation?.isBankHasFinalGuarantee?.label }}</p>
+  </label>
+
+  @if(isBankHasFinalGuarantee.value) {
+  <app-contract-form-input
+    [formControl]="bankId"
+    [type]="'select'"
+    [label]="translation?.bankId?.label"
+    [placeholder]="translation?.bankId?.placeholder"
+    [selectOptions]="banks()"
+    [selectValue]="'id'"
+    [selectOptionHasLangValues]="true"
+    [selectLabel]="'name'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="bankGuaranteePercentage"
+    [label]="translation?.bankGuaranteePercentage?.label"
+    [type]="'number'"
+    [placeholder]="translation?.bankGuaranteePercentage?.placeholder"
+    [inputIcon]="'%'"
+    [gridClass]="'span-1'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="bankGuaranteeAmount"
+    [label]="translation?.bankGuaranteeAmount?.label"
+    [type]="'number'"
+    [inputIcon]="'ر.س'"
+    [placeholder]="translation?.bankGuaranteeAmount?.placeholder"
+    [gridClass]="'span-1'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="bankGuaranteeAmountInLetters"
+    [label]="translation?.bankGuaranteeAmountInLetters?.label"
+    [type]="'text'"
+    [placeholder]="translation?.bankGuaranteeAmountInLetters?.placeholder"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="awardTotalPrice"
+    [label]="translation?.awardTotalPrice?.label"
+    [type]="'number'"
+    [inputIcon]="'ريال سعودي'"
+    [placeholder]="translation?.awardTotalPrice?.placeholder"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="awardTotalPriceInLetters"
+    [label]="translation?.awardTotalPriceInLetters?.label"
+    [type]="'text'"
+    [placeholder]="translation?.awardTotalPriceInLetters?.placeholder"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="bankGuaranteeValidityFrom"
+    [label]="translation?.bankGuaranteeValidityFrom?.label"
+    [type]="'date'"
+    [placeholder]="translation?.bankGuaranteeValidityFrom?.placeholder"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="bankGuaranteeValidityTo"
+    [label]="translation?.bankGuaranteeValidityTo?.label"
+    [type]="'date'"
+    [placeholder]="translation?.bankGuaranteeValidityTo?.placeholder"
+    [gridClass]="'span-2'"
+  ></app-contract-form-input>
+
+  <app-contract-form-input
+    [formControl]="receivedOrganization"
+    [label]="translation?.receivedOrganization?.label"
+    [type]="'text'"
+    [placeholder]="translation?.receivedOrganization?.placeholder"
+  ></app-contract-form-input>
+  } @if(!isBankHasFinalGuarantee.value) {
+  <app-contract-form-input
+    [formControl]="notes"
+    [label]="translation?.notes?.label"
+    [type]="'textarea'"
+    [placeholder]="translation?.notes?.placeholder"
+  ></app-contract-form-input>
+  } @if(isBankHasFinalGuarantee.value) {
+  <div class="fileuploader">
+    <app-file-upload
+      [multiple]="true"
+      [accept]="
+        'application/pdf,image/png,image/jpeg,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      "
+      (LoadFileHandler)="uploadFiless($event)"
+      (DeleteFileHandler)="removeFile($event)"
+    >
+    </app-file-upload>
+  </div>
+  }
+</form>

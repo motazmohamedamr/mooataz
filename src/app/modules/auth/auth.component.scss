@@ -1,0 +1,11 @@
+:host {
+  height: 100%;
+  background-image: none !important;
+  background-color: white !important;
+}
+
+.content {
+  @media (max-width:992px) {
+    width: 100%;
+  }
+}

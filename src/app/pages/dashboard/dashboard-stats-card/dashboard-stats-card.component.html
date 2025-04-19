@@ -1,0 +1,32 @@
+<div
+  class="statscard"
+  [style.background-color]="mode === 'primary' ? '#158456' : '#F5FDF9'"
+  [ngClass]="{ secondaryBorder: mode === 'secondary' }"
+>
+  <svg
+    class="circle-svg"
+    width="150"
+    height="139"
+    viewBox="0 0 150 139"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    [ngStyle]="{
+      left: translate.currentLang === 'ar' ? '0': 'initial',
+      right: translate.currentLang === 'en' ? '0': 'initial',
+    }"
+  >
+    <circle
+      cx="55"
+      cy="44"
+      r="75"
+      [attr.stroke]="mode === 'primary' ? '#F5FDF9' : '#0B3322'"
+      stroke-opacity="0.11"
+      stroke-width="40"
+    />
+  </svg>
+  <ng-content select=".stats-svg"></ng-content>
+  <div class="stats-result" [style.color]="mode === 'primary' ? '#F5FDF9' : '#0B3322'">
+    <span>{{ statsResult | numberWithCommas }}</span>
+    <p>{{ title }}</p>
+  </div>
+</div>

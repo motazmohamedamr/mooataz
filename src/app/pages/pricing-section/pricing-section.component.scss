@@ -1,0 +1,280 @@
+:host[lang='en'] {
+  font-family: 'Noto-Sans', sans-serif;
+}
+:host[lang='ar'] {
+  font-family: 'Noto-Sans-Arabic', sans-serif;
+}
+
+:host * {
+  font-family: inherit !important;
+}
+
+section {
+  p,
+  h1,
+  h3 {
+    margin: 0px;
+  }
+
+  .pricing-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    margin: 0 auto;
+
+    .pricing-section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+
+      .header {
+        display: flex;
+        padding: 6px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 999px;
+        background: rgba(21, 132, 86, 0.1);
+        backdrop-filter: blur(10px);
+
+        p {
+          color: #158456;
+          text-align: center;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 40px;
+        }
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 54px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 60px;
+        background: linear-gradient(180deg, #000 0%, #093b26 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @media (max-width: 743px) {
+          font-size: 34px;
+        }
+      }
+
+      h3 {
+        color: #010d3e;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 31px;
+        max-width: 743px;
+
+        @media (max-width: 743px) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .pricing-section-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: flex-end;
+      gap: 25px;
+
+      @media (max-width: 980px) {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+      }
+
+      @media (max-width: 743px) {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .card {
+        display: flex;
+        width: 100%;
+        padding: 40px;
+        flex-direction: column;
+        gap: 34px;
+        border-radius: 24px;
+        border: 1px solid #eff0f6;
+        background: #fff;
+        box-shadow: 0px 2px 12px 0px rgba(20, 20, 43, 0.08);
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          transform: translateY(-50px);
+        }
+
+        @media (max-width: 980px) {
+          padding: 20px;
+        }
+
+        .card-title {
+          color: #6f6c90;
+          font-family: 'DM Sans';
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: -0.558px;
+        }
+
+        .card-price {
+          color: #158456;
+          font-family: 'DM Sans';
+          font-size: 54px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 60px;
+          letter-spacing: -3.24px;
+
+          span {
+            color: #6f6c90;
+            font-family: 'DM Sans';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: -0.558px;
+            margin-inline-start: 4px;
+          }
+        }
+
+        .card-button {
+          display: flex;
+          width: 100%;
+          padding: 10px 15px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          background: #158456;
+          color: #fff;
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: -0.32px;
+          border: none;
+          transition: all 0.3s ease-in-out;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 150%;
+            height: 150%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: transform 0.5s ease-out;
+            z-index: -1;
+          }
+
+          &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(21, 132, 86, 0.3);
+            background: #1a9c65;
+
+            &::before {
+              transform: translate(-50%, -50%) scale(1);
+            }
+          }
+
+          &:active {
+            transform: translateY(1px);
+          }
+        }
+
+        .card-features {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .feature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            p {
+              color: #158456;
+              font-family: Inter;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+          }
+        }
+      }
+
+      .green-card {
+        background: #158456;
+
+        .card-title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: rgba(255, 255, 255, 0.6);
+
+          .card-title-popular {
+            display: flex;
+            width: 106px;
+            height: 31px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+            border: 1px solid #fff;
+            background: #fff;
+            color: #158456;
+            font-family: Inter;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 31px;
+            letter-spacing: -0.325px;
+          }
+        }
+
+        .card-price {
+          color: #fff;
+
+          span {
+            color: #dedede;
+          }
+        }
+
+        .card-button {
+          background: #fff;
+          color: #158456;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.6);
+          }
+        }
+
+        .card-features {
+          .feature {
+            p {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

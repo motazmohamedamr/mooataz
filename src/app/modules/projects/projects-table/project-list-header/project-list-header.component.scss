@@ -1,0 +1,51 @@
+.project-status {
+  li {
+    border: none;
+    margin: 10px 0;
+  }
+}
+
+#chart {
+  apx-chart {
+    display: flex;
+    width: 16rem;
+  }
+}
+
+::ng-deep {
+
+  .apexcharts-legend,
+  .apexcharts-datalabels {
+    display: none !important;
+  }
+
+  .apexcharts-canvas {
+    height: 100% !important;
+    width: 12.5rem !important;
+
+    svg {
+      height: 100% !important;
+      width: 100% !important;
+      position: relative;
+      background: transparent;
+      top: 0;
+    }
+  }
+}
+
+.chart-p {
+  .card-body {
+    &-wrapper {
+      width: 100%;
+      justify-content: space-around;
+      &-label {
+        min-width: 100px;
+        flex: 0 0 20%;
+      }
+      .chart {
+        flex: 1;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

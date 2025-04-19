@@ -1,0 +1,59 @@
+.card {
+  padding: 30px;
+
+  .duration-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: #5E6278;
+      }
+      span {
+        font-size: 14px;
+        font-weight: 700;
+        color: #B5B5C3;
+      }
+    }
+    .progress {
+      position: relative;
+      border-radius: 5px;
+      background-color: #1584561F;
+      height: 6px;
+      span {
+        position: absolute;
+        border-radius: 5px;
+        top: 0;
+        height: 100%;
+        background-color: #158456;
+      }
+    }
+  }
+
+  .duration-details {
+    margin-top: 24px;
+    &__detail {
+      border-top: 1px dashed #E4E6EF;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #5E6278;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #181C33;
+      }
+    }
+  }
+}

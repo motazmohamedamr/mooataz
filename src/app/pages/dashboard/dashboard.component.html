@@ -1,0 +1,115 @@
+@if (user.roles.includes(role.Admin)) {
+<section class="admin-charts">
+  <div class="stats" [class.asideDisplay]="asideDisplay">
+    <app-dashboard-stats-card
+      [title]="translation?.numberOfProjects"
+      [statsResult]="dataSummarySig().projectsCount"
+    >
+      <svg
+        width="48"
+        height="48"
+        class="stats-svg"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          opacity="0.3"
+          d="M8.10897 30.3963C16.691 15.5364 27.157 6.52635 41.857 4.02835C42.1463 3.97674 42.4437 3.99579 42.7241 4.08387C43.0044 4.17195 43.2593 4.32645 43.4671 4.53424C43.6749 4.74202 43.8294 4.99693 43.9175 5.27727C44.0055 5.5576 44.0246 5.85507 43.973 6.14435C41.475 20.8444 32.465 31.3104 17.605 39.8923L8.10897 30.3963ZM7.63897 34.6744L5.26697 40.8964C5.16904 41.1531 5.14748 41.4327 5.20489 41.7014C5.26231 41.9701 5.39624 42.2165 5.59054 42.4108C5.78484 42.6051 6.03121 42.739 6.29993 42.7964C6.56864 42.8538 6.84823 42.8323 7.10496 42.7343L13.331 40.3603L7.63897 34.6744ZM33.001 11.9964C32.4076 11.9964 31.8276 12.1723 31.3343 12.5019C30.8409 12.8316 30.4564 13.3001 30.2293 13.8483C30.0023 14.3965 29.9429 14.9997 30.0586 15.5816C30.1744 16.1636 30.4601 16.6981 30.8796 17.1177C31.2992 17.5372 31.8338 17.823 32.4157 17.9387C32.9976 18.0545 33.6008 17.9951 34.149 17.768C34.6972 17.5409 35.1657 17.1564 35.4954 16.6631C35.825 16.1697 36.001 15.5897 36.001 14.9964C36.001 14.2007 35.6849 13.4376 35.1223 12.875C34.5597 12.3124 33.7966 11.9964 33.001 11.9964Z"
+          fill="#F5FDF9"
+        />
+        <path
+          d="M8.10846 30.3962L4.49446 26.7822C4.3101 26.5979 4.17094 26.3733 4.08791 26.1262C4.00487 25.8791 3.9802 25.616 4.01585 25.3578C4.0515 25.0995 4.1465 24.853 4.29338 24.6376C4.44026 24.4222 4.63505 24.2437 4.86246 24.1162L18.3065 16.5782C14.3471 20.7433 10.9214 25.385 8.10846 30.3962ZM17.6005 39.8882L21.2145 43.5022C21.3988 43.6866 21.6234 43.8258 21.8705 43.9088C22.1176 43.9918 22.3806 44.0165 22.6389 43.9808C22.8972 43.9452 23.1437 43.8502 23.3591 43.7033C23.5745 43.5564 23.7529 43.3616 23.8805 43.1342L31.4185 29.6882C27.2539 33.6489 22.6122 37.0752 17.6005 39.8882ZM14.0805 36.3662L25.1665 25.2802C25.4761 24.9517 25.6456 24.5153 25.6389 24.0639C25.6323 23.6124 25.45 23.1813 25.1307 22.862C24.8114 22.5427 24.3803 22.3604 23.9288 22.3537C23.4774 22.3471 23.041 22.5166 22.7125 22.8262L11.6265 33.9122L14.0805 36.3662Z"
+          fill="#F5FDF9"
+        />
+      </svg>
+    </app-dashboard-stats-card>
+    <app-dashboard-stats-card
+      [title]="translation?.numberOfRequests"
+      [statsResult]="dataSummarySig().totalRequestsCount"
+    >
+      <svg
+        width="50"
+        height="50"
+        class="stats-svg"
+        viewBox="0 0 50 50"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="8.33337"
+          y="8.33334"
+          width="14.5833"
+          height="14.5833"
+          rx="1.5"
+          fill="#F5FDF9"
+        />
+        <path
+          opacity="0.3"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M27.0834 9.83333C27.0834 9.00491 27.7549 8.33334 28.5834 8.33334H40.1667C40.9951 8.33334 41.6667 9.00491 41.6667 9.83334V21.4167C41.6667 22.2451 40.9951 22.9167 40.1667 22.9167H28.5834C27.7549 22.9167 27.0834 22.2451 27.0834 21.4167V9.83333ZM8.33337 28.5833C8.33337 27.7549 9.00495 27.0833 9.83337 27.0833H21.4167C22.2451 27.0833 22.9167 27.7549 22.9167 28.5833V40.1667C22.9167 40.9951 22.2451 41.6667 21.4167 41.6667H9.83337C9.00495 41.6667 8.33337 40.9951 8.33337 40.1667V28.5833ZM28.5834 27.0833C27.7549 27.0833 27.0834 27.7549 27.0834 28.5833V40.1667C27.0834 40.9951 27.7549 41.6667 28.5834 41.6667H40.1667C40.9951 41.6667 41.6667 40.9951 41.6667 40.1667V28.5833C41.6667 27.7549 40.9951 27.0833 40.1667 27.0833H28.5834Z"
+          fill="#F5FDF9"
+        />
+      </svg>
+    </app-dashboard-stats-card>
+    <app-dashboard-stats-card
+      [title]="translation?.totalProjectValue"
+      [mode]="'secondary'"
+      [statsResult]="dataSummarySig().totalPrice"
+    >
+      <svg
+        width="48"
+        height="48"
+        class="stats-svg"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect opacity="0.3" x="26" y="8" width="6" height="32" rx="2" fill="#158456" />
+        <rect x="16" y="18" width="6" height="22" rx="2" fill="#158456" />
+        <rect x="36" y="22" width="6" height="18" rx="2" fill="#158456" />
+        <rect x="6" y="26" width="6" height="14" rx="2" fill="#158456" />
+      </svg>
+    </app-dashboard-stats-card>
+  </div>
+  <div class="charts">
+    <div class="chart">
+      <h3>{{ translation?.financialPositionSummary }}</h3>
+      <app-financial-position-summary-charts
+        [translation]="translation"
+        [asideDisplay]="asideDisplay"
+      ></app-financial-position-summary-charts>
+    </div>
+    <div class="chart">
+      <h3>{{ translation?.requestSummary }}</h3>
+      <app-requests-summary-charts
+        [translation]="translation"
+        [asideDisplay]="asideDisplay"
+      ></app-requests-summary-charts>
+    </div>
+    <div class="chart">
+      <h3>{{ translation?.timelineSummary }}</h3>
+      <app-timeline-projects-summary-chart
+        [translation]="translation"
+        [asideDisplay]="asideDisplay"
+      ></app-timeline-projects-summary-chart>
+    </div>
+    <div class="chart">
+      <h3>{{ translation?.tasksSummary }}</h3>
+      <app-tasks-summary-charts
+        [translation]="translation"
+        [asideDisplay]="asideDisplay"
+      ></app-tasks-summary-charts>
+    </div>
+  </div>
+</section>
+} @else {
+<section class="projects">
+  @for (project of projects(); track project.id) {
+  <app-project-item-card [project]="project"></app-project-item-card>
+  } @empty {
+  <h2>{{ translation?.noProjects }}</h2>
+  }
+</section>
+}

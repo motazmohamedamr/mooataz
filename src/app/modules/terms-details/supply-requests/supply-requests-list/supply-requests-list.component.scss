@@ -1,0 +1,43 @@
+table {
+  margin-bottom: 0;
+  border-bottom: 2px solid #ECEEF1;
+  thead {
+    background-color: #ECEEF1;
+  }
+  tr {
+    color: #333;
+    th {
+      white-space: nowrap;
+      font-weight: 700;
+      padding: 15px;
+      font-size: 13px;
+    }
+    td {
+      font-weight: 400;
+      padding: 15px;
+    }
+  }
+}
+
+.totalprice {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FAFCFD;
+  border-bottom: 2px solid #ECEEF1;
+  p, span {
+    font-weight: 700;
+    margin: 0;
+  }
+  p {
+    flex: 1;
+    padding: 10px 0;
+  }
+  span {
+    flex-basis: 12%;
+    background-color: #F5F8FA;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: end;
+  }
+}

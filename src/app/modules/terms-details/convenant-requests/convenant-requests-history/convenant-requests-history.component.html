@@ -1,0 +1,55 @@
+<table class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold">
+  <thead class="fs-7">
+    <tr>
+      <th scope="col" class="fw-bold">{{ translation.requestNumber | translate }}</th>
+      <th scope="col" class="fw-bold">{{ translation.requestDate | translate }}</th>
+      <th scope="col">{{ translation.requestStatus | translate }}</th>
+      <th scope="col">{{ 'termsDetails.by' | translate }}</th>
+      <th scope="col">{{ translation.responseData | translate }}</th>
+      <th scope="col">{{ translation.notes | translate }}</th>
+      <th scope="col">{{ translation.files | translate }}</th>
+    </tr>
+  </thead>
+  <tbody class="fs-6">
+    @for (status of history; track status.id; let index = $index) {
+    <tr class="main-data">
+      <td
+        dir="ltr"
+        [ngStyle]="{ textAlign: translate.currentLang === 'en' ? 'left' : 'right' }"
+      >
+        #{{ covenantRequest?.term.itemNumber + ' - ' + covenantRequest?.requestNumber }}
+      </td>
+      <td>{{ covenantRequest.createdAt | date : 'd MMM y - HH:mm' : '' : locale }}</td>
+      <td>
+        @if (covenantApprovalStatusBadges[this.history[index].status]) {
+        <div
+          [class]="
+            'badge fw-bold ' +
+            covenantApprovalStatusBadges[this.history[index].status].color
+          "
+        >
+          {{ covenantApprovalStatusBadges[this.history[index].status].value }}
+        </div>
+        }
+      </td>
+      <td>{{ actorTranslation[status.actor] | translate }}</td>
+      <td>{{ status.createdAt | date : 'd MMM y - HH:mm' : '' : locale }}</td>
+      <td>{{ status.notes }}</td>
+      <td>
+        @if (status.attachments.length > 0) {
+        <button
+          class="btn btn-icon btn-color-info btn-bg-light btn-sm me-1"
+          (click)="openAttachmentsDialog(status)"
+        >
+          <i class="ki-duotone ki-eye">
+            <span class="path1"></span>
+            <span class="path2"></span>
+            <span class="path3"></span>
+          </i>
+        </button>
+        }
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

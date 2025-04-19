@@ -1,0 +1,290 @@
+:host[lang='en'] {
+  font-family: 'Noto-Sans', sans-serif;
+}
+:host[lang='ar'] {
+  font-family: 'Noto-Sans-Arabic', sans-serif;
+}
+
+:host * {
+  font-family: inherit !important;
+}
+
+section {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+
+  border-radius: 16px;
+  background: url('/assets/media/homepage/contact-us-bg.webp') lightgray 50% / cover
+    no-repeat;
+
+  p {
+    margin: 0px;
+  }
+
+  .contact-section {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    background: linear-gradient(
+      0deg,
+      rgba(21, 132, 86, 0.2) 0%,
+      rgba(21, 132, 86, 0.2) 100%
+    );
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      padding: 20px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
+
+      .contact-details__top {
+        .contact-title {
+          width: 302px;
+          color: #fff;
+          font-feature-settings: 'liga' off, 'clig' off;
+          font-family: 'Noto Kufi Arabic';
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: 76px;
+          background-image: url('/assets/media/homepage/shape.png');
+          background-repeat: no-repeat;
+          background-position: left 40px;
+        }
+
+        .contact-title-ar {
+          background-position: right 40px;
+        }
+
+        .contact-des {
+          color: #e8e8e8;
+          font-feature-settings: 'liga' off, 'clig' off;
+          font-family: 'Noto Kufi Arabic';
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+          margin-top: -20px;
+        }
+      }
+
+      .contact-details__bottom {
+        display: flex;
+        width: 100%;
+        max-width: 400px;
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+
+        .list {
+          display: flex;
+          gap: 12px;
+
+          .icon-container {
+            padding: 6px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            height: fit-content;
+          }
+
+          .list-title {
+            color: #d2d2d2;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-family: 'Public Sans';
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+          }
+
+          .list-content {
+            color: #fff;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-family: 'Public Sans';
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+
+    .form-container {
+      display: flex;
+      max-width: 516px;
+      padding: 24px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      border-radius: 12px;
+      border: 0.5px solid rgba(247, 233, 216, 0.5);
+      background: #fff;
+
+      @media (max-width: 992px) {
+        max-width: 100%;
+      }
+
+      h3 {
+        color: #2f2b3d · 90%;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: 'Noto Kufi Arabic';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 38px;
+        margin: 0px;
+      }
+
+      h4 {
+        color: #8e8e8e;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: 'Noto Kufi Arabic';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 23px;
+        margin: 0px;
+      }
+
+      .animated-button {
+        position: relative;
+        border: none;
+        color: white;
+        font-family: 'Public Sans', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px;
+        padding: 8px 20px;
+        text-transform: capitalize;
+        border-radius: 100px;
+        background: #158456;
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      }
+
+      .animated-button:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(21, 132, 86, 0.3);
+        background-image: linear-gradient(to right, #158456, #1a9d65);
+      }
+
+      .animated-button:active {
+        transform: translateY(1px) scale(0.95);
+        box-shadow: 0 5px 10px rgba(21, 132, 86, 0.2);
+      }
+
+      .animated-button::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+      }
+
+      .animated-button:focus:not(:active)::after {
+        animation: ripple 1s ease-out;
+      }
+
+      .animated-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.3) 100%
+        );
+        transform: skewX(-25deg);
+        transition: all 0.75s;
+      }
+
+      .animated-button:hover::before {
+        animation: shine 0.75s;
+      }
+
+      @keyframes ripple {
+        0% {
+          transform: scale(0);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(20);
+          opacity: 0;
+        }
+      }
+
+      @keyframes shine {
+        100% {
+          left: 125%;
+        }
+      }
+
+      .inputs-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+
+        .top-inputs {
+          display: flex;
+          gap: 16px;
+          width: 100%;
+
+          @media (max-width: 600px) {
+            flex-direction: column;
+          }
+
+          .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 100%;
+
+            label {
+              margin: 0px;
+              color: #2f2b3d · 90%;
+            }
+
+            input {
+              ::placeholder {
+                color: #2f2b3d · 40%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

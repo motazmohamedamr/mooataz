@@ -1,0 +1,22 @@
+//
+// Theme style
+//
+
+// Initialize
+@import "./init";
+
+// Components
+@import "./core/components/components";
+@import "./components/components";
+
+// Layout
+@import "./layout/layout";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Almarai', sans-serif !important;
+}

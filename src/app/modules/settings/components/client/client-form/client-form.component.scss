@@ -1,0 +1,12 @@
+.basic-info-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  .fv-row {
+    flex: max(230px, (100% - 50px)/2);
+  }
+}
+
+input:disabled {
+  opacity: .6;
+}

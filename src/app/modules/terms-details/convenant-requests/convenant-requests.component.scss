@@ -1,0 +1,82 @@
+h2 {
+  margin-bottom: 0;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    background-color: #158456;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    i {
+      font-size: 15px;
+      color: #fff;
+    }
+  }
+}
+
+.convenant-requests-list,
+.convenant-rating {
+  margin-top: 30px;
+  .attachments {
+    margin-top: 30px;
+  }
+  .buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    button {
+      background-color: #158456;
+      border: none;
+      border-radius: 6px;
+      padding: 11px 18px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      &:nth-child(2) {
+        background-color: #F15642;
+      }
+    }
+  }
+}
+
+.convenant-requests-status-list {
+  margin-top: 20px;
+}
+
+.convenant-transactions {
+  margin-top: 30px;
+}
+
+.pagination button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  &:disabled {
+    opacity: .7;
+  }
+}
+
+app-convenant-requests-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px;
+}

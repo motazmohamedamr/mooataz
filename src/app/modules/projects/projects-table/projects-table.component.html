@@ -1,0 +1,85 @@
+<app-project-list-header></app-project-list-header>
+
+<section class="row g-6 g-xl-9">
+  <div class="search-filter-flex">
+    <div class="d-flex align-items-center position-relative my-1">
+      <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-3">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
+      <input
+        type="text"
+        id="kt_filter_search"
+        (input)="searchChange($event)"
+        class="form-control form-control-sm border-body bg-body ps-10"
+        placeholder="{{ _translateService.instant('projects.searchProjectList') }}"
+      />
+    </div>
+    <form class="status-select">
+      <select
+        data-hide-search="true"
+        #filterstatusSelect
+        (change)="statusFilterChange($event)"
+        data-placeholder="Filter"
+        class="form-select form-select-sm border-body bg-body"
+      >
+        <option option value="" disabled selected>
+          {{ _translateService.instant('projects.projectStatus') }}
+        </option>
+        <option option value="all" [selected]="statusFilter() === 'all'">
+          {{ _translateService.instant('general.all') }}
+        </option>
+        <option
+          *ngFor="let status of projectStatusesList"
+          [selected]="status.value === statusFilter()"
+          [value]="status.value"
+        >
+          {{ status.label }}
+        </option>
+      </select>
+    </form>
+  </div>
+
+  <!--begin::Col-->
+  @for (project of projectListItems(); track project.id) {
+  <div class="col-lg-12">
+    <app-project-list-item [project]="project"></app-project-list-item>
+  </div>
+  }
+  <!--end::Col-->
+
+  @if (pageInfo()?.totalPages > 1) {
+  <!--begin::Pagination-->
+  <div class="d-flex flex-stack flex-wrap pt-10">
+    <div class="fs-6 fw-semibold text-gray-700">{{ paginationInfoText }}</div>
+    <!--begin::Pages-->
+    <ul class="pagination">
+      <button
+        [disabled]="!hasPrevPage"
+        (click)="prevPageClickHandler()"
+        class="page-item previous"
+      >
+        <a class="page-link">
+          <i class="previous"></i>
+        </a>
+      </button>
+      @for (page of paginationPages(); track page) {
+      <button (click)="goToPageHandler(page - 1)" class="page-item active">
+        <a class="page-link">{{ page }}</a>
+      </button>
+      }
+      <button
+        [disabled]="!hasNextPage"
+        (click)="nextPageClickHandler()"
+        class="page-item next"
+      >
+        <a class="page-link">
+          <i class="next"></i>
+        </a>
+      </button>
+    </ul>
+    <!--end::Pages-->
+  </div>
+  <!--end::Pagination-->
+  }
+</section>

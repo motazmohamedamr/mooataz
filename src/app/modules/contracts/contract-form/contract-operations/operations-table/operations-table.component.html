@@ -1,0 +1,54 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{ translation?.name?.label | translate }}</th>
+      <th scope="col">{{ translation?.siteReceiptDate?.label | translate }}</th>
+      <th scope="col">{{ translation?.userId?.label | translate }}</th>
+      <th scope="col">{{ translation?.actions | translate }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (project of projectList; track project.id; let i = $index) {
+    <tr>
+      <td>
+        {{ project.name }}
+      </td>
+      <td>{{ project.siteReceiptDate | fullDate : translateService.currentLang }}</td>
+      <td>{{ project.userName }}</td>
+      <td class="actions">
+        <button
+          (click)="openEditDialog(project)"
+          class="btn btn-icon btn-color-primary btn-bg-light btn-sm me-1"
+        >
+          <i class="ki-duotone ki-pencil fs-2">
+            <span class="path1"></span>
+            <span class="path2"></span>
+          </i>
+        </button>
+        <button
+          (click)="deleteProj(project)"
+          class="btn btn-icon btn-bg-light btn-color-danger btn-sm"
+        >
+          <i class="ki-duotone ki-trash fs-2">
+            <span class="path1"></span>
+            <span class="path2"></span>
+            <span class="path3"></span>
+            <span class="path4"></span>
+            <span class="path5"></span>
+          </i>
+        </button>
+        <button class="btn btn-icon btn-bg-primary btn-color-light btn-sm uploadfilebtn">
+          <i class="ki-duotone ki-plus"> </i>
+          <input
+            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+            type="file"
+            (click)="$any($event.target).value = ''"
+            (change)="fileChanged($event, project)"
+          />
+        </button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+

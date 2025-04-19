@@ -1,0 +1,22 @@
+table {
+  margin-bottom: 0;
+  border-bottom: 2px solid #E5EAEE;
+  margin-top: 24px;
+  thead {
+    background-color: #E5EAEE;
+  }
+  tr {
+    color: #333;
+    th {
+      white-space: nowrap;
+      font-weight: 700;
+      padding: 15px;
+      font-size: 12px;
+    }
+    td {
+      font-weight: 700;
+      padding: 15px;
+      font-size: 14px;
+    }
+  }
+}

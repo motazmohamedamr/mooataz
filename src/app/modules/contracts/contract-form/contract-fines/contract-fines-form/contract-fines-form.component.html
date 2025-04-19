@@ -1,0 +1,42 @@
+@if (data.isDialog) {
+<h1 mat-dialog-title>{{ 'contract.stepper.fines.title' | translate }}</h1>
+<h1 mat-dialog-title class="dialog-fines-subtitle">
+  {{ translation?.addNewFineSubtitle | translate }}
+</h1>
+}
+
+<mat-dialog-content>
+  <form [formGroup]="fineForm" (ngSubmit)="createFine()">
+    <article class="fineform">
+      <app-contract-form-input
+        [formControl]="description"
+        [label]="translation?.description?.label"
+        [type]="'textarea'"
+        [placeholder]="translation?.description?.placeholder"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="amount"
+        [label]="translation?.amount?.label"
+        [type]="'number'"
+        [placeholder]="translation?.amount?.placeholder"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+      <app-contract-form-input
+        [formControl]="amountInLetters"
+        [label]="translation?.amountInLetters?.label"
+        [type]="'text'"
+        [placeholder]="translation?.amountInLetters?.placeholder"
+        [gridClass]="'span-2'"
+      ></app-contract-form-input>
+    </article>
+
+    <div class="fine-buttons">
+      @if (data.isDialog) {
+      <button mat-dialog-close>{{ 'general.cancel' | translate }}</button>
+      }
+      <button type="submit" [disabled]="!fineForm.valid || loading()">
+        {{ translation?.saveFineButton | translate }}
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>

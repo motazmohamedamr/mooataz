@@ -1,0 +1,13 @@
+<div class="no-supply-requests">
+  <img src="./assets/media/svg/files/no-price-requests.svg" alt="no supply requests" />
+  <p>{{ translation?.noSupplyRequest }}</p>
+  @if (user.roles.includes(role.ProjectManager) || user.roles.includes(role.SiteEngineer))
+  {
+  <div class="add-btn">
+    <button (click)="openAddRequestDialog()">
+      <i class="ki-duotone ki-plus"> </i>
+      <span>{{ translation?.addSupplyRequest | translate }}</span>
+    </button>
+  </div>
+  }
+</div>

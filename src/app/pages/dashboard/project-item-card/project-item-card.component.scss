@@ -1,0 +1,12 @@
+a {
+  height: 100%;
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.projectname {
+  line-height: 25px;
+}

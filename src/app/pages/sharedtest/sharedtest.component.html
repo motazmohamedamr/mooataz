@@ -1,0 +1,195 @@
+<div class="card mb-10">
+  <div class="card-body d-flex align-items-center py-8">
+    <!-- begin::Description  -->
+    <div class="ms-6">
+      <p class="list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0">
+        Shared Test Component Created To help devloper to find any Shared Component
+      </p>
+    </div>
+    <!-- end::Description  -->
+  </div>
+</div>
+<div class="card card-custom">
+  <!-- begin::Header -->
+  <div class="card-header card-header-stretch overflow-auto">
+    <ul
+      class="nav nav-stretch nav-line-tabs fw-bold border-transparent flex-nowrap"
+      role="tablist"
+    >
+      <li class="nav-item">
+        <a
+          class="nav-link cursor-pointer"
+          [ngClass]="{ active: activeTab === 'Table' }"
+          (click)="setActiveTab('Table')"
+          role="tab"
+        >
+          Table
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link cursor-pointer"
+          [ngClass]="{ active: activeTab === 'UploadFile' }"
+          (click)="setActiveTab('UploadFile')"
+          role="tab"
+        >
+          UploadFile
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link cursor-pointer"
+          [ngClass]="{ active: activeTab === 'accessDenial' }"
+          (click)="setActiveTab('accessDenial')"
+          role="tab"
+        >
+          accessDenial
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link cursor-pointer"
+          [ngClass]="{ active: activeTab === 'dialog' }"
+          (click)="setActiveTab('dialog')"
+          role="tab"
+        >
+          Dialog
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link cursor-pointer"
+          [ngClass]="{ active: activeTab === 'keenicon' }"
+          (click)="setActiveTab('keenicon')"
+          role="tab"
+        >
+          keenicon
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link cursor-pointer"
+          [ngClass]="{ active: activeTab === 'multiSelect' }"
+          (click)="setActiveTab('multiSelect')"
+          role="tab"
+        >
+          Multi Select
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link cursor-pointer"
+          [ngClass]="{ active: activeTab === 'notFound' }"
+          (click)="setActiveTab('notFound')"
+          role="tab"
+        >
+          Not Found
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link cursor-pointer"
+          [ngClass]="{ active: activeTab === 'imageUploader' }"
+          (click)="setActiveTab('imageUploader')"
+          role="tab"
+        >
+          image Uploader
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link cursor-pointer"
+          [ngClass]="{ active: activeTab === 'uploader' }"
+          (click)="setActiveTab('uploader')"
+          role="tab"
+        >
+          Uploader
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- end::Header -->
+  <!-- begin::Form -->
+  <form class="form" novalidate #form="ngForm" (ngSubmit)="submitPreview()">
+    <!-- begin::Body -->
+    <div class="card-body">
+      <div class="tab-content pt-3">
+        <!-- begin::Header -->
+        <div class="tab-pane" [ngClass]="{ active: activeTab === 'Table' }">
+          <div class="row mb-10">
+            <app-table></app-table>
+          </div>
+        </div>
+        <div class="tab-pane" [ngClass]="{ active: activeTab === 'UploadFile' }">
+          <div class="row mb-10">
+            <app-file-upload></app-file-upload>
+          </div>
+        </div>
+        <div class="tab-pane" [ngClass]="{ active: activeTab === 'accessDenial' }">
+          <div class="row mb-10">
+            <app-access-denial></app-access-denial>
+          </div>
+        </div>
+        <div class="tab-pane" [ngClass]="{ active: activeTab === 'dialog' }">
+          <div class="row mb-10">
+            <div class="col-5">
+              <div class="row">
+                <button mat-raised-button (click)="openConfirmationDialog()">
+                  Open Confirmation Dialog
+                </button>
+              </div>
+              <div class="row">
+                <button mat-raised-button (click)="openDeleteDialog()">
+                  Open Delete Dialog
+                </button>
+              </div>
+              <div class="row">
+                <button mat-raised-button (click)="openLogoutDialog()">
+                  Open logOut Dialog
+                </button>
+              </div>
+            </div>
+            <!-- Other content here -->
+          </div>
+        </div>
+        <div class="tab-pane" [ngClass]="{ active: activeTab === 'keenicon' }">
+          <div class="row mb-10">
+            <app-keenicon
+              name="verify"
+              class="fs-1 text-primary"
+              [type]="'duotone'"
+            ></app-keenicon>
+            <!-- Other content here -->
+          </div>
+        </div>
+        <div class="tab-pane" [ngClass]="{ active: activeTab === 'multiSelect' }">
+          <div class="row mb-10">
+            <app-multi-select
+              [values]="availableValues"
+              [(selectedValues)]="selectedValues"
+            ></app-multi-select>
+          </div>
+        </div>
+        <div class="tab-pane" [ngClass]="{ active: activeTab === 'notFound' }">
+          <div class="row mb-10">
+            <app-not-found></app-not-found>
+          </div>
+        </div>
+        <div class="tab-pane" [ngClass]="{ active: activeTab === 'imageUploader' }">
+          <div class="row mb-10">
+            <image-uploader></image-uploader>
+          </div>
+        </div>
+        <div class="tab-pane" [ngClass]="{ active: activeTab === 'uploader' }">
+          <div class="row mb-10">
+            <app-file-uploader [multiple]="true"></app-file-uploader>
+          </div>
+        </div>
+
+        <!-- end::Header -->
+        <!-- begin::Header -->
+        <!-- end::Footer -->
+      </div>
+    </div>
+  </form>
+</div>

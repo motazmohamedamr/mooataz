@@ -1,0 +1,70 @@
+<section class="card">
+  <div class="title-btn">
+    <div class="title">
+      <h2>{{ translation?.lastRequests }}</h2>
+      <h3>{{ totalRequests }}</h3>
+    </div>
+    <button (click)="goToActivityTab()">{{ translation?.showMore }}</button>
+  </div>
+
+  <div style="overflow-x: auto">
+    <table
+      id="kt_profile_overview_table"
+      class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+    >
+      <thead class="fs-7">
+        <tr>
+          <th
+            *ngFor="let column of tableColums"
+            [class.dt-orderable]="column.sortable"
+            (click)="sort(column)"
+            [class.dt-ordering-desc]="
+              pageInfo().sortingBy === column.sortBy && !pageInfo().ascending
+            "
+            [class.dt-ordering-asc]="
+              pageInfo().sortingBy === column.sortBy && pageInfo().ascending
+            "
+          >
+            <span class="dt-column-title">{{ column.title }}</span>
+            <span *ngIf="true" class="dt-column-order"></span>
+          </th>
+          <th scope="col">{{ translation?.details }}</th>
+        </tr>
+      </thead>
+      <tbody class="fs-6">
+        @for (activity of activities()?.items; track activity.id) {
+        <tr>
+          <td>{{ activity.request?.requestNumber }}</td>
+          <td>{{ requestTypes[activity.requestType] }}</td>
+          <td>{{ activity.createdAt | date : 'd MMM y' : '' : locale }}</td>
+          <td>
+            @if (requestActivityStatuses[activity.request?.status]) {
+            <div
+              [class]="
+                'badge fw-bold ' + requestActivityStatuses[activity.request?.status].color
+              "
+            >
+              {{ requestActivityStatuses[activity.request?.status].value }}
+            </div>
+            }
+          </td>
+          <td>
+            <a class="details" (click)="goToActivityDetails(activity)">...</a>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    @if (pageInfo()?.totalPages > 1) {
+    <app-pagination
+      [pageInfo]="pageInfo()"
+      [paginationPages]="paginationPages()"
+      [pageIndex]="pageIndexSig() + 1"
+      (goToPage)="goToPageHandler($event)"
+      [pageSize]="5"
+    ></app-pagination>
+
+    }
+  </div>
+</section>
+

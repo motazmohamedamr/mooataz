@@ -1,0 +1,41 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{ translation?.description?.label | translate }}</th>
+      <th scope="col">{{ translation?.amount?.label | translate }}</th>
+      <th scope="col">{{ translation?.actions | translate }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (fine of fineList; track fine.id; let i = $index) {
+    <tr>
+      <td>{{ fine.description }}</td>
+      <td>{{ fine.amount }}</td>
+      <td class="actions">
+        <button
+          (click)="openEditDialog(fine)"
+          class="btn btn-icon btn-color-primary btn-bg-light btn-sm me-1"
+        >
+          <i class="ki-duotone ki-pencil fs-2">
+            <span class="path1"></span>
+            <span class="path2"></span>
+          </i>
+        </button>
+        <button
+          (click)="deleteFine(fine)"
+          class="btn btn-icon btn-bg-light btn-color-danger btn-sm"
+        >
+          <i class="ki-duotone ki-trash fs-2">
+            <span class="path1"></span>
+            <span class="path2"></span>
+            <span class="path3"></span>
+            <span class="path4"></span>
+            <span class="path5"></span>
+          </i>
+        </button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+

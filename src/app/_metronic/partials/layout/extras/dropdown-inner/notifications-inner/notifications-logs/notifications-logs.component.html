@@ -1,0 +1,57 @@
+<div class="scroll-y mh-325px px-8">
+  @for (notification of notifications; track notification.id) {
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <div class="symbol symbol-35px me-4">
+        <span class="symbol-label bg-light-primary">
+          <span
+            inlineSVG="./assets/media/icons/duotune/general/gen005.svg "
+            class="svg-icon svg-icon-2 svg-icon-primary"
+          ></span>
+        </span>
+      </div>
+
+      <div class="mb-0 me-2">
+        <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">
+          {{
+            notification.title
+              ? notification.title
+              : translate.currentLang === 'en'
+              ? notification.data?.entityTypeEn
+              : notification.data?.entityTypeAr
+          }}
+        </a>
+
+        @if (notification.body) {
+        <div class="text-gray-500 fs-7">
+          {{ notification.body }}
+        </div>
+        }
+      </div>
+    </div>
+
+    <span class="createdAt badge badge-light fs-8">{{
+      notification.createdAt | timeAgo
+    }}</span>
+  </div>
+
+  } @empty {
+  <h2>{{ 'general.noLogs' | translate }}</h2>
+  }
+  <!-- <div *ngFor="let notification of notifications" class="d-flex flex-stack py-4">
+    <div class="d-flex align-items-center me-2">
+      <span
+        class="w-70px badge"
+        [ngClass]="'badge-light-' + notification.data?.state + ' me-4'"
+      >
+        {{ notification.data?.code }}
+      </span>
+
+      <a class="text-gray-800 text-hover-primary fw-bold cursor-pointer">
+        {{ notification.data?.message }}
+      </a>
+
+      <span class="badge badge-light fs-8">{{ notification.data?.time }}</span>
+    </div>
+  </div> -->
+</div>

@@ -1,0 +1,32 @@
+<app-hero-section
+  [@fadeOnScroll]="sectionStates.hero"
+  data-lang="{{ translate.currentLang }}"
+  [translation]="translation?.hero"
+></app-hero-section>
+<div class="main-wrapper">
+  <app-why-motabea-section
+    [@fadeOnScroll]="sectionStates.whymotabea"
+    data-lang="{{ translate.currentLang }}"
+    [translation]="translation?.whymotabea"
+  ></app-why-motabea-section>
+  <app-features-section
+    [@fadeOnScroll]="sectionStates.features"
+    data-lang="{{ translate.currentLang }}"
+    [translation]="translation?.features"
+  ></app-features-section>
+  <app-pricing-section
+    [@fadeOnScroll]="sectionStates.pricing"
+    data-lang="{{ translate.currentLang }}"
+    [translation]="translation?.pricing"
+  ></app-pricing-section>
+  <app-contact-section
+    [@fadeOnScroll]="sectionStates.contact"
+    data-lang="{{ translate.currentLang }}"
+    [translation]="translation?.contact"
+  ></app-contact-section>
+</div>
+<app-footer-section
+  [@fadeOnScroll]="sectionStates.footer"
+  data-lang="{{ translate.currentLang }}"
+  [translation]="translation?.footer"
+></app-footer-section>

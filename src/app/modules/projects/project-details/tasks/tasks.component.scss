@@ -1,0 +1,61 @@
+.main {
+  .tasksList {
+    width: unset !important;
+    flex: 1 1 0%;
+  }
+}
+
+.add-btn {
+  width: 2rem;
+  height: 2rem;
+}
+
+.drop-area {
+  min-height: 20rem;
+}
+
+.lateTask {
+  background-color: #ff000011;
+}
+
+input {
+  box-shadow: none !important;
+}
+
+.skill-bar {
+  height: 8px;
+  width: 100%;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  background: rgba(0, 0, 0, 0.1);
+
+  .skill-per {
+    position: relative;
+    display: block;
+    height: 100%;
+    animation: progress 0.4s ease-in-out forwards;
+  }
+
+  .inProgress {
+    border-bottom-right-radius: 9px;
+    background: var(--blue);
+  }
+
+  .completed {
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background: var(--bs-success);
+  }
+
+  .notStarted {
+    border-bottom-right-radius: 9px;
+    background: var(--bs-warning);
+    width: 1%;
+  }
+
+  .late {
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background: var(--bs-danger);
+  }
+}

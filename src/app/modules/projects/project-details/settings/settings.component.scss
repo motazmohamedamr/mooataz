@@ -1,0 +1,16 @@
+section {
+  .card-body {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .image-input svg {
+      position: absolute;
+      inset: 0;
+    }
+    .removeFile {
+      position: absolute;
+      top: -10px;
+      left: 89%;
+    }
+  }
+}

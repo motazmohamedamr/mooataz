@@ -1,0 +1,67 @@
+<div class="title-parent">
+  <h1 mat-dialog-title class="dialog-assign-title">
+    {{
+      data.department.value === 10
+        ? ('Projects.teams.addManagerTitle' | translate)
+        : ('Projects.teams.addEmployeeTitle' | translate)
+    }}
+  </h1>
+  <span class="badge badge-light-success fw-bold">{{ data.department.label }}</span>
+</div>
+<h2 class="dialog-assign-subtitle">
+  {{
+    data.department.value === 10
+      ? ('Projects.teams.addManagerSubtitle' | translate)
+      : ('Projects.teams.addEmployeeSubtitle' | translate)
+  }}
+</h2>
+
+<mat-dialog-content>
+  @if (data.users) {
+  <form [formGroup]="assignUserForm" class="assign-teams-form" (ngSubmit)="submitForm()">
+    <label for="select">{{ 'Projects.teams.employeeList' | translate }}</label>
+    <button
+      role="combobox"
+      id="select"
+      type="button"
+      value="Select"
+      aria-controls="listbox"
+      aria-haspopup="listbox"
+      tabindex="0"
+      (click)="showDropdown = !showDropdown"
+      class="form-control form-control-solid mb-lg-0"
+      aria-expanded="false"
+    >
+      {{ currentUsername || 'Projects.teams.chooseEmployees' | translate }}
+    </button>
+    @if (showDropdown) {
+    <ul role="listbox" id="listbox">
+      <li role="option" *ngFor="let user of displayUsersListDropdown(); let ind = index">
+        <mat-checkbox
+          [id]="user.id"
+          [checked]="user.selected"
+          (change)="toggleUser(user, $event.checked, ind)"
+        >
+          <div class="user-details">
+            <div class="symbol symbol-35px symbol-circle">
+              <img
+                alt="Pic"
+                [src]="user.picture ? user.picture : 'assets/media//avatars/blank.png'"
+                onerror="this.onerror=null;this.src='assets/media//avatars/blank.png'"
+              />
+            </div>
+            <p class="fullname">{{ user.fullName }}</p>
+          </div>
+        </mat-checkbox>
+      </li>
+    </ul>
+    }
+    <div class="assign-buttons">
+      <button mat-dialog-close>{{ 'general.cancel' | translate }}</button>
+      <button type="submit">
+        {{ 'Projects.teams.saveAssignButton' | translate }}
+      </button>
+    </div>
+  </form>
+  }
+</mat-dialog-content>

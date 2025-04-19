@@ -1,0 +1,5 @@
+.departments {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(max(250px, 100%/(4 + 1) + 0.1%),1fr));
+  gap:20px;
+}

@@ -1,0 +1,91 @@
+<div class="term-details-title">
+  <h1>{{ translation?.title | translate }}</h1>
+  <h3>
+    <a [routerLink]="['/', 'projects', 'project-details', projectId, 'terms-table']">{{
+      translation?.termsTable | translate
+    }}</a>
+    /
+    <span class="termstitle">{{ translation?.title | translate }}</span>
+  </h3>
+</div>
+
+<section class="details-table">
+  <!--begin::Table-->
+  <table
+    id="kt_profile_overview_table"
+    class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+  >
+    <thead class="fs-7">
+      <tr>
+        <th scope="col">{{ translation?.termNumber | translate }}</th>
+        <th scope="col" style="width: 100%">{{ translation?.termName | translate }}</th>
+        <th scope="col">{{ translation?.measurementUnit | translate }}</th>
+        <th scope="col">{{ translation?.quantity | translate }}</th>
+        <th scope="col">{{ translation?.price | translate }}</th>
+      </tr>
+    </thead>
+    <tbody class="fs-6">
+      @if (termDetails()) {
+      <tr>
+        <td>{{ termDetails().itemNumber }}</td>
+        <td>{{ termDetails().title }}</td>
+        <td>{{ measurementUnitName }}</td>
+        <td>{{ termDetails().quantity }}</td>
+        <td>{{ termDetails().unitPrice }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <!--end::Table-->
+
+  <!--begin::Nav-->
+  <ul
+    class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold"
+  >
+    <!--begin::Nav item-->
+    <li class="nav-item">
+      <a
+        routerLinkActive="active"
+        routerLink="price-requests"
+        class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+        >{{ translation?.priceRequests.title | translate }}</a
+      >
+    </li>
+    <!--end::Nav item-->
+    <!--begin::Nav item-->
+    <li class="nav-item">
+      <a
+        routerLinkActive="active"
+        routerLink="supply-requests"
+        class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+        >{{ translation?.supplyRequests.title | translate }}</a
+      >
+    </li>
+    <!--end::Nav item-->
+    <!--begin::Nav item-->
+    <li class="nav-item">
+      <a
+        routerLinkActive="active"
+        routerLink="extracts"
+        class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+        >{{ translation?.extracts.title | translate }}</a
+      >
+    </li>
+    <!--end::Nav item-->
+    <!--begin::Nav item-->
+    <li class="nav-item">
+      <a
+        routerLinkActive="active"
+        routerLink="convenant-requests"
+        class="nav-link text-active-primary py-5 me-6 cursor-pointer"
+        >{{ translation?.custodyRequests.title | translate }}</a
+      >
+    </li>
+    <!--end::Nav item-->
+  </ul>
+  <!--end::Nav-->
+</section>
+
+<section class="tabPanel">
+  <router-outlet></router-outlet>
+</section>

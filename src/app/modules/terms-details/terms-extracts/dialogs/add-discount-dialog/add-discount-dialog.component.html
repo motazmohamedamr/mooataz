@@ -1,0 +1,63 @@
+<div class="modal-header border-0">
+  <div class="d-flex flex-column">
+    <h1 class="modal-title mb-1 fw-bold">
+      {{ data?.translation?.addDiscounts | translate }}
+    </h1>
+    <h3 class="modal-title">{{ data?.translation?.enterData | translate }}</h3>
+  </div>
+</div>
+
+<form class="modal-body py-0" [formGroup]="addDiscountForm" id="modalBody">
+  <app-custom-input
+    [formControl]="description"
+    [label]="data?.translation?.businessData"
+    [type]="'text'"
+    [placeholder]="data?.translation?.businessData"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="measurementUnitId"
+    [label]="data?.translation?.measurementUnit"
+    [type]="'select'"
+    [placeholder]="data?.translation?.measurementUnit"
+    [selectOptions]="data?.measurementUnits"
+    [selectValue]="'id'"
+    [selectLabel]="'name'"
+    [gridClass]="'span-2'"
+    [selectOptionHasLangValues]="true"
+    class="mb-4"
+  ></app-custom-input>
+  <app-custom-input
+    [formControl]="totalQuantity"
+    [label]="data?.translation?.totalQuantity"
+    [gridClass]="'span-2'"
+    [type]="'number'"
+    [placeholder]="data?.translation?.totalQuantity"
+    class="mb-4"
+  ></app-custom-input>
+
+  <app-custom-input
+    [formControl]="unitPrice"
+    [label]="data?.translation?.unitPrice"
+    [gridClass]="'span-2'"
+    [type]="'number'"
+    [placeholder]="data?.translation?.unitPrice"
+    class="mb-4"
+  ></app-custom-input>
+</form>
+
+<div class="modal-footer border-0">
+  <div class="d-flex gap-3">
+    <button
+      type="button"
+      class="btn btn-primary"
+      [disabled]="!addDiscountForm.valid"
+      (click)="submit()"
+    >
+      {{ 'general.save' | translate }}
+    </button>
+    <button type="button" (click)="close()" class="btn btn-secondary">
+      {{ 'general.cancel' | translate }}
+    </button>
+  </div>
+</div>

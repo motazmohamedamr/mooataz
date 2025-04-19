@@ -1,0 +1,18 @@
+<app-aio-table
+  *ngIf="tableBuilder"
+  [title]="'mock-contract-types.title' | translate"
+  [description]="'mock-contract-types.description' | translate"
+  [tableComponent]="this"
+>
+  <!--begin::Toolbar-->
+  <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+    <button type="button" class="btn btn-light-primary me-3">
+      <i class="ki-duotone ki-exit-up fs-2">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>Export
+    </button>
+  </div>
+  <!--end::Toolbar-->
+
+</app-aio-table>

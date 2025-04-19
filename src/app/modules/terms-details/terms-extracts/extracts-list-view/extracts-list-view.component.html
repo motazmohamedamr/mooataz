@@ -1,0 +1,22 @@
+@if (translation) {
+<article class="card add-extract">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>{{ translation.itemExtracts }}</h2>
+      @if (user.roles.includes(role.ProjectManager) ||
+      user.roles.includes(role.SiteEngineer)) {
+      <button class="green-btn" type="button" (click)="openAddExtractDialog()">
+        <i class="ki-duotone ki-plus"> </i>
+        <span>{{ translation.addExtract }}</span>
+      </button>
+      }
+    </div>
+    <app-item-extracts
+      [translation]="translation"
+      [extractList]="extractList"
+      (goToDetails)="goToDetails($event)"
+    ></app-item-extracts>
+  </div>
+</article>
+}
+

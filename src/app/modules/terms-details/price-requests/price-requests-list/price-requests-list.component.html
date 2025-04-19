@@ -1,0 +1,40 @@
+<table
+  id="kt_profile_overview_table"
+  class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+>
+  <thead class="fs-7">
+    <tr>
+      <th scope="col" class="fw-bold">{{ translation?.requestNumber | translate }}</th>
+      <th scope="col" class="fw-bold">
+        {{ translation?.requestDescription | translate }}
+      </th>
+      <th scope="col" class="fw-bold">{{ translation?.requestDate | translate }}</th>
+      <th scope="col">{{ translation?.termName | translate }}</th>
+      <th scope="col">{{ translation?.measurementUnit | translate }}</th>
+      <th scope="col">{{ translation?.quantity | translate }}</th>
+      <th scope="col">{{ translation?.requestStatus | translate }}</th>
+    </tr>
+  </thead>
+  <tbody class="fs-6">
+    <tr>
+      <td
+        dir="ltr"
+        [ngStyle]="{ textAlign: _translate.currentLang === 'en' ? 'left' : 'right' }"
+      >
+        #{{ priceRequest?.term.itemNumber + ' - ' + priceRequest?.requestNumber }}
+      </td>
+      <td>{{ priceRequest.description }}</td>
+      <td>{{ priceRequest?.createdAt | date : 'd MMM y' : '' : locale }}</td>
+      <td>{{ priceRequest?.term.title }}</td>
+      <td>{{ measurementUnitName }}</td>
+      <td>{{ priceRequest?.quantity }}</td>
+      <td>
+        @if (termStatusBadge) {
+        <div [class]="'badge fw-bold ' + termStatusBadge.color">
+          {{ termStatusBadge.value }}
+        </div>
+        }
+      </td>
+    </tr>
+  </tbody>
+</table>

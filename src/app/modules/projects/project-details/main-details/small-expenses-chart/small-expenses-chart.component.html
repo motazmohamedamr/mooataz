@@ -1,0 +1,19 @@
+<section>
+  <apx-chart
+    [series]="[
+      financialSummary
+        ? (financialSummary.actualValue / financialSummary.totalValue) * 100
+        : 0
+    ]"
+    [chart]="chartOptions.chart"
+    [stroke]="chartOptions.stroke"
+    [colors]="chartOptions.colors"
+    [grid]="chartOptions.grid"
+    [plotOptions]="chartOptions.plotOptions"
+  ></apx-chart>
+  <div class="value">
+    <span>{{ (financialSummary?.actualValue | numberWithCommas) || 0 }}</span>
+    <p>{{ translation?.totalExpenses }}</p>
+  </div>
+</section>
+

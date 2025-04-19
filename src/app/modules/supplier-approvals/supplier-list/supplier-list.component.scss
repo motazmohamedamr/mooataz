@@ -1,0 +1,45 @@
+@mixin addSupplierBtn {
+    background-color: #158456;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    i {
+      font-size: 15px;
+      color: #fff;
+    }
+}
+
+.suppliers {
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      @include addSupplierBtn
+    }
+  }
+  .suppliers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+    app-supplier-list-item {
+      flex-basis: 49%;
+    }
+  }
+  .nosuppliers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  button {
+    @include addSupplierBtn
+  }
+}

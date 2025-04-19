@@ -1,0 +1,54 @@
+<table
+  id="kt_profile_overview_table"
+  class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+>
+  <thead class="fs-7">
+    <tr>
+      <th scope="col" class="fw-bold">{{ translation?.requestNumber | translate }}</th>
+      <th scope="col">{{ translation?.requestDescription | translate }}</th>
+      <th scope="col">{{ translation?.requestDate | translate }}</th>
+      <th scope="col">{{ translation?.termName | translate }}</th>
+      <th scope="col">{{ translation?.measurementUnit | translate }}</th>
+      <th scope="col">{{ translation?.price | translate }}</th>
+      <th scope="col">{{ translation?.quantity | translate }}</th>
+      <th scope="col">{{ translation?.supplierName | translate }}</th>
+    </tr>
+  </thead>
+  <tbody class="fs-6">
+    <tr>
+      <td>#{{ supplyRequest?.requestNumber }}</td>
+      <td>{{ supplyRequest?.description }}</td>
+      <td>{{ supplyRequest?.createdAt | date : 'd MMM y' : '' : locale }}</td>
+      <td>{{ supplyRequest?.term?.title }}</td>
+      <td>
+        {{
+          translate.currentLang === 'ar'
+            ? supplyRequest?.measurementUnit?.name.ar
+            : supplyRequest?.measurementUnit?.name.en
+        }}
+      </td>
+      <td>{{ supplyRequest?.unitPrice }}</td>
+      <td>{{ supplyRequest?.quantity }}</td>
+      <td>
+        {{
+          supplyRequest?.suppliers?.length > 0
+            ? supplyRequest?.suppliers[0].supplierName
+            : '-'
+        }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="totalprice">
+  <p>{{ translation.totalWithoutVAT }}</p>
+  <span dir="ltr">{{ supplyRequest?.total }}</span>
+</div>
+<div class="totalprice">
+  <p>{{ translation.vat }}</p>
+  <span dir="ltr">{{ supplyRequest?.vat }}</span>
+</div>
+<div class="totalprice">
+  <p>{{ translation.totalWithVAT }}</p>
+  <span dir="ltr">{{ supplyRequest?.totalWithVat?.toFixed(2) }}</span>
+</div>

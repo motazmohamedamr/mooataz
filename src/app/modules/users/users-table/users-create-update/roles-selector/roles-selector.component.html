@@ -1,0 +1,39 @@
+﻿<!--begin::Input group-->
+<div class="mb-5">
+  <!--begin::Label-->
+  <label class="required fw-semibold fs-6 mb-5">{{
+    'users.table.modal.fields.role' | translate
+  }}</label>
+  <!--end::Label-->
+  <!--begin::Roles-->
+  <!--begin::Input row-->
+  <ng-container *ngFor="let role of roles">
+    <div class="d-flex fv-row">
+      <!--begin::Radio-->
+      <div class="form-check form-check-custom form-check-solid">
+        <!--begin::Input-->
+        <input
+          class="form-check-input me-3"
+          type="radio"
+          [formControl]="control"
+          [value]="role.value"
+          (click)="select(role.value)"
+        />
+        <!--end::Input-->
+        <!--begin::Label-->
+        <label [for]="'radio-' + role.value" class="form-check-label">
+          <div class="fw-bold text-gray-800">{{ role.label }}</div>
+          <div class="text-gray-600">
+            {{ role.description }}
+          </div>
+        </label>
+        <!--end::Label-->
+      </div>
+      <!--end::Radio-->
+    </div>
+    <!--end::Input row-->
+    <div class="separator separator-dashed my-5"></div>
+  </ng-container>
+  <!--end::Roles-->
+</div>
+<!--end::Input group-->

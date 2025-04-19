@@ -1,0 +1,12 @@
+.contractor-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  app-dotted-box {
+    flex: 1;
+    &:first-child {
+      flex: 2;
+    }
+  }
+}

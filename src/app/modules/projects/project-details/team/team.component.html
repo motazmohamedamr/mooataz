@@ -1,0 +1,6 @@
+<app-departments
+  [departmentUsersMap]="departmentUsersMap"
+  (refetchUsersEv)="refetchUsers()"
+></app-departments>
+<hr />
+<app-team-list [users]="users()" (userSearchChange)="userChange($event)"></app-team-list>

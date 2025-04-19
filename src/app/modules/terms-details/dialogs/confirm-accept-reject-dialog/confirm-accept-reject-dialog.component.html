@@ -1,0 +1,92 @@
+<div class="modal-header border-0">
+  <div class="d-flex flex-column">
+    <h1 class="modal-title mb-1 fw-bold">
+      {{ data?.title }}
+    </h1>
+    <h3 class="modal-title">{{ data?.subtitle }}</h3>
+  </div>
+</div>
+
+<form class="modal-body py-0" [formGroup]="confirmRequestForm" id="modalBody">
+  @if (data.status === 'reject' || (data.status === 'accept' && data.notesAvailable)) {
+  <app-custom-input
+    [formControl]="notes"
+    [label]="data?.translation?.notes"
+    [type]="'textarea'"
+    [placeholder]="data?.translation?.notes"
+    class="mb-4"
+  ></app-custom-input>
+  }
+
+  <div class="attachments" formArrayName="attachments">
+    <div class="card" *ngFor="let ctrl of attachments.controls; let i = index">
+      <!--begin::Card body-->
+      <div class="card-body text-center p-4" [formGroup]="ctrl">
+        <!--begin::Name-->
+        <div class="card-detail text-gray-800 text-hover-primary d-flex flex-column">
+          <!--begin::Image-->
+          <div class="symbol symbol-60px mb-5">
+            <img
+              [src]="
+                'assets/media/svg/files/' +
+                ctrl.get('displayName').value.split('.').pop() +
+                '.svg'
+              "
+              class="theme-light-show"
+              alt=""
+            />
+          </div>
+          <!--end::Image-->
+          <!--begin::Title-->
+          <div class="fs-5 fw-bold mb-2">{{ ctrl.get('displayName').value }}</div>
+          <!--end::Title-->
+          <button
+            (click)="removeFile(i)"
+            class="deletefile btn btn-icon btn-bg-light btn-color-danger btn-sm"
+          >
+            <i class="ki-duotone ki-trash fs-2">
+              <span class="path1"></span>
+              <span class="path2"></span>
+              <span class="path3"></span>
+              <span class="path4"></span>
+              <span class="path5"></span>
+            </i>
+          </button>
+        </div>
+      </div>
+      <!--end::Card body-->
+    </div>
+  </div>
+</form>
+
+<div class="modal-footer border-0 justify-content-between">
+  <button class="btn bg-light" (click)="file.click()">
+    {{ 'termsDetails.priceRequests.addAttachment' | translate }}
+    <i>
+      <img src="./assets/media/icons/attachment.svg" alt="attachment.svg" />
+    </i>
+  </button>
+  <input
+    #file
+    type="file"
+    accept=""
+    (change)="addAttachment($event.target!)"
+    multiple
+    hidden
+  />
+
+  <div class="d-flex gap-3">
+    <button
+      type="button"
+      [disabled]="!confirmRequestForm.valid"
+      class="btn btn-primary accept-btn"
+      (click)="submit()"
+      [disabled]="!confirmRequestForm.valid"
+    >
+      {{ data?.yesBtnText }}
+    </button>
+    <button type="button" class="btn reject-btn" (click)="close()">
+      {{ data?.noBtnText }}
+    </button>
+  </div>
+</div>

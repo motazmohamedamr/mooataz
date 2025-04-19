@@ -1,0 +1,9 @@
+<div class="stepper">
+  @for (step of steps; track step.title) {
+  <div class="step" [class.completed]="step.completed">
+    <div class="circle"></div>
+    <p>{{ step.title }}</p>
+  </div>
+  }
+</div>
+

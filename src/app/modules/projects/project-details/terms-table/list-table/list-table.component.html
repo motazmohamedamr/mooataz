@@ -1,0 +1,190 @@
+<div id="kt_project_targets_table_pane" class="tab-pane fade active show">
+  <div class="card card-flush">
+    <div class="card-body pt-3">
+      <!--begin::Table-->
+      <div style="overflow-x: auto">
+        <table
+          id="kt_profile_overview_table"
+          style="width: 100%"
+          class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bold"
+        >
+          <thead class="fs-7 text-gray-500 text-uppercase">
+            <tr>
+              <th
+                *ngFor="let column of tableColums"
+                [class.dt-orderable]="column.sortable"
+                (click)="sort(pagingOptions, column)"
+                [class.dt-ordering-desc]="
+                  pagingOptions.sortingBy === column.sortBy && !pagingOptions.ascending
+                "
+                [class.dt-ordering-asc]="
+                  pagingOptions.sortingBy === column.sortBy && pagingOptions.ascending
+                "
+              >
+                <span class="dt-column-title">{{ column.title }}</span>
+                <span *ngIf="true" class="dt-column-order"></span>
+              </th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="fs-6">
+            @for (quantity of quantities; track quantity.id; let i = $index) {
+            <tr>
+              <td class="fw-bold">
+                <span
+                  (click)="goAndFilterByTasks(quantity)"
+                  class="text-gray-900 text-hover-primary"
+                >
+                  {{ quantity.itemNumber }}
+                </span>
+              </td>
+              <td>
+                <span
+                  [title]="quantity.title"
+                  class="badge badge-light fw-semibold me-auto quantitle"
+                  >{{ quantity.title }}</span
+                >
+              </td>
+              <td>
+                @if (quantity.description) {
+                <span
+                  [title]="quantity.description"
+                  class="badge badge-light fw-semibold me-auto desc"
+                  >{{ quantity.description }}</span
+                >
+                }
+              </td>
+              <td>
+                @if (quantity.specifications) {
+                <span
+                  [title]="quantity.specifications"
+                  class="badge badge-light fw-semibold me-auto desc"
+                  >{{ quantity.specifications }}</span
+                >
+                }
+              </td>
+              <td>
+                {{
+                  _translateService.currentLang === 'en'
+                    ? quantity.measurementUnitName.en
+                    : quantity.measurementUnitName.ar
+                }}
+              </td>
+              <td>
+                {{ quantity.quantity }}
+              </td>
+              <td>
+                {{ quantity.unitPrice | numberWithCommas }}
+                {{ _translateService.currentLang === 'en' ? ' S.R' : 'ر.س ' }}
+              </td>
+              <td>
+                {{ quantity.totalPrice | numberWithCommas }}
+                {{ _translateService.currentLang === 'en' ? ' S.R' : 'ر.س ' }}
+              </td>
+              <!-- <td class="me-auto">
+                @switch (quantity.status) { @case (projectQuantityStatus.NotStarted) {
+                <span class="badge badge-light fw-semibold">{{
+                  'Projects.projectDetails.yetToStart' | translate
+                }}</span>
+                } @case (projectQuantityStatus.InProgress) {
+                <span class="badge badge-blue fw-semibold">{{
+                  'Projects.projectDetails.inProgress' | translate
+                }}</span>
+                } @case (projectQuantityStatus.Completed) {
+                <span class="badge badge-light-success fw-semibold">{{
+                  'Projects.projectDetails.completed' | translate
+                }}</span>
+                } }
+              </td> -->
+              <td>
+                {{ quantity.totalPriceWithVat | numberWithCommas }}
+                {{ _translateService.currentLang === 'en' ? ' S.R' : 'ر.س ' }}
+              </td>
+              <td>
+                {{ quantity.actualValue | numberWithCommas }}
+                {{ _translateService.currentLang === 'en' ? ' S.R' : 'ر.س ' }}
+              </td>
+              <td class="td-btn">
+                <button mat-button [matMenuTriggerFor]="menu">...</button>
+                <mat-menu #menu="matMenu" class="more-details-menu">
+                  <h3 style="margin: 0 10px; font-weight: bolder">
+                    {{ 'general.more' | translate }}
+                  </h3>
+                  <a
+                    [routerLink]="['/', 'terms-details', quantity.id, projectId]"
+                    mat-menu-item
+                  >
+                    {{ 'Projects.projectDetails.termDetails' | translate }}
+                  </a>
+                  <a
+                    [routerLink]="[
+                      '/',
+                      'projects',
+                      'project-details',
+                      projectId,
+                      'tasks'
+                    ]"
+                    (click)="goAndFilterByTasks(quantity)"
+                    mat-menu-item
+                  >
+                    {{ 'Projects.projectDetails.tasksDetails' | translate }}
+                  </a>
+                  <a
+                    [routerLink]="[
+                      '/',
+                      'terms-details',
+                      quantity.id,
+                      projectId,
+                      'price-requests'
+                    ]"
+                    mat-menu-item
+                  >
+                    {{ 'Projects.projectDetails.addPriceRequest' | translate }}
+                  </a>
+                  <a
+                    [routerLink]="[
+                      '/',
+                      'terms-details',
+                      quantity.id,
+                      projectId,
+                      'supply-requests'
+                    ]"
+                    mat-menu-item
+                  >
+                    {{ 'Projects.projectDetails.addSupplyRequest' | translate }}
+                  </a>
+                  <a
+                    [routerLink]="[
+                      '/',
+                      'terms-details',
+                      quantity.id,
+                      projectId,
+                      'extracts'
+                    ]"
+                    mat-menu-item
+                  >
+                    {{ 'Projects.projectDetails.addExtract' | translate }}
+                  </a>
+                  <a
+                    [routerLink]="[
+                      '/',
+                      'terms-details',
+                      quantity.id,
+                      projectId,
+                      'convenant-requests'
+                    ]"
+                    mat-menu-item
+                  >
+                    {{ 'Projects.projectDetails.addCovenantRequest' | translate }}
+                  </a>
+                </mat-menu>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      <!--end::Table-->
+    </div>
+  </div>
+</div>

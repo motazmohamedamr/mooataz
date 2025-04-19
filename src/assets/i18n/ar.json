@@ -1,0 +1,2200 @@
+{
+  "general": {
+    "error": "حدث خطأ",
+    "loadingChart": "جاري تحميل البيانات...",
+    "project": "متابع",
+    "settings": "الاعدادات",
+    "showMore": "عرض المزيد",
+    "open": "افتح",
+    "add": "إضافة",
+    "addFile": "اضافة مرفق",
+    "create": "إنشاء",
+    "errorDownloadingFile": "خطأ أثناء التحميل برجاء المحاولة مرة اخري",
+    "update": "تحديث",
+    "delete": "حذف",
+    "description": "تبسيط المشاريع، وتمكين المسؤولين",
+    "cancel": "إلغاء",
+    "download": "تحميل",
+    "view": "مشاهدة",
+    "close": "إغلاق",
+    "title": "العنوان",
+    "ar": "الإسم بالعربية",
+    "notifications": "إشعارات",
+    "alerts": "تنبيهات",
+    "noAlerts": "لا يوجد تنبيهات",
+    "noUpdates": "لا يوجد تحديثات",
+    "noLogs": "لا يوجد سجلات",
+    "updates": "التحديثات",
+    "logs": "سجلات",
+    "downloadComplete": "تم التحميل",
+    "en": "الإسم بالإنجليزية",
+    "name": "الإسم",
+    "back": "العودة",
+    "notExist": "لا يوجد",
+    "all": "الكل",
+    "selected": "مختارة",
+    "search": "بحث",
+    "filesUploadedSuccess": "تم تحميل الملفات بنجاح",
+    "fileDeleted": "تم حذف الملف",
+    "itemsPerPageLabel": "عدد العناصر بالصفحة",
+    "firstPageLabel": "الصفحة الأولى",
+    "previousPageLabel": "الصفحة السابقة",
+    "nextPageLabel": "الصفحة التالية",
+    "lastPageLabel": "الصفحة الأخير",
+    "of": "من",
+    "empty": "لا يوجد",
+    "noDataFound": "لا يوجد بيانات",
+    "putSuccess": "تم التحديث بنجاح!",
+    "filter": "تصفية",
+    "filterDialog": "صندوق التصفية",
+    "more": "المزيد",
+    "clear": "مسح",
+    "yes": "نعم",
+    "no": "لا",
+    "confirm": "تأكيد",
+    "loading": "برجاء الانتظار ...",
+    "changeLanguage": "Change Language",
+    "save": "حفظ",
+    "saveChanges": "حفظ التغييرات",
+    "submit": "تاكيد",
+    "discard": "الغاء",
+    "uploadFiles": "تحميل الملفات أو السحب ",
+    "uploadFile": "تحميل الملف أو السحب ",
+    "maxSize": "الحد الأقصى لحجم الملف {{maxsize}}",
+    "table": {
+      "search": "بحث ...",
+      "filter": "تصفية",
+      "addNew": "اضف جديد",
+      "actions": "أجراءات",
+      "emptyTable": "لم يتم العثور على العناصر.",
+      "emptyTableDesc": "لا توجد عناصر لعرضها للمرشحات المطبقة.",
+      "paginationInfo": "عرض {{start}} الي {{end}} من اجمالي {{total}} عناصر"
+    },
+    "dashboard": {
+      "tasksSummary": "المهام",
+      "requestSummary": "الطلبات",
+      "financialPositionSummary": "الموقف المالي",
+      "priceRequests": "طلبات السعر",
+      "convenantRequests": "طلبات العهد",
+      "supplyRequests": "طلبات التوريد",
+      "extractRequest": "المستخلصات",
+      "inProgress": "جاري",
+      "notStarted":"لم تبدأ بعد",
+      "finished": "مكتمل",
+      "actualValue":"المصاريف",
+      "finalValue": "قيمة المشروع",
+      "timelineSummary": "الجدول الزمني",
+      "endingPeriod": "المدة المنتهية",
+      "remainingPeriod": "المدة المتبقية",
+      "projectPeriod": "مدة المشروع",
+      "elaspedDuration": "المدة المنتهية",
+      "noProjects": "لا يوجد مشاريع",
+      "numberOfProjects": "عدد المشاريع",
+      "numberOfRequests": "عدد الطلبات",
+      "totalProjectValue": "اجمالي قيمه المشاريع",
+      "noData": "لا توجد بيانات",
+      "monthsDuration": "{{duration}} شهر",
+      "tasksCount": "عدد المهام",
+      "ownerExtract": "مستخلص المالك",
+      "extracts": "المستخلصات",
+      "month": "شهر"
+    },
+    "sweetAlert": {
+      "success": {
+        "title": "تم بنحاح!",
+        "text": "تم اكتمال العملية بنجاح!",
+        "confirmButtonText": "حسنًا!"
+      },
+      "cancellation": {
+        "text": "هل أنت متأكد من رغبتك في الإلغاء؟",
+        "confirmButtonText": "نعم قم بإلغائها!",
+        "cancelButtonText": "لا العودة"
+      },
+      "deletion": {
+        "title": "حذف العنصر",
+        "text": "هل أنت متأكد من رغبتك في حذف هذا العنصر نهائيًا؟",
+        "success": "تم حذف العنصر بنجاح",
+        "error": "حدث خطأ أثناء حذف العنصر",
+        "confirmButtonText": "حسناً",
+        "cancelButtonText": "إلغاء"
+      },
+      "changeStatus": {
+        "title": "تغيير الحالة",
+        "text": "هل أنت متأكد من رغبتك في تغيير حالة هذا العنصر؟",
+        "success": "تم تغيير حالة العنصر بنجاح",
+        "error": "حدث خطأ أثناء تغيير حالة العنصر",
+        "confirmButtonText": "حسناً",
+        "cancelButtonText": "إلغاء"
+      }
+    }
+  },
+  "homepage": {
+    "hero": {
+      "home": "الرئيسية",
+      "dashboard": "لوحة التحكم",
+      "features": "الميزات",
+      "solutions": "الحلول",
+      "pricing": "التسعير",
+      "contactUs": "اتصل بنا",
+      "login": "تسجيل الدخول",
+      "startFreeTrial": "ابدأ تجربة مجانية",
+      "heroTitle": "إدارة مشاريع البناء بذكاء، بدعم من الذكاء الاصطناعي",
+      "heroSubtitle": "ارتقِ بمشاريعك الإنشائية مع حلول الذكاء الاصطناعي التي تقدم تقديرًا دقيقًا للتكاليف، وتتبعًا لحظيًا، وأتمتة لسير العمل. حافظ على ميزانيتك، والتزم بجدولك الزمني، وتحكم في كل التفاصيل بكفاءة.",
+      "requestDemo": "اطلب عرضاً توضيحياً"
+    },
+    "whymotabea": {
+      "whyChoose": "لماذا تختار متابع",
+      "projectsManagementText": "إدارة مشاريع البناء بذكاء تبدأ من هنا",
+      "estimatePricingAI": "تقدير التكاليف المدعوم بالذكاء الاصطناعي",
+      "completeTasks": "اتمام المهام وسير العمل",
+      "trackProjects": "تتبع المشاريع في الوقت الحقيقي",
+      "resources": "تخصيص الموارد بشكل مثالي",
+      "cloudBuilt": "مبني على السحابة وقابل للتوسع",
+      "knowHowtoWork": "تعرف على كيفية عمله"
+    },
+    "features": {
+      "title": "المميزات",
+      "allYouNeedToManage": "كل ما تحتاجه لإدارة مشاريع البناء بكفاءة",
+      "motabeaOffersTools": "متابع يوفر أدوات قوية تعمل على أتمتة العمليات، وتقليل المخاطر، والحفاظ على تقدم مشاريعك بسلاسة.",
+      "projectDashboardRealtime": "لوحة تحكم المشروع في الوقت الفعلي",
+      "watchProgress": "راقب التقدم، والنفقات، وتوزيع الموارد بشكل لحظي.",
+      "completeTasks": "اتمام المهام وسير العمل",
+      "trackUpdateTasks": "قم بتعيين وتتبع وتحديث المهام في الوقت الفعلي لتعزيز التعاون.",
+      "managementProjectsAI": "تحوّل إدارة مشاريع البناء باستخدام الذكاء الاصطناعي وتحليل البيانات",
+      "motabeaDashboard": "متابع هو منصة متقدمة لإدارة مشاريع البناء، مصممة لمساعدة الشركات على تبسيط سير العمل، وتحسين التكاليف، وزيادة كفاءة المشاريع. بفضل الذكاء الاصطناعي وتحليلات البيانات في الوقت الفعلي، يتيح تابع للفرق اتخاذ قرارات أذكى وضمان تنفيذ المشاريع بنجاح.",
+      "readOurStory": "اقرأ قصتنا"
+    },
+    "pricing": {
+      "pricing": "التسعير",
+      "title": "خطط الأسعار – اختر الخطة المثالية لعملك",
+      "description": "سواء كنت تدير مشاريع صغيرة أو مواقع بناء كبيرة، لدينا الخطة المناسبة لك.",
+      "freeTrial": "تجربة مجانية (14 يومًا)",
+      "monthly": "شهريًا",
+      "startFreeTrial": "ابدأ التجربة المجانية",
+      "taskProjectManagement": "إدارة المهام والمشاريع",
+      "basicAICostEstimation": "تقدير تكاليف الذكاء الاصطناعي الأساسي",
+      "limitedProjectTracking": "تتبع المشاريع المحدود",
+      "activeProject": "1 مشروع نشط",
+      "basicSupport": "دعم أساسي",
+      "standardPlan": "الخطة القياسية",
+      "mostPopular": "الأكثر شعبية",
+      "chooseStandardPlan": "اختر الخطة القياسية",
+      "unlimitedProjectsUsers": "مشاريع ومستخدمون غير محدودين",
+      "advancedAI": "تقدير تكاليف متقدم مدعوم بالذكاء الاصطناعي",
+      "resourceTaskManagement": "إدارة الموارد والمهام",
+      "automatedNotifications": "إشعارات وتنبيهات تلقائية",
+      "liveChat": "دعم عبر الدردشة الحية والبريد الإلكتروني على مدار الساعة طوال أيام الأسبوع",
+      "exportSupport": "دعم التصدير",
+      "business": "عمل",
+      "requestQuote": "اطلب عرض أسعار",
+      "projectMembers": "حتى 5 أعضاء في المشروع",
+      "unlimitedtasks": "مهام ومشاريع غير محدودة",
+      "storage": "200 جيجابايت من التخزين",
+      "customAPI": "تكاملات API مخصصة",
+      "unlimitedCostInsights": "رؤى تكاليف غير محدودة مدعومة بالذكاء الاصطناعي",
+      "customfields": "حقول مخصصة",
+      "prioritySupportOnboarding": "دعم وأولوية في التوجيه",
+      "exportcapabilities": "قدرات التصدير",
+      "apiaccess": "وصول API",
+      "advancedsecurityfeatures": "ميزات أمان متقدمة"
+    },
+    "contact": {
+      "contactUs": "اتصل بنا",
+      "description": "دعونا نتواصل ونبني المستقبل معًا",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "ourOffice": "مكتبنا",
+      "nakheelTower": "برج النخيل ",
+      "street": "8266 طريق الملك فهد الفرعي الرياض 12383",
+      "sendAMessage": "أرسل رسالة",
+      "haveQuestion": "هل لديك سؤال أو تبحث عن فرص استثمارية؟ نحن هنا للمساعدة. تواصل معنا للاستفسارات حول مشاريعنا وشراكاتنا.",
+      "fullName": "الاسم الكامل",
+      "fullnameRequired": "الاسم الكامل مطلوب.",
+      "emailRequired": "البريد الإلكتروني مطلوب.",
+      "emailMessage": "أدخل عنوان بريدك الإلكتروني",
+      "message": "الرسالة",
+      "messageRequired": "الرسالة مطلوبة.",
+      "sendMessage": "أرسل الرسالة",
+      "enterYourName": "أدخل اسمك",
+      "enterYourEmail": "أدخل بريدك الإلكتروني",
+      "enterYourMessage": "اكتب رسالة.."
+    },
+    "footer": {
+      "quickLinks": "روابط سريعة",
+      "home": "الرئيسية",
+      "features": "المميزات",
+      "ourStory": "قصتنا",
+      "blogAndNews": "المدونة والأخبار",
+      "customerSupport": "دعم العملاء",
+      "faqs": "الأسئلة الشائعة",
+      "supportCenter": "مركز الدعم",
+      "contactUs": "اتصل بنا",
+      "legalAndPolicies": "القوانين والسياسات",
+      "termsAndConditions": "الشروط والأحكام",
+      "privacyPolicy": "سياسة الخصوصية",
+      "userManual": "دليل المستخدم",
+      "logoContent": "متابع – إدارة البناء المدعومة بالذكاء الاصطناعي",
+      "copyright": "متابع |  {{year}}  متابع ©  جميع الحقوق محفوظة"
+    },
+    "registration": {
+      "title": "ابدأ تجربتك المجانية الآن!",
+      "description": "أنشئ حسابك في متابع وتحكم في مشاريعك الإنشائية بكفاءة مدعومة بالذكاء الاصطناعي.",
+      "fullNameRequired": "الاسم الكامل مطلوب.",
+      "emailRequired": "البريد الإلكتروني مطلوب.",
+      "phoneRequired": "رقم الهاتف مطلوب.",
+      "passwordRequired": "كلمة المرور مطلوبة.",
+      "confirmPasswordRequired": "تأكيد كلمة المرور مطلوب.",
+      "passwordsMatch": "كلمات المرور غير متطابقة.",
+      "confirmThat": "أؤكد أنني قرأت وقبلت الشروط والأحكام",
+      "createAccount": "إنشاء حساب",
+      "needHelp": "تحتاج إلى مساعدة",
+      "contact": "؟ اتصل",
+      "support": "بالدعم",
+      "forAssistance": "للحصول على المساعدة.",
+      "fullName": "الاسم الكامل *",
+      "email": "عنوان البريد الإلكتروني *",
+      "companyName": "اسم الشركة",
+      "password": "كلمة المرور *",
+      "confirmPassword": "تأكيد كلمة المرور *",
+      "phoneNumber": "رقم الهاتف *"
+    }
+  },
+  "errors": {
+    "noData": "لم نتلقى أي بيانات!",
+    "err400": "هذا الطلب لم يتم معاجلته بنجاح",
+    "err403": "هذا الحساب لا يملك الصلاحيات المطلوبة لإجراء هذا التعامل",
+    "err422": "بيانات غير صحيحة. برجاء إدخال بيانات صحيحة والمحاولة مرة أخرى",
+    "version": "أنت الان على نسخة قديمة من الموقع. برجاء التحديث والمحاولة مرة أخرى",
+    "general": "حدث خطأ أثناء تنفيذ طلبك",
+    "invalid_file_type": "نوع الملف غير صالح",
+    "required": "هذا الحقل مطلوب",
+    "min": "يجب ان يكون القيمة المدخلة اكبر من 5000"
+  },
+  "validations": {
+    "required": "هذا الحقل مطلوب",
+    "lessthanzero": "هذا الحقل لا يجب ان يكون اقل من صفر",
+    "email": "بجب ادخال الايميل صحيحا",
+    "arabicOnly": "الادخال باللغة العربية فقط",
+    "englishOnly": "الادخال باللغه الانجليزية فقط",
+    "numberOnly": "يجب أن يحتوي الإدخال على أرقام فقط",
+    "maxLength": "يجب ألا يحتوي الإدخال على أكثر من {{numChars}} حرفًا",
+    "min": "يجب ان يكون القيمة المدخلة علي الأقل {{numChars}} ",
+    "max": "يجب ان يكون القيمة المدخلة لا تزيد عن {{numChars}} ",
+    "issuanceDateLessThanAwardDate": "يحب ان يكون التاريخ بعد تاريخ اصدار امر التعميد",
+    "signingDateLessThanIssuanceDate": "يحب ان يكون تاريخ التوقيع بعد تاريخ اصدار العقد",
+    "contractPrimaryReceiptDateLessThanFinalDate": "تاريخ التسليم النهائي يجب أن يكون بعد التسليم الابتدائي",
+    "guaranteeDateLessThanAwardDate": "تاريخ الضمان البنكي يجب ان يكون بعد تاريخ الترسية",
+    "issuanceDateLessThanGuaranteeDate": "يجب ان يكون تاريخ اصدار العقد بعد او يساوي تاريخ اصدار الضمان البنكي",
+    "contractReceiptDateLessThanSigningDate": "تاريخ استلام الموقع يجب ان يكون بعد او يساوي تاريخ توقيع العقد",
+    "emptyPeriod": "يجب أن يكون مدة تنفيذ العقد علي الأقل يوم واحد"
+  },
+  "realTime": {
+    "identified": "هذا الجهاز تم ملاحظته كجهاز متصل!",
+    "disconnectedTitle": "خطأ في الاتصال بالانترنت",
+    "disconnected": "لا يمكن الاتصال بالخادم في هذا الوقت!",
+    "reconnected": "تم استرجاع الاتصال بشكل صحيح!"
+  },
+  "login": {
+    "title": "مرحبا بك في منصة متابع",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "submit": "تسجيل الدخول",
+    "forgot": "هل نسيت كلمة السر؟",
+    "signUp": "ليس لديك حساب؟"
+  },
+  "layoutBuilder": {
+    "title": "منشئ التخطيط",
+    "description": "منشئ التخطيط يساعدك على ضبط وتكوين مواصفات تخطيط المشروع المفضل لديك ومعاينتها في الوقت الحقيقي وتصدير قالب HTML مع أجزائها القابلة للإدراج من هذا العرض التوضيحي. لا يتضمن الإصدار الذي تم تنزيله مجلد الأصول لأن الغرض الرئيسي لمنشئ التخطيط هو المساعدة في إنشاء رمز HTML النهائي دون عناء. لا تؤثر تغييرات منشئ التخطيط على الصفحات التي تحتوي على أغلفة تخطيط.",
+    "header": {
+      "title": "الرأس",
+      "fixedHeader": "رأس ثابت",
+      "leftContent": "المحتوى الأيسر",
+      "width": "العرض",
+      "desktop": "الكمبيوتر المكتبي",
+      "tabletMobile": "الكمبيوتر اللوحي والجوال",
+      "enableFixedHeader": "تفعيل الرأس الثابت",
+      "menu": "القائمة",
+      "pageTitle": "عنوان الصفحة",
+      "selectHeaderLeftContentDesc": "حدد نوع المحتوى الأيسر للرأس.",
+      "selectHeaderWidthDesc": "حدد نوع عرض الرأس.",
+      "fluid": "متدفق",
+      "Fixed": "ثابت"
+    },
+    "toolbar": {
+      "title": "شريط الأدوات",
+      "display": "العرض",
+      "displayToolbar": "عرض شريط الأدوات",
+      "width": "العرض",
+      "selectLayoutWithType": "حدد نوع عرض التخطيط.",
+      "fluid": "متدفق",
+      "Fixed": "ثابت"
+    },
+    "pageTitle": {
+      "title": "عنوان الصفحة",
+      "display": "العرض",
+      "displayPagetitle": "عرض عنوان الصفحة",
+      "breadcrumb": "مسار التنقل"
+    },
+    "aside": {
+      "title": "على الجانب",
+      "display": "العرض",
+      "displayAside": "عرض على الجانب"
+    },
+    "content": {
+      "title": "المحتوى",
+      "width": "العرض",
+      "selectLayoutWithType": "حدد نوع عرض التخطيط.",
+      "fluid": "متدفق",
+      "Fixed": "ثابت"
+    },
+    "footer": {
+      "title": "القدم",
+      "width": "العرض",
+      "selectLayoutWithType": "حدد نوع عرض التخطيط.",
+      "fluid": "متدفق",
+      "Fixed": "ثابت"
+    },
+    "preview": "معاينة",
+    "pleaseWait": "الرجاء الانتظار...",
+    "reset": "إعادة تعيين"
+  },
+  "multiTenancy": {
+    "table": {
+      "title": "تنانت",
+      "description": "قائمة بالتنانت",
+      "tenantActivated": "تم تفعيل تنانت بنجاح!",
+      "tenantDeactivated": "تم إلغاء تفعيل تنانت بنجاح!",
+      "columns": {
+        "tenantDetails": "تفاصيل تنانت",
+        "adminEmail": "بريد إلكتروني المسؤول",
+        "status": "الحالة",
+        "validTo": "صالح حتى"
+      },
+      "actions": {
+        "activate": "تفعيل",
+        "deactivate": "إلغاء تفعيل"
+      },
+      "statuses": {
+        "pending": "معلق",
+        "ready": "جاهز",
+        "active": "مفعل",
+        "inactive": "غير مفعل",
+        "suspended": "موقوف"
+      },
+      "modal": {
+        "create": "إنشاء تنانت",
+        "edit": "تعديل تنانت",
+        "fields": {
+          "changeLogo": "تغيير الشعار",
+          "logo": "الشعار",
+          "logoHint": "أنواع الملفات المسموح بها: png, jpg, jpeg.",
+          "nameAr": "الاسم (بالعربية)",
+          "nameArHint": "على سبيل المثال: شركة العربي",
+          "nameEn": "الاسم (بالانجليزية)",
+          "nameEnHint": "على سبيل المثال: Arabi Company",
+          "connectionString": "سلسلة الاتصال",
+          "connectionStringHint": "على سبيل المثال: Server=...",
+          "adminEmail": "بريد إلكتروني المسؤول",
+          "adminEmailHint": "على سبيل المثال: example@tenant.com",
+          "testConnection": "اختبار الاتصال",
+          "mongoConnectionString": "سلسلة الاتصال بقاعدة البيانات مونجو"
+        },
+        "connected": {
+          "title": "تم إنشاء الاتصال بنجاح!",
+          "confirmButtonText": "حسنا, فهمت!"
+        },
+        "disconnected": {
+          "title": "فشل الاتصال!",
+          "text": "يرجى التحقق من سلسلة الاتصال والمحاولة مرة أخرى.",
+          "confirmButtonText": "حسنا, فهمت!"
+        },
+        "added": {
+          "text": "تم إضافة تنانت بنجاح!",
+          "confirmButtonText": "حسنا, فهمت!"
+        }
+      }
+    }
+  },
+  "contract": {
+    "contractSaved": "تم حفظ العقد بنجاح!",
+    "table": {
+      "title": "العقود",
+      "description": "جميع العقود",
+      "columns": {
+        "refNum": "رقم العقد",
+        "Name": "أسم المشروع",
+        "Type": "نوع العقد",
+        "ClientName": "الجهة المتعاقد معها",
+        "Date": "تاريخ العقد",
+        "status": "حالة العقد"
+      },
+      "statuses": {
+        "draft": "مسودة",
+        "started": "تم البدئ",
+        "notstarted": "لم يبدأ بعد",
+        "initialreceipt": "الاستلام الأولي",
+        "finalreceipt": "الاستلام النهائي",
+        "inprogress": "جاري",
+        "canceled": "ملغي",
+        "finished": "تم الانتهاء"
+      }
+    },
+    "stepper": {
+      "main": {
+        "title": "تفاصيل العقد",
+        "subtitle": "جميع المعلومات الأولية عن العقد"
+      },
+      "award": {
+        "title": "الترسية",
+        "subtitle": "حدد جميع تفاصيل الترسية"
+      },
+      "delegation": {
+        "title": "التفويض",
+        "subtitle": "حدد جميع تفاصيل التفويض"
+      },
+      "guarantee": {
+        "title": "الضمان البنكي النهائي",
+        "subtitle": "حدد تفاصيل الضمان البنكي النهائي"
+      },
+      "details": {
+        "title": "بيانات العقد",
+        "subtitle": "حدد جميع تفاصيل بيانات العقد"
+      },
+      "operations": {
+        "title": "العمليات",
+        "subtitle": "حدد جميع تفاصيل العمليات"
+      },
+      "terms": {
+        "title": "جدول البنود",
+        "subtitle": "حدد جميع تفاصيل استلام الموقع"
+      },
+      "fines": {
+        "title": "الغرامات",
+        "subtitle": "حدد جميع تفاصيل الغرامات"
+      }
+    },
+    "form": {
+      "details": {
+        "type": {
+          "label": "نوع العقد",
+          "placeholder": "اختر نوع العقد"
+        },
+        "client": {
+          "label": "العميل",
+          "placeholder": "اختر العميل"
+        },
+        "refNo": {
+          "label": "رقم العقد",
+          "placeholder": "ادخل رقم العقد"
+        },
+        "country": {
+          "label": "الدولة",
+          "placeholder": "اختر الدولة"
+        },
+        "name": {
+          "label": "اسم العقد",
+          "placeholder": "ادخل اسم العقد"
+        },
+        "Competition": "مناقصه",
+        "DirectOrder": "امر مباشر",
+        "savesuccess": "تم حفظ تفاصيل العقد بنجاح"
+      },
+      "award": {
+        "awardNumber": {
+          "label": "رقم امر الترسية",
+          "placeholder": "ادخل رقم امر الترسية"
+        },
+        "awardOrderIssuanceDate": {
+          "label": "تاريخ اصدار امر الترسية - ميلادي",
+          "placeholder": "حدد التاريخ"
+        },
+        "awardOrderIssuanceHijriDate": {
+          "label": "تاريخ اصدار أمر الترسية - هجري",
+          "placeholder": "حدد التاريخ"
+        },
+        "receiptAwardOrderHijriDate": {
+          "label": "تاريخ استلام أمر الترسية - هجري",
+          "placeholder": "حدد التاريخ"
+        },
+        "receiptAwardOrderDate": {
+          "label": "تاريخ استلام أمر الترسية- ميلادي ",
+          "placeholder": "حدد التاريخ"
+        },
+        "displayNumber": {
+          "label": "رقم العرض",
+          "placeholder": "ادخل رقم العرض"
+        },
+        "itimadCompetitionNumber": {
+          "label": "رقم منافسة منصة اعتماد اذا كان العميل حكومي",
+          "placeholder": "ادخل رقم المنافسة"
+        },
+        "initialTotalPrice": {
+          "label": "السعر الاجمالي الابتدائي",
+          "placeholder": "ادخل السعر الاجمالي الابتدائي"
+        },
+        "initialTotalPriceInLetters": {
+          "label": "تفقيط السعر الاجمالي الابتدائي",
+          "placeholder": "ادخل تفقيط السعر الاجمالي الابتدائي"
+        },
+        "discountPercentage": {
+          "label": "نسبة الخصم %",
+          "placeholder": "ادخل النسبة %"
+        },
+        "discountValue": {
+          "label": "قيمة الخصم",
+          "placeholder": "ادخل القيمة"
+        },
+        "discountInLetters": {
+          "label": "تفقيط الخصم",
+          "placeholder": "ادخل القيمة"
+        },
+        "vatPercentage": {
+          "label": "نسبة الضريبة المضافة",
+          "placeholder": "ادخل النسبة"
+        },
+        "vatValue": {
+          "label": "قيمة الضريبة المضافة",
+          "placeholder": "ادخل القيمة"
+        },
+        "vatValueInLetters": {
+          "label": "تفقيط الضريبة المضافة",
+          "placeholder": "ادخل النسبة"
+        },
+        "finalTotalPrice": {
+          "label": "السعر الاجمالي النهائي (بعد الخصم و الضريبة)",
+          "placeholder": "ادخل السعر"
+        },
+        "finalPriceInLetters": {
+          "label": "تفقيط السعر النهائي",
+          "placeholder": "ادخل السعر"
+        },
+        "savesuccess": "تم حفظ التعميد بنجاح"
+      },
+      "delegation": {
+        "commerceChamberId": {
+          "label": "الغرفة",
+          "placeholder": "اختر الغرفة"
+        },
+        "documentNumber": {
+          "label": "رقم الوثيقة",
+          "placeholder": "أدخل رقم الوثيقة"
+        },
+        "delegatedToName": {
+          "label": "المفوض اليه",
+          "placeholder": "اختر المفوض اليه"
+        },
+        "file": {
+          "label": "اضافة وثيقة التفويض",
+          "placeholder": ""
+        },
+        "notes": {
+          "label": "ملاحظات",
+          "placeholder": "سجل الملاحظات"
+        },
+        "savesuccess": "تم حفظ تفاصيل التفويض بنجاح"
+      },
+      "guarantee": {
+        "isBankHasFinalGuarantee": {
+          "label": "هل العقد لديه ضمان بنكي ؟"
+        },
+        "bankId": {
+          "label": "البنك",
+          "placeholder": "اختر البنك"
+        },
+        "bankGuaranteePercentage": {
+          "label": "نسبة الضمان البنكي %",
+          "placeholder": "أدخل النسبة"
+        },
+        "bankGuaranteeAmount": {
+          "label": "قيمة الضمان البنكي",
+          "placeholder": "ادخل القيمة"
+        },
+        "bankGuaranteeAmountInLetters": {
+          "label": "قيمة الضمان البنكي بالعملة",
+          "placeholder": "أدخل القيمة"
+        },
+        "awardTotalPrice": {
+          "label": "اجمالي مبلغ التعميد",
+          "placeholder": "أدخل المبلغ"
+        },
+        "awardTotalPriceInLetters": {
+          "label": "اجمالي مبلغ التعميد بالعملة",
+          "placeholder": "اختر المبلغ"
+        },
+        "bankGuaranteeValidityFrom": {
+          "label": "مدة سريان الضمان من",
+          "placeholder": "حدد التاريخ"
+        },
+        "bankGuaranteeValidityTo": {
+          "label": "مدة سريان الضمان الي",
+          "placeholder": "حدد التاريخ"
+        },
+        "receivedOrganization": {
+          "label": "الادارة المنوط بها استلام الضمان البنكي",
+          "placeholder": "أدخل الادارة المنوط بها"
+        },
+        "notes": {
+          "label": "ملاحظات",
+          "placeholder": "سجل الملاحظات"
+        },
+        "savesuccess": "تم حفظ تفاصيل الضمان البنكي بنجاح"
+      },
+      "contractDetails": {
+        "clientId": {
+          "label": "العميل",
+          "placeholder": "اختر العميل"
+        },
+        "refNumber": {
+          "label": "رقم العقد",
+          "placeholder": "ادخل رقم العقد"
+        },
+        "name": {
+          "label": "اسم العقد",
+          "placeholder": "ادخل اسم العقد"
+        },
+        "issuanceDate": {
+          "label": "تاريخ اصدار العقد - ميلادي",
+          "placeholder": "حدد التاريخ"
+        },
+        "issuanceHijriDate": {
+          "label": "تاريخ اصدار العقد - هجري",
+          "placeholder": "حدد التاريخ"
+        },
+        "dateReceiptHardCopy": {
+          "label": "تاريخ استلام النسخة الورقية",
+          "placeholder": "حدد التاريخ"
+        },
+        "days": {
+          "label": "عدد الأيام",
+          "placeholder": "حدد عدد الأيام"
+        },
+        "months": {
+          "label": "عدد الشهور",
+          "placeholder": "حدد عدد الشهور"
+        },
+        "years": {
+          "label": "مدة تنفيذ العقد - عدد السنوات",
+          "placeholder": "حدد عدد السنوات"
+        },
+        "contractTypeId": {
+          "label": "نوع العقد",
+          "placeholder": "اختر نوع العقد"
+        },
+        "contractStatus": {
+          "label": "حالة العقد",
+          "placeholder": "اختر حالة العقد"
+        },
+        "contractSigningDate": {
+          "label": "تاريخ توقيع العقد",
+          "placeholder": "حدد التاريخ"
+        },
+        "savesuccess": "تم حفظ تفاصيل بيانات العقد بنجاح"
+      },
+      "operations": {
+        "name": {
+          "label": "اسم العملية",
+          "placeholder": "أدخل اسم العمليه"
+        },
+        "userId": {
+          "label": "الموظف",
+          "placeholder": "اختر الموظف"
+        },
+        "siteReceiptDate": {
+          "label": "تاريخ استلام الموقع",
+          "placeholder": "حدد التاريخ"
+        },
+        "siteFinalReceiptDate": {
+          "label": " تاريخ التسليم النهائي",
+          "placeholder": "حدد التاريخ"
+        },
+        "sitePrimaryReceiptDate": {
+          "label": "تاريخ التسليم الابتدائي",
+          "placeholder": "حدد التاريخ"
+        },
+        "siteEndDate": {
+          "label": "تاريخ انتهاء الموقع",
+          "placeholder": "حدد التاريخ"
+        },
+        "siteReceipt": {
+          "label": "استلام الموقع"
+        },
+        "saveOperationButton": "حفظ العملية",
+        "actions": "أجراءات",
+        "addNewOperation": "اضافة عملية جديدة",
+        "addNewOperationSubtitle": "ادخل جميع البيانات التالية",
+        "firstOperation": "العملية الاولي",
+        "quantitiesAddedSuccessfully": "تم حفظ العملية"
+      },
+      "quantities": {
+        "titleHeader": "اضافة بند جديد",
+        "subtitle": "ادخل جميع البيانات التاليه",
+        "actualValue": "القيمة الفعليه شامل الضريبة",
+        "totalWithVAT": "الاجمالى شامل الضريبة",
+        "projectId": {
+          "label": "اسم العمليه",
+          "placeholder": "اختر العمليه"
+        },
+        "title": {
+          "label": "اسم البند",
+          "placeholder": "أدخل اسم البند"
+        },
+        "itemNumber": {
+          "label": "رقم البند",
+          "placeholder": "ادخل رقم البند"
+        },
+        "description": {
+          "label": "وصف البند",
+          "placeholder": "ادخل وصف البند"
+        },
+        "specifications": {
+          "label": "المواصفات",
+          "placeholder": "أدخل المواصفات"
+        },
+        "quantity": {
+          "label": "الكمية",
+          "placeholder": "ادخل الكمية"
+        },
+        "actualQuantity": {
+          "label": "الكمية الحقيقية",
+          "placeholder": "ادخل الكمية الحقيقية"
+        },
+        "measurementUnitId": {
+          "label": "وحدة القياس",
+          "placeholder": "اختر وحدة القياس"
+        },
+        "unitPrice": {
+          "label": "سعر الوحدة",
+          "placeholder": "ادخل سعر الوحدة"
+        },
+        "totalPrice": {
+          "label": "الاجمالي",
+          "placeholder": "ادخل الاجمالي"
+        },
+        "status": {
+          "label": "الحالة",
+          "placeholder": "الحالة"
+        },
+        "effectiveDate": {
+          "label": "تاريخ التنفيذ",
+          "placeholder": "تاريخ التنفيذ"
+        },
+        "businessType": {
+          "label": "نوع الأعمال",
+          "placeholder": "ادخل نوع الأعمال",
+          "Structural": "انشائي",
+          "Architectural": "معماري",
+          "Electrical": "كهربائي",
+          "Mechanical": "ميكانيكي",
+          "Telecommunications": "اتصالات",
+          "Other": "آخر"
+        },
+        "savesuccess": "تم حفظ البند بنجاح",
+        "saveQuantityButton": "حفظ",
+        "quantitiesAddedSuccessfully": "تم اضافة البنود بنجاح",
+        "quantitiesTableTitle": "بنود العملية",
+        "addQuantitiesTableBtn": "اضافة جدول البنود",
+        "addQuantity": "اضافة بند",
+        "downloadComplete": "تم التحميل",
+        "noQuantities": "لا توجد بنود"
+      },
+      "fines": {
+        "daysCount": {
+          "label": "عدد الأيام",
+          "placeholder": "ادخل عدد الأيام"
+        },
+        "amount": {
+          "label": "المبلغ",
+          "placeholder": "ادخل المبلغ"
+        },
+        "description": {
+          "label": "وصف الخصم",
+          "placeholder": "ادخل وصف الخصم"
+        },
+        "fineType": {
+          "label": "نوع الخصم",
+          "placeholder": "ادخل نوع الخصم"
+        },
+        "amountInLetters": {
+          "label": "تفقيط المبلغ",
+          "placeholder": "ادخل المبلغ"
+        },
+        "discountValue": {
+          "label": "قيمة الخصم",
+          "placeholder": "قيمة الخصم"
+        },
+        "savesuccess": "تم حفظ تفاصيل الغرامات بنجاح",
+        "saveFineButton": "حفظ الغرامة",
+        "addNewFineSubtitle": "ادخل جميع البيانات التالية"
+      },
+      "buttons": {
+        "saveAsDraft": "حفظ كمسودة",
+        "nextStep": "الخطوة التالية",
+        "saveContract": "حفظ العقد",
+        "previousStep": "الخطوة السابقة"
+      }
+    }
+  },
+  "projects": {
+    "statuses": {
+      "NotStarted": "لم يبدأ بعد",
+      "InProgress": "جاري",
+      "Completed": "تم الانتهاء"
+    },
+    "searchProjectList": "البحث عن اسم العميل او اسم المشروع",
+    "projectStatus": "حالة المشروع",
+    "allProjects": "جميع المشاريع",
+    "projectsWithContracts": "مشاريع مرتبطة بعقد",
+    "projectsWithNoContracts": "مشاريع غير مرتبطة بعقد"
+  },
+  "2fa": {
+    "title": "المصادقة الثنائية (2fa)",
+    "description": "أدخل رمز التحقق الذي أرسلناه",
+    "typeCode": "اكتب رمز الأمان الخاص بك المكون من 6 أرقام"
+  },
+  "profile": {
+    "title": "تفاصيل الملف الشخصي",
+    "signInMethod": "طريقة تسجيل الدخول",
+    "emailAddress": "عنوان البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "passwordRequirements": "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل، على الأقل حرف كبير، حرف صغير واحد، رقم واحد ورمز خاص واحد.",
+    "secureAccount": "تأمين حسابك",
+    "secureAccountDescription": "تضيف المصادقة الثنائية طبقة إضافية من الأمان إلى حسابك. لتسجيل الدخول، ستحتاج أيضًا إلى تقديم رمز مكون من 6 أرقام",
+    "changePassword": "إشعار تغيير كلمة المرور",
+    "changePasswordDescription": "يعد تغيير كلمة المرور الخاصة بك بانتظام ممارسة أمنية جيدة. لاحظ أن تغيير كلمة المرور الخاصة بك سيؤدي إلى تسجيل خروجك من جميع الأجهزة.",
+    "actions": {
+      "changeEmail": "تغيير البريد الإلكتروني",
+      "changePassword": "تغيير كلمة المرور",
+      "enable": "تفعيل",
+      "disable": "تعطيل"
+    },
+    "2fa": {
+      "title": "تفعيل المصادقة الثنائية (2fa)",
+      "description": "بالإضافة إلى اسم المستخدم وكلمة المرور، سيتعين عليك إدخال رمز (يتم إرساله عبر التطبيق) لتسجيل الدخول إلى حسابك.",
+      "authApps": "تطبيقات المصادقة",
+      "authAppsDescription": "احصل على الرموز من تطبيق مثل Google Authenticator أو Microsoft Authenticator أو Authy أو 1Password.",
+      "authAppsDescription2": "استخدام تطبيق المصادقة مثل",
+      "authAppsDescription3": "قم بمسح رمز الاستجابة السريعة QR. سيتم إنشاء رمز مكون من 6 أرقام يمكنك إدخاله أدناه.",
+      "recoverCode": "إذا كنت تواجه مشكلة في استخدام رمز الاستجابة السريعة، فحدد الإدخال اليدوي في تطبيقك، وأدخل اسم المستخدم والرمز:",
+      "continue": "متابعة",
+      "enterCode": "ادخل كود المصادقة",
+      "success": {
+        "title": "تم التفعيل!",
+        "text": "تم تفعيل المصادقة الثنائية (2fa) بنجاح!",
+        "confirmButtonText": "حسنًا!"
+      },
+      "disabled": {
+        "title": "تم الغاء التفعيل!",
+        "text": "تم الغاء تفعيل المصادقة الثنائية (2fa) بنجاح!",
+        "confirmButtonText": "حسنًا!"
+      },
+      "error": {
+        "title": "خطأ!",
+        "text": "الرمز الذي ادخلته غير صحيح",
+        "confirmButtonText": "الرقم السري غير صحيح أو حدث خطأ",
+        "cancelButtonText": "حسنًا!"
+      }
+    },
+
+    "fields": {
+      "avatar": "الصورة الرمزية",
+      "fullName": "الاسم الكامل",
+      "firstName": "الاسم الأول",
+      "lastName": "الاسم الأخير",
+      "firstNameHint": "مثال: John",
+      "lastNameHint": "مثال: Doe",
+      "phoneNumber": "رقم الهاتف",
+      "phoneNumberHint": "مثال: +20 1234567890",
+      "email": "أدخل عنوان بريد إلكتروني جديد",
+      "emailHint": "مثال: example@domain.com",
+      "currentPassword": "كلمة المرور الحالية",
+      "passwordHint": "********",
+      "oldPassword": "كلمة المرور القديمة",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور"
+    }
+  },
+  "users": {
+    "table": {
+      "title": "المستخدمون",
+      "description": "قائمة بجميع المستخدمين",
+      "userActivated": "تم تفعيل المستخدم بنجاح!",
+      "userDeactivated": "تم إلغاء تفعيل المستخدم بنجاح!",
+      "endLockout": "تم إنهاء قفل المستخدم بنجاح!",
+      "deactivationReason": "تم إلغاء تفعيل المستخدم بسبب عدم النشاط لأكثر من 6 أشهر.",
+      "resetPasswordDialog": {
+        "title": "إعادة تعيين كلمة المرور",
+        "text": "هل أنت متأكد من رغبتك في إعادة تعيين كلمة مرور هذا المستخدم؟",
+        "confirmButtonText": "نعم، أعد تعيينها!",
+        "cancelButtonText": "لا، احتفظ بها"
+      },
+      "disable2fa": {
+        "title": "تعطيل المصادقة الثنائية  (2fa)",
+        "text": "هل أنت متأكد من رغبتك في تعطيل المصادقة الثنائية لهذا المستخدم؟",
+        "confirmButtonText": "نعم، أريد تعطيلها!",
+        "cancelButtonText": "لا، احتفظ بها",
+        "success": "تم تعطيل المصادقة الثنائية(2fa) بنجاح!"
+      },
+      "statuses": {
+        "inactive": "غير نشط",
+        "deactivated": "مُلغى التفعيل",
+        "active": "نشط"
+      },
+      "columns": {
+        "userDetails": "تفاصيل المستخدم",
+        "role": "الدور",
+        "status": "الحالة",
+        "createdAt": "تم إنشاؤه في"
+      },
+      "actions": {
+        "activate": "تفعيل",
+        "deactivate": "إلغاء التفعيل",
+        "endLockout": "إنهاء القفل",
+        "resetPassword": "إعادة تعيين كلمة المرور",
+        "disable2fa": " (2FA)تعطيل المصادقة الثنائية"
+      },
+      "modal": {
+        "create": "إنشاء مستخدم",
+        "edit": "تعديل مستخدم",
+        "fields": {
+          "picture": "الصورة",
+          "firstName": "الاسم الأول",
+          "firstNameHint": "مثل أحمد",
+          "lastName": "الاسم الأخير",
+          "lastNameHint": "مثل حسن",
+          "email": "البريد الإلكتروني",
+          "emailHint": "مثل example@domain.com",
+          "role": "الدور",
+          "phoneNumber": "رقم الهاتف"
+        },
+        "roles": {
+          "admin": {
+            "label": "مسؤول",
+            "description": "المستخدمون المسؤولون لديهم حق الوصول الكامل إلى جميع الميزات"
+          },
+          "siteEngineer": {
+            "label": "مهندس الموقع",
+            "description": "مهندسو الموقع لديهم حق الوصول إلى مشاريعهم ومهامهم"
+          },
+          "projectManager": {
+            "label": "مدير المشروع",
+            "description": "مديري المشاريع لديهم حق الوصول لإنشاء المشاريع والمهام"
+          },
+          "projectsManager": {
+            "label": "مدير المشاريع",
+            "description": "مديري المشاريع لديهم حق الوصول لإنشاء المشاريع والمهام"
+          },
+          "technicalOfficer": {
+            "label": "المكتب الفني",
+            "description": "يحق للمستخدمين في المكتب الفني إنشاء التقارير المالية"
+          },
+          "accountant": {
+            "label": "المحاسب",
+            "description": "يحق للمستخدمين في المشتريات الموافقه على اوامر الشراء"
+          },
+          "purchasing": {
+            "label": "المشتريات",
+            "description": "يحق للمستخدمين في المشتريات اضافة موردين جدد"
+          }
+        },
+        "added": {
+          "text": "تم إضافة المستخدم بنجاح!",
+          "confirmButtonText": "موافق، فهمت!"
+        }
+      }
+    }
+  },
+  "TRANSLATOR": {
+    "SELECT": "اختر لغتك"
+  },
+  "PAGES": {
+    "CONTRACT_TYPES": {
+      "TITLE": "انواع العقود",
+      "DESCRIBTION": "اكثر من 500 عقد",
+      "ADD_CONTRACT": "اضافه عقد"
+    }
+  },
+  "MENU": {
+    "ContractTypes": "انواع العقود",
+    "MeasureUnitVm": "وحدات القياس",
+    "Materials": "المواد",
+    "NEW": "جديد",
+    "main": "الرئيسية",
+    "ACTIONS": "الإجراءات",
+    "CREATE_POST": "إنشاء منشور جديد",
+    "PAGES": "الصفحات",
+    "FEATURES": "الميزات",
+    "APPS": "التطبيقات",
+    "DASHBOARD": "لوحة التحكم",
+    "SETTINGS": "الاعدادات",
+    "measuring-units": "وحدات القياس",
+    "users": "المستخدمين",
+    "tenants": "تنانت",
+    "Clients": "العملاء",
+    "Branches": "الفروع",
+    "countries": "البلاد",
+    "cities": "المدن",
+    "suppliers": "الموردين",
+    "commerceChambers": "غرف التجارة",
+    "contracts": "العقود",
+    "projects": "المشاريع",
+    "requests": "الطلبات",
+    "layoutBuilder": "منشئ التخطيط"
+  },
+  "MeasureUnitVm": {
+    "nameAr": "الاسم بالعربية",
+    "nameEn": "الاسم بالانجليزيه",
+    "descriptionAr": "وصف بالعربية",
+    "descriptionEn": "وصف بالانجليزيه",
+    "Submit": "تاكيد",
+    "MustInsert": "يجب ادخال ",
+    "Cancel": "إلغاء",
+    "AddNewUnit": "اضافه وحده قياس جديده"
+  },
+  "AUTH": {
+    "GENERAL": {
+      "OR": "أو",
+      "SUBMIT_BUTTON": "إرسال",
+      "NO_ACCOUNT": "ليس لديك حساب؟",
+      "SIGNUP_BUTTON": "سجل الآن",
+      "FORGOT_BUTTON": "نسيت كلمة المرور",
+      "BACK_BUTTON": "رجوع",
+      "PRIVACY": "الخصوصية",
+      "LEGAL": "القانونية",
+      "CONTACT": "اتصال"
+    },
+    "LOGIN": {
+      "TITLE": "تسجيل الدخول",
+      "BUTTON": "تسجيل الدخول"
+    },
+    "FORGOT": {
+      "TITLE": "نسيت كلمة المرور؟",
+      "DESC": "أدخل بريدك الإلكتروني لإعادة تعيين كلمة المرور",
+      "SUCCESS": "تمت إعادة تعيين كلمة المرور بنجاح."
+    },
+    "REGISTER": {
+      "TITLE": "سجل الآن",
+      "DESC": "أدخل بياناتك لإنشاء حسابك",
+      "SUCCESS": "تم تسجيل حسابك بنجاح."
+    },
+    "INPUT": {
+      "EMAIL": "البريد الإلكتروني",
+      "FULLNAME": "الاسم الكامل",
+      "PASSWORD": "كلمة المرور",
+      "CONFIRM_PASSWORD": "تأكيد كلمة المرور",
+      "USERNAME": "اسم المستخدم"
+    },
+    "VALIDATION": {
+      "INVALID": "{{name}} غير صالح",
+      "REQUIRED": "{{name}} مطلوب",
+      "MIN_LENGTH": "الحد الأدنى ل{{name}} هو {{min}}",
+      "AGREEMENT_REQUIRED": "يجب قبول الشروط والأحكام",
+      "NOT_FOUND": "{{name}} المطلوب غير موجود",
+      "INVALID_LOGIN": "تفاصيل تسجيل الدخول غير صحيحة",
+      "REQUIRED_FIELD": "حقل مطلوب",
+      "MIN_LENGTH_FIELD": "الحد الأدنى لطول الحقل:",
+      "MAX_LENGTH_FIELD": "الحد الأقصى لطول الحقل:",
+      "INVALID_FIELD": "الحقل غير صالح"
+    }
+  },
+  "ECOMMERCE": {
+    "COMMON": {
+      "SELECTED_RECORDS_COUNT": "عدد السجلات المحددة: ",
+      "ALL": "الكل",
+      "SUSPENDED": "معلق",
+      "ACTIVE": "نشط",
+      "FILTER": "تصفية",
+      "BY_STATUS": "حسب الحالة",
+      "BY_TYPE": "حسب النوع",
+      "BUSINESS": "عمل",
+      "INDIVIDUAL": "فرد",
+      "SEARCH": "بحث",
+      "IN_ALL_FIELDS": "في جميع الحقول"
+    },
+    "ECOMMERCE": "التجارة الإلكترونية",
+    "CUSTOMERS": {
+      "CUSTOMERS": "العملاء",
+      "CUSTOMERS_LIST": "قائمة العملاء",
+      "NEW_CUSTOMER": "عميل جديد",
+      "DELETE_CUSTOMER_SIMPLE": {
+        "TITLE": "حذف العميل",
+        "DESCRIPTION": "هل أنت متأكد من رغبتك في حذف هذا العميل نهائيًا؟",
+        "WAIT_DESCRIPTION": "جاري حذف العميل...",
+        "MESSAGE": "تم حذف العميل"
+      },
+      "DELETE_CUSTOMER_MULTY": {
+        "TITLE": "حذف العملاء",
+        "DESCRIPTION": "هل أنت متأكد من رغبتك في حذف العملاء المحددين نهائيًا؟",
+        "WAIT_DESCRIPTION": "جاري حذف العملاء...",
+        "MESSAGE": "تم حذف العملاء المحددين"
+      },
+      "UPDATE_STATUS": {
+        "TITLE": "تم تحديث حالة العملاء المحددين",
+        "MESSAGE": "تم تحديث حالة العملاء المحددين بنجاح"
+      },
+      "EDIT": {
+        "UPDATE_MESSAGE": "تم تحديث العميل",
+        "ADD_MESSAGE": "تم إنشاء العميل"
+      }
+    }
+  },
+  "ContractTypes": {
+    "table": {
+      "title": "أنواع العقود",
+      "description": "قائمة أنواع العقود",
+      "columns": {
+        "contractTypeDetails": "تفاصيل أنواع العقود",
+        "arabicName": "الاسم بالعربية",
+        "englishName": "الاسم بالانجليزية"
+      }
+    },
+    "modal": {
+      "create": "إنشاء نوع عقد جديد",
+      "edit": "تعديل نوع عقد",
+      "fields": {
+        "nameAr": "الاسم بالعربية",
+        "nameEn": "الاسم بالانجليزية"
+      },
+      "added": {
+        "text": "تمت حفظ نوع العقد بنجاح",
+        "confirmButtonText": "حسناً"
+      }
+    }
+  },
+  "Suppliers": {
+    "table": {
+      "title": "الموردين",
+      "description": "قائمة بجميع الموردين",
+      "supplierActivated": "تم تفعيل المورد بنجاح",
+      "supplierDeactivated": "تم الغاء تفعيل المورد بنجاح",
+      "columns": {
+        "supplierType": "نوع البند",
+        "workType": "نوع الاعمال",
+        "name": "اسم المورد",
+        "bank": "اسم البنك",
+        "address": "العنوان",
+        "identifierNumber": "رقم الهوية",
+        "CommercialRegisterNumber": "رقم السجل التجاري",
+        "serviceType": {
+          "label": "نوع الخدمة",
+          "Supply": "توريد",
+          "Installation": "تركيب",
+          "InstallationAndSupply": "توريد وتركيب"
+        },
+        "iban": "آيبان",
+        "active": "نشط",
+        "IsActive": "الحالة نشطة",
+        "status": "الحالة",
+        "inActive": "غير نشط"
+      },
+      "actions": {
+        "activate": "تفعيل",
+        "deactivate": "الغاء التفعيل"
+      }
+    },
+    "modal": {
+      "edit": "تعديل المورد",
+      "create": "ادخل مورد جديد",
+      "ibanErr": "يجب أن يكون مكون من 24 حرف ويبدأ ب SA",
+      "fields": {
+        "supplierType": {
+          "label": "نوع البند",
+          "placeholder": "ادحل نوع البند",
+          "Individual": "فرد",
+          "Company": "شركة"
+        },
+        "workType": "نوع الاعمال",
+        "name": "اسم المورد",
+        "bankId": "اسم البنك",
+        "address": "العنوان",
+        "identifierNumber": "رقم الهوية",
+        "CommercialRegisterNumber": "رقم السجل التجاري",
+        "serviceType": {
+          "label": "نوع الخدمة",
+          "Supply": "توريد",
+          "Installation": "تركيب",
+          "InstallationAndSupply": "توريد وتركيب"
+        },
+        "iban": "آيبان",
+        "phone1": "هاتف 1",
+        "phone2": "هاتف 2",
+        "mail": "البريد الإلكتروني",
+        "active": "نشط",
+        "IsActive": "الحالة نشطة",
+        "inActive": "غير نشط",
+        "contactInformation": "معلومات الاتصال",
+        "businessType": {
+          "label": "نوع الأعمال",
+          "placeholder": "ادخل نوع الأعمال",
+          "Structural": "انشائي",
+          "Architectural": "معماري",
+          "Electrical": "كهربائي",
+          "Mechanical": "ميكانيكي",
+          "Telecommunications": "اتصالات",
+          "Other": "آخر"
+        },
+        "paymentOptionsTitle": "طريقة الدفع",
+        "paymentOptions": {
+          "Cash": "كاش",
+          "BankTransfer": "تحويل بنكي"
+        }
+      },
+      "added": {
+        "text": "تم إضافة المورد بنجاح!",
+        "confirmButtonText": "حسنًا، فهمت!"
+      }
+    }
+  },
+  "Countries": {
+    "table": {
+      "title": "البلاد",
+      "description": "قائمة البلاد",
+      "columns": {
+        "countryDetails": "تفاصيل البلد",
+        "arabicName": "الاسم بالعربية",
+        "englishName": "الاسم بالانجليزية",
+        "ISO2": "رمز ٢",
+        "ISO3": "رمز ٣",
+        "VATpercentage": "ضريبة القيمة المضافة",
+        "Currency": "العملة"
+      }
+    },
+    "modal": {
+      "edit": "تعديل البلد",
+      "fields": {
+        "nameAr": "الاسم بالعربية",
+        "nameEn": "الاسم بالانجليزية",
+        "VAT": "ضريبة القيمة المضافة"
+      },
+      "added": {
+        "text": "تمت حفظ البلد",
+        "confirmButtonText": "حسناً"
+      }
+    }
+  },
+  "Cities": {
+    "table": {
+      "title": "المدن",
+      "description": "قائمة المدن",
+      "columns": {
+        "cityDetails": "تفاصيل المدينة",
+        "arabicName": "الاسم بالعربية",
+        "englishName": "الاسم بالانجليزية",
+        "arabicCountry": "اسم الدولة بالعربية",
+        "englishCountry": "اسم الدولة بالانجليزية"
+      }
+    },
+    "modal": {
+      "edit": "تعديل المدينة",
+      "fields": {
+        "nameAr": "الاسم بالعربية",
+        "nameEn": "الاسم بالانجليزية",
+        "country": "البلد"
+      },
+      "added": {
+        "text": "تمت حفظ المدينة",
+        "confirmButtonText": "حسناً"
+      }
+    }
+  },
+  "CommerceChambers": {
+    "table": {
+      "title": "غرف التجارة",
+      "description": "قائمة غرف التجارة",
+      "columns": {
+        "commerceChamberDetails": "تفاصيل الغرفة",
+        "arabicName": "الاسم بالعربية",
+        "englishName": "الاسم بالانجليزية"
+      }
+    },
+    "modal": {
+      "edit": "تعديل الغرفة",
+      "fields": {
+        "nameAr": "الاسم بالعربية",
+        "nameEn": "الاسم بالانجليزية"
+      },
+      "added": {
+        "text": "تمت حفظ الغرفة",
+        "confirmButtonText": "حسناً"
+      }
+    }
+  },
+  "MeasurementUnits": {
+    "table": {
+      "title": "وحدات القياس",
+      "description": "قائمة وحدات القياس",
+      "columns": {
+        "measurementUnitDetails": "تفاصيل وحدات القياس",
+        "arabicName": "الاسم بالعربية",
+        "englishName": "الاسم بالانجليزية",
+        "abbreviation": "الاختصار بالعربية",
+        "abbreviationEn": "الاختصار بالانجليزية"
+      }
+    },
+    "modal": {
+      "create": "إنشاء وحدات القياس جديد",
+      "edit": "تعديل وحدات القياس",
+      "fields": {
+        "nameAr": "الاسم بالعربية",
+        "nameEn": "الاسم بالانجليزية",
+        "abbreviationAr": "الاختصار بالعربية",
+        "abbreviationEn": "الاختصار بالانجليزية"
+      },
+      "added": {
+        "text": "تمت حفظ نوع وحدات القياس",
+        "confirmButtonText": "حسناً"
+      }
+    }
+  },
+  "Materials": {
+    "table": {
+      "title": "المواد",
+      "description": "قائمة المواد",
+      "columns": {
+        "materialsDetails": "تفاصيل المواد",
+        "description": "الوصف",
+        "measurementUnit": "وحدة القياس بالعربية",
+        "measurementUnitEn": "وحدة القياس بالانجليزية"
+      }
+    },
+    "modal": {
+      "create": "إنشاء مادة جديدة",
+      "edit": "تعديل المواد",
+      "fields": {
+        "nameAr": "الاسم بالعربية",
+        "nameEn": "الاسم بالانجليزية",
+        "description": "الوصف ",
+        "measurementUnit": "وحدة القياس",
+        "measurementUnits": "وحدات القياس",
+        "measurementUnitEn": "وحدة القياس بالانجليزية"
+      },
+      "added": {
+        "text": "تمت حفظ المادة الجديدة",
+        "confirmButtonText": "حسناً"
+      }
+    }
+  },
+  "Branches": {
+    "table": {
+      "title": "الفروع",
+      "description": "قائمة الفروع",
+      "columns": {
+        "branchDetails": "تفاصيل الفروع",
+        "arabicName": "الاسم بالعربية",
+        "englishName": "الاسم بالانجليزية"
+      }
+    },
+    "modal": {
+      "create": "إنشاء فرع جديد",
+      "edit": "تعديل الفروع",
+      "fields": {
+        "nameAr": "الاسم بالعربية",
+        "nameEn": "الاسم بالانجليزية",
+        "descriptionAr": "الوصف بالعربية",
+        "descriptionEn": "الوصف بالانجليزية",
+        "code": "الكود"
+      },
+      "added": {
+        "text": "تمت حفظ الفرع",
+        "confirmButtonText": "حسناً"
+      },
+      "delete": {
+        "title": "مسح الفرع",
+        "text": "هل أنت متأكد من رغبتك في حذف هذا الفرع نهائيًا؟",
+        "confirmButtonText": "نعم امسحه",
+        "cancelButtonText": "لا احتفظ به"
+      }
+    }
+  },
+  "Clients": {
+    "table": {
+      "title": "العملاء",
+      "description": "قائمة العملاء",
+      "clientActivated": "تم تفعيل العميل بنجاح!",
+      "clientDeactivated": "لقد تم إلغاء تنشيط العميل بنجاح!",
+      "columns": {
+        "active": "نشط",
+        "inActive": "غير نشط",
+        "clientDetails": "تفاصيل العملاء",
+        "Name": "الاسم",
+        "CommercialRegisterNumber": "رقم السجل التجاري",
+        "Identification": "رقم الهوية",
+        "IsActive": "الحالة نشطة",
+        "Type": "نوع العميل ",
+        "AddressId": "العنوان",
+        "CountryId": "البلد",
+        "CountryNameAr": "اسم الدولة (بالعربية)",
+        "CountryNameEn": "اسم الدولة (بالإنجليزية)",
+        "CityId": "المدينة",
+        "CityNameAr": "اسم المدينة (بالعربية)",
+        "CityNameEn": "اسم المدينة (بالإنجليزية)",
+        "ShortAddress": "العنوان المختصر",
+        "Street": "الشارع",
+        "BuildingNumber": "رقم المبنى",
+        "ContactInfoId": "معلومات الاتصال",
+        "Email": "البريد الإلكتروني",
+        "status": "الحالة"
+      },
+      "actions": {
+        "activate": "تفعيل",
+        "deactivate": "إلغاء التنشيط"
+      }
+    },
+    "modal": {
+      "create": "إنشاء عميل جديد",
+      "edit": "تعديل بيانات العميل",
+      "BasicInformation": "البيانات الأساسية",
+      "fields": {
+        "clientType": "نوع العميل ",
+        "name": "اسم العميل",
+        "CommercialRegisterNumber": "رقم السجل التجاري",
+        "Identification": "الهوية",
+        "IsActive": "الحالة نشطة",
+        "Type": "النوع",
+        "AddressId": "العنوان",
+        "CountryId": "الدولة",
+        "CountryNameAr": "اسم الدولة (بالعربية)",
+        "CountryNameEn": "اسم الدولة (بالإنجليزية)",
+        "CityId": "المدينة",
+        "CityNameAr": "اسم المدينة (بالعربية)",
+        "CityNameEn": "اسم المدينة (بالإنجليزية)",
+        "ShortAddress": "العنوان المختصر",
+        "Street": "الشارع",
+        "BuildingNumber": "رقم المبنى",
+        "ContactInfoId": "معلومات الاتصال",
+        "Email": "البريد الإلكتروني",
+        "active": "نشط",
+        "PhoneNumber1": "رقم الهاتف ١",
+        "PhoneNumber2": "رقم الهاتف ٢",
+        "inActive": "غير نشط",
+        "FaxNumber": "رقم الفاكس",
+        "PostalCode": "رمز بريدي"
+      },
+      "added": {
+        "text": "تمت إضافة العميل بنجاح",
+        "confirmButtonText": "حسناً"
+      }
+    }
+  },
+  "termsDetails": {
+    "title": "تفاصيل البند",
+    "termsTable": "جدول البنود",
+    "termNumber": "رقم البند",
+    "termName": "اسم البند",
+    "termDescription": "وصف البند",
+    "measurementUnit": "وحدة القياس",
+    "quantity": "الكمية",
+    "price": "سعر الوحدة",
+    "acceptRequest": "قبول الطلب",
+    "rejectRequest": "رفض الطلب",
+    "confirmRejectTitle": "هل أنت متأكد من رفض هذا الطلب؟",
+    "confirmAcceptTitle": "هل أنت متأكد من قبول هذا الطلب؟",
+    "no_acceptButton": "لا ، اقبل الطلب",
+    "yes_rejectButton": "نعم ، ارفض الطلب",
+    "yes_acceptButton": "نعم ، اقبل الطلب",
+    "no_rejectButton": "لا ، ارفض الطلب",
+    "requestAccepted": "تم قبول الطلب",
+    "requestRejected": "تم رفض الطلب",
+    "requestedCreatedSuccessfully": "تم انشاء الطلب بنجاح",
+    "by": "بواسطة",
+    "fileDeleted": "تم حذف الملف بنجاح",
+    "attachmentModal": {
+      "addAttachments": "اضافة المرفقات",
+      "attachmentTypes": {
+        "None": "مرفقات",
+        "Schemes": "المخططات",
+        "QuantitySurveySchedule": "جدول حصر الكميات",
+        "ApprovedPriceQuote": "عرض السعر المعتمد"
+      },
+      "dragDropOr": "اسحب وأفلِت او",
+      "clickToUpload": "اضغط للتحميل",
+      "supportedAttachments": "التنسيقات المدعومه: PDF,DWG,XCEL"
+    },
+    "accounts": {
+      "0": "مهندس الموقع",
+      "1": "مدير المشروع",
+      "2": "المكتب الفني",
+      "3": "مدير المشاريع",
+      "4": "المحاسب",
+      "5": "المدير العام"
+    },
+    "priceRequests": {
+      "title": "طلبات السعر",
+      "noPriceRequests": "لا يوجد طلبات السعر",
+      "showAllRequests": "اظهار الكل",
+      "addPriceRequests": "اضافة طلب السعر",
+      "requestNumber": "رقم الطلب",
+      "requestDate": "تاريخ الطلب",
+      "termName": "اسم البند",
+      "measurementUnit": "وحدة القياس",
+      "quantity": "الكمية",
+      "requestStatus": "حالة الطلب",
+      "requestDescription": "وصف الطلب",
+      "sampleApprivalForm": "نموذج اعتماد العينة",
+      "addSampleApprivalForm": "اضافة نموذج اعتماد العينة",
+      "Attachments": "المرفقات",
+      "responseDate": "تاريخ الرد",
+      "notes": "الملاحظات",
+      "addSupplier":"اضافة مورد",
+      "certifiedSuppliers": "الموردين المعتمدين",
+      "supplyRequest": "اضافة مورد",
+      "enterData": "ادخل جميع البيانات التالية",
+      "addAttachment": "إضافة مرفق",
+      "supplyRequestTitleDialog": "طلب توريد مواد",
+      "unitPrice": "السعر الافرادي",
+      "supplierName": "اسم المورد",
+      "total": "الإجمالي",
+      "confirmRejectSubtitle": "سيتم ارسال رفض الطلب الي مهندس الموقع",
+      "confirmConfirmSubtitle": "سيتم ارسال قبول الطلب الي مهندس المكتب الفني ومهندس الموقع",
+      "vat": "قيمة الضريبة المضافة",
+      "totalIncludingVat": "الإجمالي شامل ضريبة القيمة المضافة",
+      "enterComment": "اضف تعليق",
+      "addFile":"اضافة مرفق",
+      "confirm": "تأكيد",
+      "noSuppliers": "لا يوجد موردين",
+      "send": "ارسال",
+      "awaitOtherOffers": "في انتظار عروض اخري",
+      "priceOffers": "عروض السعر",
+      "addPriceOffer": "اضافة عرض سعر",
+      "priceOfferNotExist": "لا يتوفر عرض سعر",
+      "pleaseAddAttachment": "من فضلك ادخل المرفقات",
+      "requestSupply":"طلب توريد",
+      "requestSupplySuccess":"تم عمل طلب التوريد",
+      "fileDeleted": "تم حذف الملف بنجاح",
+      "supplierAlreadyAdded": "تم اضافة هذا المورد من قبل",
+      "priceApprovalStatus": {
+        "Pending": "جاري",
+        "Approved": "مكتملة",
+        "ClientReview": "في انتظار موافقة العميل",
+        "ClientRejected": "مرفوضة من العميل",
+        "Rejected": "مرفوضة",
+        "WaitingNewSuppliers": "في انتظار عروض اخري"
+      },
+      "PriceApprovalRequestStatus": {
+        "Created":"تم الانشاء",
+        "Rejected":"تم الرفض",
+        "Approved":"تم الموافقه",
+        "Completed":"تم الموافقه"
+      },
+      "accounts": {
+      "0": "مهندس الموقع",
+      "1": "مدير المشروع",
+      "2": "المكتب الفني",
+      "3": "مدير المشاريع",
+      "4": "المشتريات",
+      "5": "المدير العام"
+      }
+    },
+    "supplyRequests": {
+      "title": "طلبات التوريد",
+      "addSupplyRequest":"اضافة طلب توريد",
+      "showAllRequests": "اظهار الكل",
+      "supplyRequest":"طلب توريد",
+      "enterData":"ادخل جميع البيانات التالية",
+      "requestNumber": "رقم الطلب",
+      "requestDate": "تاريخ الطلب",
+      "termName": "اسم البند",
+      "supplyRequestTitleDialog": "طلب توريد مواد",
+      "measurementUnit": "وحدة القياس",
+      "quantity": "الكمية",
+      "requestDescription": "وصف الطلب",
+      "price": "السعر",
+      "supplierName":"اسم المورد",
+      "totalWithoutVAT": "الإجمالي بدون الضريبة",
+      "vat": "قيمه الضريبة",
+      "totalWithVAT": "الإجمالي شامل الضريبة",
+      "displayApprovedPrice": "عرض السعر المعتمد",
+      "quantityTable": "جدول حصر الكميات",
+      "charts": "المخططات",
+      "requestStatus": "حالة الطلب",
+      "Attachments": "المرفقات",
+      "responseDate": "تاريخ الرد",
+      "notes": "الملاحظات",
+      "save": "حفظ",
+      "addAttachment":"إضافة مرفق",
+      "unitPrice":"السعر الافرادي",
+      "total":"الإجمالي",
+      "files": "الملفات",
+      "enterComment":"اضف تعليق",
+      "confirmRejectSubtitle": "سوف يرى مدير المشاريع هذه الحالة، أضف سبب الرفض",
+      "confirmConfirmSubtitle": "سوف يرى مدير المشاريع هذه الحالة",
+      "noSupplyRequest": "لا يوجد طلبات التوريد",
+      "totalIncludingVat": "الإجمالي شامل ضريبة القيمة المضافة",
+      "amount":"المبلغ",
+      "pleaseAddAttachment": "من فضلك ادخل المرفقات",
+      "remainingAmount":"المبلغ المتبقي",
+      "description": "وصف الطلب",
+      "evaluationSupplyRequest": "تقييمك لطلب التوريد",
+      "SupplyApprovalRequestStatus": {
+        "Created":"تم الانشاء",
+        "Rejected":"تم الرفض",
+        "Approved":"تم الموافقه",
+        "Completed":"تم الموافقه",
+        "Transferred": "تم التحويل"
+      },
+      "transactions": {
+        "title": "التحويلات",
+        "addTransaction": "اضافة تحويل",
+        "transactionDate":"تاريخ التحويل",
+        "amount":"المبلغ",
+        "supplierName":"اسم المورد",
+        "remainingAmount":"المبلغ المتبقي",
+        "confirmTransaction": "تأكيد تحويل المبلغ",
+        "noTransactions": "لا يوجد تحويلات",
+        "orderDate": "تاريخ التحويل"
+      }
+    },
+    "extracts": {
+      "title": "المستخلصات",
+      "noExtracts": "لا يوجد مستخلصات",
+      "showAllRequests": "اظهار الكل",
+      "addExtract": "اضافة مستخلص",
+      "itemExtracts": "مستخلصات البند",
+      "notes": "الملاحظات",
+      "extractNumber": "رقم المستخلص",
+      "extractDate": "تاريخ المستخلص",
+      "extractValue": "قيمة المستخلص",
+      "extractType": "نوع المستخلص",
+      "showExtract": "عرض المستخلص",
+      "acceptRequest":"قبول الطلب",
+      "rejectRequest":"رفض الطلب",
+      "extractSaved": "تم حفظ العقد",
+      "extractAccredited": "تم اعتماد العقد",
+      "confirmRejectSubtitle": "سوف يرى مدير المشاريع هذه الحالة، أضف سبب الرفض",
+      "confirmConfirmSubtitle": "سوف يرى مدير المشاريع هذه الحالة",
+      "back": "العودة",
+      "extractTypes": {
+        "InProgress": "جاري",
+        "Final": "ختامي"
+      },
+      "extractStatuses": {
+        "Pending": "جاري",
+        "Rejected": "مرفوضة",
+        "Approved": "تم الموافقه",
+        "Draft": "مسودة"
+      },
+      "extractStatus": {
+        "title": "حالة المستخلص",
+        "siteEngineer": "مهندس موقع",
+        "projectManager": "مدير المشروع",
+        "technicalOfficer": "المكتب الفني",
+        "projectsManager": "مدير المشروعات",
+        "generalManager": "المدير العام",
+        "done": "تم الصرف",
+        "TransferredPartial": "تم الصرف جزئيا",
+        "accountant": "المحاسب"
+      },
+      "requestStatus": {
+        "title": "حاله الطلب",
+        "requestNumber":"رقم الطلب",
+        "requestDate":"تاريخ الطلب",
+        "requestStatus":"حالة الطلب",
+        "responseDate":"تاريخ الرد",
+        "notes":"الملاحظات",
+        "attachments":"الملفات",
+        "extractRequestHistoryStatuses": {
+        "Created": "تم الانشاء",
+        "Rejected": "مرفوضة",
+        "Approved": "تم الموافقه",
+        "Transferred": "تم التحويل",
+        "Completed": "تم الانتهاء",
+        "Draft": "مسودة",
+        "TransferredPartial":"تم الصرف جزئيا"
+        }
+      },
+      "transactions": {
+        "title": "التحويلات",
+        "addTransaction": "اضافة تحويل",
+        "transactionDate":"تاريخ التحويل",
+        "amount":"المبلغ",
+        "supplierName":"اسم المورد",
+        "remainingAmount":"المبلغ المتبقي",
+        "confirmTransaction": "تأكيد تحويل المبلغ",
+        "noTransactions": "لا يوجد تحويلات"
+      },
+      "contractor": {
+        "data": "بيانات المقاول",
+        "name": "اسم المقاول",
+        "taxNumber": "الرقم الضريبي",
+        "bankName": "اسم البنك",
+        "BankAccountNumber": "رقم حساب البنك",
+        "contactNumber": "رقم التواصل"
+      },
+      "mainData": {
+        "title": "البيانات  الاساسية",
+        "businessDescription": "وصف الأعمال",
+        "itemNumber": "رقم البند",
+        "measurementUnit":"وحدة القياس",
+        "contractNumber":"رقم العقد",
+        "contractQuantity": "كمية العقد",
+        "unitPrice":"السعر الافرادي",
+        "totalContract": "اجمالي العقد"
+      },
+      "extractData": {
+        "title": "بيانات  المستخلص",
+        "extractNumber": "رقم المستخلص",
+        "extractDate": "تاريخ المستخلص",
+        "extractType": "نوع المستخلص",
+        "workDate": "تاريح بدء العمل",
+        "businessData":"بيانات الأعمال",
+        "itemNumber":"رقم البند",
+        "contractQuantity": "كمية العقد",
+        "previousQuantity": "الكمية سابقة",
+        "currentQuantity": "الكمية الحالية",
+        "totalQuantity": "الكمية الإجماليه",
+        "unitPrice":"السعر الافرادي",
+        "total": "الإجمالي",
+        "extractTypes": {
+        "InProgress": "جاري",
+        "Final": "ختامي"
+      },
+      "notes": "الملاحظات"
+      },
+      "discounts": {
+        "title": "الخصومات",
+        "addDiscounts": "اضافة خصومات",
+        "businessData":"بيانات الأعمال",
+        "itemNumber":"رقم البند",
+        "measurementUnit":"وحدة القياس",
+        "contractQuantity": "كمية العقد",
+        "previousQuantity": "الكمية السابقة",
+        "currentQuantity": "الكمية الحالية",
+        "totalQuantity": "الكمية الإجماليه",
+        "unitPrice":"السعر الافرادي",
+        "total": "الإجمالي",
+        "extractValue": "قيمة المستخلص",
+        "totalBusinessUntilExtractData": "إجمالي قيمه الإعمال التي تمت حتي تاريخ المستخلص",
+        "totalVat": "إجمالي قيمه الضريبة المضافة",
+        "totalBusinessWithVat": "إجمالي قيمه الإعمال شامل ضريبة القيمة المضافة",
+        "discountBusiness10Percent": "خصم ضمان أعمال بنسبه 10%",
+        "discountPaidBefore": "خصم ما سبق صرفه",
+        "netExtractIncludingVat": "صافي المستخلص شامل قيمة الضريبة المضافة",
+        "noDiscounts": "لا يوجد خصومات",
+        "enterData": "ادخل جميع البيانات التالية"
+      },
+      "attachments": {
+        "title": "المرفقات",
+        "displayApprovedPrice": "عرض السعر المعتمد",
+        "quantityTable": "جدول حصر الكميات",
+        "charts": "المخططات"
+      },
+      "addContractDetailsModal": {
+        "title": "إضافة بيانات العقد",
+        "subtitle": "ادخل جميع البيانات التاليه",
+        "projectName":"اسم المشروع",
+        "contractorName": "اسم المقاول",
+        "taxNumber":"الرقم الضريبي",
+        "bankName":"اسم البنك",
+        "BankAccountNumber":"رقم حساب البنك",
+        "contactNumber":"رقم التواصل",
+        "itemNumber":"رقم البند",
+        "businessDescription":"وصف الأعمال",
+        "measurementUnit": "الوحدة",
+        "contractNumber": "رقم العقد",
+        "contractQuantity": "كمية العقد",
+        "unitPrice":"السعر الافرادي",
+        "contractTotalPrice": "السعر الاجمالي للعقد",
+        "notes": "ملحوظات",
+        "addComment":"اضف تعليق",
+        "next": "التالي",
+        "cancel": "الغاء",
+        "taxFree": "اعفاء من الضريبة"
+      },
+      "addExtractModal": {
+        "title": "إضافة مستخلص",
+        "subtitle": "ادخل جميع البيانات التاليه",
+        "extractDate": "تاريخ المستخلص",
+        "extractType":"نوع المستخلص",
+        "beginWorkDate": "تاريخ بدء العمل",
+        "extractNumber":"رقم المستخلص",
+        "previous": "السابق",
+        "addAttachment":"اضافة مرفق",
+        "pleaseAddAttachment":"من فضلك ادخل المرفقات",
+        "Attachments":"المرفقات"
+      },
+      "accreditation": "يعتمد"
+    },
+    "custodyRequests": {
+      "title": "طلبات العهدة",
+      "norequests": "لا يوجد طلبات العهدة",
+      "addRequest": "اضافة طلب عهدة",
+      "showAllRequests": "اظهار الكل",
+      "request": "طلب عهدة",
+      "term": "بند",
+      "termNumber":"رقم البند",
+      "requestDescription":"وصف الطلب",
+      "unit": "الوحدة",
+      "quantity": "الكمية",
+      "unitPrice": "السعر الافرادي",
+      "totalPrice": "الاجمالي",
+      "totalWithoutVAT": "الإجمالي بدون الضريبة",
+      "vat": "قيمه الضريبة",
+      "totalWithVAT": "الإجمالي شامل الضريبة",
+      "attachments": "المرفقات",
+      "modal": {
+        "title": "اضافة صرف عهدة",
+        "subtitle": "ادخل جميع البيانات التاليه",
+        "termName":"اسم البند",
+        "businessData": "بيانات الأعمال",
+        "measurementUnit": "وحدة القياس",
+        "quantity": "الكمية",
+        "unitPrice": "السعر الافرادي",
+        "totalPrice": "الاجمالي",
+        "notes": "الملاحظات",
+        "addAttachment": "إضافة مرفق",
+        "pleaseAddAttachment": "من فضلك ادخل المرفقات",
+        "Attachments": "المرفقات",
+        "isTaxFree": "اعفاء من الضريبة",
+        "vat":"قيمه الضريبة"
+      },
+      "acceptRequest": "قبول الطلب",
+      "rejectRequest": "رفض الطلب",
+      "confirmRejectSubtitle": "سوف يرى مدير المشاريع هذه الحالة، أضف سبب الرفض",
+      "confirmConfirmSubtitle": "سوف يرى مدير المشاريع هذه الحالة",
+      "requestStatus":"حالة الطلب",
+      "requestNumber": "رقم الطلب",
+      "requestDate": "تاريخ الطلب",
+      "termName": "اسم البند",
+      "measurementUnit": "وحدة القياس",
+      "responseData": "تاريخ الرد",
+      "notes": "الملاحظات",
+      "files": "الملفات",
+      "convenantRate": "تقييمك لطلب العهده",
+      "transactions": {
+        "title": "التحويلات",
+        "addTransaction": "اضافة تحويل",
+        "transactionDate":"تاريخ التحويل",
+        "amount":"المبلغ",
+        "supplierName":"اسم المورد",
+        "remainingAmount":"المبلغ المتبقي",
+        "confirmTransaction": "تأكيد تحويل المبلغ",
+        "noTransactions": "لا يوجد تحويلات"
+      },
+      "CovenantRequestStatus": {
+        "Created":"تم الانشاء",
+        "Rejected":"تم الرفض",
+        "Approved":"تم الموافقه",
+        "Completed":"تم الموافقه",
+        "Transferred": "تم التحويل"
+      }
+    }
+  },
+  "SupplierApproval": {
+    "table": {
+      "title": "الطلبات",
+      "subtitle": "يمكنك اضافة وتعديل الطلبات من خلال هذه النافذة",
+      "addNew": "اضافة طلب جديد",
+      "id": "رقم الطلب",
+      "projectName": "اسم المشروع",
+      "termName": "اسم البند",
+      "status": "حالة الطلب",
+      "actions": "العمليات",
+      "statuses": {
+        "Pending": "جاري",
+        "Approved": "مكتملة",
+        "ClientReview": "في انتظار موافقة العميل",
+        "ClientRejected": "مرفوضة من العميل",
+        "Rejected": "مرفوضة"
+      },
+      "viewRequest": "تفاصيل الطلب"
+    },
+    "form": {
+      "addNew": "اضافة طلب",
+      "projectName": "اسم المشروع",
+      "chooseProject": "اختر المشروع",
+      "chooseTerm": "اختر البند",
+      "terms": "البنود",
+      "notes": "ملاحظات",
+      "send": "ارسال",
+      "suppliers": "الموردين",
+      "noSuppliers": "لا يوجد موردين",
+      "addSupplier": "اضافة مورد",
+      "chooseSuppliers": "اختر الموردين",
+      "addFile": "اضافة مرفق",
+      "confirm": "تأكيد",
+      "price": "سعر اجمالي الكمية",
+      "reject": "رفض",
+      "attachments": "الملفات",
+      "rejectionTitle": "هل أنت متأكد من رفض الطلب؟",
+      "addRejectionReason": "أضف سبب الرفض",
+      "rejectionNotesPlaceholder": "أضف المزبد من التفاصيل",
+      "supplierAlreadyAdded": "تم اضافة هذا المورد من قبل"
+    }
+  },
+  "Projects": {
+    "dashboard": {
+      "totalProjectValue":"اجمالي قيمه المشاريع",
+      "totalExpenses": "اجمالي المصروفات",
+      "projectPeriod":"مدة المشروع",
+      "startProjectDate":"تاريخ بدء المشروع",
+      "deliveryProjectDate": "تاريخ تسليم المشروع",
+      "executionPeriod": "مدة التنفيذ",
+      "expenses": "المصروفات",
+      "lastRequests": "اخر الأنشطة",
+      "totalRequests": "{{total}} اجمالي الأنشطة",
+      "requests": "الطلبات",
+      "showMore": "عرض المزيد",
+      "priceRequests": "التسعير",
+      "convenantRequests": "العهده",
+      "supplyRequests": "التوريد",
+      "extracts": "المستخلصات",
+      "requestNumber": "رقم الطلب",
+      "requestType": "نوع الطلب",
+      "requestDate":"تاريخ الطلب",
+      "requestStatus": "حالة الطلب",
+      "details": "التفاصيل",
+      "totalRequestsCount": "اجمالي الطلبات",
+      "inProgress": "جارية",
+      "completed": "مكتملة",
+      "notStarted":"لم تبدأ بعد",
+      "tasks": "المهام",
+      "task": "مهمة",
+      "totalTasks": " {{total}} اجمالي المهام",
+      "taskName":"اسم المهمة",
+      "division": "القسم",
+      "status":"الحالة",
+      "team": "الفريق",
+      "teamMember": "{{total}} عضو في الفريق",
+      "name": "الاسم",
+      "jobName": "المسمى الوظيفي",
+      "lastShow": "اخر ظهور",
+      "requestTypes": {
+        "SupplyRequest": "طلب توريد",
+        "PriceRequest": "طلب تسعير",
+        "CovenantRequest": "طلب عهدة",
+        "ExtractRequest": "مستخلصات"
+      },
+      "activityStatuses": {
+        "Created": "تم الانشاء",
+        "Rejected": "مرفوضة",
+        "Approved": "تم الموافقه",
+        "Transferred": "تم التحويل",
+        "Completed": "تم الانتهاء",
+        "Draft": "مسودة",
+        "TransferredPartial":"تم الصرف جزئيا"
+        },
+        "businessTypes": {
+          "Structural": "انشائي",
+          "Architectural": "معماري",
+          "Electrical": "كهربائي",
+          "Mechanical": "ميكانيكي",
+          "Telecommunications": "اتصالات",
+          "Other": "آخر",
+          "ProjectManager": "مدير المشروع"
+        },
+        "workItemsStatuses": {
+          "Created":"تم الانشاء",
+          "InProgress":"جاري",
+          "Completed":"تم الانتهاء",
+          "Archived": "مؤرشفة"
+        }
+    },
+    "projectDetails": {
+      "mainData": "المعلومات الرئيسية",
+      "termsTable": "جدول البنود",
+      "projectsFiles": "ملفات المشروع",
+      "changeProjectImage": "صورة المشروع",
+      "team": "الفريق",
+      "tasks": "المهام",
+      "activity": "النشاط",
+      "purchaseOrders": "اوامر الشراء",
+      "settings": "الاعدادات",
+      "projectName": "اسم المشروع",
+      "contractNumber": "رقم العقد",
+      "startDate": "تاريخ بدء المشروع",
+      "projectFileChangedSuccessfully": "تم تغيير صورة المشروع بنجاح",
+      "budget": "قيمة المشروع",
+      "deliveryDate": "تاريخ تسليم المشروع",
+      "implementationPeriod": "مدة التنفيذ",
+      "latestFiles": "أحدث الملفات",
+      "taskSummary": "ملخص المهام",
+      "totalTasks": "إجمالي المهام",
+      "inProgress": "جارية",
+      "active": "جارية",
+      "yetToStart": "لم تبدأ بعد",
+      "termDetails": "تفاصيل البند",
+      "addPriceRequest": "اضافة طلب سعر",
+      "addSupplyRequest": "اضافة طلب توريد",
+      "addExtract": "اضافة طلب مستخلص",
+      "addCovenantRequest": "اضافة طلب عهدة",
+      "tasksDetails": "تفاصيل المهمة",
+      "completed": "مكتملة",
+      "Overdue": "تأخرت",
+      "totalFiles": "إجمالي {{files}} ملف, بمساحة{{space}} ",
+      "outOfATotal": "من اجمالي {{users}} مشارك",
+      "status": {
+        "inProgress": "جاري",
+        "notStarted": "لم يبدأ بعد",
+        "completed": "مكتمل"
+      },
+      "contractNum": "رقم العقد",
+      "startingDate": "تاريخ بدء المشروع",
+      "endingDate": "تاريخ تسليم المشروع",
+      "period": "مدة التنفيذ",
+      "periodValue": "{{days}} يوم - {{months}} شهر",
+      "addNewTask": "إضافة مهمة جديدة",
+      "updateTask": "تحديث المهمة",
+      "enterData": "ادخل جميع البيانات التالية",
+      "termName": "اسم البند",
+      "enterTermName": "ادخل اسم البند",
+      "taskName": "اسم المهمة",
+      "enterTaskName": "ادخل اسم المهمة",
+      "employee": "الموظف",
+      "selectEmployee": "اختر الموظف",
+      "dueDate": "تاريخ التسليم",
+      "taskStartDate": "تاريخ بدء المهمة",
+      "selectDate": "حدد التاريخ",
+      "details": "تفاصيل المهمة",
+      "addDetails": "ادخل تفاصيل المهمة",
+      "tags": "تاج",
+      "priority": "الأولوية",
+      "notes": "ملحوظات",
+      "addComment": "اضافة تعليق",
+      "selectPriority": "اختر الأولوية",
+      "low": "ضعيفة",
+      "medium": "متوسطة",
+      "high": "عالية",
+      "taskPeriod": "مدة المهمة",
+      "periodDays": "الأيام",
+      "periodMonths": "الشهور",
+      "periodYears": "السنوات",
+      "periodError": "ويجب ان تكون الايام حتى 29 والشهور حتى 11 والسنوات حتى 10",
+      "addAttachment": "إضافة مرفق",
+      "files": "الملفات",
+      "searchInTasks": "البحث في المهام",
+      "filterByTerm": "التصفية بالبند",
+      "refreshTasks": "تحديث المهام"
+    },
+    "activityLogs": {
+      "requestsLogs": "سجلات الطلبات",
+      "tasksLogs": "سجلات المهام",
+      "searchByTaskName": "البحث حسب اسم المهمة",
+      "searchByRequestName": "البحث حسب اسم الطلب",
+      "today": "اليوم",
+      "lastWeek": "اخر اسبوع",
+      "lastMonth": "اخر شهر",
+      "taskName":"اسم المهمة",
+      "department": "القسم",
+      "status":"الحالة",
+      "team": "الفريق",
+      "requestNumber": "رقم الطلب",
+      "requestDate": "تاريخ الطلب",
+      "termName": "اسم البند",
+      "details": "التفاصيل",
+      "quantity": "الكمية",
+      "requestStatus": "حالة الطلب",
+      "showRequest": "عرض الطلب",
+      "noActivities": "لا يوجد أنشطة",
+      "extractNumber": "رقم المستخلص",
+      "extractDate": "تاريخ المستخلص",
+      "extractValue": "قيمة المستخلص",
+      "extractType": "نوع المستخلص",
+      "extractStatus": "حالة المستخلص",
+      "showExtract": "عرض المستخلص",
+      "by": "بواسطة",
+      "activityLogStatus": {
+        "Created": "تم انشاء طلب جديد لل{request}",
+        "Approved": "تمت الموافقه على طلب {request} من قبل {actor}",
+        "Rejected": "تم رفض على طلب {request} من قبل {actor}",
+        "TransferredPartial":"تم الصرف جزئيا من قبل {actor}"
+      },
+      "activityLogRequestType": {
+        "ExtractRequest": "مستخلص",
+        "SupplyApprovalRequest": "توريد",
+        "PriceApprovalRequest": "تسعير",
+        "CovenantRequestStatus": "عهدة"
+      },
+      "activityLogActor": {
+        "0": "مهندس الموقع",
+        "1": "مدير المشاريع",
+        "2": "المكتب الفنى",
+        "3": "مدير المشاريع",
+        "4": "المحاسب",
+        "5": "المدير العام"
+      },
+      "extractTypes": {
+        "InProgress": "جاري",
+        "Final": "ختامي"
+      }
+    },
+    "teams": {
+      "team": "الفريق",
+      "search": "بحث ...",
+      "departments": "الأقسام",
+      "roles": {
+        "SiteEngineer": {
+          "title": "مهندس الموقغ",
+          "description": "متابعة تقدم القسم الهيكلي وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "ProjectManager": {
+          "title": "مدبر المشاريع",
+          "description": "متابعة تقدم القسم المعماري وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "TechnicalOfficer": {
+          "title": "المكتب الفنى",
+          "description": "متابعة تقدم القسم الكهربائي وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "Accountant": {
+          "title": "المحاسب",
+          "description": "متابعة تقدم القسم الميكانيكي وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "Purchasing": {
+          "title": "المشتريات",
+          "description": "متابعة تقدم قسم اتصالات وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "ProjectsManager": {
+          "title": "مدير المشاريع",
+          "description": "متابعة تقدم ادارة المشروع وضمان تنفيذها حسب المخططات والمواصفات"
+        }
+      },
+      "businessTypes": {
+        "Structural": {
+          "title": "انشائي",
+          "description": "متابعة تقدم القسم الهيكلي وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "Architectural": {
+          "title": "معماري",
+          "description": "متابعة تقدم القسم المعماري وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "Electrical": {
+          "title": "كهربائي",
+          "description": "متابعة تقدم القسم الكهربائي وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "Mechanical": {
+          "title": "ميكانيكي",
+          "description": "متابعة تقدم القسم الميكانيكي وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "Telecommunications": {
+          "title": "اتصالات",
+          "description": "متابعة تقدم قسم اتصالات وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "Manager": {
+          "title": "مدير المشروع",
+          "description": "متابعة تقدم ادارة المشروع وضمان تنفيذها حسب المخططات والمواصفات"
+        },
+        "Other": {
+          "title": "آخر",
+          "description": "متابعة تقدم الأقسام الاخري وضمان تنفيذها حسب المخططات والمواصفات"
+        }
+      },
+      "addEmployeeTitle": "اضافة موظف الي القسم",
+      "addEmployeeSubtitle": "اختر موظف من القائمة التالية",
+      "addManagerTitle": "اضافة مدير المشروع الي القسم",
+      "addManagerSubtitle": "اختر مدير المشروع من القائمة التالية",
+      "removeUser": "الغاء تعيين المستخدم من القسم {{department}}",
+      "removeEmployeeTitle": "الغاء تعيين المستخدم من القسم",
+      "employeeList": "قائمة الموظفين",
+      "chooseEmployees": "اختر الموظف",
+      "saveAssignButton": "حفظ"
+    },
+    "files": {
+      "files": "ملفات المشروع",
+      "search": "بحث ...",
+      "fileUpload": "رافع الملفات",
+      "dragDropFiles": "قم بسحب واسقاط الملفات هنا",
+      "downloadComplete": "تم التحميل"
+    }
+  },
+  "CHOSEIMAGE": "اختر الصورة من هنا",
+  "WelcomeBack": "مرحباً بعودتك",
+  "EnjoyLogin": "استمتع بالتحكم بسلاسة بتسجيل الدخول!"
+}

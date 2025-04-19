@@ -1,0 +1,16 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  background-color: #fff;
+  padding: 0 160px;
+    @media screen and (max-width: 1199px) {
+      padding: 0 100px;
+    }
+    @media screen and (max-width: 992px) {
+      padding: 0 60px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 0 30px;
+    }
+}

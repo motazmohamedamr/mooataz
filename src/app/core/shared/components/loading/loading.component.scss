@@ -1,0 +1,15 @@
+
+#pause {
+	background-color: rgba(0,0,0,0.7);
+	width: 100vw;
+	min-height: 100vh;
+	padding: 0;
+	position: fixed;
+	z-index: 9999999;
+  inset: 0;
+
+  ::ng-deep .mat-progress-spinner circle,
+  ::ng-deep .mat-mdc-progress-spinner circle {
+    stroke: #158456 !important;
+  }
+}

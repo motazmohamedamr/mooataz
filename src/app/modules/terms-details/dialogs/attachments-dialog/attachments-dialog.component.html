@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>{{ 'termsDetails.priceRequests.Attachments' | translate }}</h1>
+
+<section mat-dialog-content>
+  <ng-container *ngFor="let attachment of data?.attachments; let i = index">
+    <div class="card bg-light" [ngClass]="i > 0 ? 'mt-6' : ''">
+      <div class="card-body d-flex gap-3 px-10 py-5 flex align-items-center">
+        <!--begin::Image-->
+        <div class="symbol symbol-60px">
+          <img
+            [src]="'assets/media/svg/files/' + attachment.extension + '.svg'"
+            class="theme-light-show"
+            alt=""
+          />
+        </div>
+        <!--end::Image-->
+        <!--begin::Title-->
+        <div class="fs-5 fw-bold">{{ attachment.displayName }}</div>
+        <!--end::Title-->
+        <button
+          type="button"
+          [title]="'general.download' | translate"
+          (click)="downloadAttachment(attachment)"
+          class="btn btn-icon btn-bg-light btn-color-primary btn-xs downloadfile"
+        >
+          <i class="ki-duotone ki-arrow-down">
+            <span class="path1"></span>
+            <span class="path2"></span>
+          </i>
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</section>

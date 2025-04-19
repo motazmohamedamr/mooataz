@@ -1,0 +1,36 @@
+<section class="card">
+  <div class="title-dropdown">
+    <h2>{{ translation?.expenses }}</h2>
+    <div class="dropdown">
+      <mat-select
+        [placeholder]="'select year'"
+        [value]="currentYear"
+        (selectionChange)="yearChanged($event)"
+        [className]="'form-control form-control-solid'"
+      >
+        @for (year of years(); track year) {
+        <mat-option [value]="year"> {{ year }} </mat-option>
+        }
+      </mat-select>
+    </div>
+  </div>
+  <h3>{{ translation?.totalExpenses }}</h3>
+  @defer (when expensesSummary()) {
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [yaxis]="chartOptions.yaxis"
+    [dataLabels]="chartOptions.dataLabels"
+    [stroke]="chartOptions.stroke"
+    [legend]="chartOptions.legend"
+    [fill]="chartOptions.fill"
+    [states]="chartOptions.states"
+    [colors]="chartOptions.colors"
+    [markers]="chartOptions.markers"
+    [plotOptions]="chartOptions.plotOptions"
+    [grid]="chartOptions.grid"
+  ></apx-chart>
+  }
+</section>
+
