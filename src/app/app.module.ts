@@ -24,12 +24,12 @@ import { ErrorInterceptor } from '@core/interceptors/error.interceptor';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { TelInputComponent } from './pages/registration/tel-input/tel-input.component';
-import { HeroSectionComponent } from './pages/hero-section/hero-section.component';
-import { WhyMotabeaSectionComponent } from './pages/why-motabea-section/why-motabea-section.component';
-import { FeaturesSectionComponent } from './pages/features-section/features-section.component';
-import { PricingSectionComponent } from './pages/pricing-section/pricing-section.component';
-import { ContactSectionComponent } from './pages/contact-section/contact-section.component';
-import { FooterSectionComponent } from './pages/footer-section/footer-section.component';
+import { HeroSectionComponent } from './pages/homepage/hero-section/hero-section.component';
+import { WhyMotabeaSectionComponent } from './pages/homepage/why-motabea-section/why-motabea-section.component';
+import { FeaturesSectionComponent } from './pages/homepage/features-section/features-section.component';
+import { PricingSectionComponent } from './pages/homepage/pricing-section/pricing-section.component';
+import { ContactSectionComponent } from './pages/homepage/contact-section/contact-section.component';
+import { FooterSectionComponent } from './pages/homepage/footer-section/footer-section.component';
 import { FormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
