@@ -21,18 +21,10 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { APP_VERSION, TokenInterceptor } from '@core/interceptors/token.interceptor';
 import { LoadingInterceptor } from '@core/interceptors/loading.interceptor';
 import { ErrorInterceptor } from '@core/interceptors/error.interceptor';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { RegistrationComponent } from './pages/registration/registration.component';
-import { TelInputComponent } from './pages/registration/tel-input/tel-input.component';
-import { HeroSectionComponent } from './pages/homepage/hero-section/hero-section.component';
-import { WhyMotabeaSectionComponent } from './pages/homepage/why-motabea-section/why-motabea-section.component';
-import { FeaturesSectionComponent } from './pages/homepage/features-section/features-section.component';
-import { PricingSectionComponent } from './pages/homepage/pricing-section/pricing-section.component';
-import { ContactSectionComponent } from './pages/homepage/contact-section/contact-section.component';
-import { FooterSectionComponent } from './pages/homepage/footer-section/footer-section.component';
 import { FormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
-
+import { HomepageModule } from './pages/homepage/homepage.module';
+import { RegistrationModule } from './pages/registration/registration.module';
 registerLocaleData(localeAr, 'ar');
 registerLocaleData(localeEn, 'en');
 
@@ -44,15 +36,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent,
-    RegistrationComponent,
-    HeroSectionComponent,
-    WhyMotabeaSectionComponent,
-    FeaturesSectionComponent,
-    PricingSectionComponent,
-    ContactSectionComponent,
-    FooterSectionComponent,
-    TelInputComponent,
   ],
   imports: [
     FormsModule,
@@ -61,6 +44,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     ClipboardModule,
     NgxIntlTelInputModule,
+    HomepageModule,
+    RegistrationModule,
     // #fake-start#
     environment.isMockEnabled
       ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {
@@ -86,6 +71,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       positionClass: 'toast-bottom-left',
       preventDuplicates: true,
     }),
+    
   ],
   providers: [
     { provide: API_BASE_URL, useValue: environment.apiBaseUrl },
