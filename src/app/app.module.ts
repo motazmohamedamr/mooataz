@@ -24,7 +24,7 @@ import { ErrorInterceptor } from '@core/interceptors/error.interceptor';
 import { FormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { HomepageModule } from './pages/homepage/homepage.module';
-import { RegistrationModule } from './pages/registration/registration.module';
+
 registerLocaleData(localeAr, 'ar');
 registerLocaleData(localeEn, 'en');
 
@@ -45,7 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ClipboardModule,
     NgxIntlTelInputModule,
     HomepageModule,
-    RegistrationModule,
+   
     // #fake-start#
     environment.isMockEnabled
       ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {

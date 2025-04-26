@@ -12,7 +12,8 @@ import { FeaturesSectionComponent } from './features-section/features-section.co
 import { PricingSectionComponent } from './pricing-section/pricing-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
 import { FooterSectionComponent } from './footer-section/footer-section.component';
-
+import { RegistrationComponent } from '../registration/registration.component';
+import { TelInputComponent } from '../registration/tel-input/tel-input.component';
 @NgModule({
   declarations: [
     HomepageComponent,
@@ -22,6 +23,8 @@ import { FooterSectionComponent } from './footer-section/footer-section.componen
     PricingSectionComponent,
     ContactSectionComponent,
     FooterSectionComponent,
+    RegistrationComponent,
+    TelInputComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +32,9 @@ import { FooterSectionComponent } from './footer-section/footer-section.componen
     RouterModule
   ],
   exports: [
-    HomepageComponent
+    HomepageComponent,
+    RegistrationComponent,
+    TelInputComponent
   ]
 })
 export class HomepageModule {}
